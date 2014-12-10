@@ -1,3 +1,3 @@
 app.controller('featureController',['$scope',function($scope){
-    $scope.getcssclass ="features-page";
+    $scope.getCssClass ="features-page";
  }]);
