@@ -1,9 +1,9 @@
 
 app.service('userService', function($q,$http){
 
-     this.signUpUser=function(email,password){
+     this.signUp=function(email,password){
         var q=$q.defer();
-        $http.post('http://localhost:3000/auth/register', {email:email,password:password}).
+        $http.post(serverURL+'/auth/register', {email:email,password:password}).
           success(function(data, status, headers, config) {
                 q.resolve(data);
           }).
@@ -13,10 +13,10 @@ app.service('userService', function($q,$http){
         return q.promise;
     }
 
-    this.logInUser=function(email,password){
+    this.logIn=function(email,password){
        var q=$q.defer();
 
-       $http.post('http://localhost:3000/auth/signin', {email:email,password:password}).
+       $http.post(serverURL+'/auth/signin', {email:email,password:password}).
          success(function(data, status, headers, config) {
                q.resolve(data);
 

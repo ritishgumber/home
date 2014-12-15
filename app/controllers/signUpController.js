@@ -2,7 +2,13 @@ app.controller('signupController',['$scope','userService',function($scope,userSe
   $scope.getCssClass =["signup-page", "access-page", "has-full-screen-bg"];
 
 
-      document.getElementById("spinner").style.display="none";
+
+      $scope.init=function()
+      {
+          document.getElementById("spinner").style.display="none";
+
+      }
+
       $scope.signUp=function(isValid){
 
         if(isValid)
@@ -10,7 +16,7 @@ app.controller('signupController',['$scope','userService',function($scope,userSe
 
               document.getElementById("spinner").style.display="block";
               $scope.loading="false";
-              var signUpPromise=userService.signUpUser($scope.email,$scope.password);
+              var signUpPromise=userService.signUp($scope.email,$scope.password);
               signUpPromise.then(
                   function(data){
                         document.getElementById("spinner").style.display="none";

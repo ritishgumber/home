@@ -1,7 +1,7 @@
 
 
 
-    <div class="upper-wrapper">
+    <div class="upper-wrapper" ng-init='init()'>
         <!-- ******HEADER****** -->
         <header class="header">
             <div class="container">
@@ -25,7 +25,7 @@
                                   <div id="spinner"></div>
                                     <form class="login-form" name="userForm" ng-submit="logIn(userForm.$valid)">
                                         <div class="form-group email">
-                                            <label class="sr-only" for="login-email">Email or username</label>
+                                            <label class="sr-only" for="login-email">Email</label>
                                             <input id="login-email" type="email" class="form-control login-email" placeholder="Email or username"  required  ng-model="email">
                                         </div><!--//form-group-->
                                         <div class="form-group password">
