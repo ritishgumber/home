@@ -21,14 +21,16 @@
                             <h2 class="title text-center">Log in to Velocity</h2>
                             <div class="row">
                                 <div class="form-container col-md-5 col-sm-12 col-xs-12">
-                                    <form class="login-form">
+                                  <p style="color:red;">{{err}}</p>
+                                  <div id="spinner"></div>
+                                    <form class="login-form" name="userForm" ng-submit="logIn(userForm.$valid)">
                                         <div class="form-group email">
                                             <label class="sr-only" for="login-email">Email or username</label>
-                                            <input id="login-email" type="email" class="form-control login-email" placeholder="Email or username">
+                                            <input id="login-email" type="email" class="form-control login-email" placeholder="Email or username"  required  ng-model="email">
                                         </div><!--//form-group-->
                                         <div class="form-group password">
                                             <label class="sr-only" for="login-password">Password</label>
-                                            <input id="login-password" type="password" class="form-control login-password" placeholder="Password">
+                                            <input id="login-password" type="password" class="form-control login-password" placeholder="Password"  required  ng-model="password">
                                             <p class="forgot-password"><a href="#">Forgot password?</a></p>
                                         </div><!--//form-group-->
                                         <button type="submit" class="btn btn-block btn-cta-primary">Log in</button>
