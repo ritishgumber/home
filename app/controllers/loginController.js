@@ -19,11 +19,10 @@ app.controller('loginController',['$scope','userService','$http',function($scope
 
                     //dfhdj
                   $http.get(serverURL+'/project/list')
-				.success(function(response) {
-				console.log(response);
-				});
-                    //dfhdj
-
+            				.success(function(response) {
+            				console.log(response);
+            				});
+                          
                     //console.log(data);
               },
               function(error){

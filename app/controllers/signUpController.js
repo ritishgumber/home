@@ -20,7 +20,8 @@ app.controller('signupController',['$scope','userService',function($scope,userSe
               var signUpPromise=userService.signUp($scope.email,$scope.password);
               signUpPromise.then(
                   function(data){
-                        $scope.showSpinner=false;
+                    console.log(data);
+                     $scope.showSpinner=false;
                         //console.log(data);
                   },
                   function(error){

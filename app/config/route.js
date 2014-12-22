@@ -12,7 +12,7 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProv
   $stateProvider.state('about',{url:'/about',templateUrl:'app/views/about.html',controller:'aboutController'});
 
   //For to enable cross-origin resource sharing
-  $httpProvider.defaults.withCredentials = false;
+  $httpProvider.defaults.withCredentials = true;
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
   //End
