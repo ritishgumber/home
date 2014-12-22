@@ -10,9 +10,11 @@ $(document).ready(function() {
     $(window).bind('scroll', function() {
          if ($(window).scrollTop() > 200) {
              $('#header').addClass('navbar-fixed-top');
+             $('#logoContainer').hide();
          }
          else {
              $('#header').removeClass('navbar-fixed-top');
+             $('#logoContainer').show();
          }
     });
     

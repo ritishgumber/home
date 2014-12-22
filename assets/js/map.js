@@ -5,6 +5,8 @@ jQuery(document).ready(function(){
         div: '#map',
         lat: 51.451573,
         lng: -2.595008,
+        width: '400px',
+        height: '300px',
     });
     map.addMarker({
         lat: 51.451573,
