@@ -1,25 +1,33 @@
-app.controller('loginController',['$scope','userService',function($scope,userService){
+app.controller('loginController',['$scope','userService','$http',function($scope,userService,$http){
 
 
   $scope.init=function()
   {
       $scope.getCssClass =["login-page","access-page","has-full-screen-bg"];
-      $scope.spinnerSwitch=false;
+      $scope.showSpinner=false;
 
   }
   $scope.logIn=function(isValid){
     if(isValid)
       {
-          $scope.spinnerSwitch=true;
+          $scope.showSpinner=true;
           var logInPromise=userService.logIn($scope.email,$scope.password);
 
           logInPromise.then(
               function(data){
-                    $scope.spinnerSwitch=false;
+                    $scope.showSpinner=false;
+
+                    //dfhdj
+                  $http.get(serverURL+'/project/list')
+				.success(function(response) {
+				console.log(response);
+				});
+                    //dfhdj
+
                     //console.log(data);
               },
               function(error){
-                   $scope.spinnerSwitch=false;
+                   $scope.showSpinner=false;
                     $scope.err=error;
               }
           );

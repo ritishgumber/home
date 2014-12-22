@@ -10,11 +10,10 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProv
   $stateProvider.state('signup',{url:'/signup',templateUrl:'app/views/signup.html',controller  : 'signupController'});
   $stateProvider.state('contact',{url:'/contact',templateUrl:'app/views/contact.html',controller:'contactController'});
   $stateProvider.state('about',{url:'/about',templateUrl:'app/views/about.html',controller:'aboutController'});
-  $stateProvider.state('dropby',{url:'/dropby',templateUrl:'app/views/dropby.html',controller:'dropbyController'});
 
   //For to enable cross-origin resource sharing
   $httpProvider.defaults.withCredentials = false;
-  $httpProvider.defaults.useXDomain = false;
+  $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
   //End
 
