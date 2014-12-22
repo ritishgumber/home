@@ -1,4 +1,4 @@
-app.controller('loginController',['$scope','userService',function($scope,userService){
+app.controller('loginController',['$scope','userService','$http',function($scope,userService,$http){
 
 
   $scope.init=function()
@@ -16,6 +16,14 @@ app.controller('loginController',['$scope','userService',function($scope,userSer
           logInPromise.then(
               function(data){
                     $scope.showSpinner=false;
+
+                    //dfhdj
+                  $http.get(serverURL+'/project/list')
+				.success(function(response) {
+				console.log(response);
+				});
+                    //dfhdj
+
                     //console.log(data);
               },
               function(error){

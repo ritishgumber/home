@@ -18,7 +18,8 @@ app.service('userService', function($q,$http){
 
        $http.post(serverURL+'/auth/signin', {email:email,password:password}).
          success(function(data, status, headers, config) {
-               q.resolve(data);
+           console.log(data);
+           q.resolve(data);
 
          }).
          error(function(data, status, headers, config) {
