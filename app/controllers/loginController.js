@@ -18,10 +18,10 @@ app.controller('loginController',['$scope','userService','$http',function($scope
               function(data){
                   $scope.showSpinner=false;
 
-                  $http.get(serverURL+'/project/list')
+                  /*$http.get(serverURL+'/project/list')
             				.success(function(response) {
             				 console.log(response);
-            			});
+            			});*/
 
               },
               function(error){
