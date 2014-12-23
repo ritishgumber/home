@@ -16,8 +16,8 @@ app.controller('signupController',['$scope','userService',function($scope,userSe
           {
 
               $scope.showSpinner=true;
-              
-              var signUpPromise=userService.signUp($scope.email,$scope.password);
+
+              var signUpPromise=userService.signUp($scope.name,$scope.email,$scope.password);
               signUpPromise.then(
                   function(data){
                         $scope.showSpinner=false;

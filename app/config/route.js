@@ -18,7 +18,7 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider',function($urlR
   $stateProvider.state('project',{url:'/project',templateUrl:'app/views/createProject.html',controller:'projectController'});
 
   //For to enable cross-origin resource sharing
-  $httpProvider.defaults.withCredentials = false;
+  $httpProvider.defaults.withCredentials = true;
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
   //End
