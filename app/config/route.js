@@ -10,6 +10,7 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProv
   $stateProvider.state('signup',{url:'/signup',templateUrl:'app/views/signup.html',controller  : 'signupController'});
   $stateProvider.state('contact',{url:'/contact',templateUrl:'app/views/contact.html',controller:'contactController'});
   $stateProvider.state('about',{url:'/about',templateUrl:'app/views/about.html',controller:'aboutController'});
+  $stateProvider.state('careers',{url:'/joinus',templateUrl:'app/views/careers.html',controller:'joinusController'});
 
   //For to enable cross-origin resource sharing
   $httpProvider.defaults.withCredentials = true;

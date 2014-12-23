@@ -11,19 +11,18 @@ app.controller('loginController',['$scope','userService','$http',function($scope
     if(isValid)
       {
           $scope.showSpinner=true;
+
           var logInPromise=userService.logIn($scope.email,$scope.password);
 
           logInPromise.then(
               function(data){
-                    $scope.showSpinner=false;
+                  $scope.showSpinner=false;
 
-                    //dfhdj
                   $http.get(serverURL+'/project/list')
             				.success(function(response) {
-            				console.log(response);
-            				});
-                          
-                    //console.log(data);
+            				 console.log(response);
+            			});
+
               },
               function(error){
                    $scope.showSpinner=false;
