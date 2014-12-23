@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en" ng-app="cbLanding"> <!--<![endif]-->
+<html lang="en" ng-app="cbLanding"> 
 <head>
-    <title>Responsive website template for products</title>
+    <title>CloudBoost</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,13 +24,14 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
 </head>
 
 
-<body  ng-class='getCssClass' ui-view>
+<body ng-class='getCssClass' ui-view>
 
 
 
@@ -46,13 +45,28 @@
 <script type="text/javascript" src="app/controllers/aboutController.js"></script>
 <script type="text/javascript" src="app/controllers/contactController.js"></script>
 <script type="text/javascript" src="app/controllers/startController.js"></script>
-<script type="text/javascript" src="app/controllers/index2Controller.js"></script>
-<script type="text/javascript" src="app/controllers/blogController.js"></script>
-<script type="text/javascript" src="app/controllers/blogArchiveController.js"></script>
-<script type="text/javascript" src="app/controllers/blogCategoryController.js"></script>
-<script type="text/javascript" src="app/controllers/blogSingleController.js"></script>
+<script type="text/javascript" src="app/controllers/joinusController.js"></script>
+
 <!--Services-->
 <script type="text/javascript" src="app/services/userServices.js"></script>
+
+<script>
+
+    function removeActiveLinks(){
+        $('#home').removeClass('active');
+        $('#features').removeClass('active');
+        $('#pricing').removeClass('active');
+        $('#aboutus').removeClass('active');
+
+    }
+
+    function makeLinkActive(id){
+        removeActiveLinks();
+        $('#'+id).addClass('active');
+    }
+
+</script>
+
 </body>
 
 
