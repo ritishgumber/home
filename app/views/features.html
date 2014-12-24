@@ -8,125 +8,63 @@
     <div class="headline-bg">
     </div><!--//headline-bg-->
 
-    <!-- ******Video Section****** -->
-    <section class="features-video section section-on-bg">
+     <section class="promo section section-on-bg" style="margin-bottom:-200px">
         <div class="container text-center">
-            <h2 class="title">Take a quick tour to see how it works</h2>
-            <div class="video-container">
-                <iframe src="http://player.vimeo.com/video/90299717?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div><!--//video-container-->
+            <h3 class="title" style="font-size:30px">Features that are so simple that it'll take you by surprise and yes of-course,<br/><span class="bigTitle" style="font-size:35px">That'll super-charge your app development. <br/>We promise </span></h3>
+            <p class="intro">CloudBoost helps you to build data-driven web apps in days instead of months and the best part, You never have to see code. </p>
         </div><!--//container-->
-    </section><!--//feature-video-->
+    </section><!--//promo-->
 
     <!-- ******Features Section****** -->
-    <section class="features-tabbed section">
+    <section class="features-tabbed section" data-ng-init="init()">
         <div class="container">
-            <h2 class="title text-center">Product Features</h2>
+            <h2 class="title text-center">What's in it for me?</h2>
             <div class="row">
                 <div class=" text-center col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs text-center" role="tablist">
-                        <li class="active"><a href="#feature-1" role="tab" data-toggle="tab"><i class="fa fa-cloud-upload"></i><br /><span class="hidden-sm hidden-xs">Feature One</span></a></li>
-                        <li><a href="#feature-2" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i><br /><span class="hidden-sm hidden-xs">Feature Two</span></a></li>
-                        <li><a href="#feature-3" role="tab" data-toggle="tab"><i class="fa fa-photo"></i><br /><span class="hidden-sm hidden-xs">Feature Three</span></a></li>
-                        <li class="last"><a href="#feature-4" role="tab" data-toggle="tab"><i class="fa fa-users"></i><br /><span class="hidden-sm hidden-xs">Feature Four</span></a></li>
+                        <li id="feature1List" class="active" style="cursor:pointer"><a data-ng-click="switchFeature(1)" role="tab" data-toggle="tab"><i class="fa fa-database"></i><br /><span class="hidden-sm hidden-xs">Database Designer</span></a></li>
+                        <li id="feature2List" style="cursor:pointer"><a data-ng-click="switchFeature(2)" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i><br /><span class="hidden-sm hidden-xs">App Designer</span></a></li>
+                        <li id="feature4List" style="cursor:pointer"><a data-ng-click="switchFeature(4)" role="tab" data-toggle="tab"><i class="fa fa-cloud-upload"></i><br /><span class="hidden-sm hidden-xs">Publish</span></a></li>
                     </ul><!--//nav-tabs-->
 
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="feature-1">
                             <h3 class="title sr-only">Feature One</h3>
-                            <figure class="figure text-center">
-                                <img class="img-responsive" src="assets/images/features/screenshot-1.png" alt="" />
-                                <figcaption class="figure-caption">(Screenshot source: Coral - App &amp; website startup kit)</figcaption>
-                            </figure>
                             <div class="desc text-left">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue leo mauris, a fringilla nisi posuere tincidunt. Aliquam elementum lorem eget sollicitudin suscipit.</p>
-                                <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-star"></i>Lorem ipsum dolor sit amet.</li>
-                                    <li><i class="fa fa-star"></i>Aliquam tincidunt mauris eu risus.</li>
-                                    <li><i class="fa fa-star"></i>Ultricies eget vel aliquam libero.</li>
-                                    <li><i class="fa fa-star"></i>Maecenas nec odio.</li>
-                                </ul>
-
-                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
+                                <p> <b>Data types that makes sense</b> :  Every wondered why playing around with datatypes such as int, float,string was such a pain? Yes! Now that was back in the day - We have a new database for you that actually understand what you want to store - text, description, photo, video, email, website - these URL make sense. Doesn't it?</p><br/><br/>
+                                <p><b>Relationships that tells the story of your app</b> :  When you relate entities to one another - our AI Ninjas actually understands what you're trying to build and how your entities are connected and in which way to design forms. So, you don't have to worry about anything.</p><br/><br/>
+                                 <p><b>Search is a breeze</b> :  Oh did we tell you, we auto-index your data to help you search faster (and not worry about indexing) and even write search algorithm for you automatically. So, if you've ever spent a week working on search before - back in the days, You'll find this feature a breze.</p><br/><br/>
+                                  <p><b>Its in the Cloud</b> :  When we say this - geo-replication, auto-backup, auto-scaling,sharding is all taken care of. If you don't know what all of these mean - You really dont have to! We take care of all that tech jargon for you.</p><br/><br/>
+                                
                             </div><!--//desc-->
                         </div><!--//tab-pane-->
-                        <div class="tab-pane" id="feature-2">
+                        <div class="tab-pane in active" id="feature-2">
                             <h3 class="title sr-only">Feature Two</h3>
-                            <figure class="figure text-center">
-                                <img class="img-responsive" src="assets/images/features/screenshot-2.png" alt="" />
-                                <figcaption class="figure-caption">(Screenshot source: Coral - App &amp; website startup kit)</figcaption>
-                            </figure>
+                           
                             <div class="desc text-left">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue leo mauris, a fringilla nisi posuere tincidunt. Aliquam elementum lorem eget sollicitudin suscipit.</p>
-                                <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id nulla at libero ultricies tempus. Duis porta justo quam, ut ultrices felis posuere sit amet. Sed imperdiet bibendum est, sit amet sagittis ante sagittis eu. <a href="#">Integer fringilla</a> a purus sit amet laoreet. Ut consequat volutpat sapien sed lobortis. Nullam laoreet vitae justo nec dignissim.
-                                </p>
-                                <blockquote>
-                                    <p>Viverra magna pellentesque in magnis gravida sit augue felis vehicula vestibulum semper penatibus justo ornare semper Gravida felis platea arcu mus non. Montes at posuere. Natoque.</p>
-                                </blockquote>
+                                 <p> <b>Form designer that designs forms automatically</b> :  That's where we kill our competitors out. We have a kick-ass form designer that lets you just drag and drop an entity on the canvas and boom! - We have everything up and running for you. You can custom-design as well, but we're sure you'll never feel the need to do it. </p><br/><br/>
+
+                                <p><b>Custom Logic</b> :  We use flow-based-programming (see noflojs.org) to help you design your app logic. So, if you were annoyed by writing code to send an email,authentication,saving forms, editing entities - Well, thats no more. We have custom components for you incase you need to write custom logic. But 90% of the time you'll never have to.</p><br/><br/>
+                                 <p><b>Custom Code</b> : Do you want to talk to a 3rd party API that we dont support yet? No problem. Drag and drop a custom component and code JavaScript. That all it takes. Simple! </p><br/><br/>
+
+                                  <p><b>Security</b> :  We know this is hard for anyone to do. Making sure you secure your app from potential hackers out there. We do this for you automatically. We have an Access Control List that helps every record in your database to be just as safe. We also auto encrypt confidencial data, So, even if its out there - no one can read it.</p><br/><br/>
+
+                                   <p><b>Web Hooks, Background Jobs, API  </b> :  We'll launch this soon, but we have support for Web Hooks, Background Jobs, and custom create your REST API on our roadmap. They'll launch soon. We promise.</p><br/><br/>
 
                             </div><!--//desc-->
                         </div><!--//tab-pane-->
-                        <div class="tab-pane" id="feature-3">
-                            <h3 class="title sr-only">Feature Three</h3>
-                            <figure class="figure text-center">
-                                <img class="img-responsive" src="assets/images/features/screenshot-3.png" alt="" />
-                                <figcaption class="figure-caption">(Screenshot source: Coral - App &amp; website startup kit)</figcaption>
-                            </figure>
-                            <div class="desc text-left">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue leo mauris, a fringilla nisi posuere tincidunt. Aliquam elementum lorem eget sollicitudin suscipit.</p>
-
-                                <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
-
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Nullam consequat</th>
-                                                <th>Commodo metus</th>
-                                                <th>Dapibus porta</th>
-                                                <th>Sed porta</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Faucibus purus</td>
-                                                <td>Aliquam sit</td>
-                                                <td>Sed porta leo</td>
-                                                <td>Duis ut ornare dui</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Condimentum</td>
-                                                <td>Curabitur tempus</td>
-                                                <td>Fusce vehicula</td>
-                                                <td>Nasceturs</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Neque a condimentum</td>
-                                                <td>Cum sociis natoque</td>
-                                                <td>Penatibus magnis</td>
-                                                <td>Curabitur</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div><!--//table-responsive-->
-                            </div><!--//desc-->
-                        </div><!--//tab-pane-->
-                        <div class="tab-pane" id="feature-4">
+                        <div class="tab-pane in active" id="feature-4">
                             <h3 class="title sr-only">Feature Four</h3>
-                            <figure class="figure text-center">
-                                <img class="img-responsive" src="assets/images/features/screenshot-4.png" alt="" />
-                                <figcaption class="figure-caption">(Screenshot source: Coral - App &amp; website startup kit)</figcaption>
-                            </figure>
+                            
                             <div class="desc text-left">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue leo mauris, a fringilla nisi posuere tincidunt. Aliquam elementum lorem eget sollicitudin suscipit.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu</p>
-                                <p class="box">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id nulla at libero ultricies tempus. Duis porta justo quam, ut ultrices felis posuere sit amet. Sed imperdiet bibendum est, sit amet sagittis ante sagittis eu. Ut consequat volutpat sapien sed lobortis. Nullam laoreet vitae justo nec dignissim.
-                                </p>
+                                <p> <b>One click publish</b> :  That's all it takes to get your app off the ground - Clicking on publish and within minutes, you're live. Throw any amount of traffic at your app, We'll handle all of it, without you need to worry about anything. </p><br/><br/>
+
+                                <p><b>Custom Domain</b> :  We let you attach custom domain to your app too!, It's a breeze - Just follow our instructions and you'll get it done just right. </p><br/><br/>
+                                 <p><b>Test Environment</b> :Want to test before you're live? We support a sandbox envirommnent that will help you test run your site before showcasing it out to the world. </p><br/><br/>
+
+                                
                             </div><!--//desc-->
                         </div><!--//tab-pane-->
                     </div><!--//tab-content-->
@@ -138,54 +76,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id nulla at libero
     <!-- ******Steps Section****** -->
     <section class="steps section">
         <div class="container">
-            <h2 class="title text-center">3 Simple Steps to Get you started with Velocity</h2>
+            <h2 class="title text-center">3 Simple Steps to build your app with CloudBoost</h2>
             <div class="row">
                  <div class="step text-center col-md-4 col-sm-4 col-xs-12">
-                     <h3 class="title"><span class="number">1</span><br /><span class="text">Sign up</span></h3>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                     <h3 class="title"><span class="number">1</span><br /><span class="text">Design your Database</span></h3>
+                     <p>We have a very simple database designer for you, that'll help you design any kind of data-model you like and store any thing you'd like - Be it a photo, video or even any kind of wierd file.</p>
                  </div><!--//step-->
                  <div class="step text-center col-md-4 col-sm-4 col-xs-12">
-                     <h3 class="title"><span class="number">2</span><br /><span class="text">Choose your lorem ipsum</span></h3>
-                     <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                     <h3 class="title"><span class="number">2</span><br /><span class="text">Design your app</span></h3>
+                     <p>Just drag and drop your database entity on the form and We'll generate forms for you - Automatically! - Then use our aweosme logic designer to design the business logic you like. Yes! Its that simple.</p>
                  </div><!--//step-->
                  <div class="step text-center col-md-4 col-sm-4 col-xs-12">
-                     <h3 class="title"><span class="number">3</span><br /><span class="text">Start building ipsum</span></h3>
-                     <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet.</p>
+                     <h3 class="title"><span class="number">3</span><br /><span class="text">Publish it out</span></h3>
+                     <p>Want to assign a custom domain? Yes - Its a breeze. We help you do everything that will take your app from development to showcasing it to the world.</p>
                  </div><!--//step-->
             </div><!--//row-->
-
-            <div class="text-center"><a class="btn btn-cta btn-cta-primary" href="signup.html">Get Started - It's Free</a></div>
 
         </div><!--//container-->
     </section><!--//steps-->
 
+    <div ng-include="'app/views/subviews/bottom_banner.html'"></div>
 
-        <!--Footer Start-->
-        <div ng-include="'app/views/subviews/footer.html'"></div>
-        <!--Footer End-->
-
-    <!-- *****CONFIGURE STYLE****** -->
-    <div class="config-wrapper">
-        <div class="config-wrapper-inner">
-            <a id="config-trigger" class="config-trigger" href="#"><i class="fa fa-cog"></i></a>
-            <div id="config-panel" class="config-panel">
-                <h5>Choose Colour</h5>
-                <ul id="color-options" class="list-unstyled list-inline">
-                    <li class="theme-1 active" ><a data-style="assets/css/styles.css" href="#"></a></li>
-                    <li class="theme-2"><a data-style="assets/css/styles-2.css" href="#"></a></li>
-                    <li class="theme-3"><a data-style="assets/css/styles-3.css" href="#"></a></li>
-                    <li class="theme-4"><a data-style="assets/css/styles-4.css" href="#"></a></li>
-                    <li class="theme-5"><a data-style="assets/css/styles-5.css" href="#"></a></li>
-                    <li class="theme-6"><a data-style="assets/css/styles-6.css" href="#"></a></li>
-                    <li class="theme-7"><a data-style="assets/css/styles-7.css" href="#"></a></li>
-                    <li class="theme-8"><a data-style="assets/css/styles-8.css" href="#"></a></li>
-                    <li class="theme-9"><a data-style="assets/css/styles-9.css" href="#"></a></li>
-                    <li class="theme-10"><a data-style="assets/css/styles-10.css" href="#"></a></li>
-                </ul><!--//color-options-->
-                <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
-            </div><!--//configure-panel-->
-        </div><!--//config-wrapper-inner-->
-    </div><!--//config-wrapper-->
+    <!--Footer Start-->
+    <div ng-include="'app/views/subviews/footer.html'"></div>
+    <!--Footer End-->
 
     <!-- Javascript -->
     <script type="text/javascript" src="assets/plugins/jquery-1.11.1.min.js"></script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="cbLanding"> 
 <head>
-    <title>CloudBoost</title>
+    <title>CloudBoost : Build web-apps crazy fast.</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +25,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/scrollToView.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
@@ -46,26 +47,10 @@
 <script type="text/javascript" src="app/controllers/contactController.js"></script>
 <script type="text/javascript" src="app/controllers/startController.js"></script>
 <script type="text/javascript" src="app/controllers/joinusController.js"></script>
+<script type="text/javascript" src="app/controllers/headerController.js"></script>
 
 <!--Services-->
 <script type="text/javascript" src="app/services/userServices.js"></script>
-
-<script>
-
-    function removeActiveLinks(){
-        $('#home').removeClass('active');
-        $('#features').removeClass('active');
-        $('#pricing').removeClass('active');
-        $('#aboutus').removeClass('active');
-
-    }
-
-    function makeLinkActive(id){
-        removeActiveLinks();
-        $('#'+id).addClass('active');
-    }
-
-</script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!-- ******HEADER****** -->
-<header id="header" class="header">
+<header id="header" class="header" data-ng-controller="headerController">
     <div class="container">
         <h1 class="logo" id="logoContainer">
             <a href="#/">
@@ -19,10 +19,10 @@
             </div><!--//navbar-header-->
             <div id="navbar-collapse" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li id="home" class="nav-item"><a href="#/index-2">Home</a></li>
-                    <li id="features" class="nav-item"><a href="#/features">Features</a></li>
-                    <li id="pricing" class="nav-item"><a href="#/pricing">Pricing</a></li>
-                    <li id="aboutus" class="nav-item dropdown" style="cursor:pointer">
+                    <li id="home" ng-class="{active: isActive('/')}" class="nav-item"><a href="#/index-2">Home</a></li>
+                    <li id="features" ng-class="{active: isActive('/features')}" class="nav-item"><a href="#/features">Features</a></li>
+                    <li id="pricing" ng-class="{active: isActive('/pricing')}" class="nav-item"><a href="#/pricing">Pricing</a></li>
+                    <li id="aboutus" ng-class="{active: (isActive('/about') || isActive('/contact') || isActive('/joinus'))}" class="nav-item dropdown" style="cursor:pointer">
                         <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">About us <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="#/about">Who are we?</a></li>
@@ -30,7 +30,7 @@
                             <li><a href="#/contact">Contact</a></li>
                         </ul>
                     </li><!--//dropdown-->
-                    <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" href="#/signup">Tell me when you launch</a></li>
+                    <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" data-ng-click="toCta()">Tell me when you launch</a></li>
                 </ul><!--//nav-->
             </div><!--//navabr-collapse-->
         </nav><!--//main-nav-->
