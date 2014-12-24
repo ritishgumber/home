@@ -1,9 +1,9 @@
 
 app.service('userService', function($q,$http){
 
-     this.signUp=function(email,password){
+     this.signUp=function(name,email,password){
         var q=$q.defer();
-        $http.post(serverURL+'/auth/register', {email:email,password:password}).
+        $http.post(serverURL+'/auth/register', {name:name,email:email,password:password}).
           success(function(data, status, headers, config) {
                 q.resolve(data);
           }).

@@ -26,6 +26,10 @@
                                   <p style="color:red;">{{err}}</p>
                                     <div id="spinner" ng-show="showSpinner"></div>
                                     <form class="signup-form" name="userForm" ng-submit="signUp(userForm.$valid)">
+                                      <div class="form-group email">
+                                          <label class="sr-only" for="signup-email">Your name</label>
+                                          <input id="signup-email" type="text" class="form-control login-email" placeholder="Your name"  required  ng-model="name">
+                                      </div><!--//form-group-->
                                         <div class="form-group email">
                                             <label class="sr-only" for="signup-email">Your email</label>
                                             <input id="signup-email" type="email" class="form-control login-email" placeholder="Your email"  required  ng-model="email">
@@ -44,7 +48,6 @@
                                     <ul class="list-unstyled social-login">
                                         <li><button class="twitter-btn btn" type="button"><i class="fa fa-twitter"></i>Sign up with Twitter</button></li>
                                         <li><button class="facebook-btn btn" type="button"><i class="fa fa-facebook"></i>Sign up with Facebook</button></li>
-                                        <li><button class="github-btn btn" type="button"><i class="fa fa-github-alt"></i>Sign up with Github</button></li>
                                         <li><button class="google-btn btn" type="button"><i class="fa fa-google-plus"></i>Sign up with Google</button></li>
                                     </ul>
                                     <p class="note">Don't worry, we won't post anything without your permission.</p>
