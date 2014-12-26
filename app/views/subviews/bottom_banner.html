@@ -2,14 +2,14 @@
         <section id="cta" class="section cta-section text-center home-cta-section" data-ng-controller="bottomBannerController">
             <div class="container">
                <h2 class="title">We're launching soon. Sooner than you'd expect.</h2>
-               <p class="intro">If you're <span class="counting">interested</span> in learning more about us and want to hear updates from us regularly (and even give feedback as we build). Shout-out your email below. </p><br/>
-               <form class="signup-form navbar-form"  name="bottomSubscribeForm" ng-submit="addSubscriber(bottomSubscribeForm.$valid)">
+               <p class="intro">Want to be a part of our alpha? If you're <span class="counting">interested</span> in learning more about us and want to hear updates from us regularly (and even give feedback as we build). Shout-out your email below. </p><br/>
+               <form ng-hide="bottomShowSpinner || (bottomSubscribeResult || bottomSubscribeErr)" class="signup-form navbar-form"  name="bottomSubscribeForm" ng-submit="addSubscriber(bottomSubscribeForm.$valid)">
                     <div class="form-group">
                         <input type="email" class="form-control" placeholder="Your email please. We dont spam." required  ng-model="bottomSubscribeEmail">
                     </div>
                     <button type="submit" class="btn btn-sm btn-cta btn-cta-primary">Loop me in</button>
                 </form>
-                <fa class="bottomSpinnerLocation" name="spinner" size="4" spin ng-style="{'color': checkColor}" ng-show="bottomShowSpinner"></fa>
+                <fa class="text-center" name="spinner" size="3" spin ng-style="{'color': checkColor}" ng-show="bottomShowSpinner"></fa>
                 <p ng-model="bottomSubscribeResult">{{bottomSubscribeResult}}</p>
                 <p ng-model="bottomSubscribeErr">{{bottomSubscribeErr}}</p>
             </div><!--//container-->

@@ -11,9 +11,9 @@ app.controller('bottomBannerController',['$scope','SubscriberService',function($
           var subscribePromise=SubscriberService.addSubscriber($scope.bottomSubscribeEmail);
 
           subscribePromise.then(
-              function(data){
+              function(message){
                   $scope.bottomShowSpinner=false;
-                  $scope.bottomSubscribeResult=data.email+" got subscribed successfully";
+                  $scope.bottomSubscribeResult=message;
 
               },
               function(error){

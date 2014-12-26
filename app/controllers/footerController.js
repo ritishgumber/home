@@ -11,9 +11,9 @@ app.controller('footerController',['$scope','SubscriberService',function($scope,
           var subscribePromise=SubscriberService.addSubscriber($scope.footerSubscribeEmail);
 
           subscribePromise.then(
-              function(data){
+              function(message){
                   $scope.footerShowSpinner=false;
-                  $scope.footerSubscribeResult=data.email+" got subscribed successfully";
+                  $scope.footerSubscribeResult=message;
               },
               function(error){
                    $scope.footerShowSpinner=false;

@@ -42,13 +42,13 @@
                             </ul>
                             <div class="form-container">
                                 <p class="intro">Want us to send you adrenalin filled emails right to your inbox when we have something new? Type in your email.We dont spam, We're hackers and we hate that too!</p>
-                                <form class="signup-form navbar-form" name="footerSubscribeForm" ng-submit="addSubscriber(footerSubscribeForm.$valid)">
+                                <form ng-hide="footerShowSpinner || (footerSubscribeResult || footerSubscribeErr)" class="signup-form navbar-form" name="footerSubscribeForm" ng-submit="addSubscriber(footerSubscribeForm.$valid)">
                                     <div class="form-group">
                                         <input type="email" class="form-control" placeholder="Enter your email address" required  ng-model="footerSubscribeEmail">
                                     </div>
                                     <button type="submit" class="btn btn-cta btn-cta-primary">Subscribe Now</button>
                                 </form>
-                                <fa class="spinnerLocation" name="spinner" size="4" spin ng-style="{'color': checkColor}" ng-show="footerShowSpinner"></fa>
+                                <fa name="spinner" size="2" spin ng-style="{'color': checkColor}" ng-show="footerShowSpinner"></fa>
                                 <p ng-model="footerSubscribeResult">{{footerSubscribeResult}}</p>
                                 <p ng-model="footerSubscribeErr">{{footerSubscribeErr}}</p>
                             </div><!--//subscription-form-->
