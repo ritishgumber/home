@@ -13,9 +13,9 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProv
   $stateProvider.state('careers',{url:'/joinus',templateUrl:'app/views/careers.html',controller:'joinusController'});
 
   //For to enable cross-origin resource sharing
-  $httpProvider.defaults.withCredentials = true;
-  $httpProvider.defaults.useXDomain = true;
-  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.withCredentials = true;
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
   //End
 
 }]);

@@ -30,4 +30,31 @@ app.service('userService', function($q,$http){
        return q.promise;
    }
 
+
+   this.facebookSignUp=function(){
+      var q=$q.defer();
+
+      $http.get(serverURL+'/auth/facebook').
+        success(function(data, status, headers, config) {
+              q.resolve(data);
+        }).
+        error(function(data, status, headers, config) {
+              q.reject(data);
+        });
+      return q.promise;
+  }
+
+  this.googleSignUp=function(){
+     var q=$q.defer();
+
+     $http.get(serverURL+'/auth/google').
+       success(function(data, status, headers, config) {
+             q.resolve(data);
+       }).
+       error(function(data, status, headers, config) {
+             q.reject(data);
+       });
+     return q.promise;
+ }
+
 });

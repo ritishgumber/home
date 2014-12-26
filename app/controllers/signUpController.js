@@ -34,4 +34,43 @@ app.controller('signupController',['$scope','userService',function($scope,userSe
       };
 
 
+
+      $scope.facebookSignUp=function(){
+
+              $scope.showSpinner=true;
+
+              var facebookSignUpPromise=userService.facebookSignUp();
+              facebookSignUpPromise.then(
+                  function(data){
+                    console.log(data);
+                     $scope.showSpinner=false;
+                        //console.log(data);
+                  },
+                  function(error){
+                        $scope.showSpinner=false;
+                        $scope.err=error;
+                  }
+              );
+
+      };
+
+      $scope.googleSignUp=function(){
+        
+              $scope.showSpinner=true;
+              var facebookSignUpPromise=userService.facebookSignUp();
+              facebookSignUpPromise.then(
+                  function(data){
+                    console.log(data);
+                     $scope.showSpinner=false;
+                        //console.log(data);
+                  },
+                  function(error){
+                        $scope.showSpinner=false;
+                        $scope.err=error;
+                  }
+              );
+
+      };
+
+
  }]);

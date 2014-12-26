@@ -3362,6 +3362,18 @@ input[type="button"] {
    z-index:99999;
 
 }
+.spinnerLocation{
+  position:absolute;
+  top:90px;
+  left:430px;
+
+}
+.bottomSpinnerLocation{
+  position:absolute;
+  bottom:88px;
+  left:910px;
+}
+
 
 
 /* Large devices (large desktops, 1200px and up) */
