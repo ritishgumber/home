@@ -5,7 +5,7 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProv
 
   $stateProvider.state('start',{url:'/',templateUrl:'app/views/start.html',controller:'indexController'});
   $stateProvider.state('features',{url:'/features',templateUrl:'app/views/features.html',controller:'featureController'});
-  $stateProvider.state('pricing',{url:'/pricing',templateUrl:'app/views/pricing.html',controller:'pricingController'});
+  $stateProvider.state('faq',{url:'/faq',templateUrl:'app/views/pricing.html',controller:'pricingController'});
   $stateProvider.state('login',{url:'/login',templateUrl:'app/views/login.html',controller  : 'loginController'});
   $stateProvider.state('signup',{url:'/signup',templateUrl:'app/views/signup.html',controller  : 'signupController'});
   $stateProvider.state('contact',{url:'/contact',templateUrl:'app/views/contact.html',controller:'contactController'});
