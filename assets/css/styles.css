@@ -200,6 +200,17 @@ input[type="button"] {
   font-size: 15px;
   float: left;
 }
+
+.careersHeader{
+  font-size:1.8em;
+  color: #fff;
+  display: inline-block;
+  float:left;
+  text-align: center;
+  font-family: "Roboto Slab", arial, sans-serif;
+
+}
+
 .header h1.logo a {
   color: #fff;
   padding: 15px 30px;
