@@ -8,4 +8,9 @@ app.controller('headerController',['$scope','$location',function($scope,$locatio
         return route === $location.path();
     };
 
+    $scope.navigate = function(loc){
+    	window.location.href = loc;
+    	location.reload();
+    };
+
  }]);
