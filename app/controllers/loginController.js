@@ -5,7 +5,6 @@ app.controller('loginController',['$scope','userService','$http',function($scope
   {
       $scope.getCssClass =["login-page","access-page","has-full-screen-bg"];
       $scope.showSpinner=false;
-
   }
   $scope.logIn=function(isValid){
     if(isValid)

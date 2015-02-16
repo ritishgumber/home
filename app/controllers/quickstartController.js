@@ -1,4 +1,4 @@
-app.controller('featureController',['$scope',function($scope){
+app.controller('quickstartController',['$scope',function($scope){
     $scope.getCssClass ="features-page";
 
     $scope.init = function(){

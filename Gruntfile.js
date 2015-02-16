@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		connect: {
 			development: {
-				port: 1440
+				port: 1444
 			}
 		},
 

@@ -36,6 +36,7 @@ a.btn {
   -o-transition: all 0.4s ease-in-out;
   font-weight: bold;
 }
+
 .btn .fa,
 a.btn .fa {
   color: #fff;
@@ -154,6 +155,9 @@ input[type="button"] {
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   z-index: 30;
+}
+.thinFont{
+  font-family: 'PT Sans', sans-serif !important;
 }
 #topcontrol:hover {
   background: #384d60;
@@ -2304,6 +2308,9 @@ input[type="button"] {
   background-clip: padding-box;
   padding: 40px;
 }
+
+
+
 .access-section .form-box .title {
   font-weight: 300;
   margin-bottom: 60px;

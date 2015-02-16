@@ -15,6 +15,7 @@
         </div><!--//container-->
     </section><!--//promo-->
 
+
     <!-- ******Features Section****** -->
     <section class="features-tabbed section" data-ng-init="init()">
         <div class="container">
@@ -23,9 +24,9 @@
                 <div class=" text-center col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs text-center" role="tablist">
-                        <li id="feature1List" class="active" style="cursor:pointer"><a data-ng-click="switchFeature(1)" role="tab" data-toggle="tab"><i class="fa fa-database"></i><br /><span class="hidden-sm hidden-xs">Database Designer</span></a></li>
-                        <li id="feature2List" style="cursor:pointer"><a data-ng-click="switchFeature(2)" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i><br /><span class="hidden-sm hidden-xs">App Designer</span></a></li>
-                        <li id="feature4List" style="cursor:pointer"><a data-ng-click="switchFeature(4)" role="tab" data-toggle="tab"><i class="fa fa-cloud-upload"></i><br /><span class="hidden-sm hidden-xs">Publish</span></a></li>
+                        <li id="feature1List" class="active" style="cursor:pointer"><a data-ng-click="switchFeature(1)" role="tab" data-toggle="tab"><i class="fa fa-search"></i><br /><span class="hidden-sm hidden-xs">Search</span></a></li>
+                        <li id="feature2List" style="cursor:pointer"><a data-ng-click="switchFeature(2)" role="tab" data-toggle="tab"><i class="fa fa-clock-o"></i><br /><span class="hidden-sm hidden-xs">Realtime</span></a></li>
+                        <li id="feature4List" style="cursor:pointer"><a data-ng-click="switchFeature(4)" role="tab" data-toggle="tab"><i class="fa fa-database"></i><br /><span class="hidden-sm hidden-xs">Store</span></a></li>
                     </ul><!--//nav-tabs-->
 
                     <!-- Tab panes -->
@@ -34,10 +35,12 @@
                             <h3 class="title sr-only">Feature One</h3>
                             <div class="desc text-left">
                                 <p> <b>Data types that makes sense</b> :  Every wondered why playing around with datatypes such as int, float,string was such a pain? Yes! Now that was back in the day - We have a new database for you that actually understand what you want to store - text, description, photo, video, email, website - these URL make sense. Doesn't it?</p><br/><br/>
+
                                 <p><b>Relationships that tells the story of your app</b> :  When you relate entities to one another - our AI Engine actually understands what you're trying to build and how your entities are connected and in which way to design forms. So, you don't have to worry about anything.</p><br/><br/>
+
                                  <p><b>Search is a breeze</b> :  Oh did we tell you, we auto-index your data to help you search faster (and not worry about indexing) and even write search algorithm for you automatically. So, if you've ever spent a week working on search before - back in the days, You'll find this feature a breze.</p><br/><br/>
+                                 
                                   <p><b>Its in the Cloud</b> :  When we say this - geo-replication, auto-backup, auto-scaling,sharding is all taken care of. If you don't know what all of these mean - You really dont have to! We take care of all that tech jargon for you.</p><br/><br/>
-                                
                             </div><!--//desc-->
                         </div><!--//tab-pane-->
                         <div class="tab-pane in active" id="feature-2">
@@ -100,4 +103,6 @@
     <!--Footer Start-->
     <div ng-include="'app/views/subviews/footer.html'"></div>
     <!--Footer End-->
+
+
 
