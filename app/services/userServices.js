@@ -20,7 +20,55 @@ app.service('userService', function($q,$http){
          success(function(data, status, headers, config) {
            console.log(data);
            q.resolve(data);
+         }).
+         error(function(data, status, headers, config) {
+            q.reject(data);
+         });
 
+       return q.promise;
+   };
+
+   this.requestResetPassword = function(email){
+      var q=$q.defer();
+
+       $http.post(serverURL+'/auth/requestResetPassword', {email:email}).
+         success(function(data, status, headers, config) {
+           q.resolve();
+         }).
+         error(function(data, status, headers, config) {
+               q.reject(data);
+         });
+
+       return q.promise;
+   };
+
+   this.changePassword = function(code,newPass, confirmPass){
+      var q=$q.defer();
+
+      if(newPass !== confirmPass){
+        q.reject('New password and confirm password do not match');
+         return q.promise;
+      }
+
+       $http.post(serverURL+'/auth/resetPassword', {code:code, password:newPass}).
+         success(function(data, status, headers, config) {
+           q.resolve();
+         }).
+         error(function(data, status, headers, config) {
+               q.reject(data);
+         });
+
+      return q.promise;
+      
+   };
+
+   this.activate=function(code){
+       var q=$q.defer();
+
+       $http.post(serverURL+'/auth/activate', {code:code}).
+         success(function(data, status, headers, config) {
+           console.log(data);
+           q.resolve(data);
          }).
          error(function(data, status, headers, config) {
                q.reject(data);
@@ -29,6 +77,7 @@ app.service('userService', function($q,$http){
 
        return q.promise;
    }
+
 
 
    this.facebookSignUp=function(){

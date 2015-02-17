@@ -16,29 +16,11 @@ app.controller('loginController',['$scope','userService','$http',function($scope
           logInPromise.then(
               function(data){
                   $scope.showSpinner=false;
-						
-							/*// Simple POST request example (passing data) :
-							$http.post(serverURL+'/project/create', {name:"hello",url:"helloworld.com"}).
-							  success(function(data, status, headers, config) {
-								// this callback will be called asynchronously
-								// when the response is available
-								
-								console.log(data);
-								
-							
-								
-							  }).
-							  error(function(data, status, headers, config) {
-								// called asynchronously if an error occurs
-								// or server returns response with an error status.
-								console.log(status);
-							  });
-               */
-
+                  window.location.href='dashboard.cloudboost.io';
               },
               function(error){
                    $scope.showSpinner=false;
-                    $scope.err=error;
+                   $scope.err=error.message;
               }
           );
 
