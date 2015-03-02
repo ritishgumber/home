@@ -21,7 +21,7 @@ app.controller('signupController',['$scope','userService',function($scope,userSe
               signUpPromise.then(
                   function(data){
                      $scope.showSpinner=false;
-                     window.location.href='dashboard.cloudboost.io';
+                     window.location.href=dashboardURL;
                   },
                   function(error){
                         $scope.showSpinner=false;

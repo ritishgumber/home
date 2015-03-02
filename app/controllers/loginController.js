@@ -16,7 +16,7 @@ app.controller('loginController',['$scope','userService','$http',function($scope
           logInPromise.then(
               function(data){
                   $scope.showSpinner=false;
-                  window.location.href='dashboard.cloudboost.io';
+                  window.location.href=dashboardURL;
               },
               function(error){
                    $scope.showSpinner=false;
