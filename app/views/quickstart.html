@@ -8,64 +8,197 @@
     <div class="headline-bg">
     </div><!--//headline-bg-->
 
-     <section class="promo section section-on-bg" style="margin-bottom:-200px">
+     <section class="contact-section section section-on-bg" style="margin-bottom:-200px">
         <div class="container text-center">
-            <h3 class="title" style="font-size:30px">Features that are so simple that it'll take you by surprise and yes of-course,<br/><span class="bigTitle" style="font-size:35px">That'll super-charge your app development. <br/>We promise </span></h3>
-            <p class="intro">CloudBoost helps you to build data-driven web apps in days instead of months and the best part, You never have to see code. </p>
+            <h2 class="title text-center"> Here's a 2 minute quickstart on CloudBoost. </h2>
+            <p class="intro text-center"> Build mobile and web apps in minutes using client-side code and our powerful API. Save time. Delight your users. <br/><br/> It'll just take few lines of code to power your app with CloudBoost.</p>
         </div><!--//container-->
     </section><!--//promo-->
+
+    <br/><br/><br/></br><br/><br/></br>
+
+     <section class="contact-other-section section">
+            <div class="container text-center">
+            <br/><br/><br/><br/><br/>
+                <div class="row">
+                    <ul class="other-info list-unstyled col-md-6 col-sm-10 col-xs-12 col-md-offset-3 col-sm-offset-1 xs-offset-0" >
+                        <li><i class="fa fa-download"></i><b> <a href="https://api.cloudboost.io/sdk/js/1.0.0">Click here</a> to download the SDK</b></li>
+                        <li><i class="fa fa-book"></i><b> <a href="https://docs.cloudboost.io/">Click here</a> to view our docs</b></li>
+                       
+                    </ul>
+                </div><!--//row-->
+            </div><!--//container-->
+        </section><!--//contact-other-section-->
 
 
     <!-- ******Features Section****** -->
     <section class="features-tabbed section" data-ng-init="init()">
         <div class="container">
-            <h2 class="title text-center">What's in it for me?</h2>
             <div class="row">
                 <div class=" text-center col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs text-center" role="tablist">
-                        <li id="feature1List" class="active" style="cursor:pointer"><a data-ng-click="switchFeature(1)" role="tab" data-toggle="tab"><i class="fa fa-search"></i><br /><span class="hidden-sm hidden-xs">Search</span></a></li>
+                        <li id="feature1List" class="active" style="cursor:pointer"><a data-ng-click="switchFeature(1)" role="tab" data-toggle="tab"><i class="fa fa-database"></i><br /><span class="hidden-sm hidden-xs">Store</span></a></li>
                         <li id="feature2List" style="cursor:pointer"><a data-ng-click="switchFeature(2)" role="tab" data-toggle="tab"><i class="fa fa-clock-o"></i><br /><span class="hidden-sm hidden-xs">Realtime</span></a></li>
-                        <li id="feature4List" style="cursor:pointer"><a data-ng-click="switchFeature(4)" role="tab" data-toggle="tab"><i class="fa fa-database"></i><br /><span class="hidden-sm hidden-xs">Store</span></a></li>
+                        <li id="feature4List" style="cursor:pointer"><a data-ng-click="switchFeature(4)" role="tab" data-toggle="tab"><i class="fa fa-search"></i><br /><span class="hidden-sm hidden-xs">Search</span></a></li>
                     </ul><!--//nav-tabs-->
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="feature-1">
+                        <div class="tab-pane fade in active" id="feature1">
                             <h3 class="title sr-only">Feature One</h3>
                             <div class="desc text-left">
-                                <p> <b>Data types that makes sense</b> :  Every wondered why playing around with datatypes such as int, float,string was such a pain? Yes! Now that was back in the day - We have a new database for you that actually understand what you want to store - text, description, photo, video, email, website - these URL make sense. Doesn't it?</p><br/><br/>
+                                <p> <b> Insert data into your CloudBost app </b> :  </p>
 
-                                <p><b>Relationships that tells the story of your app</b> :  When you relate entities to one another - our AI Engine actually understands what you're trying to build and how your entities are connected and in which way to design forms. So, you don't have to worry about anything.</p><br/><br/>
+                                <p> Inserting data into your CloudBoost app is very simple. Here we create a new CloudObject of type Student, set a name to John Smith and save it to the database. </p>
 
-                                 <p><b>Search is a breeze</b> :  Oh did we tell you, we auto-index your data to help you search faster (and not worry about indexing) and even write search algorithm for you automatically. So, if you've ever spent a week working on search before - back in the days, You'll find this feature a breze.</p><br/><br/>
-                                 
-                                  <p><b>Its in the Cloud</b> :  When we say this - geo-replication, auto-backup, auto-scaling,sharding is all taken care of. If you don't know what all of these mean - You really dont have to! We take care of all that tech jargon for you.</p><br/><br/>
+                                <textarea id="objectInsert" disabled="true">
+
+//insert a new object in CloudBoost
+
+var obj = new CB.CloudObject('Student');
+obj.set('name', 'John Smith');
+obj.save({
+    success : function(obj){
+
+    }, error : function (error){
+
+    }
+});
+
+                                </textarea>
+
+                                <br/><br/>
+
+                                <p> <b> Query data in CloudBoost </b> :  </p>
+
+                                <p> Querying data from your CloudBoost app is crazy simple. Here we create a new CloudQuery object of type Student, set a name to John Smith and query it from the  database. </p>
+
+                                <textarea id="objectQuery" disabled="true">
+
+//query data from CloudBoost
+
+var query = new CB.CloudQuery('Student');
+query.equalTo('name', 'John Smith');
+query.find({
+    success : function(list){
+        //list is an array of CloudObjects.
+    }, error : function (error){
+
+    }
+});
+
+                                </textarea>
+
+                                
                             </div><!--//desc-->
                         </div><!--//tab-pane-->
-                        <div class="tab-pane in active" id="feature-2">
+                        <div class="tab-pane in active" id="feature2">
                             <h3 class="title sr-only">Feature Two</h3>
                            
                             <div class="desc text-left">
-                                 <p> <b>Form designer that designs forms automatically</b> :  That's where we kill our competitors out. We have a kick-ass form designer that lets you just drag and drop an entity on the canvas and boom! - We have everything up and running for you. You can custom-design as well, but we're sure you'll never feel the need to do it. </p><br/><br/>
 
-                                <p><b>Custom Logic</b> :  We use flow-based-programming (see noflojs.org) to help you design your app logic. So, if you were annoyed by writing code to send an email,authentication,saving forms, editing entities - Well, thats no more. We have custom components for you incase you need to write custom logic. But 90% of the time you'll never have to.</p><br/><br/>
-                                 <p><b>Custom Code</b> : Do you want to talk to a 3rd party API that we dont support yet? No problem. Drag and drop a custom component and code JavaScript. That all it takes. Simple! </p><br/><br/>
+                            <p> <b> Get notifications when object is inserted / updated or deleted </b> : </p>
 
-                                  <p><b>Security</b> :  We know this is hard for anyone to do. Making sure you secure your app from potential hackers out there. We do this for you automatically. We have an Access Control List that helps every record in your database to be just as safe. We also auto encrypt confidencial data, So, even if its out there - no one can read it.</p><br/><br/>
+                                <p> Get instant alerts when data in your database is created / updated or deleted and keep all your apps in sync and in realtime. WOW your users with great user expeirence by implementing realtime.  
+                                </p>
 
-                                   <p><b>Web Hooks, Background Jobs, API  </b> :  We'll launch this soon, but we have support for Web Hooks, Background Jobs, and custom create your REST API on our roadmap. They'll launch soon. We promise.</p><br/><br/>
+                                <textarea id="objectNotifications" disabled="true">
+
+//CloudObjects Notification.
+
+CB.CloudObject.on('Student', 'created', function(obj){ 
+    //your custom function which you want to fire.
+    //obj is an instance of CloudObject
+    alert('Student Created : '+ obj.get('name'));
+});
+
+                                </textarea>
+                                 
+
+                                <br/><br/>
+
+                                <p> <b> Updating your app with realtime notifications </b>:  </p>
+
+                                <p> CloudNotifications provide an easy way to crate custom channels, and publish data to those channels and update your app in realtime. </p>
+
+                                <textarea id="cloudNotifications" disabled="true">
+
+//CloudNotification
+
+CB.CloudNotification.on('sample', function(data){
+    alert(data);
+}, {
+    success : function(){
+        //successfully subscribed.
+    },
+    error : function(){
+        
+    }
+});
+
+
+CB.CloudNotification.publish('sample', 'data', {
+    success : function(){
+        //succesfully published. 
+    },
+    error : function(err){
+       
+    }
+});
+
+                                </textarea>
+
+                                
 
                             </div><!--//desc-->
                         </div><!--//tab-pane-->
-                        <div class="tab-pane in active" id="feature-4">
+                        <div class="tab-pane in active" id="feature4">
                             <h3 class="title sr-only">Feature Four</h3>
                             
                             <div class="desc text-left">
-                                <p> <b>One click publish</b> :  That's all it takes to get your app off the ground - Clicking on publish and within minutes, you're live. Throw any amount of traffic at your app, We'll handle all of it, without you need to worry about anything. </p><br/><br/>
+                                <p> <b> Index objects for search </b> :  </p>
 
-                                <p><b>Custom Domain</b> :  We let you attach custom domain to your app too!, It's a breeze - Just follow our instructions and you'll get it done just right. </p><br/><br/>
-                                 <p><b>Test Environment</b> :Want to test before you're live? We support a sandbox envirommnent that will help you test run your site before showcasing it out to the world. </p><br/><br/>
+                                <p> Indexing your data is easy. Every CloudObject has a property called isSearchable, You just have to set it to true and We'll automatically index your object for search. </p>
+
+                                <textarea id="indexSearch" disabled="true">
+
+//insert a new object adn index it for Search.
+
+var obj = new CB.CloudObject('Student');
+obj.set('name', 'John Smith');
+obj.isSearchable = true; //index this object for search. 
+obj.save({
+    success : function(obj){
+
+    }, error : function (error){
+
+    }
+});
+
+                                </textarea>
+
+                                <br/><br/>
+
+                                <p> <b> Search your data with CloudSearch </b> :  </p>
+
+                                <p> CloudSearch is more like a search-engine which returns your data in the order of relevance and searching for your data is as simple as querying.  </p>
+
+                                <textarea id="searchSearch" disabled="true">
+
+//search data with CloudSearch
+
+var cs = new CB.CloudSearch('Student');
+cs.searchOn('name', 'John');
+cs.search({
+    success : function(list){
+        //list is an array of CloudObjects.
+    }, error : function (error){
+
+    }
+});
+
+                                </textarea>
 
                                 
                             </div><!--//desc-->
@@ -82,20 +215,31 @@
             <h2 class="title text-center">3 Simple Steps to build your app with CloudBoost</h2>
             <div class="row">
                  <div class="step text-center col-md-4 col-sm-4 col-xs-12">
-                     <h3 class="title"><span class="number">1</span><br /><span class="text">Design your Database</span></h3>
-                     <p>We have a very simple database designer for you, that'll help you design any kind of data-model you like and store any thing you'd like - Be it a photo, video or even any kind of wierd file.</p>
+                     <h3 class="title"><span class="number">1</span><br /><span class="text">Create a new app</span></h3>
+                     <p>Sign-up for a new free hacker account on CloudBoost and start experimenting by creating a new app, which will give you API keys to access our CloudBoost API</p>
                  </div><!--//step-->
                  <div class="step text-center col-md-4 col-sm-4 col-xs-12">
-                     <h3 class="title"><span class="number">2</span><br /><span class="text">Design your app</span></h3>
-                     <p>Just drag and drop your database entity on the form and We'll generate forms for you - Automatically! - Then use our aweosme logic designer to design the business logic you like. Yes! Its that simple.</p>
+                     <h3 class="title"><span class="number">2</span><br /><span class="text">Link the SDK to your app</span></h3>
+                     <p><a href="https://api.cloudboost.io/sdk/js/1.0.0">Download </a> and link our SDK to your app, inititialize the SDK with the API Key and you're ready to go.</p>
                  </div><!--//step-->
                  <div class="step text-center col-md-4 col-sm-4 col-xs-12">
-                     <h3 class="title"><span class="number">3</span><br /><span class="text">Publish it out</span></h3>
-                     <p>Want to assign a custom domain? Yes - Its a breeze. We help you do everything that will take your app from development to showcasing it to the world.</p>
+                     <h3 class="title"><span class="number">3</span><br /><span class="text">Start Hacking</span></h3>
+                     <p>Start experimenting and power your app with CloudBoost, We have features from data store, all the way to CloudNotificaions, and CloudSearch.</p>
                  </div><!--//step-->
             </div><!--//row-->
 
         </div><!--//container-->
+
+    <script type="text/javascript">
+
+    var myCodeMirror = CodeMirror(document.body);
+
+        // var myCodeMirror = CodeMirror(function(elt) {
+        //   myTextArea.parentNode.replaceChild(elt, document.getElementById('searchIndex'));
+        // }, {value "function myScript(){return 100;}\n", mode:  "javascript"});
+    </script>
+
+
     </section><!--//steps-->
 
     <div ng-include="'app/views/subviews/bottom_banner.html'"></div>
@@ -103,6 +247,8 @@
     <!--Footer Start-->
     <div ng-include="'app/views/subviews/footer.html'"></div>
     <!--Footer End-->
+
+
 
 
 

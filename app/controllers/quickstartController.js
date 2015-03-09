@@ -1,10 +1,20 @@
 app.controller('quickstartController',['$scope',function($scope){
     $scope.getCssClass ="features-page";
 
+    var codeMirrorEnabled = [];
+
     $scope.init = function(){
-		$('#feature-1').show();
-		$('#feature-2').hide();
-		$('#feature-4').hide();
+
+        $('#feature1').show();
+        $('#feature2').hide();
+        $('#feature4').hide();
+
+        
+
+        $scope.initCodeEditors( ['objectInsert', 'objectQuery']);
+
+        
+        
     }
 
     $scope.switchFeature = function(id){
@@ -15,13 +25,44 @@ app.controller('quickstartController',['$scope',function($scope){
 
     	$('#feature'+id+'List').addClass('active');
 
-    	//switch tabs
-    	$('#feature-1').hide();
-		$('#feature-2').hide();
-		$('#feature-4').hide();
+    	$('#feature1').hide();
+        $('#feature2').hide();
+        $('#feature4').hide();
 
-    	$('#feature-'+id).show();
+        $('#feature'+id).show();
 
+        if(id===1)
+            $scope.initCodeEditors( ['objectInsert', 'objectQuery']);
+
+        if(id===2){
+            $scope.initCodeEditors( ['cloudNotifications', 'objectNotifications']);
+        }
+
+        if(id===4){
+            $scope.initCodeEditors( ['searchSearch', 'indexSearch']);
+        }
+
+
+    };
+
+    $scope.initCodeEditors = function(arr){
+        var codeEditors = arr;
+
+        for(var i=0;i<codeEditors.length; i++){
+
+            if(document.getElementById(codeEditors[i]) && codeMirrorEnabled.indexOf(codeEditors[i]) === -1){
+
+                var myCodeMirror = CodeMirror.fromTextArea(document.getElementById(codeEditors[i]),
+                    {
+                        mode:  "javascript",
+                        lineNumbers: true,
+                        theme : 'ambiance',
+                        readOnly : "nocursor"
+                    });
+
+                codeMirrorEnabled.push(codeEditors[i]);
+            }
+        }
     };
 
  }]);
