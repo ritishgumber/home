@@ -1,6 +1,6 @@
 var __isDevelopment = false;
 
-var app=angular.module('cbLanding',['ui.router','picardy.fontawesome']);
+var app=angular.module('cbLanding',['ui.router','picardy.fontawesome', 'seo']);
 
 var serverURL = null, dashboardURL = null;
 

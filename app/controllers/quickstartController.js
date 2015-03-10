@@ -5,13 +5,22 @@ app.controller('quickstartController',['$scope',function($scope){
 
     $scope.init = function(){
 
+        var meta=document.getElementsByTagName("meta");
+        for (var i=0; i<meta.length; i++) {
+            if (meta[i].name.toLowerCase()=="description") {
+                meta[i].content= "Quickstart : Start building your app in under 2 minutes.  ";
+            }
+        }
+
+        document.title = "Quickstart";
+        
         $('#feature1').show();
         $('#feature2').hide();
         $('#feature4').hide();
 
-        
-
         $scope.initCodeEditors( ['objectInsert', 'objectQuery']);
+
+        $scope.htmlReady();
 
         
         

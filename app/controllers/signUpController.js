@@ -1,14 +1,22 @@
 app.controller('signupController',['$scope','userService',function($scope,userService){
 
-
-
-
-      $scope.init=function()
-      {
+      $scope.init = function(){      
           $scope.getCssClass =["signup-page", "access-page", "has-full-screen-bg"];
           $scope.showSpinner=false;
 
-      }
+          var meta=document.getElementsByTagName("meta");
+          
+          for (var i=0; i<meta.length; i++) {
+              if (meta[i].name.toLowerCase()=="description") {
+                  meta[i].content= "Signup to CloudBoost. Build your apps with with our simple SDK.";
+              }
+          }
+
+          document.title = "Signup";
+
+          $scope.htmlReady();
+
+      };
 
       $scope.signUp=function(isValid){
 
