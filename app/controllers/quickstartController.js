@@ -71,7 +71,7 @@ app.controller('quickstartController',['$scope',function($scope){
                     {
                         mode:  "javascript",
                         lineNumbers: true,
-                        theme : 'ambiance',
+                        //theme : 'ambiance',
                         readOnly : "nocursor"
                     });
 
