@@ -22,9 +22,15 @@ app.controller('quickstartController',['$scope',function($scope){
 
         $scope.htmlReady();
 
-        
-        
-    }
+        var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('initCode'),
+                    {
+                        mode:  "javascript",
+                        lineNumbers: true,
+                        readOnly : "nocursor"
+                    });  
+
+        myCodeMirror.setSize(null,50);
+    };
 
     $scope.switchFeature = function(id){
     	//remove active classes. 
