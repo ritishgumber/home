@@ -1,4 +1,4 @@
-app.controller('loginController',['$scope','userService','$http',function($scope,userService,$http){
+app.controller('loginController',['$scope','userService','$http','$cookies',function($scope,userService,$http,$cookies){
 
 
   $scope.init=function()
@@ -30,6 +30,12 @@ app.controller('loginController',['$scope','userService','$http',function($scope
           logInPromise.then(
               function(data){
                   $scope.showSpinner=false;
+
+                  $cookies.userId = data._id;
+                  $cookies.userFullname = data.name; 
+                  $cookies.email = data.email;
+                  $cookies.createdAt = data.createdAt;
+                  
                   window.location.href=dashboardURL;
               },
               function(error){
