@@ -1,4 +1,4 @@
-var __isDevelopment = true;
+var __isDevelopment = false;
 
 var app=angular.module('cbLanding',['ui.router','picardy.fontawesome', 'seo','ngCookies']);
 
