@@ -26,7 +26,7 @@
                                 <div class="form-container col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                                   <p ng-hide="showSpinner" class="text-center" style="color:red;">{{err}}</p>
                                   <div class="text-center" ng-show="showSpinner"><i class="fa fa-spin fa-4x fa-spinner"></i></div>
-                                    <form ng-hide="showSpinner" class="login-form" name="userForm" ng-submit="logIn(userForm.$valid)">
+                                    <form ng-show="!showSpinner" class="login-form" name="userForm" ng-submit="logIn(userForm.$valid)">
                                         <div class="form-group email">
                                             <label class="sr-only" for="login-email">Email</label>
                                             <input id="login-email" type="email" class="form-control login-email" placeholder="Email"  required  ng-model="email">
