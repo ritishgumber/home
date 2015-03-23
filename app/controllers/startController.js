@@ -1,7 +1,7 @@
-app.controller('indexController',['$scope',function($scope){
-
-	$scope.init = function(){
-
+app.controller('startController',['$scope','$rootScope',function($scope,$rootScope){
+	$rootScope.showHeader=true;
+	
+	$scope.init = function(){		
 		var meta=document.getElementsByTagName("meta");
 		for (var i=0; i<meta.length; i++) {
 		    if (meta[i].name.toLowerCase()=="description") {
@@ -9,8 +9,7 @@ app.controller('indexController',['$scope',function($scope){
 		    }
 		}
 
-		document.title = "CloudBoost : Complete backend and storage solution for your apps.";
-		
+		document.title = "CloudBoost : Complete backend and storage solution for your apps.";		
 		$scope.htmlReady();
 	};
 

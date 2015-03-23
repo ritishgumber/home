@@ -1,9 +1,9 @@
-app.controller('signupController',['$scope','userService',function($scope,userService){
+app.controller('signupController',['$scope','userService','$rootScope',function($scope,userService,$rootScope){
+      $rootScope.showHeader=false; 
+      $scope.getCssClass =["signup-page", "access-page", "has-full-screen-bg"];
 
-      $scope.init = function(){      
-          $scope.getCssClass =["signup-page", "access-page", "has-full-screen-bg"];
+      $scope.init = function(){             
           $scope.showSpinner=false;
-
           var meta=document.getElementsByTagName("meta");
           
           for (var i=0; i<meta.length; i++) {

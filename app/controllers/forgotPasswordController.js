@@ -1,9 +1,8 @@
-app.controller('forgotPasswordController',['$scope','$location','userService',function($scope,$location,userService){
+app.controller('forgotPasswordController',['$scope','$location','userService','$rootScope',function($scope,$location,userService,$rootScope){
 
-      $scope.init=function()
-      {
-          $scope.getCssClass =["signup-page", "access-page", "has-full-screen-bg"];
-
+      $scope.getCssClass =["signup-page", "access-page", "has-full-screen-bg"];
+      $rootScope.showHeader=false;
+      $scope.init=function(){
           if($location.search().code){
             $scope.showNewPasswordForm = true;
           }else{

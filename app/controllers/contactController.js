@@ -1,8 +1,8 @@
-app.controller('contactController',['$scope',function($scope){
+app.controller('contactController',['$scope','$rootScope',function($scope,$rootScope){
     $scope.getCssClass ="contact-page";
-
-    $scope.init = function(){
-
+    $rootScope.showHeader=true;
+    
+    $scope.init = function(){        
     	var meta=document.getElementsByTagName("meta");
         for (var i=0; i<meta.length; i++) {
             if (meta[i].name.toLowerCase()=="description") {

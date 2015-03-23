@@ -1,5 +1,5 @@
-app.controller('activateController',['$scope','$location','userService',function($scope,$location,userService){
-
+app.controller('activateController',['$scope','$location','userService','$rootScope',function($scope,$location,userService,$rootScope){
+      $rootScope.showHeader=false;
       $scope.init=function()
       {
           $scope.getCssClass =["signup-page", "access-page", "has-full-screen-bg"];

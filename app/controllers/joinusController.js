@@ -1,8 +1,8 @@
-app.controller('joinusController',['$scope',function($scope){
+app.controller('joinusController',['$scope','$rootScope',function($scope,$rootScope){
     $scope.getCssClass ="blog-page";
-
-    $scope.init = function(){
-
+    $rootScope.showHeader=false;
+    
+    $scope.init = function(){        
     	var meta=document.getElementsByTagName("meta");
     	
         for (var i=0; i<meta.length; i++) {

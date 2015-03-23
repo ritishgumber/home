@@ -1,8 +1,8 @@
-app.controller('partnersController',['$scope',function($scope){
+app.controller('partnersController',['$scope','$rootScope',function($scope,$rootScope){
     $scope.getCssClass ="features-page";
-
-    $scope.init = function(){
-
+    $rootScope.showHeader=true;
+    
+    $scope.init = function(){       
         var meta=document.getElementsByTagName("meta");
         for (var i=0; i<meta.length; i++) {
             if (meta[i].name.toLowerCase()=="description") {

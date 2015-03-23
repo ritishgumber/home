@@ -2,7 +2,7 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProv
 
   $urlRouterProvider.otherwise('/');
 
-  $stateProvider.state('start',{url:'/',templateUrl:'app/views/start.html',controller:'indexController'});
+  $stateProvider.state('start',{url:'/',templateUrl:'app/views/start.html',controller:'startController'});
   $stateProvider.state('quickstart',{url:'/quickstart',templateUrl:'app/views/quickstart.html',controller:'quickstartController'});
   $stateProvider.state('pricing',{url:'/pricing',templateUrl:'app/views/pricing.html',controller:'pricingController'});
   $stateProvider.state('login',{url:'/login',templateUrl:'app/views/login.html',controller  : 'loginController'});
