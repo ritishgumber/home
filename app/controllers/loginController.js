@@ -9,6 +9,9 @@ app.controller('loginController',['$scope','userService','$http','$cookies','$ro
             if (meta[i].name.toLowerCase()=="description") {
                 meta[i].content= "Login to CloudBoost. Build your apps with with our simple SDK.";
             }
+            if (meta[i].name.toLowerCase()=="keywords") {
+                meta[i].content= "login, login to cloudboost, baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage, signup, cloudboost";
+            }
         }
       document.title = "Login.";
       $scope.htmlReady(); 

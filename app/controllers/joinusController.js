@@ -9,6 +9,10 @@ app.controller('joinusController',['$scope','$rootScope',function($scope,$rootSc
             if (meta[i].name.toLowerCase()=="description") {
                 meta[i].content= "CloudBoost Careers : Join us and help us change the world. ";
             }
+
+            if (meta[i].name.toLowerCase()=="keywords") {
+                meta[i].content= "work at cloudboost, cloudboost careers , baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage, signup, cloudboost";
+            }
         }
 
         document.title = "Be one of us. Join the mafia.";

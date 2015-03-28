@@ -8,6 +8,10 @@ app.controller('aboutController',['$scope','$rootScope',function($scope,$rootSco
             if (meta[i].name.toLowerCase()=="description") {
                 meta[i].content= "About us. Meet the HackerBay Mafia! ";
             }
+
+            if (meta[i].name.toLowerCase()=="keywords") {
+                meta[i].content= "about cloudboost, cloudboost team, baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage, signup, cloudboost";
+            }
         }
 
         document.title = "Meet the mafia.";

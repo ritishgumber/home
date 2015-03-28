@@ -10,6 +10,9 @@ app.controller('signupController',['$scope','userService','$rootScope',function(
               if (meta[i].name.toLowerCase()=="description") {
                   meta[i].content= "Signup to CloudBoost. Build your apps with with our simple SDK.";
               }
+              if (meta[i].name.toLowerCase()=="keywords") {
+                  meta[i].content= "baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage, signup, cloudboost";
+              }
           }
 
           document.title = "Signup";
