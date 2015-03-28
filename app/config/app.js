@@ -16,4 +16,11 @@ if(__isDevelopment){
 	var dashboardURL = "https://dashboard.cloudboost.io";	
 }
 
+app.config([  
+    '$locationProvider',
+    function($locationProvider) {
+        $locationProvider.hashPrefix('!');
+    }
+]);
+
 
