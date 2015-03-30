@@ -10,6 +10,9 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
             if (meta[i].name.toLowerCase()=="description") {
                 meta[i].content= "Quickstart : Start building your app in under 2 minutes.  ";
             }
+             if (meta[i].name.toLowerCase()=="keywords") {
+                  meta[i].content= "quickstart, cloudbost quickstart, baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage";
+              }
         }
 
         document.title = "Quickstart";

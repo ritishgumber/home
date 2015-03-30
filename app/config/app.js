@@ -1,4 +1,8 @@
-var __isDevelopment = true;
+var __isDevelopment = false;
+
+if(window.location.host.indexOf('localhost') > -1){
+	__isDevelopment = true;
+}
 
 var app=angular.module('cbLanding',['ui.router','picardy.fontawesome', 'seo','ngCookies']);
 
@@ -11,5 +15,12 @@ if(__isDevelopment){
 	var serverURL="https://service.cloudboost.io";	
 	var dashboardURL = "https://dashboard.cloudboost.io";	
 }
+
+app.config([  
+    '$locationProvider',
+    function($locationProvider) {
+        $locationProvider.hashPrefix('!');
+    }
+]);
 
 

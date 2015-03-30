@@ -13,4 +13,14 @@ app.controller('headerController',['$scope','$location',function($scope,$locatio
     	location.reload();
     };
 
+    $scope.$watch(function(scope) {
+     return $location.path()
+     },
+      function(newPath,oldPath) {
+        if(newPath.toLowerCase().indexOf('login') > -1 || newPath.toLowerCase().indexOf('signup')> -1){
+            $scope.showHeader = false; 
+        }else{
+            $scope.showHeader = true;
+        }          
+      });  
  }]);

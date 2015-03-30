@@ -7,6 +7,10 @@ app.controller('startController',['$scope','$rootScope',function($scope,$rootSco
 		    if (meta[i].name.toLowerCase()=="description") {
 		        meta[i].content= "CloudBoost is one complete backend and storage solution for your apps which does data-storage, search and realtime notifications.";
 		    }
+
+		    if (meta[i].name.toLowerCase()=="keywords") {
+		        meta[i].content= "baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage";
+		    }
 		}
 
 		document.title = "CloudBoost : Complete backend and storage solution for your apps.";		
