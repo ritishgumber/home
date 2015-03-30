@@ -17,8 +17,7 @@ app.service('userService', function($q,$http){
        var q=$q.defer();
 
        $http.post(serverURL+'/auth/signin', {email:email,password:password}).
-         success(function(data, status, headers, config) {
-           console.log(data);
+         success(function(data, status, headers, config) {          
            q.resolve(data);
          }).
          error(function(data, status, headers, config) {
