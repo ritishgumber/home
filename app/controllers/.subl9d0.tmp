@@ -26,7 +26,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
       realtime.push(i);
     }
 
-    for(var i=0;i<=200000; i+=10000){
+    for(var i=0;i<=20000; i+=1000){
       apiArray.push(i);
     }
 
@@ -41,33 +41,14 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
     $scope.storageAmt = 0;
     $('#storageText').text($scope.storageAmt);
 
-     $scope.apiAmt = 0;
-    $('#apiAmt').text($scope.apiAmt);
-
-    $scope.realtimeAmt = 0;
-    $('#realtimeText').text($scope.realtimeAmt);
-
-    $scope.searchAmt = 0;
-    $('#searchText').text($scope.searchAmt);
-
-    updateTotal();
-
     $("#api").ionRangeSlider({
         values : apiArray,
         type: "single",
-        from : 1,
+        from : 10,
         postfix: " requests",
         grid: true,
         onChange: function (data) {
-          if(data.from_value === 10000){
-              $scope.apiAmt = 0;
-          }else{
-             $scope.apiAmt = (data.from_value / 1000) * 1.8;
-          }
-
-          $('#apiText').text($scope.apiAmt);
-
-          updateTotal();
+          
         },
     });
 
@@ -85,8 +66,6 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
           }
 
           $('#storageText').text($scope.storageAmt);
-
-          updateTotal();
          
         },
     });
@@ -95,7 +74,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
     $("#realtime").ionRangeSlider({
         values : realtime,
         type: "single",
-        from : 1,
+        from : 10,
         postfix: " messages",
         grid: true,
         onChange: function (data) {
@@ -103,12 +82,10 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
           if(data.from_value === 10000){
               $scope.realtimeAmt = 0;
           }else{
-             $scope.realtimeAmt = (data.from_value / 1000) * 1.5 ;
+             $scope.realtimeAmt = (data.from_value * 10) / 10 ;
           }
 
           $('#realtimeText').text($scope.realtimeAmt);
-
-          updateTotal();
          
         },
     });
@@ -121,15 +98,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
         postfix: " documents",
         grid: true,
         onChange: function (data) {
-           if(data.from_value === 1000){
-              $scope.searchAmt = 0;
-            }else{
-               $scope.searchAmt = (data.from_value / 100) * 2.5 ;
-            }
-
-            $('#searchText').text($scope.searchAmt);
-
-            updateTotal();
+          
         },
     });
 
@@ -149,11 +118,6 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
 		
 		$scope.htmlReady();
 	};
-
-  function updateTotal(){
-    $('#totalText').text($scope.storageAmt + $scope.searchAmt + $scope.realtimeAmt + $scope.apiAmt);
-
-  }
 
 
  }]);

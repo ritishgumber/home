@@ -6,70 +6,49 @@
     <!-- ******Pricing Section****** -->
     <section class="pricing section section-on-bg" data-ng-init="init()">
         <div class="container">
-            <h2 class="title text-center">Pricing and Plans</h2>
-            <p class="intro text-center">No contracts. Upgrade and downgrade anytime. <br/> Not satisfied? We'll refund. No questions asked.</p>
-              <div class="price-cols row">
-                <div class="items-wrapper col-md-10 col-sm-12 col-xs-12 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
-                    <div class="item price-1 col-md-4 col-sm-4 col-xs-12 text-center">
-                        <div class="item-inner">
-                            <div class="heading">
-                            <h3 class="title">Starter</h3>
-                                <p class="price-figure"><span class="price-figure-inner"><span class="number">Free</span></span><br/><span class="unit">for experiements and hacks</span></p>
-                            </div>
-                            <div class="content">
-                                <ul class="list-unstyled feature-list">
-                                    <li><i class="fa fa-check"></i>50 concurrent connections</li>
-                                    <li><i class="fa fa-check"></i>1 GB storage</li>
-                                    <li><i class="fa fa-check"></i>3 GB data transfer</li>
-                                    <li><i class="fa fa-check"></i>100 MB Search Data Index</li>    
-                                    <li><i class="fa fa-check"></i>Free email support</li>
-                                </ul>
-                                <a class="btn btn-cta btn-cta-primary" href="#!/signup">Start Hacking</a>
 
-                            </div>
-                        </div>
+            <h2 class="title text-center">Pay-as-you-go pricing. Simple and transparent. </h2>
+
+            <p class="intro text-center">No contracts. Pay-as-yo-go. Cancel anytime.  Not satisfied with anything? We'll refund. No questions asked.</p>
+              <div class="price-cols row col-md-8 col-md-offset-2">
+
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    
+                    <h3>API</h3>
+                    <input type="text" id="api" name="example_name" value="" />
+                    <span style="color:#696E6E">
+                        <h4 class="pull-left">Requests / month</h4> <h4 class="pull-right">   $ <span id="apiText"></span> USD </h4> 
+                    </span>
+
+                    <br/><br/><br/>
+
+                    <h3>Data Storage</h3>
+                    <input type="text" id="storage" name="example_name" value="" />
+                    <span style="color:#696E6E">
+                        <h4 class="pull-left">Size of data stored</h4> <h4 class="pull-right"> $ <span id="storageText"></span> USD </h4> 
+                    </span>
+
+                    <br/><br/><br/>
+
+                    <h3>Search</h3>
+                    <input type="text" id="search" name="example_name" value="" />
+                    <span style="color:#696E6E">
+                        <h4 class="pull-left">Documents indexed for search</h4> <h4 class="pull-right"> $ <span id="searchText"></span> USD</h4> 
+                    </span>
+
+                    <br/><br/><br/>
+
+                    <h3>Real-time (Pub / Sub)</h3>
+                    <input type="text" id="realtime" name="example_name" value="" />
+                    <div style="color:#696E6E">
+                        <h4 class="pull-left">Messages Sent / month</h4> <h4 class="pull-right">$ <span id="realtimeText"></span> USD</h4> 
                     </div>
 
-                    <div class="item price-2 col-md-4 col-sm-4 col-xs-12 text-center best-buy">
-                        <div class="item-inner">
-                            <div class="heading">
-                            <h3 class="title">Small App</h3>
-                                <p class="price-figure"><span class="price-figure-inner"><span class="currency">$</span><span class="number">75</span><br /><span class="unit">per month</span></span></p>
-                            </div>
-                            <div class="content">
-                                <ul class="list-unstyled feature-list">
-                                   <ul class="list-unstyled feature-list">
-                                    <li><i class="fa fa-check"></i>500 concurrent connections</li>
-                                    <li><i class="fa fa-check"></i>5 GB storage</li>
-                                    <li><i class="fa fa-check"></i>15 GB data transfer</li>
-                                    <li><i class="fa fa-check"></i>1 GB Search Data Index</li>    
-                                    <li><i class="fa fa-check"></i>Free email and online support</li>
-                                </ul>
-                                </ul>
-                                <a class="btn btn-cta btn-cta-primary" href="#!/signup">Purchase Plan</a>
-                            </div>
-                        </div>
+                    <br/><br/><br/><br/><br/>
+                    
+                    <div>
+                        <h2 class="pull-left">Total </h2> <h2 class="pull-right">$ <span id="totalText"></span> USD / month</h2> 
                     </div>
-
-                    <div class="item price-3 col-md-4 col-sm-4 col-xs-12 text-center">
-                        <div class="item-inner">
-                            <div class="heading">
-                                <h3 class="title">Apps at Scale</h3>
-                                <p class="price-figure"><span class="price-figure-inner"><span class="currency">$</span><span class="number">249</span><br /><span class="unit">per month</span></span></p>
-                            </div>
-                            <div class="content">
-                                <ul class="list-unstyled feature-list">
-                                    <li><i class="fa fa-check"></i>2000 concurrent connections</li>
-                                    <li><i class="fa fa-check"></i>15 GB storage</li>
-                                    <li><i class="fa fa-check"></i>50 GB data transfer</li>
-                                    <li><i class="fa fa-check"></i>10 GB Search Data Index</li>    
-                                    <li><i class="fa fa-check"></i>Free email and online support</li>
-                                </ul>
-                                <a class=" btn btn-cta btn-cta-primary" href="#!/signup">Purchase Plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section> 
@@ -83,17 +62,12 @@
                     <div class="panel">
                         <div class="panel-heading" data-ng-click="faqExpand('faq1')" style="cursor:pointer">
                             <h4 class="panel-title"><a data-parent="#accordion"
-                            data-toggle="collapse" class="panel-toggle"><i class="fa fa-plus-square"></i>What if I exceed my paid plan limits?</a></h4>
+                            data-toggle="collapse" class="panel-toggle"><i class="fa fa-plus-square"></i>What if I exceed the slider limits limits?</a></h4>
                         </div>
 
                         <div class="panel-collapse collapse" id="faq1">
                             <div class="panel-body">
-                               <p>Because we use 95th percentile billing, you won't be charged for your overages 5% of the time (about 1.5 days each month). If you exceed your limits for more than 5% of the month, the following overage fees will be added to the base price of your monthly bill:</p>
-
-                               <p>Starter Plan: $0.25 each additional connection.
-                                $2.50 each additional GB of Data Transfer.</p>
-                               <p>Apps at Scale Plan: $0.25 each additional connection.
-                                $2.50 each additional GB of Data Transfer.</p>
+                               <p>Call us. We have discounted pricing for you. </p>
                             </div>
                         </div>
                     </div><!--//panel-->
@@ -107,7 +81,7 @@
                         <div class="panel-collapse collapse" id="faq2">
                             <div class="panel-body">
 
-                            Yes. We're building a custom dashboard which will be rolled out very soon, but for now - email us and we'll send you a report. We'll even email you if you're about to exceed your plan.
+                            Yes. Log in to your dashboard and you can.
                             </div>
                         </div>
                     </div><!--//panel-->
@@ -115,12 +89,12 @@
                     <div class="panel">
                         <div class="panel-heading" data-ng-click="faqExpand('faq3')" style="cursor:pointer">
                             <h4 class="panel-title"><a data-parent="#accordion"
-                            data-toggle="collapse" class="panel-toggle"><i class="fa fa-plus-square"></i>Can I upgrade, downgrade, and cancel?</a></h4>
+                            data-toggle="collapse" class="panel-toggle"><i class="fa fa-plus-square"></i>Can I add spending limits,  and cancel?</a></h4>
                         </div>
 
                         <div class="panel-collapse collapse" id="faq3">
                             <div class="panel-body">
-                               Yes. You can change your CloudBoost App size or even cancel at any time from your account panel. Note that we don't provide prorated refunds for downgrades or cancellations.
+                               Yes. You can change your CloudBoost App size or even cancel at any time from your dashboard. Note that we don't provide prorated refunds for downgrades or cancellations.
                             </div>
                         </div>
                     </div>
@@ -138,46 +112,7 @@
                         </div>
                     </div><!--//panel-->
 
-                    <div class="panel">
-                        <div class="panel-heading" data-ng-click="faqExpand('faq5')" style="cursor:pointer">
-                            <h4 class="panel-title"><a data-parent="#accordion"
-                            data-toggle="collapse" class="panel-toggle"><i class="fa fa-plus-square"></i>What is a concurrent connection? </a></h4>
-                        </div>
-
-                        <div class="panel-collapse collapse" id="faq5">
-                            <div class="panel-body">
-                               A connection is a measure of the number of users that are using your app or site simultaneously. It's any open network connection to our servers. This isn't the same as the total number of visitors to your site or the total number of users of your app. In our experience, 1 concurrent corresponds to roughly 1,400 monthly visits.
-
-                                Our Starter Plan has a hard limit on the number of connections. All of the paid CloudBoost apps, however, are “burstable”, which means there are no hard caps on usage. REST API requests don't count towards your connection limits.
-                            </div>
-                        </div>
-                    </div><!--//panel-->
-
-                    <div class="panel">
-                        <div class="panel-heading" data-ng-click="faqExpand('faq6')" style="cursor:pointer">
-                            <h4 class="panel-title"><a data-parent="#accordion"
-                            data-toggle="collapse" class="panel-toggle"><i class="fa fa-plus-square"></i>What is the limit on the FREE Plan?</a></h4>
-                        </div>
-
-                        <div class="panel-collapse collapse" id="faq6">
-                            <div class="panel-body">
-                               The free plan has a hard cap at 50 concurrent connections. When the 51st user tries to connect, the API will throw an error and any additional connections will fail. Our paid plans have no hard caps on usage.
-                            </div>
-                        </div>
-                    </div><!--//panel-->
-
-                    <div class="panel">
-                        <div class="panel-heading" data-ng-click="faqExpand('faq7')" style="cursor:pointer">
-                            <h4 class="panel-title"><a data-parent="#accordion"
-                            data-toggle="collapse" class="panel-toggle"><i class="fa fa-plus-square"></i>What's the role of AI?</a></h4>
-                        </div>
-
-                        <div class="panel-collapse collapse" id="faq7">
-                            <div class="panel-body">
-                               Our AI engine analyses how your app queries your data and according to that move your data to a data-store that suits well for your app - all of this is done to make quering crazy fast. 
-                            </div>
-                        </div>
-                    </div><!--//panel-->
+                
 
                     <div class="panel">
                         <div class="panel-heading" data-ng-click="faqExpand('faq8')" style="cursor:pointer">
