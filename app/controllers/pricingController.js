@@ -26,7 +26,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
       realtime.push(i);
     }
 
-    for(var i=0;i<=200000; i+=10000){
+    for(var i=0;i<=20; i+=0.5){
       apiArray.push(i);
     }
 
@@ -42,7 +42,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
     $('#storageText').text($scope.storageAmt);
 
      $scope.apiAmt = 0;
-    $('#apiAmt').text($scope.apiAmt);
+    $('#apiText').text($scope.apiAmt);
 
     $scope.realtimeAmt = 0;
     $('#realtimeText').text($scope.realtimeAmt);
@@ -56,13 +56,13 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
         values : apiArray,
         type: "single",
         from : 1,
-        postfix: " requests",
+        postfix: " million requests",
         grid: true,
         onChange: function (data) {
-          if(data.from_value === 10000){
+          if(data.from_value === 0.5){
               $scope.apiAmt = 0;
           }else{
-             $scope.apiAmt = (data.from_value / 1000) * 1.8;
+             $scope.apiAmt = (data.from_value * 100) * 0.6;
           }
 
           $('#apiText').text($scope.apiAmt);
