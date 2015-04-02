@@ -6,6 +6,16 @@ app.service('userService', function($q,$http){
         $http.post(serverURL+'/auth/register', {name:name,email:email,password:password}).
           success(function(data, status, headers, config) {
                 q.resolve(data);
+
+                /****Tracking*********/                
+                 mixpanel.alias(data._id);
+
+                 mixpanel.people.set({ "Name": data.name,"$email": data.email});
+                 //mixpanel.identify(data._id);
+
+                 mixpanel.register({ "Name": data.name,"Email": data.email});
+                 mixpanel.track('Signup', { "Name": data.name,"Email": data.email});
+                /****End of Tracking*****/
           }).
           error(function(data, status, headers, config) {
                 q.reject(data);
@@ -19,6 +29,13 @@ app.service('userService', function($q,$http){
        $http.post(serverURL+'/auth/signin', {email:email,password:password}).
          success(function(data, status, headers, config) {          
            q.resolve(data);
+
+            /****Tracking*********/
+             mixpanel.identify(data._id);
+             mixpanel.register({ "Name": data.name,"Email": data.email});
+             mixpanel.track('LogIn', { "Name": data.name,"Email": data.email});
+            /****End of Tracking*****/
+
          }).
          error(function(data, status, headers, config) {
             q.reject(data);
