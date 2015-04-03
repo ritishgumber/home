@@ -57,7 +57,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
         postfix: " million requests",
         grid: true,
         onChange: function (data) {
-          if(data.from_value === 0.5){
+          if(data.from===1){
               $scope.apiAmt = 0;
           }else{
              $scope.apiAmt = (data.from_value * 100) * 0.6;
@@ -76,7 +76,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
         postfix: " GB",
         grid: true,
         onChange: function (data) {
-          if(data.from_value === 1){
+          if(data.from===1){
               $scope.storageAmt = 0;
           }else{
              $scope.storageAmt = (data.from_value * 2) ;
@@ -98,7 +98,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
         grid: true,
         onChange: function (data) {
 
-          if(data.from_value === 10000){
+          if(data.from===1){
               $scope.realtimeAmt = 0;
           }else{
              $scope.realtimeAmt = (data.from_value / 1000) * 1.5 ;
@@ -119,7 +119,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
         postfix: " million documents",
         grid: true,
         onChange: function (data) {
-           if(data.from===0){
+           if(data.from===1){
               $scope.searchAmt = 0;
             }else{
                $scope.searchAmt = (data.from_value) * 20 ;
