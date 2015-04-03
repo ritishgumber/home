@@ -15,8 +15,6 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
 
   $scope.init = function(){ 
 
-
-
     var apiArray = [];
     var storageArray = [];
     var searchArray = [];
@@ -30,12 +28,12 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
       apiArray.push(i);
     }
 
-    for(var i=0;i<=10; i+=0.5){
-      storageArray.push(i);
+    for(var i=0;i<=20; i+=1){
+      storageArray.push(Math.floor(i*1.8));
     }
 
-    for(var i=0;i<=10000; i+=1000){
-      searchArray.push(i);
+    for(var i=0;i<=2; i+=0.2){
+      searchArray.push(Math.round(i * 10) / 10);
     }
 
     $scope.storageAmt = 0;
@@ -74,14 +72,14 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
     $("#storage").ionRangeSlider({
         values : storageArray,
         type: "single",
-        from : 0.5,
+        from : 1,
         postfix: " GB",
         grid: true,
         onChange: function (data) {
-          if(data.from_value === 0.5){
+          if(data.from_value === 1){
               $scope.storageAmt = 0;
           }else{
-             $scope.storageAmt = (data.from_value * 10) / 0.5 ;
+             $scope.storageAmt = (data.from_value * 2) ;
           }
 
           $('#storageText').text($scope.storageAmt);
@@ -118,13 +116,13 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
         values : searchArray,
         type: "single",
         from : 1,
-        postfix: " documents",
+        postfix: " million documents",
         grid: true,
         onChange: function (data) {
-           if(data.from_value === 1000){
+           if(data.from===0){
               $scope.searchAmt = 0;
             }else{
-               $scope.searchAmt = (data.from_value / 100) * 2.5 ;
+               $scope.searchAmt = (data.from_value) * 20 ;
             }
 
             $('#searchText').text($scope.searchAmt);
