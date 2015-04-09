@@ -23,9 +23,4 @@ app.config([
     }
 ]);
 
-app.config(['$location', 
-function($location) {
-  $location.html5Mode(true);
-}]);
-
 
