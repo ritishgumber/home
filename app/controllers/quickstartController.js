@@ -23,7 +23,7 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
 
         $scope.initCodeEditors( ['objectInsert', 'objectQuery']);
 
-        $scope.htmlReady();
+        window.seojsSnapshotReady = true;
 
         var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('initCode'),
                     {

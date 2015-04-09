@@ -17,7 +17,7 @@ app.controller('joinusController',['$scope','$rootScope',function($scope,$rootSc
 
         document.title = "Be one of us. Join the mafia.";
 
-        $scope.htmlReady();
+        window.seojsSnapshotReady = true;
     };
 
  }]);

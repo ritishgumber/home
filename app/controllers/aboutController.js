@@ -16,7 +16,7 @@ app.controller('aboutController',['$scope','$rootScope',function($scope,$rootSco
 
         document.title = "Meet the mafia.";
 
-        $scope.htmlReady();
+        window.seojsSnapshotReady = true;
     };
 
 

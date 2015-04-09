@@ -16,6 +16,7 @@ app.controller('partnersController',['$scope','$rootScope',function($scope,$root
 
         document.title = "CloudBoost Partners.";
         
+        window.seojsSnapshotReady = true;
         
     };
 

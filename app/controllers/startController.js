@@ -14,7 +14,7 @@ app.controller('startController',['$scope','$rootScope',function($scope,$rootSco
 		}
 
 		document.title = "CloudBoost : Complete backend and storage solution for your apps.";		
-		$scope.htmlReady();
+		window.seojsSnapshotReady = true;
 	};
 
 	$scope.toCta = function(){

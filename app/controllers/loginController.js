@@ -14,7 +14,8 @@ app.controller('loginController',['$scope','userService','$http','$cookies','$ro
             }
         }
       document.title = "Login.";
-      $scope.htmlReady(); 
+
+      window.seojsSnapshotReady = true;
   }
 
   $scope.logIn=function(isValid){

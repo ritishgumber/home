@@ -17,7 +17,7 @@ app.controller('signupController',['$scope','userService','$rootScope',function(
 
           document.title = "Signup";
 
-          $scope.htmlReady();
+          window.seojsSnapshotReady = true;
 
       };
 

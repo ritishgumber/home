@@ -145,7 +145,7 @@ app.controller('pricingController',['$scope','$rootScope',function($scope,$rootS
 
 		document.title = "Pricing";
 		
-		$scope.htmlReady();
+		window.seojsSnapshotReady = true;
 	};
 
   function updateTotal(){
