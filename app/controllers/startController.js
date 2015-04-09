@@ -5,7 +5,7 @@ app.controller('startController',['$scope','$rootScope',function($scope,$rootSco
 		var meta=document.getElementsByTagName("meta");
 		for (var i=0; i<meta.length; i++) {
 		    if (meta[i].name.toLowerCase()=="description") {
-		        meta[i].content= "CloudBoost is one complete backend and storage solution for your apps which does data-storage, search and realtime notifications.";
+		        meta[i].content= "CloudBoost is one complete backend and storage solution for your apps which does data-storage, search and realtime.";
 		    }
 
 		    if (meta[i].name.toLowerCase()=="keywords") {
@@ -13,7 +13,7 @@ app.controller('startController',['$scope','$rootScope',function($scope,$rootSco
 		    }
 		}
 
-		document.title = "CloudBoost : Complete backend and storage solution for your apps.";		
+		document.title = "CloudBoost : One API to build your next big thing.";		
 		window.seojsSnapshotReady = true;
 	};
 
