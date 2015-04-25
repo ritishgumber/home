@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "express": "^4.12.3",
-    "express-seojs": "0.0.5"
+    "express-seojs": "0.0.5",
+    "prerender-node": "^1.2.1"
   }
 }
