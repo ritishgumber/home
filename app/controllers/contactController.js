@@ -16,6 +16,6 @@ app.controller('contactController',['$scope','$rootScope',function($scope,$rootS
 
         document.title = "Contact us";
 
-        $scope.htmlReady();
+        window.seojsSnapshotReady = false;
     };
  }]);
