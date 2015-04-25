@@ -27,11 +27,194 @@
     </div> -->
 
     <section class="promo section section-on-bg">
-        <div class="container text-center">
-            <h3 class="title thinFont">We know your app has tons of needs <br/> from data-storage, to search, to real-time updates, and more.<br/><br/><span class="bigTitle thinFont">CloudBoost is one complete backend and storage <br/> solution for your apps.</span></h3>
-            <p class="intro">We're the world's first backend as a service which uses AI to store your data and get your data back to you in the fastest way possible.  </p>
-            <p><a class="btn btn-cta btn-cta-primary" href="#!/signup">Start Hacking</a></p>
-            <!-- <button type="button" class="play-trigger btn-link" data-toggle="modal" data-target="#modal-video" data-backdrop="static" data-keyboard="false"><i class="fa fa-youtube-play"></i> Watch the video</button>  -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">                   
+                        <h1 style="width:55%; margin:0 auto;">One solutions for all Database problems</h1>
+                        <h4 style="width:15%; margin:0 auto; margin-top:15px;">Single API</h4>             
+                 </div>
+            </div>        
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="widget-div">
+                        <div class="widget-bx">
+                           <div class="widget-header cf">
+                                <div class="widget-search pull-left cf">
+                                    <input type="text" id="search-input" placeholder="Search anything" class="pull-left" ng-model="search.comment">
+                                    <a class="search-btn pull-left"><i class="fa fa-search"></i></a>
+                                </div>                              
+                               
+                                 <div class="realtime-div pull-right" ng-click="toggleNotifications()">
+                                    <i class="fa fa-comments notify-icon"></i>
+                                    <div class="notify-counter" ng-show="notificationCount>0">
+                                        <center>
+                                           <span class="count-number">{{notificationCount}}</span>
+                                        </center>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--List of comments--> 
+                            <div id="notificationContainer"  ng-show="showNotifications">
+                                <div id="notificationTitle">Notifications</div>
+                                <div id="notificationsBody" class="notifications">
+                                   <div class="comments-container cf" ng-repeat="eachComment in filteredCommentList=(commentsList | filter:filterUserFn)">
+                                       <div class="user-pic pull-left">
+                                            <img src="assets/images/{{eachComment.userPic}}.png">
+                                       </div>
+                                       <div class="user-comment pull-left">                    
+                                        <span>
+                                          Hi,You got a new Notification from <span class="notify-username">CloudBoost</span>
+                                        </span>    
+                                       </div>
+                                   </div>
+
+                                   <div class="comments-container cf" ng-show="!filteredCommentList.length">
+                                    <span style="color:black; font-size:12px;">There are no notifications</span>
+                                   </div>
+
+                                </div>                                
+                            </div>
+                            <!--/List of comments-->
+
+                            <div class="widget-content">
+                                <div class="widget-inner">
+                                    <div class="widget-post-bx cf">
+                                        <form name="postForm" ng-submit="postComment(postForm.$valid)">
+                                            <div class="txtinput pull-left">
+                                                <div class="txt-wrapper cf">
+                                                    <input tyoe="text" class="pull-right" placeholder="Post anything" ng-model="comment">
+                                                </div>                                        
+                                            </div>
+                                            <div class="post-btn-bx pull-left">
+                                                <button type="submit" class="post-btn pull-right">Post</button>
+                                            </div>
+                                        </form>    
+                                    </div>
+
+                                    <div class="widget-comments-list cf">
+                                        <div class="widget-comments-bx cf" ng-repeat="eachComment in commentsList | filter:search | orderBy:'index':true">
+                                            <div class="user-pic pull-left">
+                                             <img src="assets/images/{{eachComment.userPic}}.png">
+                                           </div>
+                                           <div class="user-comment2 pull-left">
+                                                <span class="comment-username">{{eachComment.name}}</span>
+                                                <span>
+                                                   {{eachComment.comment}}
+                                                </span>    
+                                           </div>
+                                        </div>
+
+                                        <!--Static-->
+                                         <div class="widget-comments-bx cf">
+                                            <div class="user-pic pull-left">
+                                             <img src="assets/images/cb-user.png">
+                                           </div>
+                                           <div class="user-comment2 pull-left">
+                                                <span class="comment-username">CloudBoost</span>
+                                                <span>
+                                                   Database as a service with only One API
+                                                </span>                                             
+                                           </div>
+                                        </div>
+                                                                           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                       
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                  <div class="code-widget">
+                        <!-- Nav tabs -->
+                    <ul class="nav nav-tabs text-center" role="tablist">
+                        <li id="feature1List" class="active" style="cursor:pointer"><a data-ng-click="switchFeature(1)" role="tab" data-toggle="tab"><i class="fa fa-database"></i><br /><span class="hidden-sm hidden-xs">Store</span></a></li>
+                        <li id="feature2List" style="cursor:pointer"><a data-ng-click="switchFeature(2)" role="tab" data-toggle="tab"><i class="fa fa-clock-o"></i><br /><span class="hidden-sm hidden-xs">Realtime</span></a></li>
+                        <li id="feature4List" style="cursor:pointer"><a data-ng-click="switchFeature(4)" role="tab" data-toggle="tab"><i class="fa fa-search"></i><br /><span class="hidden-sm hidden-xs">Search</span></a></li>
+                    </ul><!--//nav-tabs-->
+
+                    <!-- Tab panes -->
+                    <div class="tab-content homepage-tab">
+                        <div class="tab-pane fade in active" id="feature1">
+                            <h3 class="title sr-only">Feature One</h3>
+                            <div class="desc text-left">
+                                <div style="padding:20px;">
+                                     <p> <b> Insert data into your CloudBost app </b> </p>
+                                </div>                         
+
+                                <textarea id="objectInsert" disabled="true">
+
+//insert a new object in CloudBoost
+
+var obj = new CB.CloudObject('Student');
+obj.set('name', 'John Smith');
+obj.save({
+    success : function(obj){
+
+    }, error : function (error){
+
+    }
+});
+
+                                </textarea>
+                                
+                            </div><!--//desc-->
+                        </div><!--//tab-pane-->
+                        <div class="tab-pane in active" id="feature2">
+                            <h3 class="title sr-only">Feature Two</h3>
+                           
+                            <div class="desc text-left">
+                            <div style="padding:20px;">
+                            <p> <b> Get notifications when object is inserted / updated or deleted </b>  </p>
+                                
+                            </div>    
+                                <textarea id="objectNotifications" disabled="true">
+
+//CloudObjects Notification.
+
+CB.CloudObject.on('Student', 'created', function(obj){ 
+    //your custom function which you want to fire.
+    //obj is an instance of CloudObject
+    alert('Student Created : '+ obj.get('name'));
+});
+
+                                </textarea>                           
+
+                            </div><!--//desc-->
+                        </div><!--//tab-pane-->
+                        <div class="tab-pane in active" id="feature4">
+                            <h3 class="title sr-only">Feature Four</h3>
+                            
+                            <div class="desc text-left">
+                            <div style="padding:20px;">    
+                                <p> <b> Index objects for search </b>   </p>                               
+                            </div>
+                                <textarea id="indexSearch" disabled="true">
+
+//insert a new object adn index it for Search.
+
+var obj = new CB.CloudObject('Student');
+obj.set('name', 'John Smith');
+obj.isSearchable = true; //index this object for search. 
+obj.save({
+    success : function(obj){
+
+    }, error : function (error){
+
+    }
+});
+
+                                </textarea>
+
+                              
+
+                                
+                            </div><!--//desc-->
+                        </div><!--//tab-pane-->
+                    </div><!--//tab-content-->
+                  </div>  
+                </div>     
+            </div>    
         </div><!--//container-->
     </section><!--//promo-->
 

@@ -2,6 +2,7 @@
 <html lang="en" ng-app="cbLanding">
 <head>
     <title> </title>
+    <base href="/">
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +29,6 @@
     <link rel="stylesheet" href="assets/css/ion.rangeSlider.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/ion.rangeSlider.skinFlat.css">
-
     
     <style type="text/css">
         .pace {
@@ -86,9 +86,9 @@ mixpanel.init("59f8c851677a01bdbfa6cffb2865c682");</script>
 <header id="header" class="header" ng-show="showHeader" data-ng-controller="headerController">
     <div class="container">
         <h1 class="logo" id="logoContainer">
-            <a href="#!/">
+            <a href="/">
                 <span class="text">
-                    <img id="logoImg" style="margin-bottom:10px" height="75" src='/assets/images/cblogo.png'/>
+                    <img id="logoImg" src='/assets/images/cbfull.png'/>
                 </span>
             </a>
         </h1><!--//logo-->
@@ -103,22 +103,22 @@ mixpanel.init("59f8c851677a01bdbfa6cffb2865c682");</script>
             </div><!--//navbar-header-->
             <div id="navbar-collapse" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li style="cursor:pointer" id="home" ng-class="{active: isActive('/')}" class="nav-item"><a href="#!/index" >Overview</a></li>
-                    <li style="cursor:pointer" id="features" ng-class="{active: isActive('/quickstart')}" class="nav-item"><a href="#!/quickstart">Quickstart</a></li>
+                    <li style="cursor:pointer" id="home" ng-class="{active: isActive('/')}" class="nav-item"><a href="/index" >Overview</a></li>
+                    <li style="cursor:pointer" id="features" ng-class="{active: isActive('/quickstart')}" class="nav-item"><a href="/quickstart">Quickstart</a></li>
                     <li style="cursor:pointer" id="pricing" ng-class="{active: isActive('/faq')}" class="nav-item"><a href="http://docs.cloudboost.io">Docs</a></li>
-                    <li style="cursor:pointer" id="pricing" ng-class="{active: isActive('/pricing')}" class="nav-item"><a href="#!/pricing">Pricing</a></li>
+                    <li style="cursor:pointer" id="pricing" ng-class="{active: isActive('/pricing')}" class="nav-item"><a href="/pricing">Pricing</a></li>
                     <li style="cursor:pointer" id="aboutus" ng-class="{active: (isActive('/about') || isActive('/contact') || isActive('/joinus'))}" class="nav-item dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">More<i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li style="cursor:pointer"><a href="#!/about">Who are we?</a></li>
-                            <li style="cursor:pointer"><a href="#!/partners">Be our partner</a></li>
-                            <li style="cursor:pointer"><a href="#!/joinus">CloudBoost Careers</a></li>
-                            <li style="cursor:pointer"><a href="#!/contact">Help and Support</a></li>
+                            <li style="cursor:pointer"><a href="/about">Who are we?</a></li>
+                            <li style="cursor:pointer"><a href="/partners">Be our partner</a></li>
+                            <li style="cursor:pointer"><a href="/joinus">CloudBoost Careers</a></li>
+                            <li style="cursor:pointer"><a href="/contact">Help and Support</a></li>
                             <li style="cursor:pointer"><a href="http://blog.cloudboost.io/">Blog</a></li>
                         </ul>
                     </li><!--//dropdown-->
-                    <li style="cursor:pointer" id="pricing" ng-class="{active: isActive('/faq')}" class="nav-item"><a href="#!/login">Login</a></li>
-                    <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" href="#!/signup">Sign up</a></li>
+                    <li style="cursor:pointer" id="pricing" ng-class="{active: isActive('/faq')}" class="nav-item"><a href="/login">Login</a></li>
+                    <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" href="/signup">Sign up</a></li>
                 </ul><!--//nav-->
             </div><!--//navabr-collapse-->
         </nav><!--//main-nav-->

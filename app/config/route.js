@@ -1,4 +1,5 @@
-app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProvider',function($urlRouterProvider,$stateProvider,$httpProvider,$locationProvider){
+app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProvider',
+  function($urlRouterProvider,$stateProvider,$httpProvider,$locationProvider){
 
   $urlRouterProvider.otherwise('/');
 
@@ -19,4 +20,10 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProv
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
+  $locationProvider.html5Mode(true);
+  $locationProvider.hashPrefix('!');
+
 }]);
+
+
+
