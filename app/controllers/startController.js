@@ -19,6 +19,7 @@ app.controller('startController',
 	
 	$scope.init = function(){		
 
+        hljs.initHighlightingOnLoad();
 		var meta=document.getElementsByTagName("meta");
 		for (var i=0; i<meta.length; i++) {
 		    if (meta[i].name.toLowerCase()=="description") {
