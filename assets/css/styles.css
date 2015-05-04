@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 p {
   margin-bottom: 15px;
   line-height: 1.5;
@@ -97,6 +98,15 @@ a.btn-ghost .text,
   /* WebKit browsers */
   color: #a6a6a6;
 }
+.buttonBorder{
+    border-style: solid;
+    border-width: 2px;
+    border-radius:5px; 
+}
+.linkHover:hover{
+  background:#096E80 !important;
+  border-radius:5px;
+}
 .form-control:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #a6a6a6;
@@ -115,6 +125,46 @@ a.btn-ghost .text,
   -moz-box-shadow: none;
   box-shadow: none;
 }
+
+.widgetBrowserHeader{
+  color:black !important;
+  font-size:0.8em;
+}
+
+.languageHeader{
+    margin-top:1px;
+    padding:5px;
+    padding-right:10px !important;
+    padding-left:10px !important;
+    margin-bottom:-2px;
+}
+
+.languageHeader:hover{
+    background:#070A0D;
+}
+
+.bottomBar{
+  padding:20px;
+  font-size:45px;
+}
+
+.bottomBarIcon{
+  cursor:pointer;
+  color:#DEDEDE;
+}
+
+.bottomBarIcon:hover{
+  color:#FFFFFF;
+}
+
+.bottomText{
+  font-size:0.3em;
+}
+
+.languageHeader.active{
+    background:#070A0D;
+}
+
 .text-highlight {
   color: #952410;
 }
@@ -174,7 +224,6 @@ input[type="button"] {
   position: relative;
   z-index: 40;
   height: 72px !important;  
-  background-color:#0DA5BF;  
 }
 
 .header.navbar-fixed-top {
@@ -3262,7 +3311,7 @@ input[type="button"] {
     float: right !important;
   }
   .promo {
-    height: 620px;
+    height: 820px;
     padding-top: 40px;
   }
   .promo.section .intro {
@@ -3384,15 +3433,27 @@ input[type="button"] {
   height:62px;
 }
 .widget-bx{
-  background-color: #CBCED8;
+  background-color: #F0F0F0;
   height:472.5px;
   width:460px; 
   border-radius: 2.5px;  
   box-shadow: 0px 0px 1px 1px #6E747A; 
 }
 
+.verticalDivider{
+  border-style:solid; 
+  border-width:1px;
+  height:75px;
+}
+
+.code-bx{
+  background-color: #F0F0F0;
+  height:360px;
+  border-radius: 2.5px;  
+  box-shadow: 0px 0px 1px 1px #6E747A; 
+}
+
 .widget-bxmenu{
-  
   height:26px; 
   border-top-left-radius:2.5px;
   border-top-right-radius:2.5px;
@@ -3409,6 +3470,12 @@ input[type="button"] {
   background-color:#253340;
   height:55px;
   padding:14px;  
+}
+
+.code-header{
+  background-color:#253340;
+  height:35px; 
+  cursor:pointer;
 }
 
 .cf:before, .cf:after { content: ""; display: table; }
@@ -3659,18 +3726,19 @@ input[type="button"] {
 
 .widget-comments-list{
   width: 100%;
-  margin-top: 3px;
-  height: 290px;
+  height: 310px;
   overflow:hidden;
 }  
 
 .widget-comments-bx{ 
   background-color: white;
   margin-top: 12px;
-  border:1px solid #EAEBED;
   height:auto;
   padding:6px;
-  border-radius: 2.5px; 
+  border-radius: 4px; 
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ADADAD;
 }
 .homepage-tab{
   background-color: white;  

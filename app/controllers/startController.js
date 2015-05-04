@@ -1,5 +1,5 @@
 app.controller('startController',
-	['$scope','$rootScope','$timeout',function($scope,$rootScope,$timeout){
+	['$scope','$rootScope','$timeout','$sce',function($scope,$rootScope,$timeout, $sce){
 	$rootScope.showHeader=true;
 	$scope.showNotifications=false;
 	var codeMirrorEnabled = [];
@@ -11,9 +11,9 @@ app.controller('startController',
 		index:$scope.commentIndex,
 		isUser:false,
 		userPic:"defult-user",
-		comment:"Welcome to CloudBoost",
+		comment:$sce.trustAsHtml("I've used <a href='https://twitter.com/search?q=%23cloudboost' target='blank'> #CloudBoost </a> to build my local social networking app and I can tell you, it was a breeze to integrate."),
 		notify:false,
-		name:"CloudBoost"		
+		name:"Sara Lane shared a post"		
 	}
 	$scope.commentsList.push(newAdminComment);
 	
@@ -38,8 +38,7 @@ app.controller('startController',
 		//For Code tab        
         $('#feature1').show();
         $('#feature2').hide();
-        $('#feature4').hide();
-        $scope.initCodeEditors( ['objectInsert', 'objectQuery']);
+        $scope.initCodeEditors( ['objectInsert']);
 	};
 
 	$scope.toCta = function(){
@@ -63,27 +62,72 @@ app.controller('startController',
 	    	var newComment={
 	    		index:$scope.commentIndex,
 	    		isUser:true,
-	    		userPic:"user-comment",
-	    		comment:$scope.comment,
+	    		userPic:"anonymous",
+	    		comment:$sce.trustAsHtml($scope.comment),
 	    		notify:false,
-	    		name:"You"    		   		
+	    		name:"You shared a post"    		   		
 	    	};
 	    	$scope.commentsList.push(newComment);
 	    	$scope.comment=null;
 
 	    	$timeout(function(){ 
 	    		++$scope.commentIndex;
-	            var newAdminComment={
-	            	index:$scope.commentIndex,
-					isUser:false,
-					userPic:"defult-user",
-					comment:"Hey, How Are You, Welcome to CloudBoost",
-					notify:true,
-					name:"CloudBoost"
-									
-				} 
-				$scope.commentsList.push(newAdminComment);
-				++$scope.notificationCount;
+                if($scope.commentIndex === 2){
+                    var newAdminComment={
+                    index:$scope.commentIndex,
+                    isUser:false,
+                    userPic:"cb-user",
+                    comment: $sce.trustAsHtml("<span>Thank you for playing around with the app. You can now signup to Cloudboost <a href='/signup'>here.</a></span>"),
+                    notify:true,
+                    name:"Jeff Whietman from CloudBoost"
+                                    
+                    };
+                    $scope.commentsList.push(newAdminComment);
+                    ++$scope.notificationCount;
+                }      
+                if($scope.commentIndex === 4){
+                    var newAdminComment={
+                    index:$scope.commentIndex,
+                    isUser:false,
+                    userPic:"user-comment",
+                    comment: $sce.trustAsHtml("<span> Looks like you've fallen in love with the app. I'm sure, you'll love the API as much. Check out the  <a href='http://docs.cloudboost.io' target='blank'>docs here.</a></span>"),
+                    notify:false,
+                    name:"Charlie Jen from CloudBoost"
+                                    
+                    };
+                    $scope.commentsList.push(newAdminComment);
+                   
+                }
+
+                if($scope.commentIndex === 6){
+                    var newAdminComment={
+                    index:$scope.commentIndex,
+                    isUser:false,
+                    userPic:"cb-user",
+                    comment: $sce.trustAsHtml("<span> Thank you for your love. The app like this can be built on CloudBoost and I'm sure you can build great apps too! Share the links of apps you've built to <a mailto='hello@cloudboost.io'>hello@cloudbost.io </a>and we'll share it with the world. </span>"),
+                    notify:false,
+                    name:"Jeff Whietman from CloudBoost"
+                                    
+                    };
+                    $scope.commentsList.push(newAdminComment);
+                }
+
+                if($scope.commentIndex === 8){
+                    var newAdminComment={
+                    index:$scope.commentIndex,
+                    isUser:false,
+                    userPic:"cb-user",
+                    comment: $sce.trustAsHtml("Hey, We're looking for restless & kick-ass people like you. If you like what we've built, you're a hacker, and want to build CloudBoost together. Send us your Resume on <a mailto='careers@cloudboost.io'>careers@cloudboost.io </a>"),
+                    notify:false,
+                    name:"Jeff Whietman from CloudBoost"
+                                    
+                    };
+
+                    $scope.commentsList.push(newAdminComment);
+                }
+
+            
+				
 	        }, 2000);
     	}	
 
@@ -101,28 +145,20 @@ app.controller('startController',
     	//remove active classes. 
     	$('#feature1List').removeClass('active');
     	$('#feature2List').removeClass('active');
-    	$('#feature4List').removeClass('active');
 
     	$('#feature'+id+'List').addClass('active');
 
     	$('#feature1').hide();
         $('#feature2').hide();
-        $('#feature4').hide();
 
         $('#feature'+id).show();
 
         if(id===1)
-            $scope.initCodeEditors( ['objectInsert', 'objectQuery']);
+            $scope.initCodeEditors( ['objectInsert']);
 
         if(id===2){
-            $scope.initCodeEditors( ['cloudNotifications', 'objectNotifications']);
+            $scope.initCodeEditors( ['ObjectQuery']);
         }
-
-        if(id===4){
-            $scope.initCodeEditors( ['searchSearch', 'indexSearch']);
-        }
-
-
     };
 
     $scope.initCodeEditors = function(arr){
@@ -135,9 +171,8 @@ app.controller('startController',
                 var myCodeMirror = CodeMirror.fromTextArea(document.getElementById(codeEditors[i]),
                     {
                         mode:  "javascript",
-                        lineNumbers: true,
-                        //theme : 'ambiance',
-                        readOnly : "nocursor"
+                        readOnly : "nocursor",
+                        lineNumbers: true
                     });
 
                 codeMirrorEnabled.push(codeEditors[i]);
