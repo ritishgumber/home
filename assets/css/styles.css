@@ -129,6 +129,7 @@ a.btn-ghost .text,
 .widgetBrowserHeader{
   color:black !important;
   font-size:0.8em;
+  margin-top: 1.4px;
 }
 
 .languageHeader{
@@ -150,7 +151,7 @@ a.btn-ghost .text,
 
 .bottomBarIcon{
   cursor:pointer;
-  color:#DEDEDE;
+  color:#DEDEDE;  
 }
 
 .bottomBarIcon:hover{
@@ -3476,6 +3477,7 @@ input[type="button"] {
   background-color:#253340;
   height:35px; 
   cursor:pointer;
+  margin-top: 3.5px;
 }
 
 .cf:before, .cf:after { content: ""; display: table; }
