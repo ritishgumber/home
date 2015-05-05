@@ -56,7 +56,11 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
         }
 
         if($scope.featureSelected  === 2){
-            $scope.initCodeEditors( ['objectInsert-'+lang,'objectQuery-'+lang],'javascript');
+            $scope.initCodeEditors( ['objectNotifications-'+lang,'cloudNotifications-'+lang],'javascript');
+        }
+
+         if($scope.featureSelected  === 3){
+            $scope.initCodeEditors( ['searchSearch-'+lang,'indexSearches-'+lang],'javascript');
         }
     };
 
