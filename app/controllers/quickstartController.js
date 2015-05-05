@@ -4,7 +4,8 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
 
     var codeMirrorEnabled = [];
 
-    $scope.init = function(){        
+    $scope.init = function(){ 
+
         var meta=document.getElementsByTagName("meta");
         for (var i=0; i<meta.length; i++) {
             if (meta[i].name.toLowerCase()=="description") {
@@ -21,20 +22,42 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
         $('#feature2').hide();
         $('#feature4').hide();
 
-        $scope.initCodeEditors( ['objectInsert-js', 'objectQuery']);
 
         window.seojsSnapshotReady = true;
 
-        var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('initCode'),
-                    {
-                        mode:  "javascript",
-                        lineNumbers: true,
-                        readOnly : "nocursor"
-                    });  
-
-        myCodeMirror.setSize(null,50);
+        $scope.languageClick('js',1);
+        $scope.featureSelected  = 1;
 
 
+    };
+
+    $scope.languageClick=function(lang, id){
+
+        if(lang){
+             $scope.languageSelected = lang;
+        }
+
+        lang = $scope.languageSelected;
+        $('.js').removeClass('active');
+        $('.java').removeClass('active');
+        $('.'+lang).addClass('active');
+        $('.javaCode').hide();
+        $('.jsCode').hide();
+        $('.'+lang+'Code').show();
+
+        if(id){
+            $scope.featureSelected = id;
+        }
+       
+        $scope.initCodeEditors( ['initCode-'+lang],'javascript',50);
+
+        if($scope.featureSelected  ===1){
+            $scope.initCodeEditors( ['objectInsert-'+lang,'objectQuery-'+lang],'javascript');
+        }
+
+        if($scope.featureSelected  === 2){
+            $scope.initCodeEditors( ['objectInsert-'+lang,'objectQuery-'+lang],'javascript');
+        }
     };
 
     $scope.switchFeature = function(id){
@@ -51,21 +74,13 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
 
         $('#feature'+id).show();
 
-        if(id===1)
-            $scope.initCodeEditors( ['objectInsert-js']);
-
-        if(id===2){
-            $scope.initCodeEditors( ['cloudNotifications', 'objectNotifications']);
-        }
-
-        if(id===4){
-            $scope.initCodeEditors( ['searchSearch', 'indexSearch']);
-        }
+        $scope.languageClick(null,id);
+        
 
 
     };
 
-    $scope.initCodeEditors = function(arr){
+    $scope.initCodeEditors = function(arr,language,size){
         var codeEditors = arr;
 
         for(var i=0;i<codeEditors.length; i++){
@@ -74,11 +89,15 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
 
                 var myCodeMirror = CodeMirror.fromTextArea(document.getElementById(codeEditors[i]),
                     {
-                        mode:  "javascript",
+                        mode:  language,
                         lineNumbers: true,
                         //theme : 'ambiance',
                         readOnly : "nocursor"
                     });
+
+                if(size){
+                    myCodeMirror.setSize(null,size);
+                }
 
                 codeMirrorEnabled.push(codeEditors[i]);
             }

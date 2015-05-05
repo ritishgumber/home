@@ -8,7 +8,7 @@
                         <h1 style="color:white; font-family:font-family: 'Signika', sans-serif; font-weight: 300; ">Here's a <span style="font-weight: 700;">a 2 minute quickstart </span> on CloudBoost.</h1>
                     </div> 
                     <div>             
-                            <h4 style="color:white; font-family:font-family: 'Signika', sans-serif; font-weight: 300; ">Build mobile and web apps in minutes using client-side code and our powerful API. Save time. Delight your users.  <br/><br/><b>It'll just take few lines of code to power your app with CloudBoost.</b> </h4>
+                            <h4 style="color:white; font-family:font-family: 'Signika', sans-serif; font-weight: 300; ">Build mobile and web apps in minutes using client-side code and our powerful API. Save time. Delight your users.<br/><br/><b>It'll just take few lines of code to power your app with CloudBoost.</b></h4>
                     </div>
            
         </div><!--//container-->
@@ -52,17 +52,23 @@
 
                             <div class="code-header cf">
                                                            
-                                <div id='js' class="pull-left languageHeader active" style="color:white" ng-click="languageClick('js')">
+                                <div id='js' class="pull-left languageHeader active js" style="color:white" ng-click="languageClick('js')">
                                     JavaScript   
                                 </div>
-                                <div id='java' class="pull-left languageHeader" style="color:white" ng-click="languageClick('java')">
+                                <div id='java' class="pull-left languageHeader java" style="color:white" ng-click="languageClick('java')">
                                     Java
                                 </div>
                             </div>
-    <div id="Insert-js">                           
-<textarea rows="3" id="initCode" disabled="true" width="height:30px">
+<div id="init-js" class="jsCode" style="height:20px;">                           
+<textarea id="initCode-js" disabled="true" width="height:30px">
 //Initialize your CloudBoost App
-CB.CloudApp.init('YOUR APP ID', 'YOUR APP KEY'); </textarea>
+CB.CloudApp.init('YOUR APP ID', 'YOUR APP KEY'); 
+</textarea>
+    </div>
+    <div id="init-java" class="javaCode">                           
+<textarea rows="3" id="initCode-java" disabled="true" width="height:30px">
+JAVA INIT
+</textarea>
     </div>
     </div>
                                 
@@ -105,15 +111,15 @@ CB.CloudApp.init('YOUR APP ID', 'YOUR APP KEY'); </textarea>
 
                             <div class="code-header cf">
                                                            
-                                <div id='js' class="pull-left languageHeader active" style="color:white" ng-click="languageClick('js')">
+                                <div id='js' class="pull-left languageHeader active js" style="color:white" ng-click="languageClick('js')">
                                     JavaScript   
                                 </div>
-                                <div id='java' class="pull-left languageHeader" style="color:white" ng-click="languageClick('java')">
+                                <div id='java' class="pull-left languageHeader java" style="color:white" ng-click="languageClick('java')">
                                     Java
                                 </div>
                             </div>
-    <div id="Insert-js">                           
-    <textarea id="objectInsert-js" disabled="true">
+    <div id="Insert-js" class="jsCode">                           
+    <textarea id="objectInsert-js"  disabled="true">
 
 //insert a new object in CloudBoost
 var obj = new CB.CloudObject('Student');
@@ -125,6 +131,12 @@ obj.save({
 
     }
 });
+    </textarea>
+    </div>
+    <div id="Insert-java" class="javaCode">                           
+    <textarea id="objectInsert-java"  disabled="true">
+
+JAVA INSERT
     </textarea>
     </div>
     </div>
@@ -143,15 +155,15 @@ obj.save({
 
                             <div class="code-header cf">
                                                            
-                                <div id='js' class="pull-left languageHeader active" style="color:white" ng-click="languageClick('js')">
+                                <div id='js' class="pull-left languageHeader active js" style="color:white" ng-click="languageClick('js')">
                                     JavaScript   
                                 </div>
-                                <div id='java' class="pull-left languageHeader" style="color:white" ng-click="languageClick('java')">
+                                <div id='java' class="pull-left languageHeader java" style="color:white" ng-click="languageClick('java')">
                                     Java
                                 </div>
                             </div>
-    <div id="Insert-js">                           
-     <textarea id="objectQuery" disabled="true">
+    <div id="query-js" class="jsCode">                           
+     <textarea id="objectQuery-js" disabled="true">
 
 //query data from CloudBoost
 
@@ -164,6 +176,13 @@ query.find({
 
     }
 });
+
+</textarea>
+    </div>
+        <div id="query-java" class="javaCode">                           
+     <textarea id="objectQuery-java" disabled="true">
+
+JAVA QUERY
 
 </textarea>
     </div>
@@ -183,16 +202,16 @@ query.find({
 
 
                                  <div class="code-bx">
-                           <center>
+                            <center>
                                 <span class="widgetBrowserHeader">INSERT DATA</span>
                             </center>  
 
                             <div class="code-header cf">
                                                            
-                                <div id='js' class="pull-left languageHeader active" style="color:white" ng-click="languageClick('js')">
+                                <div id='js' class="pull-left languageHeader active js" style="color:white" ng-click="languageClick('js')">
                                     JavaScript   
                                 </div>
-                                <div id='java' class="pull-left languageHeader" style="color:white" ng-click="languageClick('java')">
+                                <div id='java' class="pull-left languageHeader java" style="color:white" ng-click="languageClick('java')">
                                     Java
                                 </div>
                             </div>
