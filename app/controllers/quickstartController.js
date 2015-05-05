@@ -64,13 +64,13 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
     	//remove active classes. 
     	$('#feature1List').removeClass('active');
     	$('#feature2List').removeClass('active');
-    	$('#feature4List').removeClass('active');
+    	$('#feature3List').removeClass('active');
 
     	$('#feature'+id+'List').addClass('active');
 
     	$('#feature1').hide();
         $('#feature2').hide();
-        $('#feature4').hide();
+        $('#feature3').hide();
 
         $('#feature'+id).show();
 

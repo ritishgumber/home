@@ -356,10 +356,13 @@ input[type="button"] {
 }
 .header .main-nav .nav .nav-item a:active {
   outline: none;
-  background: none;
+  background: none; 
 }
+
 .header .main-nav .nav .nav-item.active {
   color: #549AFC;
+  background:#096E80 !important;
+  border-radius:5px;  
 }
 .header .main-nav .nav .nav-item.last {
   margin-right: 0;
@@ -3124,6 +3127,7 @@ input[type="button"] {
     padding-top: 15px;
     padding-bottom: 15px;
   }
+
   .blog-page .header h1.logo {
     float: left;
     margin: inherit;
