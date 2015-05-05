@@ -21,7 +21,7 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
         $('#feature2').hide();
         $('#feature4').hide();
 
-        $scope.initCodeEditors( ['objectInsert', 'objectQuery']);
+        $scope.initCodeEditors( ['objectInsert-js', 'objectQuery']);
 
         window.seojsSnapshotReady = true;
 
@@ -34,7 +34,7 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
 
         myCodeMirror.setSize(null,50);
 
-        
+
     };
 
     $scope.switchFeature = function(id){
@@ -52,7 +52,7 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
         $('#feature'+id).show();
 
         if(id===1)
-            $scope.initCodeEditors( ['objectInsert', 'objectQuery']);
+            $scope.initCodeEditors( ['objectInsert-js']);
 
         if(id===2){
             $scope.initCodeEditors( ['cloudNotifications', 'objectNotifications']);

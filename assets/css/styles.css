@@ -509,9 +509,9 @@ input[type="button"] {
 }
 .headline-bg.pricing-headline-bg {
   background-image: url('../images/background/try3.jpg');
-}
-.headline-bg.contact-headline-bg {
-  background-image: url('../images/background/bg-footer-2.jpg');
+
+}.headline-bg.contact-headline-bg {
+  background-image: url('../images/background/try3.jpg');
 }
 .headline-bg.about-headline-bg {
   background-image: url('../images/background/try3.jpg');
@@ -1319,7 +1319,7 @@ input[type="button"] {
 /* ======= Download Apps ======= */
 .download-page .headline-bg {
   height: 1200px;
-  background: #253340 url('../images/background/bg-mobile-headline.jpg') no-repeat 50% top;
+  background: #253340 url('../images/background/try3.jpg') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

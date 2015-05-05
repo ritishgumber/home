@@ -28,8 +28,8 @@
                                 </div>
                             </div><!--//profile-->
                             <div class="quote-content">
-                                <p><a href="https://api.cloudboost.io/sdk/js/1.0.0" target="_blank"><b>Download the SDK : </b></a> Download the CloudBoost JavaScirpt SDK and link it to your app. A good place for it to be is in the head of index.html / main page of your app. </p>
-                                <p class="source">Note : You need to link <a href="http://code.jquery.com/jquery-2.1.3.min.js"> jQuery </a> before you link CloudBoost SDK.</p>
+                                <p><a href="https://docs.cloudboost.io" target="_blank"><b>Download the SDK : </b></a> Download the CloudBoost SDK and link it to your app. You can find the SDK's <a href="https://docs.cloudboost.io">here.</a> </p>
+                               
                             </div><!--//quote-content-->                                     
                         </div><!--//quote-->                        
                     </div><!--//content-->
@@ -45,9 +45,27 @@
                             </div><!--//profile-->
                             <div class="quote-content">
                                 <p><a href="https://api.cloudboost.io/sdk/js/1.0.0" target="_blank"><b>Initialize your CloudBoost App : </b></a> Initializing your CloudBoost app is just one single line of code :  </p>
-                                <textarea rows="3" id="initCode" disabled="true" width="height:30px">
+                        <div class="code-bx" style="height:110px">
+                           <center>
+                                <span class="widgetBrowserHeader">INIT YOUR APP</span>
+                            </center>  
+
+                            <div class="code-header cf">
+                                                           
+                                <div id='js' class="pull-left languageHeader active" style="color:white" ng-click="languageClick('js')">
+                                    JavaScript   
+                                </div>
+                                <div id='java' class="pull-left languageHeader" style="color:white" ng-click="languageClick('java')">
+                                    Java
+                                </div>
+                            </div>
+    <div id="Insert-js">                           
+<textarea rows="3" id="initCode" disabled="true" width="height:30px">
 //Initialize your CloudBoost App
 CB.CloudApp.init('YOUR APP ID', 'YOUR APP KEY'); </textarea>
+    </div>
+    </div>
+                                
                             </div><!--//quote-content-->                                     
                         </div><!--//quote-->                        
                     </div><!--//content-->
@@ -79,22 +97,38 @@ CB.CloudApp.init('YOUR APP ID', 'YOUR APP KEY'); </textarea>
                                 <p> <b> Insert data into your CloudBost app </b> :  </p>
 
                                 <p> Inserting data into your CloudBoost app is very simple. Here we create a new CloudObject of type Student, set a name to John Smith and save it to the database. </p>
+                                 <div class="widget-div">
+                        <div class="code-bx">
+                           <center>
+                                <span class="widgetBrowserHeader">INSERT DATA</span>
+                            </center>  
 
-                                <textarea id="objectInsert" disabled="true">
+                            <div class="code-header cf">
+                                                           
+                                <div id='js' class="pull-left languageHeader active" style="color:white" ng-click="languageClick('js')">
+                                    JavaScript   
+                                </div>
+                                <div id='java' class="pull-left languageHeader" style="color:white" ng-click="languageClick('java')">
+                                    Java
+                                </div>
+                            </div>
+    <div id="Insert-js">                           
+    <textarea id="objectInsert-js" disabled="true">
 
 //insert a new object in CloudBoost
-
 var obj = new CB.CloudObject('Student');
-obj.set('name', 'John Smith');
+obj.set('name', 'John Smith.');
 obj.save({
     success : function(obj){
-
+        //object saved. 
     }, error : function (error){
 
     }
 });
+    </textarea>
+    </div>
+    </div>
 
-                                </textarea>
 
                                 <br/><br/>
 
@@ -102,7 +136,22 @@ obj.save({
 
                                 <p> Querying data from your CloudBoost app is crazy simple. Here we create a new CloudQuery object of type Student, set a name to John Smith and query it from the  database. </p>
 
-                                <textarea id="objectQuery" disabled="true">
+                                 <div class="code-bx">
+                           <center>
+                                <span class="widgetBrowserHeader">QUERY DATA</span>
+                            </center>  
+
+                            <div class="code-header cf">
+                                                           
+                                <div id='js' class="pull-left languageHeader active" style="color:white" ng-click="languageClick('js')">
+                                    JavaScript   
+                                </div>
+                                <div id='java' class="pull-left languageHeader" style="color:white" ng-click="languageClick('java')">
+                                    Java
+                                </div>
+                            </div>
+    <div id="Insert-js">                           
+     <textarea id="objectQuery" disabled="true">
 
 //query data from CloudBoost
 
@@ -116,8 +165,9 @@ query.find({
     }
 });
 
-                                </textarea>
-
+</textarea>
+    </div>
+    </div>
                                 
                             </div><!--//desc-->
                         </div><!--//tab-pane-->
@@ -131,7 +181,25 @@ query.find({
                                 <p> Get instant alerts when data in your database is created / updated or deleted and keep all your apps in sync and in realtime. WOW your users with great user expeirence by implementing realtime.  
                                 </p>
 
-                                <textarea id="objectNotifications" disabled="true">
+
+                                 <div class="code-bx">
+                           <center>
+                                <span class="widgetBrowserHeader">INSERT DATA</span>
+                            </center>  
+
+                            <div class="code-header cf">
+                                                           
+                                <div id='js' class="pull-left languageHeader active" style="color:white" ng-click="languageClick('js')">
+                                    JavaScript   
+                                </div>
+                                <div id='java' class="pull-left languageHeader" style="color:white" ng-click="languageClick('java')">
+                                    Java
+                                </div>
+                            </div>
+    <div id="Insert-js">                           
+<textarea id="objectNotifications" disabled="true">
+
+
 
 //CloudObjects Notification.
 
@@ -142,6 +210,10 @@ CB.CloudObject.on('Student', 'created', function(obj){
 });
 
                                 </textarea>
+    </div>
+    </div>
+
+                                
                                  
 
                                 <br/><br/>
@@ -234,11 +306,12 @@ cs.search({
                     </div><!--//tab-content-->
                 </div><!--//col-md-x-->
             </div><!--//row-->
+        </div>
 
             <div class="feature-lead text-center">
                     <p>We have an amazing API documented beautifully for you. <br/> Want to have a look?<p>
-                    <p><a class="btn btn-cta btn-cta-secondary" href="https://docs.cloudboost.io">See our API Docs.</a></p>
-                </div>
+                    <p><a class="btn btn-cta btn-cta-primary" href="https://docs.cloudboost.io">See our API Docs.</a></p>
+            </div>
 
 
         </div><!--//container-->

@@ -182,13 +182,14 @@ cs.search({
 
 <div id="Insert-java">                           
 <textarea id="objectInsert-java" disabled="true">
-
-Java Insert
+CloudObject obj = new CloudObject("Post");
+obj.set("text", "your text here");
+obj.save();
 </textarea>
 </div>
 <div id="Realtime-java">
 <textarea id="objectRealtime-java" disabled="true">
-
+CloudObject.on("Post", "created", interfaceObject);
 Realtime Java
    
 </textarea>
