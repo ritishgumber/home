@@ -151,10 +151,20 @@ a.btn-ghost .text,
 
 .bottomBarIcon{
   cursor:pointer;
-  color:#DEDEDE;  
+  color:#9BDBE5;  
+  font-size:0.8em;
+}
+.bottomBarIcon.active{
+  cursor:pointer;
+  color:#FFFFFF;  
+  font-size:0.8em;
 }
 
-.bottomBarIcon:hover{
+.bottomBarIconHover:hover{
+  color:#FFFFFF;
+}
+
+.bottomBarIconHover.active{
   color:#FFFFFF;
 }
 
@@ -491,20 +501,20 @@ input[type="button"] {
   top: 0;
   left: 0;
   height: 500px;
-  background: #253340 url('../images/background/bg-header-small-1.jpg') no-repeat 50% top;
+  background: #253340 url('../images/background/try3.jpg') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .headline-bg.pricing-headline-bg {
-  background-image: url('../images/background/bg-header-small-2.jpg');
+  background-image: url('../images/background/try3.jpg');
 }
 .headline-bg.contact-headline-bg {
   background-image: url('../images/background/bg-footer-2.jpg');
 }
 .headline-bg.about-headline-bg {
-  background-image: url('../images/background/bg-header-small-3.jpg');
+  background-image: url('../images/background/try3.jpg');
 }
 /* ======= Promo ======= */
 .promo {
@@ -876,6 +886,12 @@ input[type="button"] {
   padding-top: 90px;
   position: relative;
   z-index: 10;
+}
+.whiteButton{
+  color:white !important;
+  font-family:Signika;
+  font-weight:800;
+  
 }
 .features-video .title {
   font-size: 36px;
@@ -3444,7 +3460,8 @@ input[type="button"] {
 .verticalDivider{
   border-style:solid; 
   border-width:1px;
-  height:75px;
+  height:55px;
+  margin-top:8px;
 }
 
 .code-bx{

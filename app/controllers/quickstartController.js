@@ -33,6 +33,8 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
                     });  
 
         myCodeMirror.setSize(null,50);
+
+        
     };
 
     $scope.switchFeature = function(id){

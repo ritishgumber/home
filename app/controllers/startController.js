@@ -20,6 +20,7 @@ app.controller('startController',
 	$scope.init = function(){		
 
         hljs.initHighlightingOnLoad();
+
 		var meta=document.getElementsByTagName("meta");
 		for (var i=0; i<meta.length; i++) {
 		    if (meta[i].name.toLowerCase()=="description") {
@@ -33,13 +34,47 @@ app.controller('startController',
 
 		document.title = "CloudBoost : One API to build your next big thing.";		
 		window.seojsSnapshotReady = true;
+        $scope.hideAllCode();
+        $('#Insert-js').show();
+        $scope.initCodeEditors( ['objectInsert-js']);
 
-
-		//For Code tab        
-        $('#feature1').show();
-        $('#feature2').hide();
-        $scope.initCodeEditors( ['objectInsert']);
+        $('#InsertIcon').addClass('active');
+        $scope.codeTabSelected = 'js';
+        $scope.currentFeature = 'Insert';
+        
 	};
+
+    $scope.hideAllCode = function(){
+        $('#Insert-js').hide();
+        $('#Realtime-js').hide();
+        $('#Search-js').hide();
+        $('#Insert-java').hide();
+        $('#Realtime-java').hide();
+        $('#Search-java').hide();
+        //remove CSS classes. 
+        $('#InsertIcon').removeClass('active');
+        $('#RealtimeIcon').removeClass('active');
+        $('#SearchIcon').removeClass('active');
+
+    };
+
+    $scope.languageClick = function(lang){
+        $scope.hideAllCode();
+        $scope.codeTabSelected = lang;
+        $scope.featureClick($scope.currentFeature);
+        $('#java').removeClass('active');
+        $('#js').removeClass('active');
+        $('#'+lang).addClass('active');
+
+    };
+
+    $scope.featureClick = function(feature){
+        $scope.hideAllCode();
+        $('#'+feature+'-'+$scope.codeTabSelected).show();
+        $scope.initCodeEditors( ['object'+feature+'-'+$scope.codeTabSelected]);
+        $('#'+feature+'Icon').addClass('active');
+        $scope.currentFeature = feature;
+    }
 
 	$scope.toCta = function(){
     	$('html,body').animate({scrollTop: $('#cta').offset().top-200},500); //smooth scroll animation.
