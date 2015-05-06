@@ -108,8 +108,14 @@ mixpanel.init("59f8c851677a01bdbfa6cffb2865c682");</script>
             </div><!--//navbar-header-->
             <div id="navbar-collapse" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li style="cursor:pointer; color:white" ng-class="{active: isActive('/')}" class="nav-item linkHover"><a style="color:white"  href="/index" >OVERVIEW</a></li>
-                    <li style="cursor:pointer ; color:white" ng-class="{active: isActive('/quickstart')}" class="nav-item linkHover"><a  style="color:white"  href="/quickstart">QUICKSTART</a></li>
+                    <li style="cursor:pointer; color:white" ng-class="{active: isActive('/')}" class="nav-item linkHover">
+                        <a style="color:white"  href="/index" >OVERVIEW</a>
+                    </li>
+
+                    <li style="cursor:pointer; color:white" ng-class="{active: isActive('/quickstart')}" class="nav-item linkHover">
+                        <a  style="color:white"  href="/quickstart">QUICKSTART</a>
+                    </li>
+
                     <li style="cursor:pointer; color:white" ng-class="{active: isActive('/faq')}" class="nav-item linkHover"><a style="color:white"  href="http://docs.cloudboost.io" target="blank">DOCS</a></li>
                     <li style="cursor:pointer; color:white" ng-class="{active: isActive('/pricing')}" class="nav-item linkHover"><a style="color:white"  href="/pricing">PRICING</a></li>
                     <li style="cursor:pointer; color:white" ng-class="{active: (isActive('/about') || isActive('/contact') || isActive('/joinus'))}" class="nav-item dropdown linkHover">
@@ -122,10 +128,10 @@ mixpanel.init("59f8c851677a01bdbfa6cffb2865c682");</script>
                             <li style="cursor:pointer"><a href="http://blog.cloudboost.io/">Blog</a></li>
                         </ul>
                     </li><!--//dropdown-->
-                    <li style="cursor:pointer; color:white" ng-class="{active: isActive('/faq')}" class="nav-item linkHover"><a style="color:white"  href="/login">LOGIN</a></li>
+                    <li style="cursor:pointer; color:white" ng-class="{active: isActive('/faq')}" class="nav-item linkHover"><a style="color:white"  href="{{loginURL}}">LOGIN</a></li>
 
                     <li style="cursor:pointer; color:white" class="nav-item  linkHover ">
-                        <a style="color:white; padding-top: 10px;padding-right: 10px;padding-left: 10px;padding-bottom: 7px;" class="buttonBorder" href="/signup">SIGN UP</a>
+                        <a style="color:white; padding-top: 10px;padding-right: 10px;padding-left: 10px;padding-bottom: 7px;" class="buttonBorder" href="{{signUpURL}}">SIGN UP</a>
                     </li>
                 </ul><!--//nav-->
             </div><!--//navabr-collapse-->
@@ -150,8 +156,6 @@ mixpanel.init("59f8c851677a01bdbfa6cffb2865c682");</script>
 <script type="text/javascript" src="app/controllers/indexController.js"></script>
 <script type="text/javascript" src="app/controllers/quickstartController.js"></script>
 <script type="text/javascript" src="app/controllers/pricingController.js"></script>
-<script type="text/javascript" src="app/controllers/loginController.js"></script>
-<script type="text/javascript" src="app/controllers/signUpController.js"></script>
 <script type="text/javascript" src="app/controllers/aboutController.js"></script>
 <script type="text/javascript" src="app/controllers/contactController.js"></script>
 <script type="text/javascript" src="app/controllers/startController.js"></script>
@@ -160,8 +164,6 @@ mixpanel.init("59f8c851677a01bdbfa6cffb2865c682");</script>
 <script type="text/javascript" src="app/controllers/headerController.js"></script>
 <script type="text/javascript" src="app/controllers/bottomBannerController.js"></script>
 <script type="text/javascript" src="app/controllers/footerController.js"></script>
-<script type="text/javascript" src="app/controllers/activateController.js"></script>
-<script type="text/javascript" src="app/controllers/forgotPasswordController.js"></script>
 <script type="text/javascript" src="app/controllers/partnersController.js"></script>
 
 

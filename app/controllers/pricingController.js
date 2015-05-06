@@ -1,4 +1,7 @@
-app.controller('pricingController',['$scope','$rootScope',function($scope,$rootScope){
+app.controller('pricingController',
+  ['$scope','$rootScope',
+  function($scope,$rootScope){
+    
   $scope.getCssClass ="pricing-page";
   $rootScope.showHeader=true;
 
