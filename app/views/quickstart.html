@@ -141,10 +141,10 @@ CloudObject obj = new CloudObject("Student");
 obj.set("name", "Smith");
 Callback callbackObj = new Callback(){ 
 	@Override public void success(){ 
-		System.out.println("success message"); 
+		//success
 	} 
 	@Override public void error(){ 
-		System.out.println("error message"); 
+		//error
 	} 
 }; 
 obj.save(callbackObj);
@@ -193,19 +193,21 @@ query.find({
         <div id="query-java" class="javaCode">                           
      <textarea id="objectQuery-java" disabled="true">
 
+CloudQuery query = new CloudQuery("Student");
+query.equalTo("name", "John Smith");
+
 CloudQueryCallback callbackObj = new CloudQueryCallback(){ 
 	@Override 
 	public void success(Map <String, Object>[] list){ 
-		for(int i=0; i&lt;list.length; i++){ 
-			System.out.println(list[i].get("text")); 
-		} 
+	   //list is an array of CloudObjects
 	} 
 	@Override 
 	public void error(){ 
-		System.out.println("error message"); 
+		//error
 	} 
 }; 
-cs.find(callbackObj);
+
+query.find(callbackObj);
 </textarea>
     </div>
     
@@ -259,7 +261,7 @@ CB.CloudObject.on('Student', 'created', function(obj){
 CloudNotificationMethod callbackObj = new CloudNotificationMethod(){ 
 	@Override 
 	public void onMethod(Object data){ // override this function as per your requirnment.
-		System.out.println("message : " + data); 
+		//data is an instance of CloudObject 
 	} 
 }; 
 CloudObject.on("Student", "created", callbackObj); 
@@ -323,8 +325,8 @@ CB.CloudNotification.publish('sample', 'data', {
 //intializing CloudNotificationMethod, and overriding methods 
 CloudNotificationMethod callbackObj = new CloudNotificationMethod(){ 
 	@Override 
-	public void onMethod(Object data){// override this function as per your requirnment.
-		 System.out.println("message : " + data); 
+	public void onMethod(Object data){
+		 //data is basically the message 
 	} 
 }; 
 CloudNotification.on("sample", callbackObj);
@@ -384,11 +386,11 @@ obj.set("name", "John Smith");
 obj.setIsSearchable(true);
 Callback callbackObj = new Callback(){ 
 	@Override public void success(){ 
-		System.out.println("success message"); 
+		//success
 	} 
 	@Override 
 	public void error(){ 
-		System.out.println("error message"); 
+		//error
 	} 
 }; 
 obj.save(callbackObj);
@@ -445,13 +447,11 @@ cs.searchOn("name", "John");
 CloudSearchCallback callbackObj = new CloudSearchCallback(){ 
 	@Override 
 	public void success(Map &lt;String,Object&gt;[] list){ 
-		for(int i=0; i&lt;list.length; i++){ 
-			System.out.println(list[i].get("text")); 
-		} 
+		//list is an array of CloudObjects
 	} 
 	@Override 
 	public void error(){ 
-		System.out.println("error message"); 
+		//error
 	} 
 }; 
 cs.search(callbackObj);

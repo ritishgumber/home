@@ -183,20 +183,17 @@ cs.search({
 <div id="Insert-java">                           
 <textarea id="objectInsert-java" disabled="true">
 
-CloudObject obj = new CloudObject("post");
+CloudObject obj = new CloudObject("Post");
 ob.set("text", "your text here");
-//without callback
-obj.save();
 
-//with callback
 Callback callbackObj = new Callback(){
 	@Override
 	public void success() {
-		System.out.println("success message");
+		//success
 	}
 	@Override
 	public void error() {
-		System.out.println("error message");
+		//error
 	}
 };
 
@@ -212,7 +209,7 @@ CloudObject obj = new CloudObject("Post");
 CloudNotificationMethod callbackObj = new CloudNotificationMethod(){ 
 	@Override 
 	public void onMethod(Object data) { // override this function as per your requirnment. 
-		System.out.println("message : " + data); 
+		//data is an instance of CloudObject
 	} 
 }; 
 obj.on("Post", "created",  callbackObj);
@@ -222,23 +219,18 @@ obj.on("Post", "created",  callbackObj);
 <div id="Search-java">
     <textarea id="objectSearch-java" disabled="true">
     
-	CloudSearch cs = new CloudSearch('Post');
-	cs.searchOn('text', 'Your search text here');
-	Map&lt;String, Object&gt;[] searchResultList;
-	//without callback 
-	searchResultList = cs.search();
-	
-	//with callback
-	CloudSearchCallback callbackObj = new CloudSearchCallback(){
+CloudSearch cs = new CloudSearch('Post');
+cs.searchOn('text', 'Your search text here');
+Map&lt;String, Object&gt;[] searchResultList;
+
+CloudSearchCallback callbackObj = new CloudSearchCallback(){
 	@Override
 	public void success(list) {
-		for(int i=0; i&lt;list.length; i++){
-			System.out.println(list[i].get("text"));
-		}
+		//list is an array of CloudObject
 	}
 	@Override
 	public void error() {
-		System.out.println("error message");
+		//error
 	}
 };
 cs.search(callbackObj);
