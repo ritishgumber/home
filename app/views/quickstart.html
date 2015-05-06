@@ -67,7 +67,8 @@ CB.CloudApp.init('YOUR APP ID', 'YOUR APP KEY');
     </div>
     <div id="init-java" class="javaCode">                           
 <textarea rows="3" id="initCode-java" disabled="true" width="height:30px">
-JAVA INIT
+//Initialize your CloudBoost App
+CloudApp.init("Your App Id", "Your Secret Key");
 </textarea>
     </div>
     </div>
@@ -135,8 +136,18 @@ obj.save({
     </div>
     <div id="Insert-java" class="javaCode">                           
     <textarea id="objectInsert-java"  disabled="true">
-
-JAVA INSERT
+//Insert a new object in CloudBoost
+CloudObject obj = new CloudObject("Student"); 
+obj.set("name", "Smith");
+Callback callbackObj = new Callback(){ 
+	@Override public void success(){ 
+		System.out.println("success message"); 
+	} 
+	@Override public void error(){ 
+		System.out.println("error message"); 
+	} 
+}; 
+obj.save(callbackObj);
     </textarea>
     </div>
     </div>
@@ -182,8 +193,19 @@ query.find({
         <div id="query-java" class="javaCode">                           
      <textarea id="objectQuery-java" disabled="true">
 
-JAVA QUERY
-
+CloudQueryCallback callbackObj = new CloudQueryCallback(){ 
+	@Override 
+	public void success(Map <String, Object>[] list){ 
+		for(int i=0; i&lt;list.length; i++){ 
+			System.out.println(list[i].get("text")); 
+		} 
+	} 
+	@Override 
+	public void error(){ 
+		System.out.println("error message"); 
+	} 
+}; 
+cs.find(callbackObj);
 </textarea>
     </div>
     
@@ -233,11 +255,14 @@ CB.CloudObject.on('Student', 'created', function(obj){
     </div>
     <div id="notifications-java" class="javaCode">                           
 <textarea id="objectNotifications-java" disabled="true">
-
-
-
-JAVA - CODE
-
+//intializing CloudNotificationMethod, and overriding methods 
+CloudNotificationMethod callbackObj = new CloudNotificationMethod(){ 
+	@Override 
+	public void onMethod(Object data){ // override this function as per your requirnment.
+		System.out.println("message : " + data); 
+	} 
+}; 
+CloudObject.on("Student", "created", callbackObj); 
                                 </textarea>
     </div>
 
@@ -267,8 +292,7 @@ JAVA - CODE
                                 </div>
                             </div>
     <div id="cloudNotification-js" class="jsCode">                           
-<textarea id="cloudNotifications-js" disabled="true">
-
+		<textarea id="cloudNotifications-js" disabled="true">
 //CloudNotification
 
 CB.CloudNotification.on('sample', function(data){
@@ -292,18 +316,23 @@ CB.CloudNotification.publish('sample', 'data', {
     }
 });
 
-</textarea>
+		</textarea>
     </div>
     <div id="cloudNotification-java" class="javaCode">                           
-<textarea id="cloudNotifications-java" disabled="true">
+		<textarea id="cloudNotifications-java" disabled="true">
+//intializing CloudNotificationMethod, and overriding methods 
+CloudNotificationMethod callbackObj = new CloudNotificationMethod(){ 
+	@Override 
+	public void onMethod(Object data){// override this function as per your requirnment.
+		 System.out.println("message : " + data); 
+	} 
+}; 
+CloudNotification.on("sample", callbackObj);
 
-
-
-JAVA CODE
-</textarea>
-    </div>
-
-    </div>
+CloudNotification.publish("sample","data");
+		</textarea>
+	</div>
+</div>
 
 
 
@@ -335,11 +364,7 @@ JAVA CODE
                             </div>
     <div id="indexSearch-js" class="jsCode">                           
 <textarea id="indexSearches-js" disabled="true">
-
-
-
 //insert a new object adn index it for Search.
-
 var obj = new CB.CloudObject('Student');
 obj.set('name', 'John Smith');
 obj.isSearchable = true; //index this object for search. 
@@ -350,16 +375,23 @@ obj.save({
 
     }
 });
-
-                                </textarea>
-    </div>
+	</textarea>
+	</div>
     <div id="indexSearch-java" class="javaCode">                           
-<textarea id="indexSearches-java" disabled="true">
-
-
-
-JAVA - CODE
-
+	<textarea id="indexSearches-java" disabled="true">
+CloudObject obj = new CloudObject("Student");
+obj.set("name", "John Smith");
+obj.setIsSearchable(true);
+Callback callbackObj = new Callback(){ 
+	@Override public void success(){ 
+		System.out.println("success message"); 
+	} 
+	@Override 
+	public void error(){ 
+		System.out.println("error message"); 
+	} 
+}; 
+obj.save(callbackObj);
 </textarea>
     </div>
 
@@ -407,11 +439,22 @@ cs.search({
     </div>
     <div id="searchSearches-java" class="javaCode">                           
 <textarea id="searchSearch-java" disabled="true">
-
-
-
-JAVA - CODE
-
+//search data with CloudSearch
+CloudSearch cs = new CloudSearch("Student");
+cs.searchOn("name", "John");
+CloudSearchCallback callbackObj = new CloudSearchCallback(){ 
+	@Override 
+	public void success(Map &lt;String,Object&gt;[] list){ 
+		for(int i=0; i&lt;list.length; i++){ 
+			System.out.println(list[i].get("text")); 
+		} 
+	} 
+	@Override 
+	public void error(){ 
+		System.out.println("error message"); 
+	} 
+}; 
+cs.search(callbackObj);
 </textarea>
     </div>
 
