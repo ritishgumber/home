@@ -24,15 +24,15 @@ app.controller('startController',
 		var meta=document.getElementsByTagName("meta");
 		for (var i=0; i<meta.length; i++) {
 		    if (meta[i].name.toLowerCase()=="description") {
-		        meta[i].content= "CloudBoost is one complete backend and storage solution for your apps which does data-storage, search and realtime.";
+		        meta[i].content= "CloudBoost is one complete Database Solution for your apps which does data-storage, search and realtime, graphs, time-series and much more.";
 		    }
 
 		    if (meta[i].name.toLowerCase()=="keywords") {
-		        meta[i].content= "baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage";
+		        meta[i].content= "database service,database as a service, hybrid database, cloudboost, search, realtime, storage, app storage, nosql";
 		    }
 		}
 
-		document.title = "CloudBoost : One API to build your next big thing.";		
+		document.title = "CloudBoost | One Complete Database Service to build your app";		
 		window.seojsSnapshotReady = true;
         $scope.hideAllCode();
         $('#Insert-js').show();
