@@ -67,7 +67,8 @@ CB.CloudApp.init('YOUR APP ID', 'YOUR APP KEY');
     </div>
     <div id="init-java" class="javaCode">                           
 <textarea rows="3" id="initCode-java" disabled="true" width="height:30px">
-JAVA INIT
+//Initialize your CloudBoost App
+CloudApp.init("Your App Id", "Your Secret Key");
 </textarea>
     </div>
     </div>
@@ -92,7 +93,7 @@ JAVA INIT
                     <ul class="nav nav-tabs text-center" role="tablist">
                         <li id="feature1List" class="active" style="cursor:pointer"><a data-ng-click="switchFeature(1)" role="tab" data-toggle="tab"><i class="fa fa-database"></i><br /><span class="hidden-sm hidden-xs">Store</span></a></li>
                         <li id="feature2List" style="cursor:pointer"><a data-ng-click="switchFeature(2)" role="tab" data-toggle="tab"><i class="fa fa-clock-o"></i><br /><span class="hidden-sm hidden-xs">Realtime</span></a></li>
-                        <li id="feature4List" style="cursor:pointer"><a data-ng-click="switchFeature(4)" role="tab" data-toggle="tab"><i class="fa fa-search"></i><br /><span class="hidden-sm hidden-xs">Search</span></a></li>
+                        <li id="feature3List" style="cursor:pointer"><a data-ng-click="switchFeature(3)" role="tab" data-toggle="tab"><i class="fa fa-search"></i><br /><span class="hidden-sm hidden-xs">Search</span></a></li>
                     </ul><!--//nav-tabs-->
 
                     <!-- Tab panes -->
@@ -135,8 +136,18 @@ obj.save({
     </div>
     <div id="Insert-java" class="javaCode">                           
     <textarea id="objectInsert-java"  disabled="true">
-
-JAVA INSERT
+//Insert a new object in CloudBoost
+CloudObject obj = new CloudObject("Student"); 
+obj.set("name", "Smith");
+Callback callbackObj = new Callback(){ 
+	@Override public void success(){ 
+		//success
+	} 
+	@Override public void error(){ 
+		//error
+	} 
+}; 
+obj.save(callbackObj);
     </textarea>
     </div>
     </div>
@@ -182,8 +193,21 @@ query.find({
         <div id="query-java" class="javaCode">                           
      <textarea id="objectQuery-java" disabled="true">
 
-JAVA QUERY
+CloudQuery query = new CloudQuery("Student");
+query.equalTo("name", "John Smith");
 
+CloudQueryCallback callbackObj = new CloudQueryCallback(){ 
+	@Override 
+	public void success(Map <String, Object>[] list){ 
+	   //list is an array of CloudObjects
+	} 
+	@Override 
+	public void error(){ 
+		//error
+	} 
+}; 
+
+query.find(callbackObj);
 </textarea>
     </div>
     
@@ -216,8 +240,8 @@ JAVA QUERY
                                     Java
                                 </div>
                             </div>
-    <div id="Insert-js">                           
-<textarea id="objectNotifications" disabled="true">
+    <div id="notifications-js" class="jsCode">                           
+<textarea id="objectNotifications-js" disabled="true">
 
 
 
@@ -231,6 +255,19 @@ CB.CloudObject.on('Student', 'created', function(obj){
 
                                 </textarea>
     </div>
+    <div id="notifications-java" class="javaCode">                           
+<textarea id="objectNotifications-java" disabled="true">
+//intializing CloudNotificationMethod, and overriding methods 
+CloudNotificationMethod callbackObj = new CloudNotificationMethod(){ 
+	@Override 
+	public void onMethod(Object data){ // override this function as per your requirnment.
+		//data is an instance of CloudObject 
+	} 
+}; 
+CloudObject.on("Student", "created", callbackObj); 
+                                </textarea>
+    </div>
+
     </div>
 
                                 
@@ -242,8 +279,22 @@ CB.CloudObject.on('Student', 'created', function(obj){
 
                                 <p> CloudNotifications provide an easy way to crate custom channels, and publish data to those channels and update your app in realtime. </p>
 
-                                <textarea id="cloudNotifications" disabled="true">
+                                <div class="code-bx">
+                            <center>
+                                <span class="widgetBrowserHeader">INSERT DATA</span>
+                            </center>  
 
+                            <div class="code-header cf">
+                                                           
+                                <div id='js' class="pull-left languageHeader active js" style="color:white" ng-click="languageClick('js')">
+                                    JavaScript   
+                                </div>
+                                <div id='java' class="pull-left languageHeader java" style="color:white" ng-click="languageClick('java')">
+                                    Java
+                                </div>
+                            </div>
+    <div id="cloudNotification-js" class="jsCode">                           
+		<textarea id="cloudNotifications-js" disabled="true">
 //CloudNotification
 
 CB.CloudNotification.on('sample', function(data){
@@ -267,13 +318,31 @@ CB.CloudNotification.publish('sample', 'data', {
     }
 });
 
-                                </textarea>
+		</textarea>
+    </div>
+    <div id="cloudNotification-java" class="javaCode">                           
+		<textarea id="cloudNotifications-java" disabled="true">
+//intializing CloudNotificationMethod, and overriding methods 
+CloudNotificationMethod callbackObj = new CloudNotificationMethod(){ 
+	@Override 
+	public void onMethod(Object data){
+		 //data is basically the message 
+	} 
+}; 
+CloudNotification.on("sample", callbackObj);
+
+CloudNotification.publish("sample","data");
+		</textarea>
+	</div>
+</div>
+
+
 
                                 
 
                             </div><!--//desc-->
                         </div><!--//tab-pane-->
-                        <div class="tab-pane in active" id="feature4">
+                        <div class="tab-pane in active" id="feature3">
                             <h3 class="title sr-only">Feature Four</h3>
                             
                             <div class="desc text-left">
@@ -281,10 +350,23 @@ CB.CloudNotification.publish('sample', 'data', {
 
                                 <p> Indexing your data is easy. Every CloudObject has a property called isSearchable, You just have to set it to true and We'll automatically index your object for search. </p>
 
-                                <textarea id="indexSearch" disabled="true">
+                                 <div class="code-bx">
+                            <center>
+                                <span class="widgetBrowserHeader">INSERT DATA</span>
+                            </center>  
 
+                            <div class="code-header cf">
+                                                           
+                                <div id='js' class="pull-left languageHeader active js" style="color:white" ng-click="languageClick('js')">
+                                    JavaScript   
+                                </div>
+                                <div id='java' class="pull-left languageHeader java" style="color:white" ng-click="languageClick('java')">
+                                    Java
+                                </div>
+                            </div>
+    <div id="indexSearch-js" class="jsCode">                           
+<textarea id="indexSearches-js" disabled="true">
 //insert a new object adn index it for Search.
-
 var obj = new CB.CloudObject('Student');
 obj.set('name', 'John Smith');
 obj.isSearchable = true; //index this object for search. 
@@ -295,16 +377,53 @@ obj.save({
 
     }
 });
+	</textarea>
+	</div>
+    <div id="indexSearch-java" class="javaCode">                           
+	<textarea id="indexSearches-java" disabled="true">
+CloudObject obj = new CloudObject("Student");
+obj.set("name", "John Smith");
+obj.setIsSearchable(true);
+Callback callbackObj = new Callback(){ 
+	@Override public void success(){ 
+		//success
+	} 
+	@Override 
+	public void error(){ 
+		//error
+	} 
+}; 
+obj.save(callbackObj);
+</textarea>
+    </div>
 
-                                </textarea>
+    </div>
 
+                                
                                 <br/><br/>
 
                                 <p> <b> Search your data with CloudSearch </b> :  </p>
 
                                 <p> CloudSearch is more like a search-engine which returns your data in the order of relevance and searching for your data is as simple as querying.  </p>
 
-                                <textarea id="searchSearch" disabled="true">
+                                 <div class="code-bx">
+                            <center>
+                                <span class="widgetBrowserHeader">INSERT DATA</span>
+                            </center>  
+
+                            <div class="code-header cf">
+                                                           
+                                <div id='js' class="pull-left languageHeader active js" style="color:white" ng-click="languageClick('js')">
+                                    JavaScript   
+                                </div>
+                                <div id='java' class="pull-left languageHeader java" style="color:white" ng-click="languageClick('java')">
+                                    Java
+                                </div>
+                            </div>
+    <div id="searchSearches-js" class="jsCode">                           
+<textarea id="searchSearch-js" disabled="true">
+
+
 
 //search data with CloudSearch
 
@@ -319,7 +438,29 @@ cs.search({
 });
 
                                 </textarea>
+    </div>
+    <div id="searchSearches-java" class="javaCode">                           
+<textarea id="searchSearch-java" disabled="true">
+//search data with CloudSearch
+CloudSearch cs = new CloudSearch("Student");
+cs.searchOn("name", "John");
+CloudSearchCallback callbackObj = new CloudSearchCallback(){ 
+	@Override 
+	public void success(Map &lt;String,Object&gt;[] list){ 
+		//list is an array of CloudObjects
+	} 
+	@Override 
+	public void error(){ 
+		//error
+	} 
+}; 
+cs.search(callbackObj);
+</textarea>
+    </div>
 
+    </div>
+
+                                
                                 
                             </div><!--//desc-->
                         </div><!--//tab-pane-->

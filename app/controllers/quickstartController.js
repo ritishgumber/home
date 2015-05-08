@@ -17,18 +17,13 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
         }
 
         document.title = "Quickstart";
-        
-        $('#feature1').show();
-        $('#feature2').hide();
-        $('#feature4').hide();
 
 
         window.seojsSnapshotReady = true;
 
         $scope.languageClick('js',1);
+        $scope.switchFeature(1);
         $scope.featureSelected  = 1;
-
-
     };
 
     $scope.languageClick=function(lang, id){
@@ -56,7 +51,11 @@ app.controller('quickstartController',['$scope','$rootScope',function($scope,$ro
         }
 
         if($scope.featureSelected  === 2){
-            $scope.initCodeEditors( ['objectInsert-'+lang,'objectQuery-'+lang],'javascript');
+            $scope.initCodeEditors( ['objectNotifications-'+lang,'cloudNotifications-'+lang],'javascript');
+        }
+
+         if($scope.featureSelected  === 3){
+            $scope.initCodeEditors( ['searchSearch-'+lang,'indexSearches-'+lang],'javascript');
         }
     };
 
