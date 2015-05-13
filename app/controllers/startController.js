@@ -93,7 +93,7 @@ app.controller('startController',
 
     $scope.postComment=function(valid){
     	if(valid && $scope.comment){
-	    		++$scope.commentIndex;
+	    	++$scope.commentIndex;
 	    	var newComment={
 	    		index:$scope.commentIndex,
 	    		isUser:true,
@@ -104,6 +104,10 @@ app.controller('startController',
 	    	};
 	    	$scope.commentsList.push(newComment);
 	    	$scope.comment=null;
+
+            /****Tracking*********/            
+                mixpanel.track('App Users', {"Comments":$scope.comment});
+            /****End of Tracking*****/
 
 	    	$timeout(function(){ 
 	    		++$scope.commentIndex;
