@@ -9,9 +9,9 @@ var request = require('request');
 app.use(require('prerender-node').set('prerenderServiceUrl', 'http://service.prerender.io/').set('prerenderToken', '9I6PNQ4jxLzvPISvvUo7'));
 app.use(express.static(__dirname));
 
-app.get('/js-sdk/1.0', function(req, res) {
+app.get('/js-sdk/:id', function(req, res) {
 
-	request('https://raw.githubusercontent.com/CloudBoost/JavaScriptSDK/master/dist/1.0.0.js', function (error, response, body) {
+	request('https://raw.githubusercontent.com/CloudBoost/JavaScriptSDK/master/dist/'+req.params.id, function (error, response, body) {
 	    if (!error && response.statusCode == 200) {
 	        res.header("content-type","text/javascript");
 	        res.send(body);
