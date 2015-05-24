@@ -1,4 +1,4 @@
-app.controller('partnersController',['$scope','$rootScope',function($scope,$rootScope){
+app.controller('privacyController',['$scope','$rootScope',function($scope,$rootScope){
     $scope.getCssClass ="about-page";
     $rootScope.showHeader=true;
     
@@ -6,7 +6,7 @@ app.controller('partnersController',['$scope','$rootScope',function($scope,$root
         var meta=document.getElementsByTagName("meta");
         for (var i=0; i<meta.length; i++) {
             if (meta[i].name.toLowerCase()=="description") {
-                meta[i].content= "CloudBoost |  Terms of Use ";
+                meta[i].content= "CloudBoost | Privacy Policy";
             }
 
             if (meta[i].name.toLowerCase()=="keywords") {
@@ -14,7 +14,7 @@ app.controller('partnersController',['$scope','$rootScope',function($scope,$root
             }
         }
 
-        document.title = "CloudBoost |  Terms of Use ";
+        document.title = "CloudBoost | Privacy Policy.";
         
         window.seojsSnapshotReady = true;
         
