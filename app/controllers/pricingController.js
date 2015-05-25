@@ -39,16 +39,16 @@ app.controller('pricingController',
       searchArray.push(Math.round(i * 10) / 10);
     }
 
-    $scope.storageAmt = 0;
+    $scope.storageAmt = (1 * 2) ;
     $('#storageText').text($scope.storageAmt);
 
-     $scope.apiAmt = 0;
+     $scope.apiAmt = (0.5 * 100) * 0.6;
     $('#apiText').text($scope.apiAmt);
 
-    $scope.realtimeAmt = 0;
+    $scope.realtimeAmt = (10000 / 1000) * 1.0 ;
     $('#realtimeText').text($scope.realtimeAmt);
 
-    $scope.searchAmt = 0;
+    $scope.searchAmt = (0.2) * 20 ;
     $('#searchText').text($scope.searchAmt);
 
     updateTotal();
@@ -60,11 +60,9 @@ app.controller('pricingController',
         postfix: " million requests",
         grid: true,
         onChange: function (data) {
-          if(data.from===1){
-              $scope.apiAmt = 0;
-          }else{
+          
              $scope.apiAmt = (data.from_value * 100) * 0.6;
-          }
+          
 
           $('#apiText').text($scope.apiAmt);
 
@@ -79,11 +77,9 @@ app.controller('pricingController',
         postfix: " GB",
         grid: true,
         onChange: function (data) {
-          if(data.from===1){
-              $scope.storageAmt = 0;
-          }else{
+         
              $scope.storageAmt = (data.from_value * 2) ;
-          }
+         
 
           $('#storageText').text($scope.storageAmt);
 
@@ -101,11 +97,9 @@ app.controller('pricingController',
         grid: true,
         onChange: function (data) {
 
-          if(data.from===1){
-              $scope.realtimeAmt = 0;
-          }else{
+         
              $scope.realtimeAmt = (data.from_value / 1000) * 1.5 ;
-          }
+          
 
           $('#realtimeText').text($scope.realtimeAmt);
 
@@ -122,11 +116,9 @@ app.controller('pricingController',
         postfix: " million documents",
         grid: true,
         onChange: function (data) {
-           if(data.from===1){
-              $scope.searchAmt = 0;
-            }else{
+          
                $scope.searchAmt = (data.from_value) * 20 ;
-            }
+            
 
             $('#searchText').text($scope.searchAmt);
 
