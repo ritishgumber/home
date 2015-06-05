@@ -2,7 +2,7 @@
     <div class="headline-bg">
     </div><!--//headline-bg-->
 
-     <section class="contact-section section section-on-bg" style="margin-bottom:-200px">
+     <section class="contact-section section section-on-bg promo" style="margin-bottom:-400px">
         <div class="container text-center">
              <div class="col-md-12"> 
                         <h1 style="color:white; font-family:font-family: 'Signika', sans-serif; font-weight: 300; ">Here's a <span style="font-weight: 700;">a 2 minute quickstart </span> on CloudBoost.</h1>
@@ -10,11 +10,15 @@
                     <div>             
                             <h4 style="color:white; font-family:font-family: 'Signika', sans-serif; font-weight: 300; ">Build mobile and web apps in minutes using client-side code and our powerful API. Save time. Delight your users.<br/><br/><b>It'll just take few lines of code to power your app with CloudBoost.</b></h4>
                     </div>
-           
+                    <br/><br/>
+                    <div>
+                         <button type="button" class="play-trigger btn-link " data-toggle="modal" data-target="#modal-video" data-backdrop="static" data-keyboard="false"><i class="fa fa-youtube-play"></i> WATCH THE QUICKSTART VIDEO</button> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://github.com/CloudBoost/sample-social-network" class="play-trigger btn-link " ><i class="fa fa-rocket"></i> SAMPLE APP BUILT ON CLOUDBOOST</a>
+
+                    </div>
         </div><!--//container-->
     </section><!--//promo-->
 
-    <br/><br/><br/></br><br/><br/></br><br/><br/></br></br><br/><br/></br>
+
 
        <section id="why" class="section why">
             <div class="container">
@@ -44,7 +48,7 @@
                                 </div>
                             </div><!--//profile-->
                             <div class="quote-content">
-                                <p><a href="https://api.cloudboost.io/sdk/js/1.0.0" target="_blank"><b>Initialize your CloudBoost App : </b></a> Initializing your CloudBoost app is just one single line of code :  </p>
+                                <p><a href="https://docs.cloudboost.io" target="_blank"><b>Initialize your CloudBoost App : </b></a> Initializing your CloudBoost app is just one single line of code :  </p>
                         <div class="code-bx" style="height:110px">
                            <center>
                                 <span class="widgetBrowserHeader">INIT YOUR APP</span>
@@ -269,10 +273,7 @@ CloudObject.on("Student", "created", callbackObj);
     </div>
 
     </div>
-
-                                
-                                 
-
+    
                                 <br/><br/>
 
                                 <p> <b> Updating your app with realtime notifications </b>:  </p>
@@ -506,6 +507,24 @@ cs.search(callbackObj);
     <!--Footer Start-->
     <div ng-include="'app/views/subviews/footer.html'"></div>
     <!--Footer End-->
+
+
+    <!-- Video Modal -->
+    <div class="modal modal-video" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 id="videoModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <iframe width="720" height="405" src="https://www.youtube.com/embed/pYnPdzoV67w" frameborder="0" allowfullscreen></iframe>
+                    </div><!--//video-container-->
+                </div><!--//modal-body-->
+            </div><!--//modal-content-->
+        </div><!--//modal-dialog-->
+    </div><!--//modal-->
 
 
 

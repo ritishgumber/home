@@ -10,6 +10,8 @@ app.config(['$urlRouterProvider','$stateProvider','$httpProvider','$locationProv
   $stateProvider.state('about',{url:'/about',templateUrl:'app/views/about.html',controller:'aboutController'});
   $stateProvider.state('careers',{url:'/joinus',templateUrl:'app/views/careers.html',controller:'joinusController'});  
   $stateProvider.state('partners',{url:'/partners',templateUrl:'app/views/partners.html',controller:'partnersController'});
+  $stateProvider.state('terms',{url:'/terms',templateUrl:'app/views/terms.html',controller:'termsController'});
+  $stateProvider.state('privacy',{url:'/privacy',templateUrl:'app/views/privacypolicy.html',controller:'privacyController'});
 
   //For to enable cross-origin resource sharing
   $httpProvider.defaults.withCredentials = true;
