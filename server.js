@@ -2,10 +2,7 @@
 var express = require('express');
 var app = express();
 
-//var seojs = require('express-seojs');
-//app.use(seojs('14f59vej5dr1mmx95pvzb9qlx'));
-
-app.use(require('prerender-node').set('prerenderServiceUrl', 'http://service.prerender.io/').set('prerenderToken', '9I6PNQ4jxLzvPISvvUo7'));
+app.use(require('prerender-node').set('prerenderToken', '9I6PNQ4jxLzvPISvvUo7'));
 app.use(express.static(__dirname));
 
 //This will ensure that all routing is handed over to AngularJS 
