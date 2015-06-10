@@ -2,10 +2,9 @@
 var express = require('express');
 var app = express();
 var request = require('request');
+var path = require('path');
 
-app.use(require('prerender-node').set('prerenderToken', '9I6PNQ4jxLzvPISvvUo7'));
-app.use(express.static(__dirname));
-
+//Convert the Content
 app.get('/js-sdk/:id', function(req, res) {
 
 	request('https://raw.githubusercontent.com/CloudBoost/JavaScriptSDK/master/dist/'+req.params.id, function (error, response, body) {
@@ -18,18 +17,20 @@ app.get('/js-sdk/:id', function(req, res) {
 	});
 
 });
+//Convert the Content
+/****************************************************************************************************/
 
-//This will ensure that all routing is handed over to AngularJS 
-app.get('*', function(req, res){
-  console.log(__dirname);
-  res.sendFile(__dirname+'/index.html'); 
-}); 
+//Routers
+var routes = require('./routes/routes');
 
+//View engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', routes);
+
+//Ending
 app.set('port', process.env.PORT || 1444);
-
-//serve SDK. 
-
-
-var server = app.listen(app.get('port'), function() {
-	
+var server = app.listen(app.get('port'), function() {	
 });
