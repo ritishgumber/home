@@ -18,7 +18,7 @@ router.get('/about', function(req, res) {
 });
 
 router.get('/patners', function(req, res) {
-  res.render('patners');
+  res.render('patner');
 });
 
 router.get('/joinus', function(req, res) {

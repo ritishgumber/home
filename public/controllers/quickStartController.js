@@ -94,12 +94,12 @@ var initCodeEditors = function(arr,language,size){
         if(document.getElementById(codeEditors[i]) && codeMirrorEnabled.indexOf(codeEditors[i]) === -1){
 
             var myCodeMirror = CodeMirror.fromTextArea(document.getElementById(codeEditors[i]),
-                {
-                    mode:  language,
-                    lineNumbers: true,
-                    //theme : 'ambiance',
-                    readOnly : "nocursor"
-                });
+            {
+                mode:  language,
+                lineNumbers: true,
+                //theme : 'ambiance',
+                readOnly : "nocursor"
+            });
 
             if(size){
                 myCodeMirror.setSize(null,size);
