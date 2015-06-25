@@ -5,14 +5,14 @@ var realtime = [];
 
 var storageAmt = (1 * 2) ;
 var apiAmt = (0.5 * 100) * 0.6;
-var realtimeAmt = (10000 / 1000) * 1.0 ;
+var realtimeAmt = (50) * 0.2 ;
 var searchAmt = (0.2) * 20 ;
 
 //Initialization
 $(document).ready(function(){
    
 
-    for(var i=0;i<=200000; i+=10000){
+    for(var i=0;i<=2000; i+=50){
       realtime.push(i);
     }
 
@@ -74,12 +74,12 @@ $(document).ready(function(){
         values : realtime,
         type: "single",
         from : 1,
-        postfix: " messages",
+        postfix: " concurrent connections",
         grid: true,
         onChange: function (data) {
 
          
-           realtimeAmt = (data.from_value / 1000) * 1.5 ;
+           realtimeAmt = (data.from_value) * 0.2;
           
 
           $('#realtimeText').text(realtimeAmt);
@@ -127,6 +127,21 @@ $("#dfaq3").click(function(event){
 $("#dfaq4").click(function(event){
     event.preventDefault();
     faqExpand('faq4')
+});
+
+$("#dfaq5").click(function(event){
+    event.preventDefault();
+    faqExpand('faq5')
+});
+
+$("#dfaq6").click(function(event){
+    event.preventDefault();
+    faqExpand('faq6')
+});
+
+$("#dfaq7").click(function(event){
+    event.preventDefault();
+    faqExpand('faq7')
 });
 
 $("#dfaq8").click(function(event){
