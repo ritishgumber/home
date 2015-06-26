@@ -178,7 +178,7 @@ $("#postBtn").click(function(event){
                 index:commentIndex,
                 isUser:false,
                 userPic:"cb-user",
-                comment:"<span>Thank you for playing around with the app. You can now signup to Cloudboost <a href='/signup'>here.</a></span>",
+                comment:"<span>Thank you for playing around with the app. You can now signup to Cloudboost <a href='https://dashboard.cloudboost.io/accounts/#/signup'>here.</a></span>",
                 notify:true,
                 name:"Jeff Whietman from CloudBoost"
                                 
