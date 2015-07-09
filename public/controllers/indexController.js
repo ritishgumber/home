@@ -30,6 +30,8 @@ $(document).ready(function(){
     //$('html,body').animate({scrollTop: $('#cta').offset().top-200},500); //smooth scroll animation.
     initAppendComments(commentsList);
     initAppendNotifications();
+    ++notificationCount;
+    toggleNotification();
 });
 //Initialization
 
@@ -278,7 +280,7 @@ function appendEachNotifications(comment){
         htmlTag+='<img src="/images/'+comment.userPic+'.png">';
         htmlTag+='</div>';
         htmlTag+='<div class="user-comment pull-left">';                    
-        htmlTag+='<span>Hi,You got a new notification from <span class="notify-username">Jeff Whietman </span></span>';    
+        htmlTag+='<span>Hi,You got a new notification from <span class="notify-username">'+comment.name+' </span></span>';    
         htmlTag+='</div>';
         htmlTag+='</div>';
     $("#notificationsBody").prepend(htmlTag);    
@@ -296,7 +298,7 @@ function initAppendNotifications(){
                 htmlTag+='<img src="/images/'+commentsList[i].userPic+'.png">';
                 htmlTag+='</div>';
                 htmlTag+='<div class="user-comment pull-left">';                    
-                htmlTag+='<span>Hi,You got a new notification from <span class="notify-username">Jeff Whietman </span></span>';    
+                htmlTag+='<span>Hi,You got a new notification from <span class="notify-username"> Sara Lane </span></span>';    
                 htmlTag+='</div>';
                 htmlTag+='</div>';
             $("#notificationsBody").append(htmlTag);    
