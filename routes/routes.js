@@ -13,6 +13,10 @@ router.get('/pricing', function(req, res) {
   res.render('pricing');
 });
 
+router.get('/experts', function(req, res) {
+  res.render('expertProgram');
+});
+
 router.get('/about', function(req, res) {
   res.render('about');
 });
