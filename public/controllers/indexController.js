@@ -20,40 +20,41 @@ $(document).ready(function(){
     $("#notificationContainer").hide();
     $("#red-counter").hide();    
     //$('html,body').animate({scrollTop: $('#cta').offset().top-200},500); //smooth scroll animation.
-
-     var newAdminComment={
-                index:commentIndex,
-                isUser:false,
-                userPic:"cb-user",
-                comment:" Hey, Thanks for coming up. CloudBoost is one simple API that you can build your next big app on. Infact, the app you see here can be built on CloudBoost too! Feel free to play with it. ",
-                notify:false,
-                name:"Jeff Whietman from CloudBoost"      
-            }
-        commentsList.push(newAdminComment);
-        initAppendComments(commentsList);
-        initAppendNotifications();
-        ++notificationCount;
-        toggleNotification();
-        commentsList = [];
-
-    setTimeout(function(){ 
-
-           var newAdminComment={
-                index:commentIndex,
-                isUser:false,
-                userPic:"defult-user",
-                comment:"I've used <a href='https://twitter.com/search?q=%23cloudboost' target='blank'> #CloudBoost </a> to build my local social networking app and I can tell you, it was a breeze to integrate.",
-                notify:false,
-                name:"Sara Lane shared a post"      
-            }
+     setTimeout(function(){ 
+         var newAdminComment={
+                    index:commentIndex,
+                    isUser:false,
+                    userPic:"cb-user",
+                    comment:" Hey, Thanks for coming up. CloudBoost is one simple API that you can build your next big app on. Infact, the app you see here can be built on CloudBoost too! Feel free to play with it. ",
+                    notify:false,
+                    name:"Jeff Whietman from CloudBoost"      
+                }
             commentsList.push(newAdminComment);
-
             initAppendComments(commentsList);
             initAppendNotifications();
             ++notificationCount;
             toggleNotification();
-     }, 1500);
+            commentsList = [];
 
+        setTimeout(function(){ 
+
+               var newAdminComment={
+                    index:commentIndex,
+                    isUser:false,
+                    userPic:"defult-user",
+                    comment:"I've used <a href='https://twitter.com/search?q=%23cloudboost' target='blank'> #CloudBoost </a> to build my local social networking app and I can tell you, it was a breeze to integrate.",
+                    notify:false,
+                    name:"Sara Lane shared a post"      
+                }
+                commentsList.push(newAdminComment);
+
+                initAppendComments(commentsList);
+                initAppendNotifications();
+                ++notificationCount;
+                toggleNotification();
+         }, 2000);
+
+ }, 1000);
     
 });
 //Initialization
