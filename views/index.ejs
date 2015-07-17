@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CloudBoost | Database as a Service for the next web.</title> 
+    <title>CloudBoost | NoSQL Database as a Service</title> 
     <base href="/">   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -127,7 +127,6 @@
                             </div>
 <div id="Insert-js">                           
 <textarea id="objectInsert-js" disabled="true">
-
 //insert a new object in CloudBoost
 var obj = new CB.CloudObject('Post');
 obj.set('text', 'Your text here.');
@@ -142,7 +141,6 @@ obj.save({
 </div>
 <div id="Realtime-js">
 <textarea id="objectRealtime-js" disabled="true">
-
 //insert a new object in CloudBoost
 CB.CloudObject.on('Post','created', function(post){
     //when a new post is created, this function is fired. 
@@ -152,9 +150,15 @@ CB.CloudObject.on('Post','created', function(post){
 </div>
 <div id="Search-js">
     <textarea id="objectSearch-js" disabled="true">
+//create a new CloudSearch Object and pass table name in the constructor.
+var cs = new CB.CloudSearch('Post',searchQuery);
 
-var cs = new CB.CloudSearch('Post');
-cs.searchOn('text', 'Your search text here');
+//create a new SearchQuery
+var searchQuery = new CB.SearchQuery();
+searchQuery.searchOn('text', 'Your search text here');
+
+cs.searchQuery = searchQuery;
+
 cs.search({
     success : function(list){
         //list is an array of CloudObjects of Post Table.
@@ -207,7 +211,13 @@ obj.on("Post", "created",  callbackObj);
     <textarea id="objectSearch-java" disabled="true">
     
 CloudSearch cs = new CloudSearch('Post');
-cs.searchOn('text', 'Your search text here');
+
+//create a new SearchQuery
+SearchQuery searchQuery = new SearchQuery();
+searchQuery.searchOn('text', 'Your search text here');
+
+cs.setSearchQuery(searchQuery);
+
 Map&lt;String, Object&gt;[] searchResultList;
 
 CloudSearchCallback callbackObj = new CloudSearchCallback(){
