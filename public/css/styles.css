@@ -893,9 +893,16 @@ input[type="button"] {
 }
 .whiteButton{
   color:white !important;
-  font-family:Signika;
-  font-weight:800;
-  
+  border-style:solid;
+  border-radius : 5px;
+  padding:10px;
+  font-family: Roboto, arial, sans-serif !important;
+  text-decoration: none;
+  font-size: 25px;
+
+}
+.whiteButton:hover{
+    text-decoration: none;
 }
 .features-video .title {
   font-size: 36px;
@@ -3333,7 +3340,7 @@ input[type="button"] {
     float: right !important;
   }
   .promo {
-    height: 820px;
+    height: 700px;
     padding-top: 40px;
   }
   .promo.section .intro {

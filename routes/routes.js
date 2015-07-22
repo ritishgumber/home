@@ -13,12 +13,16 @@ router.get('/pricing', function(req, res) {
   res.render('pricing');
 });
 
+router.get('/experts', function(req, res) {
+  res.render('expertProgram');
+});
+
 router.get('/about', function(req, res) {
   res.render('about');
 });
 
-router.get('/patners', function(req, res) {
-  res.render('patner');
+router.get('/partners', function(req, res) {
+  res.render('partner');
 });
 
 router.get('/joinus', function(req, res) {
@@ -35,6 +39,10 @@ router.get('/terms', function(req, res) {
 
 router.get('/privacy', function(req, res) {
   res.render('privacy');
+});
+
+router.get('/service-level-agreement', function(req, res) {
+  res.render('sla');
 });
 
 module.exports = router;

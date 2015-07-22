@@ -36,7 +36,7 @@
                     </div>
                     <br/><br/>
                     <div>
-                         <button type="button" class="play-trigger btn-link " data-toggle="modal" data-target="#modal-video" data-backdrop="static" data-keyboard="false"><i class="fa fa-youtube-play"></i> WATCH THE QUICKSTART VIDEO</button> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://github.com/CloudBoost/CloudBoost.github.io/tree/master/socialNetApp" target="_blank" class="play-trigger btn-link " ><i class="fa fa-rocket"></i> SAMPLE APP BUILT ON CLOUDBOOST</a>
+                         <button type="button" class="play-trigger btn-link " data-toggle="modal" data-target="#modal-video" data-backdrop="static" data-keyboard="false"><i class="fa fa-youtube-play"></i> WATCH THE QUICKSTART VIDEO</button> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://blog.cloudboost.io/building-a-sample-social-networking-app-with-cloudboost-io/" target="_blank" class="play-trigger btn-link " ><i class="fa fa-rocket"></i> SAMPLE APP BUILT ON CLOUDBOOST</a>
 
                     </div>
         </div><!--//container-->
@@ -211,9 +211,7 @@ obj.save(callbackObj);
                             </div>
     <div id="query-js" class="jsCode">                           
      <textarea id="objectQuery-js" disabled="true">
-
 //query data from CloudBoost
-
 var query = new CB.CloudQuery('Student');
 query.equalTo('name', 'John Smith');
 query.find({
@@ -278,9 +276,6 @@ query.find(callbackObj);
                             </div>
     <div id="notifications-js" class="jsCode">                           
 <textarea id="objectNotifications-js" disabled="true">
-
-
-
 //CloudObjects Notification.
 
 CB.CloudObject.on('Student', 'created', function(obj){ 
@@ -329,7 +324,6 @@ CloudObject.on("Student", "created", callbackObj);
     <div id="cloudNotification-js" class="jsCode">                           
         <textarea id="cloudNotifications-js" disabled="true">
 //CloudNotification
-
 CB.CloudNotification.on('sample', function(data){
     alert(data);
 }, {
@@ -381,7 +375,7 @@ CloudNotification.publish("sample","data");
                             <div class="desc text-left">
                                 <p> <b> Index objects for search </b> :  </p>
 
-                                <p> Indexing your data is easy. Every CloudObject has a property called isSearchable, You just have to set it to true and We'll automatically index your object for search. </p>
+                                <p> Indexing your data is easy. Every object your save into CloudBoost is automatically indexed for search. </p>
 
                                  <div class="code-bx">
                             <center>
@@ -399,10 +393,9 @@ CloudNotification.publish("sample","data");
                             </div>
     <div id="indexSearch-js" class="jsCode">                           
 <textarea id="indexSearches-js" disabled="true">
-//insert a new object adn index it for Search.
+//Save data into CloudBoost. We automatically index it for search.
 var obj = new CB.CloudObject('Student');
 obj.set('name', 'John Smith');
-obj.isSearchable = true; //index this object for search. 
 obj.save({
     success : function(obj){
 
@@ -414,9 +407,9 @@ obj.save({
     </div>
     <div id="indexSearch-java" class="javaCode">                           
     <textarea id="indexSearches-java" disabled="true">
+//Save data into CloudBoost. We automatically index it for search.
 CloudObject obj = new CloudObject("Student");
 obj.set("name", "John Smith");
-obj.setIsSearchable(true);
 Callback callbackObj = new Callback(){ 
     @Override public void success(){ 
         //success
@@ -455,18 +448,21 @@ obj.save(callbackObj);
                             </div>
     <div id="searchSearches-js" class="jsCode">                           
 <textarea id="searchSearch-js" disabled="true">
-
-
-
 //search data with CloudSearch
-
 var cs = new CB.CloudSearch('Student');
-cs.searchOn('name', 'John');
+//create a new SearchQuery
+var searchQuery = new CB.SearchQuery();
+searchQuery.searchOn('name', 'John');
+
+//attach searchQuery to CloudSearch
+cs.searchQuery = searchQuery; 
+
+//search
 cs.search({
     success : function(list){
         //list is an array of CloudObjects.
     }, error : function (error){
-
+        console.log(error);
     }
 });
 
@@ -476,7 +472,13 @@ cs.search({
 <textarea id="searchSearch-java" disabled="true">
 //search data with CloudSearch
 CloudSearch cs = new CloudSearch("Student");
-cs.searchOn("name", "John");
+//create a new SearchQuery
+SearchQuery searchQuery = new SearchQuery();
+searchQuery.searchOn('name', 'John');
+
+//attach the searchQuery to CLoudSearch
+cs.setSearchQuery(searchQuery);
+//create a callback
 CloudSearchCallback callbackObj = new CloudSearchCallback(){ 
     @Override 
     public void success(Map &lt;String,Object&gt;[] list){ 
@@ -487,6 +489,8 @@ CloudSearchCallback callbackObj = new CloudSearchCallback(){
         //error
     } 
 }; 
+
+//search
 cs.search(callbackObj);
 </textarea>
     </div>

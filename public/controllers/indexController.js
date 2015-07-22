@@ -4,15 +4,7 @@ var codeMirrorEnabled = [];
 var commentsList=[];
 var notificationCount=0;
 var commentIndex=0;
-var newAdminComment={
-	index:commentIndex,
-	isUser:false,
-	userPic:"defult-user",
-	comment:"I've used <a href='https://twitter.com/search?q=%23cloudboost' target='blank'> #CloudBoost </a> to build my local social networking app and I can tell you, it was a breeze to integrate.",
-	notify:false,
-	name:"Sara Lane shared a post"		
-}
-commentsList.push(newAdminComment);
+
 
 var codeTabSelected = 'js';
 var currentFeature = 'Insert';
@@ -28,8 +20,42 @@ $(document).ready(function(){
     $("#notificationContainer").hide();
     $("#red-counter").hide();    
     //$('html,body').animate({scrollTop: $('#cta').offset().top-200},500); //smooth scroll animation.
-    initAppendComments(commentsList);
-    initAppendNotifications();
+     setTimeout(function(){ 
+         var newAdminComment={
+                    index:commentIndex,
+                    isUser:false,
+                    userPic:"cb-user",
+                    comment:" Hey, Thanks for coming up. CloudBoost is one simple API that you can build your next big app on. Infact, the app you see here can be built on CloudBoost too! Feel free to play with it. ",
+                    notify:false,
+                    name:"Jeff Whietman from CloudBoost"      
+                }
+            commentsList.push(newAdminComment);
+            initAppendComments(commentsList);
+            initAppendNotifications();
+            ++notificationCount;
+            toggleNotification();
+            commentsList = [];
+
+        setTimeout(function(){ 
+
+               var newAdminComment={
+                    index:commentIndex,
+                    isUser:false,
+                    userPic:"defult-user",
+                    comment:"I've used <a href='https://twitter.com/search?q=%23cloudboost' target='blank'> #CloudBoost </a> to build my local social networking app and I can tell you, it was a breeze to integrate.",
+                    notify:false,
+                    name:"Sara Lane shared a post"      
+                }
+                commentsList.push(newAdminComment);
+
+                initAppendComments(commentsList);
+                initAppendNotifications();
+                ++notificationCount;
+                toggleNotification();
+         }, 2000);
+
+ }, 1000);
+    
 });
 //Initialization
 
@@ -144,7 +170,7 @@ $("#notificationshow").click(function(event){
 
 var toggleNotification=function(){
     if(notificationCount>0){
-        $("#red-counter").show();
+        $("#red-counter").addClass('animated bounceIn').show();
         $(".count-number").text(notificationCount);
     }else{
         $("#red-counter").hide();
@@ -178,7 +204,7 @@ $("#postBtn").click(function(event){
                 index:commentIndex,
                 isUser:false,
                 userPic:"cb-user",
-                comment:"<span>Thank you for playing around with the app. You can now signup to Cloudboost <a href='/signup'>here.</a></span>",
+                comment:"<span>Thank you for playing around with the app. You can now signup to Cloudboost <a href='https://dashboard.cloudboost.io/accounts/#/signup'>here.</a></span>",
                 notify:true,
                 name:"Jeff Whietman from CloudBoost"
                                 
@@ -256,7 +282,9 @@ function initAppendComments(commentsList){
 
         for(var i=0;i<commentsList.length;++i){
 
-            var htmlTag='<div class="widget-comments-bx cf flex-general-row-wrapper">';
+
+            var htmlTag='<div class="widget-comments-bx cf animated fadeInDown flex-general-row-wrapper">';
+
                 htmlTag+='<div class="user-pic pull-left">';
                 htmlTag+='<img src="/images/'+commentsList[i].userPic+'.png">';
                 htmlTag+='</div>';
@@ -277,9 +305,8 @@ function appendEachNotifications(comment){
         htmlTag+='<div class="user-pic2 pull-left">';
         htmlTag+='<img src="/images/'+comment.userPic+'.png">';
         htmlTag+='</div>';
-        htmlTag+='<div class="user-comment pull-left">';                    
-        htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">Jeff Whietman </span></span>';    
-        htmlTag+='</div>';
+        htmlTag+='<div class="user-comment pull-left">';
+        htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">'+comment.name+' </span></span>';         htmlTag+='</div>';
         htmlTag+='</div>';
     $("#notificationsBody").prepend(htmlTag);    
    
@@ -295,8 +322,8 @@ function initAppendNotifications(){
                 htmlTag+='<div class="user-pic2 pull-left">';
                 htmlTag+='<img src="/images/'+commentsList[i].userPic+'.png">';
                 htmlTag+='</div>';
-                htmlTag+='<div class="user-comment pull-left">';                    
-                htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">Jeff Whietman </span></span>';    
+                htmlTag+='<div class="user-comment pull-left">';
+                htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">Sara Lane </span></span>';
                 htmlTag+='</div>';
                 htmlTag+='</div>';
             $("#notificationsBody").append(htmlTag);    
