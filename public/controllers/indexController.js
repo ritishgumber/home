@@ -237,7 +237,7 @@ $("#postBtn").click(function(event){
 
 function appendEachComments(comment){   
 
-    var htmlTag='<div class="widget-comments-bx cf">';
+    var htmlTag='<div class="widget-comments-bx cf flex-general-row-wrapper">';
         htmlTag+='<div class="user-pic pull-left">';
         htmlTag+='<img src="/images/'+comment.userPic+'.png">';
         htmlTag+='</div>';
@@ -256,7 +256,7 @@ function initAppendComments(commentsList){
 
         for(var i=0;i<commentsList.length;++i){
 
-            var htmlTag='<div class="widget-comments-bx cf">';
+            var htmlTag='<div class="widget-comments-bx cf flex-general-row-wrapper">';
                 htmlTag+='<div class="user-pic pull-left">';
                 htmlTag+='<img src="/images/'+commentsList[i].userPic+'.png">';
                 htmlTag+='</div>';
@@ -273,12 +273,12 @@ function initAppendComments(commentsList){
 
 function appendEachNotifications(comment){   
 
-    var htmlTag='<div class="comments-container cf">';
-        htmlTag+='<div class="user-pic pull-left">';
+    var htmlTag='<div class="comments-container cf flex-general-row-wrapper">';
+        htmlTag+='<div class="user-pic2 pull-left">';
         htmlTag+='<img src="/images/'+comment.userPic+'.png">';
         htmlTag+='</div>';
         htmlTag+='<div class="user-comment pull-left">';                    
-        htmlTag+='<span>Hi,You got a new notification from <span class="notify-username">Jeff Whietman </span></span>';    
+        htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">Jeff Whietman </span></span>';    
         htmlTag+='</div>';
         htmlTag+='</div>';
     $("#notificationsBody").prepend(htmlTag);    
@@ -291,12 +291,12 @@ function initAppendNotifications(){
 
         for(var i=0;i<commentsList.length;++i){ 
 
-            var htmlTag='<div class="comments-container cf">';
-                htmlTag+='<div class="user-pic pull-left">';
+            var htmlTag='<div class="comments-container cf flex-general-row-wrapper">';
+                htmlTag+='<div class="user-pic2 pull-left">';
                 htmlTag+='<img src="/images/'+commentsList[i].userPic+'.png">';
                 htmlTag+='</div>';
                 htmlTag+='<div class="user-comment pull-left">';                    
-                htmlTag+='<span>Hi,You got a new notification from <span class="notify-username">Jeff Whietman </span></span>';    
+                htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">Jeff Whietman </span></span>';    
                 htmlTag+='</div>';
                 htmlTag+='</div>';
             $("#notificationsBody").append(htmlTag);    
