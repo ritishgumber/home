@@ -5,9 +5,23 @@ var request = require('request');
 var path = require('path');
 
 //Convert the Content
+//For Production SDK
 app.get('/js-sdk/:id', function(req, res) {
 
 	request('https://raw.githubusercontent.com/CloudBoost/JavaScriptSDK/master/dist/'+req.params.id, function (error, response, body) {
+	    if (!error && response.statusCode == 200) {
+	        res.header("content-type","text/javascript");
+	        res.send(body);
+	    }else{
+	    	res.status(404).send('Sorry, we cannot find the SDK. For more info, Please visit https://docs.cloudboost.io');
+	    }
+	});
+
+});
+//For Developement SDK
+app.get('/js-sdk-development/:id', function(req, res) {
+
+	request('https://raw.githubusercontent.com/CloudBoost/JavaScriptSDK/development/dist/'+req.params.id, function (error, response, body) {
 	    if (!error && response.statusCode == 200) {
 	        res.header("content-type","text/javascript");
 	        res.send(body);
