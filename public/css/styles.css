@@ -533,7 +533,7 @@ input[type="button"] {
   padding-top: 120px;
   position: relative;
   color: #fff;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   height: auto;
   z-index: 10; 
 }
@@ -625,7 +625,7 @@ input[type="button"] {
   padding-bottom: 80px;
 }
 .why-quickstart {
-  padding-top: 80px;
+  padding-top:0 !important;
   padding-bottom: 80px;
 }
 .why .title {
@@ -3097,7 +3097,7 @@ input[type="button"] {
     height: 420px; 
   }
   .promo-quickstart {
-    height: 420px; 
+    height: 420px;
   }
   .why .item .content {
     margin-bottom: 60px;
@@ -3401,8 +3401,7 @@ input[type="button"] {
   }
   .promo-quickstart{
     height:450px;
-    padding-bottom: 40px;
-    border: 1px solid red;
+    padding-bottom: 40px;    
   }
   .promo.section .intro {
     margin-bottom: 45px;

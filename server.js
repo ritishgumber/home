@@ -33,4 +33,5 @@ app.use('/', routes);
 //Ending
 app.set('port', process.env.PORT || 1444);
 var server = app.listen(app.get('port'), function() {	
+	console.log("App started on PORT:"+app.get('port'));
 });

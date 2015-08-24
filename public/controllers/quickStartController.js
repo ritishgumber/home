@@ -109,3 +109,10 @@ var initCodeEditors = function(arr,language,size){
         }
     }
 };        
+
+$(".tut-bx-container").mouseenter(function(event){    
+    $(".tut-bx-container-gray-bx").css("visibility", "visible");    
+});
+$(".tut-bx-container-gray-bx").mouseleave(function(event){
+    $(this).css("visibility", "hidden");    
+})
