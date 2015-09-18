@@ -45,8 +45,47 @@
 </url>
 
 
-
 <url>
   <loc>http://blog.cloudboost.io</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=gettingstarted&subcategory=yourfirstapp</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=datastorage&subcategory=objects</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=datastorage&subcategory=files</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=datastorage&subcategory=geopoint</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=datastorage&subcategory=relations</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=query&subcategory=basicqueries</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=security&subcategory=acl</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=security&subcategory=roles</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=security&subcategory=users</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=schema&subcategory=cloudtables</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=realtime&subcategory=customnotifications</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=realtime&subcategory=cloudobjectnotifications</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/?lang=en&category=search&subcategory=basicsearch</loc>
 </url>
 </urlset>

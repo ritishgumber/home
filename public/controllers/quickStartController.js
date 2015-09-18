@@ -125,12 +125,12 @@ function getTutorials(){
 
 function bindTutorialData(tutData){
 
-    var tutHtml='<section id="why" class="section why why-quickstart cb-tutorials">';
-        tutHtml+='<div class="container">';
+    var tutHtml='<section id="" class="cb-tutorials">';
+        tutHtml+='<div class="container bx-list">';
         tutHtml+='<!--Heading-->';
-        tutHtml+='<div class="tut-heading flex-general-column-wrapper-center">';
-        tutHtml+='<h1>'+tutData.name+'</h1>';
-        tutHtml+='<span>'+tutData.description+'</span>';
+        tutHtml+='<div class="tut-heading flex-general-column-wrapper-center" style="margin-bottom:30px !important;"">';
+        tutHtml+='<h1 style="color:#737373; font-family:Signika, sans-serif; font-weight: 700; ">'+tutData.name+'</h1>';
+        tutHtml+='<span style="margin-top:10px; color:#737373; font-family: Signika, sans-serif; font-weight: 300; ">'+tutData.description+'</span>';
         tutHtml+='</div>';
 
         tutHtml+='<!--Boxes-->';
@@ -149,25 +149,29 @@ function createTutorialBox(tutorialBoxList){
     var tutBoxHtml="";
     for(var i=0;i<tutorialBoxList.length;++i){    
     var boxHtml='<!--******BOX*******-->';
-        boxHtml+='<div style="position:relative">';
+        boxHtml+='<div style="position:relative; margin-top:20px; margin-bottom:5px;">';
         boxHtml+='<div class="tut-bx-container" data-boxid="'+tutorialBoxList[i].id+'">';
         boxHtml+='<div class="tut-name">';
-        boxHtml+='<h3 class="flex-general-column-wrapper-center" style="margin:0">'+tutorialBoxList[i].name+'</h3>';
+        boxHtml+='<h3 class="flex-general-column-wrapper-center" style="margin-top:30px;color:#737373; font-family: Signika, sans-serif; font-weight: 300; ">'+tutorialBoxList[i].name+'</h3>';
         boxHtml+='</div>'; 
         boxHtml+='<div class="tut-desc">';
         boxHtml+='<div class="flex-general-column-wrapper-center">';
-        boxHtml+='<span>'+tutorialBoxList[i].description+'</span>';
+        boxHtml+='<span style="color:#737373; font-family: Signika, sans-serif; font-weight: 300; font-size:15px">'+tutorialBoxList[i].description+'</span>';
         boxHtml+='</div>';
         boxHtml+='</div>'; 
-        boxHtml+='<div class="tut-labels flex-general-row-wrapper-center" style="margin-top:20px;">';
-        boxHtml+='<div class="flex-general-row-wrapper" style="width:85%">';
+        boxHtml+='<div class="tut-labels flex-general-row-wrapper-center" style="margin-top:30px;">';
+        boxHtml+='<div class="flex-general-row-wrapper" style="width:82%; color:#737373;">';
         boxHtml+='<div class="flex-equal-ratio-items flex-general-row-wrapper-center">';
-        boxHtml+='<i class="fa fa-graduation-cap"></i>';
+        boxHtml+='<i class="fa fa-graduation-cap" style="color:#BEB7BF !important"></i>';
+        boxHtml+='<span style="color:#BEB7BF !important">';
         boxHtml+='&nbsp;'+tutorialBoxList[i].difficulty;
+        boxHtml+='</span>';
         boxHtml+='</div>';
         boxHtml+='<div class="flex-equal-ratio-items flex-general-row-wrapper-center">';
-        boxHtml+='<i class="fa fa-clock-o"></i>';
+        boxHtml+='<i class="fa fa-clock-o" style="color:#BEB7BF !important"></i>';
+        boxHtml+='<span style="color:#BEB7BF !important">';
         boxHtml+='&nbsp;'+tutorialBoxList[i].time;
+        boxHtml+='</span>';
         boxHtml+='</div>';
         boxHtml+='</div>';                        
         boxHtml+='</div>';
@@ -178,7 +182,7 @@ function createTutorialBox(tutorialBoxList){
         boxHtml+='<div class="flex-general-column-wrapper-center" style="margin:0;">';
         boxHtml+='<span style="margin:0;color:#BCBABA;">Available</span>';
         boxHtml+='</div>'; 
-        boxHtml+='<div class="prog-lang-list flex-general-column-wrapper-center" style="margin-top:10px;">';
+        boxHtml+='<div class="prog-lang-list flex-general-column-wrapper-center" style="margin-top:10px;color:#BCC9DE">';
         boxHtml+='<div class="flex-general-row-wrapper">';
 
         //Loop over languages        
@@ -217,9 +221,10 @@ function createTutorialBox(tutorialBoxList){
         boxHtml+='</div>'; 
         boxHtml+='</div>';
 
+        var tURL=tutorialURL+"?lang="+tutorialBoxList[i].tutorialLink.lang+"&category="+tutorialBoxList[i].tutorialLink.category+"&subcategory="+tutorialBoxList[i].tutorialLink.subcategory;
         boxHtml+='<!--On Hover-->';
         boxHtml+='<div id="'+tutorialBoxList[i].id+'" class="tut-bx-container-gray-bx flex-general-column-wrapper-center">';
-        boxHtml+='<a href="'+tutorialBoxList[i].tutorialLink+'" target="_blank" class="btn tut-view-btn"><p style="margin-top:3px;">View</p></a>';
+        boxHtml+='<a href="'+tURL+'" target="_blank" class="btn tut-view-btn"><p style="margin-top:3px;">View</p></a>';
         boxHtml+='</div>'; 
         boxHtml+='</div>'; 
         boxHtml+='<!--****/END BOX****-->';
@@ -231,11 +236,18 @@ function createTutorialBox(tutorialBoxList){
 }
 
 //Tutorials functions
-$(document).on("mouseenter",".tut-bx-container",function(event){  
+$(document).on("mouseenter",".tut-bx-container",function(event){ 
+    $(".tut-bx-container-gray-bx").css("visibility", "hidden"); 
     var targetDiv="#"+$(this).data("boxid");  
-    $(targetDiv).css("visibility", "visible");    
+    $(targetDiv).css("visibility", "visible");
+    $(targetDiv).find(".tut-view-btn").css("display", "initial"); 
+    $(targetDiv).removeClass('animated fadeOut');  
+    $(targetDiv).addClass('animated fadeIn');   
 });
 
-$(document).on("mouseleave",".tut-bx-container-gray-bx",function(event){
-    $(this).css("visibility", "hidden");    
+$(document).on("mouseleave",".tut-bx-container-gray-bx",function(event){ 
+    $(this).find(".tut-view-btn").css("display", "none");      
+    $(this).removeClass('animated fadeIn'); 
+    $(this).addClass('animated fadeOut');
+    $(this).css("visibility", "hidden");      
 });
