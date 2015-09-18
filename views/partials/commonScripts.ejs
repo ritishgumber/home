@@ -49,19 +49,17 @@ $("#subscribeBtn").click(function(event){
         $("#footerSubscribeErr").hide();
  
        
-        $.when( addSubscriber(email) ).then(
-          function( message ) {
+        $.when(addSubscriber(email))
+        .then(function( message ) {
             $("#subscribeInput").val(null);
             $("#footerShowSpinner").hide();
             $("#footerSubscribeResult").text(message);
             $("#footerSubscribeResult").show();
-          },
-          function( status ) {
+        },function( status ) {
             $("#footerShowSpinner").hide();
             $("#footerSubscribeErr").text(status);
             $("#footerSubscribeErr").show();
-          }
-        );
+        });
     }
 });
 </script>

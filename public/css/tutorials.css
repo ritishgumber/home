@@ -52,4 +52,10 @@
 	color: black;
 	border-radius: 2px;
 }
+.langIcon{
+    margin-left: 10px;
+}
+.langIcon:first-child {
+    margin-left:0;
+}
 

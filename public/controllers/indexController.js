@@ -273,7 +273,7 @@ function appendEachComments(comment){
         htmlTag+='</div>';
         htmlTag+='</div>';
 
-    $(".widget-comments-list").prepend(htmlTag)
+    $(".widget-comments-list").prepend(htmlTag);
 }    
    
 

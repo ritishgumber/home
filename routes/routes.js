@@ -45,4 +45,8 @@ router.get('/service-level-agreement', function(req, res) {
   res.render('sla');
 });
 
+router.get('/tutorials', function(req, res) {
+  res.render('tutorial');
+});
+
 module.exports = router;
