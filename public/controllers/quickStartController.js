@@ -136,6 +136,17 @@ function bindTutorialData(tutData){
         tutHtml+='<!--Boxes-->';
         tutHtml+='<div class="tut-bx-wrapper flex-general-row-wrapper">';
                 //Create Tutorial Boxes
+               
+                tutData.tutorials.sort(function (a, b) {
+                  if (a.order > b.order) {
+                    return 1;
+                  }
+                  if (a.order < b.order) {
+                    return -1;
+                  }
+                  // a must be equal to b
+                  return 0;
+                });
                 var result=createTutorialBox(tutData.tutorials); 
                 tutHtml+=result;             
         tutHtml+='</div>';    
@@ -160,7 +171,7 @@ function createTutorialBox(tutorialBoxList){
         boxHtml+='</div>';
         boxHtml+='</div>'; 
         boxHtml+='<div class="tut-labels flex-general-row-wrapper-center" style="margin-top:30px;">';
-        boxHtml+='<div class="flex-general-row-wrapper" style="width:82%; color:#737373;">';
+        boxHtml+='<div class="flex-general-row-wrapper" style="width:85%; color:#737373;">';
         boxHtml+='<div class="flex-equal-ratio-items flex-general-row-wrapper-center">';
         boxHtml+='<i class="fa fa-graduation-cap" style="color:#BEB7BF !important"></i>';
         boxHtml+='<span style="color:#BEB7BF !important">';
