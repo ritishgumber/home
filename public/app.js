@@ -12,6 +12,7 @@ var tutorialURL='';
 
 if(__isDevelopment){
 	serverURL="http://localhost:3000";
+	serverURL="https://service.cloudboost.io";	
 	dashboardURL = "http://localhost:1440";
 	signUpURL="http://localhost:1440/accounts/#/signup";
 	loginURL="http://localhost:1440/accounts";
