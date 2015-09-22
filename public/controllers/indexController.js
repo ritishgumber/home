@@ -306,7 +306,8 @@ function appendEachNotifications(comment){
         htmlTag+='<img src="/images/'+comment.userPic+'.png">';
         htmlTag+='</div>';
         htmlTag+='<div class="user-comment pull-left">';
-        htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">'+comment.name+' </span></span>';         htmlTag+='</div>';
+        htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">'+comment.name+' </span></span>';         
+        htmlTag+='</div>';
         htmlTag+='</div>';
     $("#notificationsBody").prepend(htmlTag);    
    
@@ -323,7 +324,7 @@ function initAppendNotifications(){
                 htmlTag+='<img src="/images/'+commentsList[i].userPic+'.png">';
                 htmlTag+='</div>';
                 htmlTag+='<div class="user-comment pull-left">';
-                htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">Sara Lane </span></span>';
+                htmlTag+='<span>Hi,You got a new notification from <span class="notify-username2">'+commentsList[i].name+'</span></span>';
                 htmlTag+='</div>';
                 htmlTag+='</div>';
             $("#notificationsBody").append(htmlTag);    
