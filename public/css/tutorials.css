@@ -93,4 +93,7 @@
 .langIcon:first-child {
     margin-left:0;
 }
-
+.prog-lang-list{
+	color:#BCC9DE;
+	margin-top: 10px;
+}

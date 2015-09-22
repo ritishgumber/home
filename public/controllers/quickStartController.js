@@ -193,7 +193,7 @@ function createTutorialBox(tutorialBoxList){
         boxHtml+='<div class="flex-general-column-wrapper-center" style="margin:0;">';
         boxHtml+='<span style="margin:0;color:#BCBABA;">Available</span>';
         boxHtml+='</div>'; 
-        boxHtml+='<div class="prog-lang-list flex-general-column-wrapper-center" style="margin-top:10px;color:#BCC9DE">';
+        boxHtml+='<div class="prog-lang-list flex-general-column-wrapper-center">';
         boxHtml+='<div class="flex-general-row-wrapper">';
 
         //Loop over languages        
