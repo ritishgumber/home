@@ -100,7 +100,7 @@ var initCodeEditors = function(arr,language,size){
                 mode:  language,
                 lineNumbers: true,
                 //theme : 'ambiance',
-                readOnly : "nocursor"
+                readOnly : true
             });
 
             if(size){

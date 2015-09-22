@@ -83,7 +83,7 @@ var initCodeEditors = function(arr){
             var myCodeMirror = CodeMirror.fromTextArea(document.getElementById(codeEditors[i]),
                 {
                     mode:  "javascript",
-                    readOnly : "nocursor",
+                    readOnly : true,
                     lineNumbers: true
                 });
 
