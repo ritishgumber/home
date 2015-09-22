@@ -20,7 +20,6 @@ body{
     -moz-align-items: flex-start;  
     -webkit-align-items:flex-start;     
 }
-
 .flex-general-column-wrapper{
    /* Flex column rules */
     display: flex;
