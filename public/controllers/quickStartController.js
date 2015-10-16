@@ -7,7 +7,7 @@ $(document).ready(function(){
     switchFeature(1);
     featureSelected  = 1;  
 
-    //LoadTutorials
+    //LoadTutorials    
     getTutorials();   
 });
 //Initialization
@@ -113,13 +113,14 @@ var initCodeEditors = function(arr,language,size){
 };  
 
 //getTutorials
-function getTutorials(){ 
+function getTutorials(){     
     $.get(serverURL+'/tutorial', function(data, status){
         if(status=="success"){
           for(var i=0;i<data.length;++i){
             bindTutorialData(data[i]);
           }
         }
+        $(".tutorials-loading").remove();
     }); 
 }
 

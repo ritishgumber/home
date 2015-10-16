@@ -49,4 +49,8 @@ router.get('/tutorials', function(req, res) {
   res.render('tutorial');
 });
 
+router.get('/compare', function(req, res) {
+  res.render('compare');
+});
+
 module.exports = router;

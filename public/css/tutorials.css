@@ -1,6 +1,11 @@
 .tutorials-parent{
 	margin-bottom: 100px;
 }
+.tutorials-loading{	
+	height: 300px;
+	width: 100%;
+	padding-top: 50px;	
+}
 .tut-heading h1{	
 	margin: 0;
 }
