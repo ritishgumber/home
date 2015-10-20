@@ -4016,9 +4016,24 @@ input[type="button"] {
 .icon-wrapper{ 
   width: 80%;
 }
-.cb-ribbon{
-  padding: 3.5px;
-  background-color: white;
-  border-radius: 
+.cb-compare{
+  width: 100%;
+  height:500px;
+  border:1px solid red;
+}
+.compare-head{
+  height:40px;
+  width: 100%;
+  border:1px solid green;
 }
 
+.intercomm{
+  height: 45px;
+  width: 45px;
+  border-radius: 25px;
+  background-color: #2D3D4D;
+  position: fixed;
+  z-index: 999999;
+  right: 20px;
+  bottom: 20px;
+}
