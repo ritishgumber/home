@@ -4033,6 +4033,6 @@ input[type="button"] {
   background-color: #2D3D4D;
   position: fixed;
   z-index: 999999;
-  right: 20px;
-  bottom: 20px;
+  right: 50px;
+  bottom: 50px;
 }
