@@ -4016,16 +4016,6 @@ input[type="button"] {
 .icon-wrapper{ 
   width: 80%;
 }
-.cb-compare{
-  width: 100%;
-  height:500px;
-  border:1px solid red;
-}
-.compare-head{
-  height:40px;
-  width: 100%;
-  border:1px solid green;
-}
 .intercomm{
   height: 45px;
   width: 45px;
@@ -4033,6 +4023,51 @@ input[type="button"] {
   background-color: #2D3D4D;
   position: fixed;
   z-index: 999999;
-  right: 50px;
-  bottom: 50px;
+  right: 20px;
+  bottom: 20px;
+}
+
+.cb-compare{
+  width: 100%;
+  height:auto;  
+}
+.compare-head{
+  height:50px;
+  width: 100%;  
+  background-color: #039DB5;
+  color: white;
+}
+
+.compare-row1{
+  padding: 3px;
+  background-color: #EFEDED;
+}
+
+.compare-row2{
+  padding: 3px;
+  background-color: #EEF1F5;
+}
+
+.compare-company-wrap{
+  padding-bottom: 5px;
+}
+.compare-compare-wrap{
+  padding-bottom: 3px;
+  width: 100%;  
+}
+.compare-feature-wrap{
+  padding-top: 4px;
+}
+.compare-company-wrap-cb{
+  padding-top: 1.5px;
+}
+.compare-td{
+  width: 15%;
+}
+.compare-th{
+  width: 15%;
+}
+.com-company-name{
+  font-weight: normal;
+  font-size: 16px;
 }
