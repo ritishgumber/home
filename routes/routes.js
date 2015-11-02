@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var Q = require('q');
+var request = require('request');
 
 router.get('/', function(req, res) {
   res.render('index');
@@ -10,7 +12,7 @@ router.get('/quickstart', function(req, res) {
 });
 
 router.get('/pricing', function(req, res) {
-  res.render('pricing');
+  res.render('pricing');  
 });
 
 router.get('/experts', function(req, res) {
@@ -52,5 +54,14 @@ router.get('/tutorials', function(req, res) {
 router.get('/compare', function(req, res) {
   res.render('compare');
 });
+
+
+//Callback functions
+var error = function (err, response, body) {
+    //console.log('ERROR [%s]', err);
+};
+var success = function (data) {
+    //console.log('Data [%s]', data);
+};
 
 module.exports = router;

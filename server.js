@@ -1,8 +1,12 @@
 
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var request = require('request');
 var path = require('path');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 //Convert the Content
 //For Production SDK
@@ -36,6 +40,7 @@ app.get('/js-sdk-development/:id', function(req, res) {
 
 //Routers
 var routes = require('./routes/routes');
+var twitterRoutes=require('./routes/twitterRoutes')();
 
 //View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,6 +48,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/', twitterRoutes);
 
 //Ending
 app.set('port', process.env.PORT || 1444);

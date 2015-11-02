@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" if="twitter-wjs">
 <head>
     <title>Pricing</title> 
     <base href="/">   
@@ -10,7 +10,33 @@
     <meta name="keywords" content="pricing, baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage, signup, cloudboost">
     <meta name="fragment" content="!"/>  
     <!--common head links-->  
-    <% include ./partials/commonHead %>
+    <% include ./partials/commonHead %>  
+    <!--<link rel="stylesheet" href="/js/owlcarousel/assets/owl.carousel.css"> -->
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css"> 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
+
+    <!-- Twitter -->
+    <script>
+        window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+         
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+         
+          return t;
+        }(document, "script", "twitter-wjs"));
+       
+    </script>
+    <!-- /Twitter -->
+    
 </head>
 
 <body>
@@ -225,7 +251,32 @@
                 <a class="btn btn-cta btn-cta-primary" href="/contact">Get in touch</a>
             </div>
         </div><!--//container-->
-    </section><!--//faq-->     
+    </section><!--//faq-->   
+
+   <section class="twittr-feed">
+    <!--head-->
+    <div class="flex-general-column-wrapper-center" style="width:100%;padding:2px;">
+        <div style="font-size:25px;font-weight:700">
+            From Wall of Love
+        </div>    
+    </div>  
+    <!--content-->
+    <div id="tweetwrapper cf" style="padding-top:12px;">
+        
+        <div class="tweetparent cf">
+                              
+        </div>
+           
+    </div>
+    <!--footer-->
+    <div class="flex-general-column-wrapper-center" style="width:100%;padding:2px;">
+        <div style="cursor:pointer !important;">
+            <a href="https://twitter.com/cloudboostio" target="_blank" style="font-size:16px !important;cursor:pointer !important;">See more cards
+                <i class="fa fa-arrow-right"></i>
+            </a>            
+        </div>
+    </div>  
+   </section> 
 
     <section id="cta" class="section cta-section text-center home-cta-section">
         <% include ./partials/bottom_banner %>
@@ -246,11 +297,106 @@
 
     <!--scripts-->
     <% include ./partials/commonScripts %>
+    <script type="text/javascript" src="/bower_components/underscrore/underscore.js"></script>    
+    <!--<script type="text/javascript" src="/js/owlcarousel/owl.carousel.js"></script> -->
+    <script type="text/javascript" src="/bower_components/slick-carousel/slick/slick.js"></script>
 
-    <script type="text/javascript" src="/plugins/back-to-top.js"></script>
+
+    <script type="text/javascript">      
+       $(document).ready(function(){
+            $('.tweetparent').slick({                
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                infinite:true,
+                centerMode: true,
+                slidesToShow:3,
+                slidesPerRow:1                
+            });
+       });
+        
+            
+        $.get(selfServerUrl+'/twitter/search',function(list, status){
+            if(status=="success"){
+              //console.log(list);
+
+            var tweetsArray=[];  
+            for(var i=0;i<list.twitterFeed.length;++i){
+                var tweetId=list.twitterFeed[i].id_str;
+                //tweetId=JSON.stringify(tweetId);
+                //tweetId=20;
+                $.get(selfServerUrl+'/twitter/'+tweetId,function(twitterObj, newstatus){
+                    if(newstatus=="success"){
+
+                        var htmlTemp='<div class="tweetbody pull-left" style="width:400px !important; margin-left:5px; ">';                    
+                               htmlTemp+=twitterObj.html;                            
+                            htmlTemp+='</div>';
+
+                        tweetsArray.push(htmlTemp);  
+                        $(".tweetparent").slick('slickAdd',htmlTemp); 
+                        
+                       // $(".tweetparent").append(htmlTemp);                    
+
+                        /*$(".tweetparent")
+                       .trigger('add.owl.carousel', [$(htmlTemp),0])
+                       .trigger('refresh.owl.carousel');*/
+
+                        /*$(".tweetparent").on('change.owl.carousel', function(e) {
+                          if (!e.namespace) return
+                          e.relatedTarget.add($('#foo'))
+                          e.relatedTarget.add($('#bar'))
+                          e.relatedTarget.update()
+                        });*/                        
+
+                    }else{
+                        console.log(newstatus);
+                    }
+                }); 
+            } 
+
+             
+            
+            /*$('.tweetparent').owlCarousel({
+                margin:17,
+                loop:true,
+                autoWidth:false,
+                autoplay:true,
+                autoplayTimeout:2000,                
+                nav: false,               
+                autoplayHoverPause:true,
+                center:true,
+                items:3
+            });
+            $('.tweetparent').owlCarousel();
+
+            // Listen to owl events:
+            var count=0;
+           $('.tweetparent').on('changed.owl.carousel', function(event) {
+                var htmlTemp=_.sample(tweetsArray);
+                ++count;
+
+                /*if(count==2){
+                  count=0;  
+                  $(".tweetparent")
+                   .trigger('add.owl.carousel', [$(htmlTemp),0])
+                   .trigger('refresh.owl.carousel');  
+                }
+                
+            });*/
+             
+
+            //twttr.widgets.load(tweetparent);             
+            }else{
+              console.log(status);
+            }        
+        });   
+        
+    </script>
+
+    
     <script type="text/javascript" src="/plugins/jquery-placeholder/jquery.placeholder.js"></script>
-    <script type="text/javascript" src="/plugins/FitVids/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="/plugins/flexslider/jquery.flexslider-min.js"></script> 
+    <script type="text/javascript" src="/plugins/FitVids/jquery.fitvids.js"></script>      
+  
 
 <!--********************************************************************************************-->
     <script type="text/javascript" src="/controllers/pricingController.js"></script>

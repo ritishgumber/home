@@ -1,101 +1,74 @@
-# Highlight.js
+##New version 2.0.0-beta now available for testers. [Check it](http://www.owlgraphic.com/owlcarousel2/)
 
-[![Build Status](https://travis-ci.org/isagalaev/highlight.js.svg?branch=master)](https://travis-ci.org/isagalaev/highlight.js)
+### OwlCarousel ###
+>v.1.3.3
 
-Highlight.js is a syntax highlighter written in JavaScript. It works in the
-browser as well as on the server. It works with pretty much any markup,
-doesn’t depend on any framework and has automatic language detection.
+Touch enabled jQuery plugin that lets you create beautiful responsive carousel slider.
+[Visit Owl Carousel landing page](http://owlgraphic.com/owlcarousel)
+
+###Features:
+* Responsive
+* Touch Events
+* Mouse Slide Events
+* Fully Customizable
+* Choose the number of items to be displayed
+* Multiple Sliders
+* CSS3 3d Transitions
+* Custimizable controls
+* JSON 
+* Custom events
+* Helpful callbacks
+
+> Tested on IE7, IE8, IE9, IE10, Chrome, Safari, Firefox, Opera, iPhone, iPad, Chrom on Google Nexus.
 
 
-## Getting Started
+### More Demos
+See what Owl can do:
+* [With auto scaling images](http://owlgraphic.com/owlcarousel/demos/images.html)
+* [Full Width](http://owlgraphic.com/owlcarousel/demos/full.html)
+* [Custom Widths](http://owlgraphic.com/owlcarousel/demos/custom.html)
+* [One Item](http://owlgraphic.com/owlcarousel/demos/one.html)
+* [More demos](http://owlgraphic.com/owlcarousel/#more-demos)
 
-The bare minimum for using highlight.js on a web page is linking to the library
-along with one of the styles and calling [`initHighlightingOnLoad`][1]:
+### 1.Getting Started
+Load jQuery(1.7+) and include Owl Carousel plugin files
 
 ```html
-<link rel="stylesheet" href="/path/to/styles/default.css">
-<script src="/path/to/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<!-- Basic stylesheet -->
+<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+ 
+ <!-- Default Theme -->
+<link rel="stylesheet" href="owl-carousel/owl.theme.css">
+ 
+<!-- Include js plugin -->
+<script src="owl-carousel/owl.carousel.js"></script>
 ```
-
-This will find and highlight code inside of `<pre><code>` tags; it tries to detect
-the language automatically. If automatic detection doesn’t work for you, you can
-specify the language in the `class` attribute:
+### 2.Set up your HTML
+You don't need any special markup. All you need is to wrap your divs inside the container element <div class="owl-carousel">. Class "owl-carousel" is mandatory to apply proper styles that come from owl.carousel.css file.
 
 ```html
-<pre><code class="html">...</code></pre>
+<div class="owl-carousel">
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  ...
+</div>
 ```
-
-The list of supported language classes is available in the [class reference][8].
-Classes can also be prefixed with either `language-` or `lang-`.
-
-To disable highlighting altogether use the `nohighlight` class:
+### 3.Call the plugin
+Now call the Owl initializer function and your carousel is ready.
 
 ```html
-<pre><code class="nohighlight">...</code></pre>
+$(".owl-carousel").owlCarousel();
 ```
-
-## Custom Initialization
-
-When you need a bit more control over the initialization of
-highlight.js, you can use the [`highlightBlock`][2] and [`configure`][3]
-functions. This allows you to control *what* to highlight and *when*.
-
-Here’s an equivalent way to calling [`initHighlightingOnLoad`][1] using jQuery:
-
-```javascript
-$(document).ready(function() {
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-```
-
-You can use any tags instead of `<pre><code>` to mark up your code. If you don't
-use a container that preserve line breaks you will need to configure
-highlight.js to use the `<br>` tag:
-
-```javascript
-hljs.configure({useBR: true});
-
-$('div.code').each(function(i, block) {
-  hljs.highlightBlock(block);
-});
-```
-
-For other options refer to the documentation for [`configure`][3].
+### 4. For more details visit [OwlCarousel landing page](http://owlgraphic.com/owlcarousel)
+##### Changelog available [here](http://owlgraphic.com/owlcarousel/changelog.html)
 
 
-## Getting the Library
 
-You can get highlight.js as a hosted or custom-build browser script or as a
-server module. Head over to the [download page][4] for all the options.
-
-**Note:** the library is not supposed to work straight from the source on
-GitHub; it requires building. If none of the pre-packaged options work for you
-refer to the [building documentation][5].
-
-
-## License
-
-Highlight.js is released under the BSD License. See [LICENSE][10] file for
-details.
-
-
-## Links
-
-The official site for the library is at <https://highlightjs.org/>.
-
-Further in-depth documentation for the API and other topics is at
-<http://highlightjs.readthedocs.org/>.
-
-Authors and contributors are listed in the [AUTHORS.en.txt][9] file.
-
-[1]: http://highlightjs.readthedocs.org/en/latest/api.html#inithighlightingonload
-[2]: http://highlightjs.readthedocs.org/en/latest/api.html#highlightblock-block
-[3]: http://highlightjs.readthedocs.org/en/latest/api.html#configure-options
-[4]: https://highlightjs.org/download/
-[5]: http://highlightjs.readthedocs.org/en/latest/building-testing.html
-[8]: http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html
-[9]: https://github.com/isagalaev/highlight.js/blob/master/AUTHORS.en.txt
-[10]: https://github.com/isagalaev/highlight.js/blob/master/LICENSE
+License
+------------
+The MIT License (MIT)

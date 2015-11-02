@@ -8,6 +8,7 @@ var serverURL = null, dashboardURL = null;
 var signUpURL = '';
 var loginURL = '';
 var tutorialURL='';
+var selfServerUrl='';
 
 
 if(__isDevelopment){
@@ -15,11 +16,13 @@ if(__isDevelopment){
 	dashboardURL = "http://localhost:1440";
 	signUpURL="http://localhost:1440/accounts/#/signup";
 	loginURL="http://localhost:1440/accounts";
-	tutorialURL="http://localhost:1446";	
+	tutorialURL="http://localhost:1446";
+	selfServerUrl="http://localhost:1444";	
 }else{
 	serverURL="https://service.cloudboost.io";	
 	dashboardURL = "https://dashboard.cloudboost.io";
 	signUpURL="https://dashboard.cloudboost.io/accounts/#/signup";	
 	loginURL="https://dashboard.cloudboost.io/accounts";
 	tutorialURL="https://tutorials.cloudboost.io";
+	selfServerUrl="https://cloudboost.io";	
 }
