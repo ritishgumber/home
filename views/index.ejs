@@ -11,6 +11,8 @@
     <meta name="fragment" content="!"/>  
     <!--common head links-->  
     <% include ./partials/commonHead %>
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css"> 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
 </head>
 
 <body>
@@ -350,18 +352,44 @@ cs.search(callbackObj);
               
 
                 <div class="row item last-item">
-                    <div class="content col-md-5 col-sm-12 col-xs-12 col-md-push-6 col-sm-push-0 col-xs-push-0">
+                    <!--<div class="content col-md-5 col-sm-12 col-xs-12 col-md-push-6 col-sm-push-0 col-xs-push-0">
                         <h3 class="title">Your data is safe. Always!</h3>
                         <div class="desc">
                             <p>The safety and security of your data is our top priority. CloudBoost  allows you to restrict reading and writing via granular access controls and custom authentication. </p>
                             <p>We automatically backup and replicate all your data in secure-locations around the world. </p>
                         </div>
 
-                    </div><!--//content-->
+                    </div>
                     <figure class="figure col-md-4 col-sm-12 col-xs-11 col-md-pull-4 col-sm-pull-0 col-xs-pull-1">
                         <img class="img-responsive" style="height:175px" src="/images/figures/shield.png" alt="Data security : Your data is secure."/>
-                    </figure>
-                </div><!--//item-->
+                    </figure>-->
+                    <section class="twittr-feed">
+                        <!--head-->
+                        <div class="flex-general-column-wrapper-center" style="width:100%;padding:2px;">
+                            <div style="font-size:25px;font-weight:700">
+                                From Wall of Love
+                            </div>    
+                        </div>  
+                        <!--content-->
+                        <div id="tweetwrapper cf" style="padding-top:12px;">
+                            
+                            <div class="tweetparent cf">                       
+                            </div>      
+                               
+                        </div>
+                        <!--footer-->
+                        <div class="flex-general-column-wrapper-center" style="width:100%;padding-top:2px;padding-bottom:16px;margin-top:-15px;">
+                            <div class="flex-general-column-wrapper-center" style="position:relative !important;width:100%;">
+                                <div class="flex-general-column-wrapper-center" style="cursor:pointer !important;position:absolute !important; z-index:99999;width:160px;width:100%;">
+                                    <a href="https://twitter.com/cloudboostlove" target="_blank" style="font-size:16px !important;cursor:pointer !important;">See more cards
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>            
+                                </div>
+                            </div>    
+                            
+                        </div>  
+                    </section>
+                </div>
 
                  <div class="row item last-item">
 
@@ -428,6 +456,129 @@ cs.search(callbackObj);
 <!--/Slack chat-->
 
 <script type="text/javascript" src="/controllers/indexController.js"></script>
+<script type="text/javascript" src="/bower_components/underscrore/underscore.js"></script>    
+<!--<script type="text/javascript" src="/js/owlcarousel/owl.carousel.js"></script> -->
+<script type="text/javascript" src="/bower_components/slick-carousel/slick/slick.js"></script>
+<script type="text/javascript" src="/bower_components/q/q.js"></script>
+<script type="text/javascript">  
+    
+       $(document).ready(function(){
+            $('.tweetparent').slick({                
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                infinite:true,
+                centerMode: true,
+                slidesToShow:3,
+                slidesPerRow:1,
+                accessibility:false,
+                arrows:false,
+                initialSlide:0,
+                respondTo:'slider'                
+            });
+
+            /*$('#myCarousel').carousel({
+                interval: 200,
+                wrap:true
+            });*/
+
+            /*slider=$(".tweetparent").lightSlider({
+                item: 3,
+                autoWidth: false,
+                slideMove: 1, // slidemove will be 1 if loop is true
+                slideMargin: 10 ,
+                auto: true,
+                mode: "slide",
+                loop: true,  
+                easing: 'linear',
+                controls:true,
+                pager:true             
+            });*/
+       });
+        
+            
+        $.get(selfServerUrl+'/twitter/search',function(list, status){
+            if(status=="success"){
+                //console.log(list);                
+                var promises=[];
+                var tweertIds=[];
+                for(var i=0;i<list.twitterFeed.length;++i){
+                    //console.log(list.twitterFeed[i].entities.user_mentions[0]);
+                    var tweetId=list.twitterFeed[i].id_str;
+                    
+                    //tweetId=JSON.stringify(tweetId);
+                    //tweetId=20;
+                    promises.push(getEachTweetById(tweetId));
+                    tweertIds.push(tweetId);                
+                    
+                }
+
+                Q.all(promises).then(function(dList){
+                    //console.log(dList);
+                  
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);
+                    appendTweet(dList,tweertIds);                    
+                    
+                    $(".tweetparent").slick('slickGoTo',true); 
+                    
+                },function(error){
+                    console.log(error);
+                });              
+                        
+            }else{
+              console.log(status);
+            }        
+        });  
+
+        function getEachTweetById(tweetId){
+            var q=Q.defer();
+            $.get(selfServerUrl+'/twitter/'+tweetId,function(twitterObj, newstatus){
+                if(newstatus=="success"){ 
+                   q.resolve(twitterObj);
+                }else{
+                    q.reject(newstatus);                    
+                }
+            }); 
+
+            return  q.promise;  
+        }
+
+        function appendTweet(dList,tweertIds){
+            var duplicateId=[];
+            for(var i=0;i<dList.length;++i){
+                
+                var htmlTemp='<div class="tweetbody">';                    
+                       htmlTemp+=dList[i].html;                            
+                    htmlTemp+='</div>';
+
+                if(duplicateId.length>0){
+                    if(duplicateId.indexOf(tweertIds[i])<0){
+                        duplicateId.push(tweertIds[i]);
+                        $(".tweetparent").slick('slickAdd',htmlTemp); 
+                    }
+                }else{
+                    duplicateId.push(tweertIds[i]);
+                    $(".tweetparent").slick('slickAdd',htmlTemp); 
+                }
+
+                // $(".newtwitter").append(htmlTemp);                   
+
+            }
+        }
+          
+        
+    </script>
 
 </body>
 </html>

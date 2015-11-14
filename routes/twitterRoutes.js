@@ -17,7 +17,7 @@ module.exports = function() {
     // routes
     app.get('/twitter/search', function(req,res,next) {
 
-    	twitter.getHomeTimeline({'count': 5}, function (err, response, body) {    		
+    	twitter.getHomeTimeline({'count': 10}, function (err, response, body) {    		
 		    return res.status(500).send(err); 
 		  }, function (data) {
 		    var obj=JSON.parse(data);    
