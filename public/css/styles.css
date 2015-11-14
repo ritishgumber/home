@@ -4082,7 +4082,9 @@ input[type="button"] {
 }
 
 .tweetparent{
-  height: 250px !important;
+  height: 229px !important;  
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;  
 }
 
 .tweetparent .tweetbody{
@@ -4092,5 +4094,8 @@ input[type="button"] {
   margin-top: 7px; 
   float: left; 
 }
-
+.carousel-inner{  
+  top: 15px;
+  padding-left: 65px;
+}
 

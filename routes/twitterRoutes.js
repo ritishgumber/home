@@ -17,13 +17,12 @@ module.exports = function() {
     // routes
     app.get('/twitter/search', function(req,res,next) {
 
-    	twitter.getSearch({'q':'@cloudboostio','count': 10}, function (err, response, body) {    		
+    	twitter.getHomeTimeline({'count': 5}, function (err, response, body) {    		
 		    return res.status(500).send(err); 
 		  }, function (data) {
 		    var obj=JSON.parse(data);    
-		    //console.log(obj.statuses);
-		    //console.log(obj.statuses);
-		    var returnJson={twitterFeed : obj.statuses};
+		    //console.log(obj.statuses);		    	    
+		    var returnJson={twitterFeed : obj};
 		    return res.status(200).json(returnJson);		
 		  });
     });
