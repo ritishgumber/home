@@ -1,17 +1,23 @@
 
 var addSubscriber=function(email){
-  var dfd = jQuery.Deferred();
-
-    $.post(serverURL+'/subscribe',{email:email},
-      function(data, status){
-        if(status=="success"){
-          dfd.resolve("Voila! You're looped in. We'll keep you posted. Thanks!" );
-        }else{
-          dfd.reject("You've already subscribed with us, OR Something went wrong with us");
-        }        
+  var q=Q.defer();
+    
+    var sendJson={};
+    sendJson.email=email;
+    $.ajax({
+        type: "POST",
+        url: serverURL+'/subscribe',
+        data: sendJson,            
+        success: function (msg) {
+          q.resolve("Voila! You're looped in. We'll keep you posted. Thanks!" );
+        },
+        error: function (error) {
+          q.reject("You've already subscribed with us, OR Something went wrong with us"); 
+        }
     });
 
-  return dfd.promise();  
+
+  return  q.promise;    
 }
 
 

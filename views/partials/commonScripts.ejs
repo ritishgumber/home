@@ -8,6 +8,7 @@
 <script type="text/javascript" src="/js/pace.js"></script>
 <script type="text/javascript" src="/bower_components/underscore/underscore-min.js"></script>
 <script type="text/javascript" src="/js/poshytip/src/jquery.poshytip.min.js"></script>
+<script type="text/javascript" src="/bower_components/q/q.js"></script>
 
 <script>
     (function (i, s, o, g, r, a, m) {
@@ -51,7 +52,7 @@ $("#subscribeBtn").click(function(event){
         $("#footerSubscribeErr").hide();
  
        
-        $.when(addSubscriber(email))
+        addSubscriber(email)
         .then(function( message ) {
             $("#subscribeInput").val(null);
             $("#footerShowSpinner").hide();
