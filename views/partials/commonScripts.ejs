@@ -66,6 +66,22 @@ $("#subscribeBtn").click(function(event){
         });
     }
 });
+
+$(document).ready(function(){
+    var currentUrl=window.location.href;
+    var currentLink = currentUrl.split("/")[3].toLowerCase();
+  
+    $('.cb-main-linkz').each(function(){
+        //var linkText=$(this).text().toLowerCase();
+        var innerTag=$(this)[0].innerHTML;
+        var linkText=$(innerTag).text().toLowerCase()
+        
+        if(linkText==currentLink){
+            $(this).removeClass("linkHover-nrml"); 
+            $(this).addClass("link-nrmlActive");           
+        }
+    });
+});
 </script>
 <script type="text/javascript" src="/services/subscriberService.js"></script>
 <script src="https://cdn.optimizely.com/js/3119790308.js"></script> 

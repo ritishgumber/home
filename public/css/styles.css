@@ -107,6 +107,15 @@ a.btn-ghost .text,
   background:#096E80 !important;
   border-radius:5px;
 }
+.linkHover-nrml a{
+  color: rgba(146, 237, 251, 0.98) !important;
+}
+.link-nrmlActive a{
+  color: white !important;
+}
+.linkHover-nrml:hover a{
+  color: white !important;
+}
 .form-control:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #a6a6a6;
