@@ -236,7 +236,7 @@ function createTutorialBox(tutorialBoxList){
         var tURL=tutorialURL+"?lang="+tutorialBoxList[i].tutorialLink.lang+"&category="+tutorialBoxList[i].tutorialLink.category+"&subcategory="+tutorialBoxList[i].tutorialLink.subcategory;
         boxHtml+='<!--On Hover-->';
         boxHtml+='<div id="'+tutorialBoxList[i].id+'" class="tut-bx-container-gray-bx flex-general-column-wrapper-center">';
-        boxHtml+='<a href="'+tURL+'" target="_blank" class="btn tut-view-btn"><p style="margin-top:3px;">View</p></a>';
+        boxHtml+='<a href="'+tURL+'" target="_blank" data-subcat="'+tutorialBoxList[i].tutorialLink.subcategory+'" class="btn tut-view-btn"><p style="margin-top:3px;">View</p></a>';
         boxHtml+='</div>'; 
         boxHtml+='</div>'; 
         boxHtml+='<!--****/END BOX****-->';
@@ -262,4 +262,21 @@ $(document).on("mouseleave",".tut-bx-container-gray-bx",function(event){
     $(this).removeClass('animated fadeIn'); 
     $(this).addClass('animated fadeOut');
     $(this).css("visibility", "hidden");      
+});
+
+$(document).on("click",".tut-view-btn",function(event){ 
+   var subCategory=$(this).data("subcat");
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('View Tutorial', {"subcategory":subCategory});
+      /****End of Tracking*****/
+    }      
+});
+
+$(".quickstart-getstarted-btn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('Tutorials Short Button', {"clicked":"Clicked on short button for first app"});
+      /****End of Tracking*****/
+    }
 });
