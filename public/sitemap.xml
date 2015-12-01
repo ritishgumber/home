@@ -11,12 +11,7 @@
 <url>
   <loc>https://www.cloudboost.io/pricing</loc>
 </url>
-<url>
-  <loc>https://www.cloudboost.io/login</loc>
-</url>
-<url>
-  <loc>https://www.cloudboost.io/signup</loc>
-</url>
+
 <url>
   <loc>https://www.cloudboost.io/contact</loc>
 </url>
@@ -44,6 +39,21 @@
   <loc>https://www.cloudboost.io/experts</loc>
 </url>
 
+<url>
+  <loc>http://dashboard.cloudboost.io</loc>
+</url>
+
+<url>
+  <loc>http://status.cloudboost.io</loc>
+</url>
+
+<url>
+  <loc>https://slack.cloudboost.io/</loc>
+</url>
+
+<url>
+  <loc>https://docs.cloudboost.io/</loc>
+</url>
 
 <url>
   <loc>http://blog.cloudboost.io</loc>
@@ -53,4 +63,69 @@
   <loc>https://tutorials.cloudboost.io</loc>
 </url>
 
+<url>
+  <loc>https://tutorials.cloudboost.io/en/gettingstarted/yourfirstapp</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/datastorage/objects</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/datastorage/relations</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/datastorage/geopoint</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/datastorage/files</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/datastorage/bulkapi</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/query/basicqueries</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/realtime/customnotifications</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/realtime/cloudobjectnotifications</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/search/basicsearch</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/security/acl</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/en/security/roles</loc>
+</url>
+<url>
+  <loc>https://tutorials.cloudboost.io/en/security/users</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/security/users</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/schema/cloudtables</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/queues/basicqueues</loc>
+</url>
+
+<url>
+  <loc>https://tutorials.cloudboost.io/en/cache/basiccache</loc>
+</url>
 </urlset>

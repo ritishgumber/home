@@ -233,7 +233,7 @@ function createTutorialBox(tutorialBoxList){
         boxHtml+='</div>'; 
         boxHtml+='</div>';
 
-        var tURL=tutorialURL+"?lang="+tutorialBoxList[i].tutorialLink.lang+"&category="+tutorialBoxList[i].tutorialLink.category+"&subcategory="+tutorialBoxList[i].tutorialLink.subcategory;
+        var tURL=tutorialURL+"/"+tutorialBoxList[i].tutorialLink.lang+"/"+tutorialBoxList[i].tutorialLink.category+"/"+tutorialBoxList[i].tutorialLink.subcategory;
         boxHtml+='<!--On Hover-->';
         boxHtml+='<div id="'+tutorialBoxList[i].id+'" class="tut-bx-container-gray-bx flex-general-column-wrapper-center">';
         boxHtml+='<a href="'+tURL+'" target="_blank" data-subcat="'+tutorialBoxList[i].tutorialLink.subcategory+'" class="btn tut-view-btn"><p style="margin-top:3px;">View</p></a>';

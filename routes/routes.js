@@ -55,13 +55,4 @@ router.get('/compare', function(req, res) {
   res.render('compare');
 });
 
-
-//Callback functions
-var error = function (err, response, body) {
-    //console.log('ERROR [%s]', err);
-};
-var success = function (data) {
-    //console.log('Data [%s]', data);
-};
-
 module.exports = router;
