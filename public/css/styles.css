@@ -533,6 +533,19 @@ input[type="button"] {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.headline-compare-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 400px;
+  background: #253340 url('../images/background/try3.jpg') no-repeat 50% top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .headline-bg.pricing-headline-bg {
   background-image: url('../images/background/try3.jpg');
 }
