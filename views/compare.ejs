@@ -813,7 +813,7 @@
                 <h3 class="title text-center" style="color:#6B6B6B"> <br/> $50 USD every month, for life in CloudBoost Credits. <br/></h3>
                 <br/>
                 <p class="intro text-center">
-                    <a id="pricing-body-signup-btn" class="text-center btn btn-cta btn-cta-primary" style="font-size:20px;" href="https://dashboard.cloudboost.io/accounts/#/signup"><i class="fa fa-rocket"></i>&nbsp;SIGN UP FOR FREE</a>
+                    <a id="compare-body-signup-btn" class="text-center btn btn-cta btn-cta-primary" style="font-size:20px;" href="https://dashboard.cloudboost.io/accounts/#/signup"><i class="fa fa-rocket"></i>&nbsp;SIGN UP FOR FREE</a>
                 </p>
             </div>
         </div>
@@ -839,6 +839,14 @@
             if(!__isDevelopment){
               /****Tracking************/            
                mixpanel.track('Visted Compare Page', {"visited":"visited Compare Page"});
+              /****End of Tracking*****/
+            }        
+        });
+
+        $("#compare-body-signup-btn").click(function() {  
+            if(!__isDevelopment){
+              /****Tracking************/            
+               mixpanel.track('Clicked Compare Page Sign Up Button', {"Clicked":"Compare Page Sign Up Button"});
               /****End of Tracking*****/
             }        
         });
