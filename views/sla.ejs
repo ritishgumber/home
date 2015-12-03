@@ -169,18 +169,21 @@
     <!--footer-->
     <footer class="footer">
         <% include ./partials/footer %>
-    </footer>   
-
-    <!--Slack chat-->
-    <a href="http://slack.cloudboost.io" target="_blank">
-        <div class="intercomm flex-general-column-wrapper-center">    
-            <i class="icon ion-ios-chatboxes" style="font-size:26px !important; color:white;margin-top:3px;"></i>
-        </div> 
-    </a>
-    <!--/Slack chat-->
+    </footer>    
     
      <!--scripts-->
     <% include ./partials/commonScripts %> 
+    <script type="text/javascript">
+        //Initialization
+        $(document).ready(function(){         
+            if(!__isDevelopment){
+              /****Tracking************/            
+               mixpanel.track('Visted Service Level Agreement Page', {"visited":"visited Service Level Agreement Page"});
+              /****End of Tracking*****/
+            }  
+        });
+        //Initialization
+    </script>
 
 </body>
 </html>

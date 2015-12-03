@@ -120,9 +120,11 @@
         </div>
         <br/><br/>
          <div class="contact-lead text-center">
-                <h3 class="title text-center" style="color:#6B6B6B"><b>Free $50 USD </b> every month for life. <br/></h3>
-                <br/>
-                <p class="intro text-center"><a class="text-center btn btn-cta btn-cta-primary" style="font-size:20px;" href="https://dashboard.cloudboost.io/accounts/#/signup"><i class="fa fa-rocket"></i>&nbsp;SIGN UP FOR FREE</a></p>
+            <h3 class="title text-center" style="color:#6B6B6B"><b>Free $50 USD </b> every month for life. <br/></h3>
+            <br/>
+            <p class="intro text-center">
+                <a id="pricing-body-signup-btn" class="text-center btn btn-cta btn-cta-primary" style="font-size:20px;" href="https://dashboard.cloudboost.io/accounts/#/signup"><i class="fa fa-rocket"></i>&nbsp;SIGN UP FOR FREE</a>
+            </p>
         </div>
 
 
@@ -141,7 +143,9 @@
                         <span style="font-size:26px !important;">We also offer <span style="color:black;">Enterprise</span> and <span style="color:black;">On-Premises</span> Capabilities</span>
                     </div> 
                     <div>
-                        <span style="font-size:20px !important;"><a href="https://cloudboostio.typeform.com/to/Y4JOQD" target="_blank">Get in touch<i class="fa fa-angle-double-right"></i></a></span>
+                        <span style="font-size:20px !important;">
+                            <a id="pricing-body-getintouch-btn" href="https://cloudboostio.typeform.com/to/Y4JOQD" target="_blank">Get in touch<i class="fa fa-angle-double-right"></i></a>
+                        </span>
                     </div>
                 </div>   
             </div>
@@ -154,7 +158,8 @@
         <!--head-->
         <div class="flex-general-column-wrapper-center" style="width:100%;padding:2px;">
             <h2 class="title text-center pull-left" style="color:#6B6B6B">
-                <i class="fa fa-twitter" style="color:#5EA9DD;font-size:30px;"></i>&nbsp; From our <b>wall of love</b> </h2>
+                <i class="fa fa-twitter" style="color:#5EA9DD;font-size:30px;"></i>&nbsp; From our <b>wall of love</b> 
+            </h2>
         </div>  
         <!--content-->
         <div id="tweetwrapper cf" style="padding-top:12px;">
@@ -189,7 +194,9 @@
                         <span style="font-size:26px !important;">Compare <span style="color:black;">CloudBoost</span> with other Database as a Service (DBaaS) & Backend as a Service (BaaS) platforms.</span>
                     </div> 
                     <div>
-                        <span style="font-size:24px !important;"><a href="/compare">Compare<i class="fa fa-angle-double-right"></i></a></span>
+                        <span style="font-size:24px !important;">
+                            <a id="pricing-body-compare-btn" href="/compare">Compare<i class="fa fa-angle-double-right"></i></a>
+                        </span>
                     </div>
                 </div>   
             </div>
@@ -319,7 +326,7 @@
             </div><!--//row-->
             <div class="contact-lead text-center">
                 <h4 class="title">Have more questions?</h4>
-                <a class="btn btn-cta btn-cta-primary" href="/contact">Get in touch</a>
+                <a id="pricing-bottom-getintouch-btn" class="btn btn-cta btn-cta-primary" href="/contact">Get in touch</a>
             </div>
         </div><!--//container-->
     </section><!--//faq-->   
@@ -333,15 +340,7 @@
     <!--footer-->
     <footer class="footer">
         <% include ./partials/footer %>
-    </footer> 
-
-    <!--Slack chat-->
-    <a href="http://slack.cloudboost.io" target="_blank">
-        <div class="intercomm flex-general-column-wrapper-center">    
-            <i class="icon ion-ios-chatboxes" style="font-size:26px !important; color:white;margin-top:3px;"></i>
-        </div> 
-    </a>
-    <!--/Slack chat-->   
+    </footer>      
 
     <!--scripts-->
     <% include ./partials/commonScripts %>

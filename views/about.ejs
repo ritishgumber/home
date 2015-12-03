@@ -117,7 +117,7 @@ Even if you - the probable outcome is failure." - Elon Musk</blockquote>
                 <div class="press-kit text-center">
                     <h3 class="title">Hey, we're hiring! </h3>
                     <p>Get paid to play, learn, grow and work. From a good pay package, to flexible work and vacation policy and to fly weeks (that's new), parties and more.We also invite you to drop by our office, chat with one of our engineers and even have lunch with us. <br/>
-                    <a class="btn btn-cta btn-cta-primary" href="/joinus">Join us</a>
+                    <a id="about-bottom-joinus-btn" class="btn btn-cta btn-cta-primary" href="/joinus">Join us</a>
                 </div><!--//press-kit-->
             </div><!--//story-container-->
         </div><!--//container-->
@@ -126,18 +126,29 @@ Even if you - the probable outcome is failure." - Elon Musk</blockquote>
     <!--footer-->
     <footer class="footer">
         <% include ./partials/footer %>
-    </footer> 
-
-    <!--Slack chat-->
-    <a href="http://slack.cloudboost.io" target="_blank">
-        <div class="intercomm flex-general-column-wrapper-center">    
-            <i class="icon ion-ios-chatboxes" style="font-size:26px !important; color:white;margin-top:3px;"></i>
-        </div> 
-    </a>
-    <!--/Slack chat-->
+    </footer>    
 
     <!--scripts-->
     <% include ./partials/commonScripts %>   
+    <script type="text/javascript">
+        //Initialization
+        $(document).ready(function(){         
+            if(!__isDevelopment){
+              /****Tracking************/            
+               mixpanel.track('Visted About Page', {"visited":"visited About Page"});
+              /****End of Tracking*****/
+            }  
+        });
+        //Initialization
+
+        $("#about-bottom-joinus-btn").click(function(){         
+            if(!__isDevelopment){
+              /****Tracking************/            
+                mixpanel.track('Aboutpage Bottom JoinUs Button', {"Clicked":"Aboutpage Bottom JoinUs Button"});
+              /****End of Tracking*****/
+            }  
+        });
+    </script>
 
 <!--********************************************************************************************-->
 

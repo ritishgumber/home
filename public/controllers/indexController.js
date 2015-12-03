@@ -56,6 +56,11 @@ $(document).ready(function(){
 
  }, 1000);
     
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('Visted Home Page', {"visited":"visited Home Page"});
+      /****End of Tracking*****/
+    }  
 });
 //Initialization
 
@@ -355,5 +360,36 @@ $("#search-input").keyup(function(){
     initAppendComments(newCommentList);      
 });
 
+$("#header-signupbtn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('Landing Header Sign Up Button', {"Clicked":"Sign up for free"});
+      /****End of Tracking*****/
+    }
+});
 
-   
+$("#header-loginbtn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('Landing Header Login Button', {"Clicked":"Login"});
+      /****End of Tracking*****/
+    }
+}); 
+
+$("#home-body-signup-btn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('HomePage Body Sign Up Button', {"Clicked":"HomePage Body Sign Up Button"});
+      /****End of Tracking*****/
+    }
+});
+
+$("#home-body-quickstart-btn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('HomePage Body QuickStart Button', {"Clicked":"HomePage Body QuickStart Button"});
+      /****End of Tracking*****/
+    }
+}); 
+
+ 

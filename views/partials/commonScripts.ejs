@@ -1,3 +1,11 @@
+<!--Slack chat-->
+<a id="bottom-slack-chat-btn" href="http://slack.cloudboost.io" target="_blank">
+    <div class="intercomm flex-general-column-wrapper-center">    
+        <i class="icon ion-ios-chatboxes" style="font-size:26px !important; color:white;margin-top:3px;"></i>
+    </div> 
+</a>
+<!--/Slack chat-->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/js/codemirror.js"></script>
 <script src="/js/codemirror-javascript.js"></script>
@@ -64,6 +72,12 @@ $("#subscribeBtn").click(function(event){
             $("#footerSubscribeErr").text(status);
             $("#footerSubscribeErr").show();
         });
+
+        if(!__isDevelopment){
+          /****Tracking************/            
+           mixpanel.track('Footer Subscribe Button', {"Clicked":"Footer Subscribe Button"});
+          /****End of Tracking*****/
+        }
     }
 });
 
@@ -84,4 +98,23 @@ $(document).ready(function(){
 });
 </script>
 <script type="text/javascript" src="/services/subscriberService.js"></script>
-<script src="https://cdn.optimizely.com/js/3119790308.js"></script> 
+<script src="https://cdn.optimizely.com/js/3119790308.js"></script>
+<script type="text/javascript">
+ 
+    $("#home-footer-signup-btn").click(function(){         
+        if(!__isDevelopment){
+          /****Tracking************/            
+           mixpanel.track('Footer Sign Up Button', {"Clicked":"Footer Sign Up Button"});
+          /****End of Tracking*****/
+        }  
+    });
+
+    $("#bottom-slack-chat-btn").click(function(){         
+        if(!__isDevelopment){
+          /****Tracking************/            
+           mixpanel.track('Slack Chat Button', {"Clicked":"Slack Chat Button"});
+          /****End of Tracking*****/
+        }  
+    });
+ 
+</script> 

@@ -106,6 +106,12 @@ $(document).ready(function(){
             updateTotal();
         },
     });
+
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('Visted Pricing Page', {"visited":"visited Pricing Page"});
+      /****End of Tracking*****/
+    }
 });
 //Initialization
 
@@ -158,7 +164,38 @@ var faqExpand = function(id){
     }    
 };
 
-
 function updateTotal(){
     $('#totalText').text(storageAmt + searchAmt + realtimeAmt + apiAmt);
 }
+
+$("#pricing-body-signup-btn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('PricingPage Body SignUp Button', {"Clicked":"PricingPage Body SignUp Button"});
+      /****End of Tracking*****/
+    }
+});
+
+$("#pricing-body-getintouch-btn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('PricingPage GetIn-Touch Button', {"Clicked":"PricingPage GetIn-Touch Button"});
+      /****End of Tracking*****/
+    }
+}); 
+
+$("#pricing-body-compare-btn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('PricingPage Compare Button', {"Clicked":"PricingPage Compare Button"});
+      /****End of Tracking*****/
+    }
+});  
+
+$("#pricing-bottom-getintouch-btn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('PricingPage Bottom GetIn-Touch Button', {"Clicked":"PricingPage Bottom GetIn-Touch Button"});
+      /****End of Tracking*****/
+    }
+});

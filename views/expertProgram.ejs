@@ -46,7 +46,11 @@
                 <h2 class="title text-center" style="font-size:50px; color:#565656">Inspire other Developers </h2>
                 <p class="intro text-center"> The CloudBoost Experts Program gives CloudBoost developers around the world 
 an opportunity to make an impact in their local developer communities. <br/>Inspire developers and lead the way to build the next big app the world will ever see.</p>
-                <p class="intro text-center"><a class="typeform-share text-center btn btn-cta btn-cta-primary" style="font-size:20px;" href="https://cloudboostio.typeform.com/to/Piy8st" data-mode="1" target="_blank"><i class="fa fa-code" ></i>&nbsp;BECOME AN EXPERT</a></p>
+                <p class="intro text-center">
+                    <a id="expert-bcomepert-btn" class="typeform-share text-center btn btn-cta btn-cta-primary" style="font-size:20px;" href="https://cloudboostio.typeform.com/to/Piy8st" data-mode="1" target="_blank">
+                        <i class="fa fa-code" ></i>&nbsp;BECOME AN EXPERT
+                    </a>
+                </p>
                 <div class="row item">
                     <div class="content col-md-offset-1 col-md-4 col-sm-12 col-xs-12">
                         <h3 class="title"> Plan &amp; Organize Meetups </h3>
@@ -100,7 +104,9 @@ an opportunity to make an impact in their local developer communities. <br/>Insp
                 <div class="feature-lead text-center">
                      <h2 class="title text-center" style="font-size:35px; color:#565656">Be a part of CloudBoost Expert Program today.</h2>
                      <br/>
-                     <p class="intro text-center"><a class="typeform-share text-center btn btn-cta btn-cta-primary" style="font-size:20px;" href="https://cloudboostio.typeform.com/to/Piy8st" data-mode="1" target="_blank"><i class="fa fa-code" ></i>&nbsp;JOIN THE PROGRAM</a></p>
+                     <p class="intro text-center">
+                        <a id="expert-joinprogram-btn" class="typeform-share text-center btn btn-cta btn-cta-primary" style="font-size:20px;" href="https://cloudboostio.typeform.com/to/Piy8st" data-mode="1" target="_blank"><i class="fa fa-code" ></i>&nbsp;JOIN THE PROGRAM</a>
+                    </p>
                 </div>
             </div><!--//container-->
         </section><!--//why-->       
@@ -116,18 +122,38 @@ an opportunity to make an impact in their local developer communities. <br/>Insp
     <!--footer-->
     <footer class="footer">
         <% include ./partials/footer %>
-    </footer> 
-
-    <!--Slack chat-->
-    <a href="http://slack.cloudboost.io" target="_blank">
-        <div class="intercomm flex-general-column-wrapper-center">    
-            <i class="icon ion-ios-chatboxes" style="font-size:26px !important; color:white;margin-top:3px;"></i>
-        </div> 
-    </a>
-    <!--/Slack chat-->
+    </footer>   
     
     <!--scripts-->
-    <% include ./partials/commonScripts %>   
+    <% include ./partials/commonScripts %>  
+    <script type="text/javascript">
+        //Initialization
+        $(document).ready(function(){         
+            if(!__isDevelopment){
+              /****Tracking************/            
+               mixpanel.track('Visted Expert Program Page', {"visited":"visited Expert Program Page"});
+              /****End of Tracking*****/
+            }  
+        });
+        //Initialization
+
+        $("#expert-bcomepert-btn").click(function(){
+            if(!__isDevelopment){
+              /****Tracking************/            
+               mixpanel.track('ExpertsPage BecomeExpert Button', {"Clicked":"ExpertsPage BecomeExpert Button"});
+              /****End of Tracking*****/
+            }
+        });
+
+        $("#expert-joinprogram-btn").click(function(){
+            if(!__isDevelopment){
+              /****Tracking************/            
+               mixpanel.track('ExpertsPage JoinProgram Button', {"Clicked":"ExpertsPage JoinProgram Button"});
+              /****End of Tracking*****/
+            }
+        });
+
+    </script> 
 
 <!--********************************************************************************************-->
 

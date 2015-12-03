@@ -8,7 +8,12 @@ $(document).ready(function(){
     featureSelected  = 1;  
 
     //LoadTutorials    
-    getTutorials();   
+    getTutorials(); 
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('Visted QuickStart Page', {"visited":"visited QuickStart Page"});
+      /****End of Tracking*****/
+    }  
 });
 //Initialization
 
@@ -268,7 +273,7 @@ $(document).on("click",".tut-view-btn",function(event){
    var subCategory=$(this).data("subcat");
     if(!__isDevelopment){
       /****Tracking************/            
-       mixpanel.track('View Tutorial', {"subcategory":subCategory});
+       mixpanel.track('Quickstart-View Tutorial', {"subcategory":subCategory});
       /****End of Tracking*****/
     }      
 });
@@ -276,7 +281,7 @@ $(document).on("click",".tut-view-btn",function(event){
 $(".quickstart-getstarted-btn").click(function(){
     if(!__isDevelopment){
       /****Tracking************/            
-       mixpanel.track('Tutorials Short Button', {"clicked":"Clicked on short button for first app"});
+       mixpanel.track('Quickstart-Getting Started Tutorial', {"clicked":"Clicked on short button for first app"});
       /****End of Tracking*****/
     }
 });

@@ -294,7 +294,7 @@
 
                 <div class="contact-lead text-center" style="margin-bottom:50px;margin-top:50px">
                     <h3 class="title" style="color:#5f5f5f">Want to be the part of the family? </h3> <br/>
-                    <a class="btn btn-cta btn-cta-primary" target="_blank" href="https://angel.co/cloudboost-io/jobs">Apply here.</a>
+                    <a id="joinus-apply-btn" class="btn btn-cta btn-cta-primary" target="_blank" href="https://angel.co/cloudboost-io/jobs">Apply here.</a>
                 </div>
             </div><!--//row-->
 
@@ -305,15 +305,7 @@
     <!--footer-->
     <footer class="footer">
         <% include ./partials/footer %>
-    </footer> 
-
-    <!--Slack chat-->
-    <a href="http://slack.cloudboost.io" target="_blank">
-        <div class="intercomm flex-general-column-wrapper-center">    
-            <i class="icon ion-ios-chatboxes" style="font-size:26px !important; color:white;margin-top:3px;"></i>
-        </div> 
-    </a>
-    <!--/Slack chat-->
+    </footer>    
     
     <!--scripts-->
     <% include ./partials/commonScripts %>   
@@ -336,6 +328,25 @@
     <!-- blog page specific js ends -->   
      
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript">
+        //Initialization
+        $(document).ready(function(){         
+            if(!__isDevelopment){
+              /****Tracking************/            
+               mixpanel.track('Visted Join us Page', {"visited":"visited join Us Page"});
+              /****End of Tracking*****/
+            }  
+        });
+        //Initialization
+
+        $("#joinus-apply-btn").click(function(){
+            if(!__isDevelopment){
+              /****Tracking************/            
+               mixpanel.track('JoinUsPage ApplyHere Button', {"Clicked":"JoinUsPage ApplyHere Button"});
+              /****End of Tracking*****/
+            }
+        });
+    </script>
 
 </body>
 </html>
