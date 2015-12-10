@@ -240,10 +240,9 @@ function createTutorialBox(tutorialBoxList){
                     langHtml+='</div>';
                 langs+=langHtml;    
             }
-            //PHP
-            //Android
-            //IOS
-            
+            //.Net
+            //PHP           
+            //IOS            
         }
         boxHtml+=langs;//Bind languages
 
