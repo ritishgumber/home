@@ -225,6 +225,20 @@ function createTutorialBox(tutorialBoxList){
                     langHtml+='<i class="icon ion-social-nodejs fa-lg"></i>';
                     langHtml+='</div>';
                 langs+=langHtml;    
+            }           
+            //Android
+            if(tutorialBoxList[i].languages[j]=="Java"){
+                var langHtml='<div class="flex-equal-ratio-items langIcon">';
+                    langHtml+='<img src="./images/java.png" style="height:24px;width:22px;margin-top:-6px;">';
+                    langHtml+='</div>';
+                langs+=langHtml;    
+            }
+            //Android
+            if(tutorialBoxList[i].languages[j]=="Android"){
+                var langHtml='<div class="flex-equal-ratio-items langIcon">';
+                    langHtml+='<i class="icon ion-social-android fa-lg"></i>';
+                    langHtml+='</div>';
+                langs+=langHtml;    
             }
             //PHP
             //Android
