@@ -75,23 +75,10 @@ function serverLights(elmClass,onTime,offTime){
 
 $(document).on( "click",".start-demo",function() {
     $(".trending-slides").addClass("letsstart");
-    $(".letsstart .animsec1 .smalltab-wrap")[0].addEventListener( 'webkitTransitionEnd', on2DevicesDisapear, false );
+    //$(".letsstart .animsec1 .mobile")[0].addEventListener( 'webkitTransitionEnd', on2DevicesDisapear, false );
 });
 
-/*
-$(".start-demo").click(function(){       
-
-    $(".trending-slides").addClass("letsstart");
-    $(".letsstart .animsec1 .smalltab-wrap")[0].addEventListener( 'webkitTransitionEnd', on2DevicesDisapear, false );
-     
-}); */
-
 var on2DevicesDisapear = function ( e ){ 
-    $(".trending-slides").addClass("accelerate");
-    $(".accelerate .animsec1 .bigtab-wrap")[0].addEventListener( 'webkitTransitionEnd', onother2DevicesDisapear, false );
-}
-
-var onother2DevicesDisapear = function ( e ){ 
     $(".trending-slides").addClass("translatembl");  
     $(".translatembl .animsec1 .mobile")[0].addEventListener( 'webkitTransitionEnd', onmbldeviceready, false );  
 }
