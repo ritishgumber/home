@@ -586,22 +586,41 @@
 .letsstart .animsec1 .mbl-slide1{	
 	opacity: 1;
 }
-.animsec1 .goToMblSlide3 .mbl-slide1 .mbl-app-header{
-	-webkit-animation: fadeout 0.3s both ease 0.4s;
+
+.animsec1 .mbl-slide1 .mbl-app-header-defaults{
+	height: 18px;
+	width: 100%;
+	padding-top: 3px;
+	padding-bottom: 1px;
+	
+	background-color: black;
+	opacity: 0.8;	
+}
+.animsec1 .mbl-slide1 .mbl-defaults-left{
+	width: 23%;	
+}
+.animsec1 .mbl-slide1 .mbl-defaults-center{
+	width: 54%;
+}
+.animsec1 .mbl-slide1 .mbl-defaults-right{
+	width: 23%;	
+	padding: 0 !important;
 }
 
 .animsec1 .mbl-slide1 .mbl-app-header{
 	width: 100%;
 	height: 10%;
 }
+
+.animsec1 .goToMblSlide3 .mbl-slide1 .mbl-app-header{
+	-webkit-animation: fadeout 0.3s both ease 0.4s;
+}
 .animsec1 .mbl-slide1 .mbl-app-head-logo{
 	width:78%;	
 }
 .animsec1 .mbl-slide1 .mbl-app-head-logo img{
-	width:92%;
-	height:89%;
-	margin-top: 2px;
-	margin-left: 3px;
+	width:34%;		
+	margin-left: 50px;	
 }
 .animsec1 .mbl-slide1 .mbl-app-head-features{
 	width:19%;
@@ -610,11 +629,12 @@
 }
 
 .animsec1 .mbl-slide1 .mbl-app-notify-icon{
-	margin-top: 16%;
-	margin-left: 19%;
+	margin-top: 18%;
+    margin-left: 55%;
 }
 .animsec1 .mbl-slide1 .mbl-app-notify-icon i{
 	color: #024E7D;
+	font-size: 14px;
 }
 .animsec1 .mbl-slide1 .mbl-app-notify-bubble{
 	height:16px;
@@ -624,7 +644,7 @@
 	position: absolute;
 	top:0;
 	margin-top: 3.5px;
-	left:15px;
+    left: 30px;
 	opacity: 0;
 	transition-property:all;
 	transition-duration:0.3s;
@@ -632,7 +652,7 @@
 	transition-timing-function: ease-in-out;
 }
 .animsec1 .mbl-slide1 .mbl-app-notify-bubble span{
-	color:red;
+	color: #024E7D;
 	font-size: 10px;
 }
 .readyforrealtime .animsec1 .mbl-slide1 .mbl-app-notify-bubble{
@@ -640,10 +660,10 @@
 }
 
 .animsec1 .mbl-slide1 .mbl-app-search{
-	height: 10%;
+	height: 12%;
 	width:100%;
 	background-color: white;
-	padding: 6px;			
+	padding: 10px;			
 }
 .animsec1 .goToMblSlide2 .mbl-slide1 .mbl-app-search{
 	opacity: 0;
@@ -654,6 +674,7 @@
 	height: 100%;
 	border:1px solid  #D4D2D2;;
 	background-color: white;
+	border-radius: 3px;
 }
 .animsec1 .mbl-slide1 .mbl-app-searchin-wrap .search-input{	
 	width:92%;
@@ -663,7 +684,7 @@
 .animsec1 .mbl-slide1 .mbl-app-searchin-wrap .inputlike{
 	width:100%;
 	height:98%;
-	color: #ddd;
+	color: #ADABAB;
 	font-size:12px;
 	padding:4px;
 	border:none;
@@ -672,15 +693,17 @@
 .animsec1 .mbl-slide1 .mbl-app-searchin-wrap .search-icon{	
 	width:8%;	
 }
-.animsec1 .mbl-slide1 .mbl-app-searchin-wrap i{	
+.animsec1 .mbl-slide1 .mbl-app-searchin-wrap i{
 	font-size: 14px;
-	color:black;
-	margin-left:3px;
+	color: #ADABAB;
+	margin-left:2px;
 }
 .animsec1 .mbl-slide1 .mbl-app-content{
 	width:100%;
 	height: 100%;	
-	padding: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
 	background-color: white;
 	transition-property:all;
 	transition-duration:0.5s;
@@ -692,33 +715,73 @@
 .animsec1 .goToMblSlide3 .mbl-slide1 .mbl-app-content{
 	-webkit-animation: fadeout 0.3s both ease 0.4s;
 }
-.animsec1 .mbl-slide1 .restaurants-box{
+.animsec1 .mbl-slide1 .coverpage-box{
 	width:100%;
 	height:auto;
 	margin-bottom: 5px;
-}
-.animsec1 .showsearchresults .mbl-slide1 .restaurants-box-img{
-	width:100%;
-	height: 85%;
-}
-.animsec1 .mbl-slide1 .restaurants-box-img img{
-	width:100%;
-	height: 100%;
-}
-.animsec1 .mbl-slide1 .rest-name span{
-	color:green;	
-	font-size:12px;
-	font-weight: 500;
-}
-.animsec1 .mbl-slide1 .rest-det span{
-	color:black;
-	font-size:11px;	
-}
-.animsec1 .mbl-slide1 .rest-link span{
-	color:red;
-	font-size:11px;	
+	border:1px solid #E1E8ED;
+	background-color: white;
+	border-radius: 3px;
 }
 
+/**Profile cover page specific***/
+.animsec1 .mbl-slide1 .coverpage-wrap{
+	width:100%;
+	height: 137px;
+}
+.animsec1 .mbl-slide1 .coverpage-box-img{
+	width:100%;
+	height: 99px;
+	position: relative;	
+}
+.animsec1 .mbl-slide1 .coverpage-box-img .big-rect-profile{
+	width: 100%;
+	height: 100%
+}
+.animsec1 .mbl-slide1 .coverpage-box-img .big-rect-profile img{
+	width: 100%;
+	height: 100%
+}
+.animsec1 .mbl-slide1 .small-round-profile{
+	position: absolute;
+	height:50px;
+	width: 50px;	
+	bottom: -30px;
+	left: 10px;
+	border-radius: 40px;
+	overflow: hidden;
+}
+.animsec1 .mbl-slide1 .small-round-profile img{
+	width: 100%;
+	height: 100%;
+}
+.animsec1 .mbl-slide1 .cover-big-name{
+	position: absolute;
+	height:39px;
+	width: 73%;	
+	left: 60px;	
+	overflow: hidden;
+	padding-top: 3px;
+	padding-left: 5px;
+}
+.animsec1 .mbl-slide1 .cover-big-name span{
+	color: #333;
+	font-size: 14px;
+	font-weight: 700;
+}
+/**Profile cover page specific***/
+
+.animsec1 .mbl-slide1 .coverpage-box-det{
+	height: auto;
+	width: 100%;
+	padding-left: 10px;
+}
+.animsec1 .mbl-slide1 .coverpage-each-det{
+	margin-top: -10px;
+}
+.animsec1 .mbl-slide1 .coverpage-small-descri{
+
+}
 /*End Mobile slide-1*/
 
 
