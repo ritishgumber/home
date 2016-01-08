@@ -1,5 +1,3 @@
-
-
 //Initialization
 $(document).ready(function(){       
 
@@ -75,10 +73,14 @@ function serverLights(elmClass,onTime,offTime){
 
 $(document).on( "click",".start-demo",function() {
     $(".trending-slides").addClass("letsstart");
-    //$(".letsstart .animsec1 .mobile")[0].addEventListener( 'webkitTransitionEnd', on2DevicesDisapear, false );
+    $(".letsstart .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .inputlike p")[0].addEventListener( 'animationend', showsearchpeople, false );
 });
 
-var on2DevicesDisapear = function ( e ){ 
+var showsearchpeople=function(e){
+    $(".trending-slides").addClass("showsearchpeople");
+};
+
+var on2DevicesDisapear = function (e){ 
     $(".trending-slides").addClass("translatembl");  
     $(".translatembl .animsec1 .mobile")[0].addEventListener( 'webkitTransitionEnd', onmbldeviceready, false );  
 }
