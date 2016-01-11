@@ -78,7 +78,13 @@ $(document).on( "click",".start-demo",function() {
 
 var showsearchpeople=function(e){
     $(".trending-slides").addClass("showsearchpeople");
+    $(".showsearchpeople .dotyped")[0].addEventListener( 'webkitTransitionEnd', serverspace, false ); 
 };
+
+var serverspace=function(){
+    $(".trending-slides").addClass("serverspace"); 
+};
+
 
 var on2DevicesDisapear = function (e){ 
     $(".trending-slides").addClass("translatembl");  
@@ -153,6 +159,16 @@ var readytoscroll=function(){
          
     }, 1000);    
 }
+
+
+$(".dotyped").typed({
+    stringsElement: $('.realtime-feature-wrap'),
+    loop: true,
+    contentType: 'html',
+    typeSpeed: 100,
+    backSpeed: 10,
+    showCursor:false
+});
 
 
 /******Html****/
