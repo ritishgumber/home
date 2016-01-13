@@ -21,12 +21,24 @@
 	width:100%;	
 	z-index: 5;	
 	opacity: 1;
+	transition-property:all;
+	transition-duration:1.5s;
+	transition-delay:1.5s;
+
 	-webkit-transition-property:all;
-	-webkit-transition-duration:0.6s;
-	-webkit-transition-delay:0.2s;
+	-webkit-transition-duration:1.5s;
+	-webkit-transition-delay:1.5s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1.5s;
+	-moz-transition-delay:1.5s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1.5s;
+	-o-transition-delay:1.5s;
 }
 
-.goToSlide4 .animsec1{
+.beginlast .animsec1{
 	opacity: 0;
 }
 
@@ -37,15 +49,30 @@
 	opacity: 0;	
 	transition-property:all;
 	transition-duration:0.4s;			
-	transition-timing-function:ease;		
+	transition-timing-function:ease;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s;			
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.4s;			
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.4s;			
+	-o-transition-timing-function:ease;		
 }
 
 .letsstart .animsec2{
 	opacity: 1;
 }
 
-.goToSlide2 .animsec2{
-	-webkit-animation: fadeout 0.3s both ease 0.4s;
+.serverspace .animsec2{
+	animation: fadeout 0.3s both ease 12s;
+	-webkit-animation: fadeout 0.3s both ease 12s;
+	-moz-animation: fadeout 0.3s both ease 12s;
+	-o-animation: fadeout 0.3s both ease 12s;
 }
 
 .animsec3{
@@ -57,37 +84,95 @@
 	transition-duration:0.4s;
 	transition-delay:10s;		
 	transition-timing-function:ease;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s;
+	-webkit-transition-delay:10s;		
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.4s;
+	-moz-transition-delay:10s;		
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.4s;
+	-o-transition-delay:10s;		
+	-o-transition-timing-function:ease;
 }
 
 .showsearchpeople .animsec3{
 	opacity: 1;
 }
-.goToSlide3 .animsec3{
-	-webkit-animation: fadeout 0.3s both ease 4s;	
+.serverspace .animsec3{
+	animation: fadeout 0.3s both ease 12s;
+	-webkit-animation: fadeout 0.3s both ease 12s;
+	-moz-animation: fadeout 0.3s both ease 12s;
+	-o-animation: fadeout 0.3s both ease 12s;	
 }
 .animsec4{
 	position: absolute;
 	width:100%;		
 	z-index: 2;
 	opacity: 0;	
+	transition-property:all;
+	transition-duration:0.6s;
+	transition-delay:9s;		
+	transition-timing-function:ease;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.6s;
+	-webkit-transition-delay:9s;		
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.6s;
+	-moz-transition-delay:9s;		
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.6s;
+	-o-transition-delay:9s;		
+	-o-transition-timing-function:ease;
 }
 
 .serverspace .animsec4{
 	opacity: 1;	
 }
 
-.goToSlide4 .animsec4{
-	-webkit-animation: fadeout 0.5s both ease 0.4s;
+.beginlast .animsec4{
+	animation: fadeout 1.5s both ease 1.5s;
+	-webkit-animation: fadeout 1.5s both ease 1.5s;
+	-moz-animation: fadeout 1.5s both ease 1.5s;
+	-o-animation: fadeout 1.5s both ease 1.5s;
 }
-
 .animsec5{
 	position: absolute;
 	width:100%;		
 	z-index: 1;	
-	opacity: 0;	
+	opacity: 0;
+	transition-property:all;
+	transition-duration:0.2s;
+	transition-delay:2.4s;		
+	transition-timing-function:ease;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.2s;
+	-webkit-transition-delay:2.4s;		
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.2s;
+	-moz-transition-delay:2.4s;		
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.2s;
+	-o-transition-delay:2.4s;		
+	-o-transition-timing-function:ease;	
 }
 
-.goToSlide4 .animsec5{
+.beginlast .animsec5{
 	opacity: 1;	
 }
 
@@ -132,6 +217,21 @@
 	transition-duration:1s;	
 	transition-delay:3s;	
 	transition-timing-function:ease;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;	
+	-webkit-transition-delay:3s;	
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;	
+	-moz-transition-delay:3s;	
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;	
+	-o-transition-delay:3s;	
+	-o-transition-timing-function:ease;
 }
 
 .letsstart .animsec1 .graphic-column1{
@@ -146,11 +246,26 @@
 .animsec1 .demo-main-heading{
 	transition-property:all;
 	transition-duration:.5s;	
-	transition-timing-function:ease-in;		
+	transition-timing-function:ease-in;	
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.5s;	
+	-webkit-transition-timing-function:ease-in;	
+
+	-moz-transition-property:all;
+	-moz-transition-duration:.5s;	
+	-moz-transition-timing-function:ease-in;
+
+	-o-transition-property:all;
+	-o-transition-duration:.5s;	
+	-o-transition-timing-function:ease-in;
 }
 
 .letsstart .animsec1 .demo-main-heading{
+	transform: translate(0,70px);
 	-webkit-transform: translate(0,70px);
+	-moz-transform: translate(0,70px);
+	-o-transform: translate(0,70px);
 	opacity: 0;
 }
 
@@ -160,27 +275,59 @@
 	transition-property:all;
 	transition-duration:.6s;	
 	transition-timing-function:ease-in;	
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.6s;	
+	-webkit-transition-timing-function:ease-in;	
+
+	-moz-transition-property:all;
+	-moz-transition-duration:.6s;	
+	-moz-transition-timing-function:ease-in;
+
+	-o-transition-property:all;
+	-o-transition-duration:.6s;	
+	-o-transition-timing-function:ease-in;
 }
 
 .letsstart .animsec1 .demo-sub-heading{
+	transform: translate(0,60px);
 	-webkit-transform: translate(0,60px);
+	-moz-transform: translate(0,60px);
+	-o-transform: translate(0,60px);
 	opacity: 0;
 }
 
 .animsec1 .demo-start-btn{
 	transition-property:all;
 	transition-duration:.6s;	
-	transition-timing-function:ease-in;	
+	transition-timing-function:ease-in;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:.6s;	
+	-webkit-transition-timing-function:ease-in;	
+
+	-moz-transition-property:all;
+	-moz-transition-duration:.6s;	
+	-moz-transition-timing-function:ease-in;
+
+	-o-transition-property:all;
+	-o-transition-duration:.6s;	
+	-o-transition-timing-function:ease-in;
 }
 
 .letsstart .animsec1 .demo-start-btn{
+	transform: translate(0,40px);
 	-webkit-transform: translate(0,40px);
+	-moz-transform: translate(0,40px);
+	-o-transform: translate(0,40px);
 	opacity: 0;
 }
 
 .bounce-arrow{
-	-webkit-animation:bounce-arrow .85s linear infinite;
 	animation:bounce-arrow .85s linear infinite;
+	-webkit-animation:bounce-arrow .85s linear infinite;
+	-moz-animation:bounce-arrow .85s linear infinite;
+	-o-animation:bounce-arrow .85s linear infinite;
 }
 
 .animsec1 .graphic-column2{
@@ -191,6 +338,21 @@
 	transition-duration:1s;	
 	transition-delay:3s;	
 	transition-timing-function:ease;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;	
+	-webkit-transition-delay:3s;	
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;	
+	-moz-transition-delay:3s;	
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;	
+	-o-transition-delay:3s;	
+	-o-transition-timing-function:ease;
 }
 .letsstart .animsec1 .graphic-column2{
 	width:33.33%;
@@ -198,7 +360,10 @@
 }
 
 .serverspace .animsec1 .graphic-column2{
-	-webkit-animation: scaleup 0.2s both ease 0.4s;
+	animation: scaleup 0.8s both ease 10.5s;
+	-webkit-animation: scaleup 0.8s both ease 10.5s;
+	-moz-animation: scaleup 0.8s both ease 10.5s;
+	-o-animation: scaleup 0.8s both ease 10.5s;
 }
 
 .animsec1 .demo-product-wrap{
@@ -216,6 +381,21 @@
 	transition-duration:1s;	
 	transition-delay:3s;	
 	transition-timing-function:ease;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;	
+	-webkit-transition-delay:3s;	
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;	
+	-moz-transition-delay:3s;	
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;	
+	-o-transition-delay:3s;	
+	-o-transition-timing-function:ease;
 }
 
 .letsstart .animsec1 .graphic-column3{
@@ -224,7 +404,10 @@
 }
 
 .serverspace .animsec1 .graphic-column3{
-	-webkit-animation: scaledown 0.2s both ease 0.4s;
+	animation: scaledown 0.8s both ease 10.5s;
+	-webkit-animation: scaledown 0.8s both ease 10.5s;
+	-moz-animation: scaledown 0.8s both ease 10.5s;
+	-o-animation: scaledown 0.8s both ease 10.5s;
 }
 
 
@@ -249,7 +432,10 @@
 
 .letsstart .animsec1 .big-desktop-wrap{
 	/*opacity: 0;*/
+	animation: bringdowndevices 0.4s both linear 1s;
 	-webkit-animation: bringdowndevices 0.4s both linear 1s;
+	-moz-animation: bringdowndevices 0.4s both linear 1s;
+	-o-animation: bringdowndevices 0.4s both linear 1s;
 }
 
 .animsec1 .big-desktop{
@@ -312,7 +498,10 @@
 
 .letsstart .animsec1 .laptop-wrap{
 	/*opacity: 0;*/
+	animation: bringdowndevices 0.4s both linear 0.8s;
 	-webkit-animation: bringdowndevices 0.4s both linear 0.8s;
+	-moz-animation: bringdowndevices 0.4s both linear 0.8s;
+	-o-animation: bringdowndevices 0.4s both linear 0.8s;
 }
 
 .animsec1 .laptop{
@@ -364,7 +553,10 @@
 
 .letsstart .animsec1 .bigtab-wrap{
 	/*opacity: 0;*/
+	animation: bringdowndevices 0.4s both linear 1.2s;
 	-webkit-animation: bringdowndevices 0.4s both linear 1.2s;
+	-moz-animation: bringdowndevices 0.4s both linear 1.2s;
+	-o-animation: bringdowndevices 0.4s both linear 1.2s;
 }
 .animsec1 .bigtab{
 	width:21%;
@@ -408,7 +600,10 @@
 
 .letsstart .animsec1 .smalltab-wrap{
 	/*opacity: 0;*/
+	animation: bringdowndevices 0.4s both linear 1.4s;
 	-webkit-animation: bringdowndevices 0.4s both linear 1.4s;
+	-moz-animation: bringdowndevices 0.4s both linear 1.4s;
+	-o-animation: bringdowndevices 0.4s both linear 1.4s;
 }
 
 .animsec1 .smalltab{
@@ -458,6 +653,21 @@
 	transition-duration:1s;	
 	transition-delay:2s;
 	transition-timing-function:cubic-bezier(0.2, 1, 1, 1);
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;	
+	-webkit-transition-delay:2s;
+	-webkit-transition-timing-function:cubic-bezier(0.2, 1, 1, 1);
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;	
+	-moz-transition-delay:2s;
+	-moz-transition-timing-function:cubic-bezier(0.2, 1, 1, 1);
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;	
+	-o-transition-delay:2s;
+	-o-transition-timing-function:cubic-bezier(0.2, 1, 1, 1);
 }	
 
 .letsstart .animsec1 .mobile{
@@ -468,7 +678,10 @@
 }
 
 .serverspace .animsec1 .mobile{
-	-webkit-animation: moveleft 0.8s both ease 0.4s;
+	animation: moveleft 1.4s both ease 10.9s;
+	-webkit-animation: moveleft 1.4s both ease 10.9s;
+	-moz-animation: moveleft 1.4s both ease 10.9s;
+	-o-animation: moveleft 1.4s both ease 10.9s;
 }
 
 .animsec1 .mobile-head{
@@ -480,6 +693,18 @@
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:2s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:2s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:2s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:2s;
 }
 .letsstart .animsec1 .mobile-head{
 	border-top-right-radius: 10px;
@@ -494,6 +719,18 @@
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:2s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:2s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:2s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:2s;
 }
 
 .letsstart .animsec1 .mobile-tail{
@@ -506,6 +743,18 @@
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:2s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:2s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:2s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:2s;
 }
 
 .letsstart .mbl-head-features-point1{
@@ -521,6 +770,18 @@
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:2s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:2s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:2s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:2s;
 }
 .letsstart .mbl-head-features-point2{
 	margin-left:4px;		
@@ -535,6 +796,18 @@
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:2s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:2s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:2s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:2s;
 }
 .letsstart .mbl-tail-features{
 	height:30px;
@@ -549,6 +822,18 @@
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:2s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:2s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:2s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:2s;
 }
 .letsstart .mobile-screen{
 	height: 70%;
@@ -572,11 +857,25 @@
 	transition-duration:1s;	
 	transition-timing-function: ease-in-out;
 	transition-delay:4.4s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;	
+	-webkit-transition-timing-function: ease-in-out;
+	-webkit-transition-delay:4.4s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;	
+	-moz-transition-timing-function: ease-in-out;
+	-moz-transition-delay:4.4s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;	
+	-o-transition-timing-function: ease-in-out;
+	-o-transition-delay:4.4s;
 }
 .letsstart .animsec1 .mbl-slide0{
 	opacity: 0;
 }
-
 .animsec1 .mobile-screen-inn .mbl-slide0 img{
 	width: 92.5%;
 	height: 30%;
@@ -590,16 +889,37 @@
 	width:100%;
 	position: absolute;
 	z-index: 3;	
+	background-color: #E9EAED;
 	opacity: 0;	
 	transition-property:all;
 	transition-duration:1s;
 	transition-timing-function: ease-in-out;
 	transition-delay:4.4s;
-	background-color: #E9EAED;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-timing-function: ease-in-out;
+	-webkit-transition-delay:4.4s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-timing-function: ease-in-out;
+	-moz-transition-delay:4.4s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-timing-function: ease-in-out;
+	-o-transition-delay:4.4s;
 }
 
 .letsstart .animsec1 .mbl-slide1{	
 	opacity: 1;
+}
+.serverspace .animsec1 .mbl-slide1{
+	animation: fadeout 1s both ease 12.9s;
+	-webkit-animation: fadeout 1s both ease 12.9s;
+	-moz-animation: fadeout 1s both ease 12.9s;
+	-o-animation: fadeout 1s both ease 12.9s;
 }
 
 .animsec1 .mbl-slide1 .mbl-app-header-defaults{
@@ -626,15 +946,13 @@
 	height: 10%;
 }
 
-.animsec1 .goToMblSlide3 .mbl-slide1 .mbl-app-header{
-	-webkit-animation: fadeout 0.3s both ease 0.4s;
-}
 .animsec1 .mbl-slide1 .mbl-app-head-logo{
 	width:78%;	
 }
 .animsec1 .mbl-slide1 .mbl-app-head-logo img{
-	width:34%;		
-	margin-left: 50px;	
+	width:50%;		
+	margin-left: 45px;	
+	margin-top: 3px;
 }
 
 /*Notification bubble*/
@@ -665,6 +983,21 @@
 	transition-duration:0.3s;
 	transition-delay:10.4s;
 	transition-timing-function: ease-in-out;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.3s;
+	-webkit-transition-delay:10.4s;
+	-webkit-transition-timing-function: ease-in-out;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.3s;
+	-moz-transition-delay:10.4s;
+	-moz-transition-timing-function: ease-in-out;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.3s;
+	-o-transition-delay:10.4s;
+	-o-transition-timing-function: ease-in-out;
 }
 
 .animsec1 .mbl-slide1 .mbl-app-notify-bubble span{
@@ -686,7 +1019,22 @@
 	transition-property:all;
 	transition-duration:0.3s;
 	transition-delay:10s;
-	transition-timing-function: ease-in-out;			
+	transition-timing-function: ease-in-out;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.3s;
+	-webkit-transition-delay:10s;
+	-webkit-transition-timing-function: ease-in-out;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.3s;
+	-moz-transition-delay:10s;
+	-moz-transition-timing-function: ease-in-out;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.3s;
+	-o-transition-delay:10s;
+	-o-transition-timing-function: ease-in-out;			
 }
 
 .letsstart .animsec1 .mbl-slide1 .mbl-app-search{
@@ -739,7 +1087,10 @@
 }
 
 .letsstart .animsec1 .mbl-slide1 .mbl-app-content-wrap2{
+	animation: scrolleffect 2.7s both ease 4.8s;
 	-webkit-animation: scrolleffect 2.7s both ease 4.8s;
+	-moz-animation: scrolleffect 2.7s both ease 4.8s;
+	-o-animation: scrolleffect 2.7s both ease 4.8s;
 }
 
 .animsec1 .mbl-slide1 .coverpage-box{
@@ -820,10 +1171,32 @@
 	transition-duration:0.5s;
 	transition-timing-function: ease;
 	transition-delay:9.9s;	
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.5s;
+	-webkit-transition-timing-function: ease;
+	-webkit-transition-delay:9.9s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.5s;
+	-moz-transition-timing-function: ease;
+	-moz-transition-delay:9.9s;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.5s;
+	-o-transition-timing-function: ease;
+	-o-transition-delay:9.9s;
 }
 
 .letsstart .animsec1 .mbl-slide2{	
 	opacity: 1;
+}
+
+.serverspace .animsec1 .mbl-slide2{
+	animation: fadeout 1s both ease 12.9s;
+	-webkit-animation: fadeout 1s both ease 12.9s;
+	-moz-animation: fadeout 1s both ease 12.9s;
+	-o-animation: fadeout 1s both ease 12.9s;
 }
 
 .animsec1 .mbl-slide2 .mbl-app-header-defaults{
@@ -868,11 +1241,14 @@
 
 .letsstart .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .inputlike p{	
 	font-size:12px;
-    width:130px;    
+    width:128px;    
     white-space:nowrap;
     overflow:hidden;
     border-right: .1em solid black;    
-    -webkit-animation: typing 4s steps(23, end) 10s, blink-caret 1s step-end infinite 10s;    
+    animation: typing 4s steps(22, end) 10s, blink-caret 1s step-end infinite 10s; 
+    -webkit-animation: typing 4s steps(22, end) 10s, blink-caret 1s step-end infinite 10s; 
+    -moz-animation: typing 4s steps(22, end) 10s, blink-caret 1s step-end infinite 10s; 
+    -o-animation: typing 4s steps(22, end) 10s, blink-caret 1s step-end infinite 10s;    
 }
 
 
@@ -892,6 +1268,18 @@
 	transition-property:all;
 	transition-duration:0.3s;
 	transition-delay:10.1s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.3s;
+	-webkit-transition-delay:10.1s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.3s;
+	-moz-transition-delay:10.1s;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.3s;
+	-o-transition-delay:10.1s;
 }
 .letsstart .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .searchicon-mode1{
 	opacity: 0;
@@ -899,7 +1287,10 @@
 
 /*animate showsearchpeople*/
 .showsearchpeople .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .searchicon-mode1{
+	animation: fadein 0.5s both ease 0.6s;
 	-webkit-animation: fadein 0.5s both ease 0.6s;
+	-moz-animation: fadein 0.5s both ease 0.6s;
+	-o-animation: fadein 0.5s both ease 0.6s;
 }
 
 .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .search-icon .searchspinner{	
@@ -912,6 +1303,18 @@
 	transition-property:all;
 	transition-duration:0.3s;
 	transition-delay:10.2s;	
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.3s;
+	-webkit-transition-delay:10.2s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.3s;
+	-moz-transition-delay:10.2s;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.3s;
+	-o-transition-delay:10.2s;
 }
 
 .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .search-icon .searchspinner img{	
@@ -925,7 +1328,10 @@
 
 /*animate showsearchpeople*/
 .showsearchpeople .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .search-icon .searchspinner{
+	animation: fadeout 0.3s both ease 0.4s;
 	-webkit-animation: fadeout 0.3s both ease 0.4s;
+	-moz-animation: fadeout 0.3s both ease 0.4s;
+	-o-animation: fadeout 0.3s both ease 0.4s;
 }
 
 .animsec1 .mbl-slide2 .mbl-app-content{
@@ -937,7 +1343,16 @@
 	opacity: 0.7;
 	background-color: #E9EAED; 
 	transition-property:all;
-	transition-duration:0.3s;	
+	transition-duration:0.3s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.3s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.3s;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.3s;	
 }
 
 /*animate showsearchpeople*/
@@ -956,7 +1371,10 @@
 
 /*animate showsearchpeople*/
 .showsearchpeople .animsec1 .mbl-slide2 .mbl-app-content-wrap2{	
+	animation: showresults 1s both ease-out 0.1s;
 	-webkit-animation: showresults 1s both ease-out 0.1s;
+	-moz-animation: showresults 1s both ease-out 0.1s;
+	-o-animation: showresults 1s both ease-out 0.1s;
 }
 
 .animsec1 .mbl-slide2 .coverpage-box{
@@ -1036,11 +1454,33 @@
 	transition-property:all;
 	transition-duration:0.4s;
 	transition-timing-function: ease-in-out;
-	transition-delay:15s;	
+	transition-delay:15s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s;
+	-webkit-transition-timing-function: ease-in-out;
+	-webkit-transition-delay:15s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.4s;
+	-moz-transition-timing-function: ease-in-out;
+	-moz-transition-delay:15s;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.4s;
+	-o-transition-timing-function: ease-in-out;
+	-o-transition-delay:15s;	
 }
 .showsearchpeople .animsec1 .mbl-slide3{	
 	opacity: 1;
 }
+.serverspace .animsec1 .mbl-slide3{
+	animation: fadeout 1s both ease 13s;
+	-webkit-animation: fadeout 1s both ease 13s;
+	-moz-animation: fadeout 1s both ease 13s;
+	-o-animation: fadeout 1s both ease 13s;
+}
+
 .animsec1 .mbl-slide3 .mbl-app-header-defaults{
 	height: 18px;
 	width: 100%;
@@ -1054,8 +1494,9 @@
 	width:78%;	
 }
 .animsec1 .mbl-slide3 .mbl-app-head-logo img{
-	width:34%;		
-	margin-left: 50px;	
+	width:50%;		
+	margin-left: 45px;	
+	margin-top: 3px;	
 }
 
 /*Notification bubble*/
@@ -1076,6 +1517,21 @@
 	transition-duration:0.4s;
 	transition-timing-function: ease-in-out;
 	transition-delay:16.8s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s;
+	-webkit-transition-timing-function: ease-in-out;
+	-webkit-transition-delay:16.8s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.4s;
+	-moz-transition-timing-function: ease-in-out;
+	-moz-transition-delay:16.8s;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.4s;
+	-o-transition-timing-function: ease-in-out;
+	-o-transition-delay:16.8s;
 }
 .showsearchpeople .mbl-slide3 .mbl-app-notify-icon i{
 	color: #024E7D;
@@ -1094,6 +1550,21 @@
 	transition-duration:0.4s;
 	transition-timing-function: ease-in-out;
 	transition-delay:16.9s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s;
+	-webkit-transition-timing-function: ease-in-out;
+	-webkit-transition-delay:16.9s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:0.4s;
+	-moz-transition-timing-function: ease-in-out;
+	-moz-transition-delay:16.9s;
+
+	-o-transition-property:all;
+	-o-transition-duration:0.4s;
+	-o-transition-timing-function: ease-in-out;
+	-o-transition-delay:16.9s;
 }
 
 .showsearchpeople .animsec1 .mbl-slide3 .mbl-app-notify-bubble{
@@ -1115,7 +1586,10 @@
 }
 
 .showsearchpeople .animsec1 .mbl-slide3 .mbl-app-content{
+	animation: openNotification 0.5s both ease-out 15.4s;
 	-webkit-animation: openNotification 0.5s both ease-out 15.4s;
+	-moz-animation: openNotification 0.5s both ease-out 15.4s;
+	-o-animation: openNotification 0.5s both ease-out 15.4s;
 }
 
 .animsec1 .mbl-slide3 .mbl-app-content .notification-box{
@@ -1187,35 +1661,99 @@
 	position: absolute;
 	z-index: 1;	
 	opacity: 0;
-	transition-property:all;
-	transition-duration:0.4s;
-	transition-timing-function: ease;
-	background-color: white;	
-}
+	background-color: white;
 
-.goToSlide3 .animsec1 .mbl-slide4{
+	transition-property:all;
+	transition-duration:1s;
+	transition-timing-function: ease;
+	transition-delay: 12.6s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-timing-function: ease;
+	-webkit-transition-delay: 12.6s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-timing-function: ease;
+	-moz-transition-delay: 12.6s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-timing-function: ease;
+	-o-transition-delay: 12.6s;
+		
+}
+.serverspace .animsec1 .mbl-slide4{
 	opacity: 1;
 }
+
 
 .animsec1 .mbl-slide4 .mbl-app-content{
 	width:100%;
 	height: 100%;	
-	background-color: white;	
+	background-color: #0E9EF2;	
 	overflow: hidden;
-	opacity: 0;		
+	opacity: 1;		
 }
-.animsec1 .mbl-slide4 .mbl-app-content .data-trans-wrap{
+.data-trans-wrap{
 	width:100%;
-	height: 100%;
+	height: 100%;	
+	position: relative;
 }
-.animsec1 .mbl-slide4 .mbl-app-content .data-trans-wrap img{
-	width:70%;
-	margin-top:-15px;
-	opacity:0.8;
+.data-trans-wrap img{
+	width:55%;		
+	position: absolute;	
+	top:110px;
+	left:55px;	
+}
+.rollingimg{
+	opacity: 1;
+}
+
+.animateimg{	
+	animation-name: rollingimages;
+	animation-duration: 2s; 
+	animation-timing-function: linear; 
+	animation-delay: 0;
+	animation-direction: normal;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+
+	-webkit-animation-name: rollingimages;
+	-webkit-animation-duration: 2s; 
+	-webkit-animation-timing-function: linear; 
+	-webkit-animation-delay: 0;
+	-webkit-animation-direction: normal;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: running;
+
+	-moz-animation-name: rollingimages;
+	-moz-animation-duration: 2s; 
+	-moz-animation-timing-function: linear; 
+	-moz-animation-delay: 0;
+	-moz-animation-direction: normal;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: running;
+
+	-o-animation-name: rollingimages;
+	-o-animation-duration: 2s; 
+	-o-animation-timing-function: linear; 
+	-o-animation-delay: 0;
+	-o-animation-direction: normal;
+	-o-animation-iteration-count: 1;
+	-o-animation-fill-mode: forwards;
+	-o-animation-play-state: running;
 }
 
 .animsec1 .goToMblSlide3 .mbl-slide4 .mbl-app-content{
+	animation: openNotification 0.5s both ease-out 0.6s;
 	-webkit-animation: openNotification 0.5s both ease-out 0.6s;
+	-moz-animation: openNotification 0.5s both ease-out 0.6s;
+	-o-animation: openNotification 0.5s both ease-out 0.6s;
 }
 
 /*End Mobile slide-4*/
@@ -1247,19 +1785,40 @@
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:5.2s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:5.2s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:5.2s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:5.2s;
 }
 .letsstart .animsec2 .graphic-column1 .demo-main-heading{	
-	-webkit-animation: fallingSentences 1s both ease 8s;		
+	animation: fallingSentences 1s both ease 8s;
+	-webkit-animation: fallingSentences 1s both ease 8s;
+	-moz-animation: fallingSentences 1s both ease 8s;
+	-o-animation: fallingSentences 1s both ease 8s;		
 }
 .animsec2 .graphic-column1 .demo-sub-heading{
 	opacity: 0;	
 }
 .letsstart .animsec2 .graphic-column1 .demo-sub-heading{
-	-webkit-animation: fallingSentences 1s both ease 8.6s;	
+	animation: fallingSentences 1s both ease 8.6s;
+	-webkit-animation: fallingSentences 1s both ease 8.6s;
+	-moz-animation: fallingSentences 1s both ease 8.6s;
+	-o-animation: fallingSentences 1s both ease 8.6s;	
 }
 
 .showsearchpeople .animsec2 .graphic-column1 .demo-explain{
+	animation: closeSentence 0.7s both ease-out 7.5s;
 	-webkit-animation: closeSentence 0.7s both ease-out 7.5s;
+	-moz-animation: closeSentence 0.7s both ease-out 7.5s;
+	-o-animation: closeSentence 0.7s both ease-out 7.5s;
 }
 /*Column1 end*/
 
@@ -1275,7 +1834,10 @@
 	border:1px solid green;
 }
 .showsearchpeople .animsec2 .graphic-column3 .demo-explain2{
+	animation: closeSentence 0.7s both ease-out 8.5s;
 	-webkit-animation: closeSentence 0.7s both ease-out 8.5s;
+	-moz-animation: closeSentence 0.7s both ease-out 8.5s;
+	-o-animation: closeSentence 0.7s both ease-out 8.5s;
 }
 .round-search-features{
 	height: 22px;
@@ -1308,19 +1870,34 @@
 }
 
 .showsearchpeople .animsec2 .graphic-column3 .demo-main-heading2 .searchfeature1{
+	animation: openSentence 0.7s both ease-out 2.5s;
 	-webkit-animation: openSentence 0.7s both ease-out 2.5s;
+	-moz-animation: openSentence 0.7s both ease-out 2.5s;
+	-o-animation: openSentence 0.7s both ease-out 2.5s;
 }
 .showsearchpeople .animsec2 .graphic-column3 .demo-main-heading2 .searchfeature2{
+	animation: openSentence 0.7s both ease-out 3.5s;
 	-webkit-animation: openSentence 0.7s both ease-out 3.5s;
+	-moz-animation: openSentence 0.7s both ease-out 3.5s;
+	-o-animation: openSentence 0.7s both ease-out 3.5s;
 }
 .showsearchpeople .animsec2 .graphic-column3 .demo-main-heading2 .searchfeature3{
+	animation: openSentence 0.7s both ease-out 4.5s;
 	-webkit-animation: openSentence 0.7s both ease-out 4.5s;
+	-moz-animation: openSentence 0.7s both ease-out 4.5s;
+	-o-animation: openSentence 0.7s both ease-out 4.5s;
 }
 .showsearchpeople .animsec2 .graphic-column3 .demo-main-heading2 .searchfeature4{
+	animation: openSentence 0.7s both ease-out 5.5s;
 	-webkit-animation: openSentence 0.7s both ease-out 5.5s;
+	-moz-animation: openSentence 0.7s both ease-out 5.5s;
+	-o-animation: openSentence 0.7s both ease-out 5.5s;
 }
 .showsearchpeople .animsec2 .graphic-column3 .demo-main-heading2 .searchfeature5{
+	animation: openSentence 0.7s both ease-out 6.5s;
 	-webkit-animation: openSentence 0.7s both ease-out 6.5s;
+	-moz-animation: openSentence 0.7s both ease-out 6.5s;
+	-o-animation: openSentence 0.7s both ease-out 6.5s;
 }
 
 /*Section2*/
@@ -1348,7 +1925,20 @@
 
 .animsec3 .graphic-column1 .demo-explain{
 	transition-property:all;
-	transition-duration:0.5s;	
+	transition-duration:1s;
+	transition-delay:9.6s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:9.6s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:9.6s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:9.6s;	
 }
 
 .serverspace .animsec3 .graphic-column1 .demo-explain{
@@ -1360,6 +1950,18 @@
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:12.1s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:12.1s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:12.1s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:12.1s;
 }
 .realtime-intro1,.realtime-intro2{
 	opacity: 0;
@@ -1368,10 +1970,16 @@
 	opacity: 1;
 }
 .showsearchpeople .realtime-intro1{
+	animation: openSentence 0.8s both ease 12.6s;
 	-webkit-animation: openSentence 0.8s both ease 12.6s;
+	-moz-animation: openSentence 0.8s both ease 12.6s;
+	-o-animation: openSentence 0.8s both ease 12.6s;
 }
 .showsearchpeople .realtime-intro2{
+	animation: openSentence 0.8s both ease 12.9s;
 	-webkit-animation: openSentence 0.8s both ease 12.9s;
+	-moz-animation: openSentence 0.8s both ease 12.9s;
+	-o-animation: openSentence 0.8s both ease 12.9s;
 }
 
 
@@ -1384,6 +1992,27 @@
 	width:33.33%;
 	height:100%;	
 	border:1px solid green;
+}
+.animsec3 .graphic-column3 .demo-main-heading2{
+	transition-property:all;
+	transition-duration:1.5s;
+	transition-delay:7.5s;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1.5s;
+	-webkit-transition-delay:7.5s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1.5s;
+	-moz-transition-delay:7.5s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1.5s;
+	-o-transition-delay:7.5s;
+}
+
+.serverspace .animsec3 .graphic-column3 .demo-main-heading2{
+	opacity: 0;
 }
 
 .relatime-main{
@@ -1399,10 +2028,22 @@
 }
 
 .dotyped{
+	opacity: 0;
 	transition-property:all;
 	transition-duration:1s;
 	transition-delay:19s;
-	opacity: 0;
+
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:19s;
+
+	-moz-transition-property:all;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:19s;
+
+	-o-transition-property:all;
+	-o-transition-duration:1s;
+	-o-transition-delay:19s;	
 }
 
 .showsearchpeople .dotyped{
@@ -1413,7 +2054,8 @@
 	position: absolute;	
 	margin:0 auto;	
 	width: 100%;
-	right: 3.5px;		
+	right: 3.5px;	
+	z-index: 2;	
 }
 
 .showsearchpeople .relatime-main{
@@ -1474,38 +2116,38 @@
 .animsec4 .graphic-column2 .datatrans-head .main{
 	opacity: 0;
 	transition-property:all;
-	transition-duration:1s;	
+	transition-duration:1.2s;	
 	transition-timing-function:ease;
-	transition-delay:5.4s;
+	transition-delay:17.5s;
 }
-.goToSlide3 .animsec4 .graphic-column2 .datatrans-head .main{
+.serverspace .animsec4 .graphic-column2 .datatrans-head .main{
 	opacity: 1;
 }
 .animsec4 .graphic-column2 .datatrans-head .sub{
 	opacity: 0;
 	transition-property:all;
-	transition-duration:1s;	
+	transition-duration:1.2s;	
 	transition-timing-function:ease;
-	transition-delay:6s;
+	transition-delay:18.5s;
 }
 
-.goToSlide3 .animsec4 .graphic-column2 .datatrans-head .sub{
+.serverspace .animsec4 .graphic-column2 .datatrans-head .sub{
 	opacity: 1;
 }
 
 .animsec4 .graphic-column2 .datatrans-body{
 	width: 100%;
-	height: 16%;
-	background-color: rgba(204,214,221,.75);
+	height: 13%;
+	background-color: #027182;
 	overflow: hidden;	
 	opacity: 0;
 	transition-property:all;
-	transition-duration:0.4s;	
+	transition-duration:1s;	
 	transition-timing-function:ease;
-	transition-delay:3.2s;
+	transition-delay:14.5s;
 }
 
-.goToSlide3 .animsec4 .graphic-column2 .datatrans-body{
+.serverspace .animsec4 .graphic-column2 .datatrans-body{
 	opacity: 1;
 }
 
@@ -1513,7 +2155,7 @@
 	height: 100%;
 	position: absolute;
 	animation-name: movetoserver;
-	animation-duration: 3s; 
+	animation-duration: 2s; 
 	animation-timing-function: linear; 
 	animation-delay: 0;
 	animation-direction: normal;
@@ -1530,10 +2172,10 @@
 	transition-property:all;
 	transition-duration:0.8s;	
 	transition-timing-function:ease;
-	transition-delay:3.5s;
+	transition-delay:15.2s;
 }
 
-.goToSlide3 .animsec4 .graphic-column2 .datatrans-tail{
+.serverspace .animsec4 .graphic-column2 .datatrans-tail{
 	opacity: 1;
 }
 
@@ -1548,8 +2190,8 @@
 	padding-bottom: 20px;	
 }
 
-.goToSlide3 .animsec4 .graphic-column3 .server-bx-wrap{
-	-webkit-animation: bringserver 0.4s both linear 2s;
+.serverspace .animsec4 .graphic-column3 .server-bx-wrap{
+	-webkit-animation: bringserver 0.5s both linear 9s;
 }
 
 .animsec4 .graphic-column3 .server-racks{
@@ -1581,27 +2223,27 @@
 	height:100%;	
 }
 
-.animsec5 .graphic-row1 .graphic-column1 .demo-main-heading{
+.animsec5 .graphic-row1 .graphic-column1 .demo-main-heading .sent1{
 	opacity: 0;
 	transition-property:all;
 	transition-duration:1s;	
 	transition-timing-function:ease;
-	transition-delay:1.5s;
+	transition-delay:3.6s;
 }
-.goToSlide4 .animsec5 .graphic-row1 .graphic-column1 .demo-main-heading{
-	opacity: 1;
-}
-.animsec5 .graphic-row1 .graphic-column1 .demo-sub-heading{
-	opacity: 0;
-	transition-property:all;
-	transition-duration:1s;	
-	transition-timing-function:ease;
-	transition-delay:2.5s;
-}
-.goToSlide4 .animsec5 .graphic-row1 .graphic-column1 .demo-sub-heading{
+.beginlast .animsec5 .graphic-row1 .graphic-column1 .demo-main-heading .sent1{
 	opacity: 1;
 }
 
+.animsec5 .graphic-row1 .graphic-column1 .demo-main-heading .sent2{
+	opacity: 0;
+	transition-property:all;
+	transition-duration:1.2s;	
+	transition-timing-function:ease;
+	transition-delay:4.8s;
+}
+.beginlast .animsec5 .graphic-row1 .graphic-column1 .demo-main-heading .sent2{
+	opacity: 1;
+}
 
 .animsec5 .graphic-row2{
 	width:100%;
@@ -1622,106 +2264,66 @@
 .more-functs{
 	width: 250px;
 	height: 242px;
-	background-color: white;
+	background-color: #036E80;
 	margin-left: 10px;
-	border-radius: 4px;
+	border-radius: 10px;
+	border:1px solid #0395AC;
 }
 .funct-head{
 	height: 25%;
-	width: 100%;	
+	width: 100%;
+	margin-top: 10px;	
 }
 .funct-head span{
-	font-size: 20px;
-	color:black;
+	font-size: 20px;	
 }
 .funct-body{
-	height: 74%;
+	height: 60%;
 	width: 100%;	
 }
 .animsec5 .graphic-column1 .funct1{
 	opacity: 0;	
 }
-.goToSlide4 .animsec5 .graphic-column1 .funct1{
-	-webkit-animation: morefeateres 0.4s both linear 4s;
+.beginlast .animsec5 .graphic-column1 .funct1{
+	-webkit-animation: morefeateres 0.4s both linear 6s;
 }
 
 .animsec5 .graphic-column1 .funct2{
 	opacity: 0;
 }
-.goToSlide4 .animsec5 .graphic-column1 .funct2{
-	-webkit-animation: morefeateres 0.4s both linear 4.4s;
+.beginlast .animsec5 .graphic-column1 .funct2{
+	-webkit-animation: morefeateres 0.4s both linear 6.4s;
 }
 .animsec5 .graphic-column1 .funct3{
 	opacity: 0;
 }
-.goToSlide4 .animsec5 .graphic-column1 .funct3{
-	-webkit-animation: morefeateres 0.4s both linear 4.8s;
+.beginlast .animsec5 .graphic-column1 .funct3{
+	-webkit-animation: morefeateres 0.4s both linear 6.8s;
 }
 
 .animsec5 .graphic-row3 .head{
 	opacity: 0;
 	transition-property:all;
-	transition-duration:1s;	
+	transition-duration:0.4s;	
 	transition-timing-function:ease;
-	transition-delay:5s;
+	transition-delay:8s;
 }
 
-.goToSlide4 .animsec5 .graphic-row3 .head{
-	opacity: 1;
-}
-
-.animsec5 .graphic-row3 .plat1{
-	opacity: 0;
-	transition-property:all;
-	transition-duration:1s;	
-	transition-timing-function:ease;
-	transition-delay:6.3s;
-}
-.goToSlide4 .animsec5 .graphic-row3 .plat1{
+.beginlast .animsec5 .graphic-row3 .head{
 	opacity: 1;
 }
 
-.animsec5 .graphic-row3 .plat2{
+.animsec5 .graphic-row3 .allplatforms{
 	opacity: 0;
 	transition-property:all;
 	transition-duration:1s;	
 	transition-timing-function:ease;
-	transition-delay:6.9s;
+	transition-delay:9s;
 }
-.goToSlide4 .animsec5 .graphic-row3 .plat2{
+.beginlast .animsec5 .graphic-row3 .allplatforms{
 	opacity: 1;
 }
 
-.animsec5 .graphic-row3 .plat3{
-	opacity: 0;
-	transition-property:all;
-	transition-duration:1s;	
-	transition-timing-function:ease;
-	transition-delay:7.5s;
-}
-.goToSlide4 .animsec5 .graphic-row3 .plat3{
-	opacity: 1;
-}
-.animsec5 .graphic-row3 .plat4{
-	opacity: 0;
-	transition-property:all;
-	transition-duration:1s;	
-	transition-timing-function:ease;
-	transition-delay:8.1s;
-}
-.goToSlide4 .animsec5 .graphic-row3 .plat4{
-	opacity: 1;
-}
-.animsec5 .graphic-row3 .plat5{
-	opacity: 0;
-	transition-property:all;
-	transition-duration:1s;	
-	transition-timing-function:ease;
-	transition-delay:8.7s;
-}
-.goToSlide4 .animsec5 .graphic-row3 .plat5{
-	opacity: 1;
-}
 
 /*Section5*/
 @keyframes scrolleffect {
@@ -1785,6 +2387,21 @@
     	opacity: 0;
     }
 }
+
+@keyframes rollingimages {
+    0% {
+    	-webkit-transform:perspective(700px) rotateX(-60deg) translateY(40px);
+		opacity: 0;
+    }
+    50% {
+    	-webkit-transform:perspective(700px) rotateX(0) translateY(0);
+		opacity: 1;
+    }
+    100% {    	
+		opacity: 0;
+    }
+}
+
 @keyframes raisingsentence {
     0% {
     	-webkit-transform:translateY(50px);
@@ -1918,7 +2535,7 @@
 /****Typing****/
 @-webkit-keyframes typing {
     from { width: 0 }
-    to { width:130px;}
+    to { width:128px;}
 }
 
 @-webkit-keyframes blink-caret {
