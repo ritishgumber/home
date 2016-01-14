@@ -982,22 +982,22 @@
 	opacity: 0;
 	transition-property:all;
 	transition-duration:0.3s;
-	transition-delay:10.4s;
+	transition-delay:14s;
 	transition-timing-function: ease-in-out;
 
 	-webkit-transition-property:all;
 	-webkit-transition-duration:0.3s;
-	-webkit-transition-delay:10.4s;
+	-webkit-transition-delay:14s;
 	-webkit-transition-timing-function: ease-in-out;
 
 	-moz-transition-property:all;
 	-moz-transition-duration:0.3s;
-	-moz-transition-delay:10.4s;
+	-moz-transition-delay:14s;
 	-moz-transition-timing-function: ease-in-out;
 
 	-o-transition-property:all;
 	-o-transition-duration:0.3s;
-	-o-transition-delay:10.4s;
+	-o-transition-delay:14s;
 	-o-transition-timing-function: ease-in-out;
 }
 
@@ -1955,19 +1955,19 @@
 	opacity: 0;
 	transition-property:all;
 	transition-duration:1s;
-	transition-delay:12.1s;
+	transition-delay:10s;
 
 	-webkit-transition-property:all;
 	-webkit-transition-duration:1s;
-	-webkit-transition-delay:12.1s;
+	-webkit-transition-delay:10s;
 
 	-moz-transition-property:all;
 	-moz-transition-duration:1s;
-	-moz-transition-delay:12.1s;
+	-moz-transition-delay:10s;
 
 	-o-transition-property:all;
 	-o-transition-duration:1s;
-	-o-transition-delay:12.1s;
+	-o-transition-delay:10s;
 }
 .realtime-intro1,.realtime-intro2{
 	opacity: 0;
@@ -1976,16 +1976,16 @@
 	opacity: 1;
 }
 .showsearchpeople .realtime-intro1{
-	animation: openSentence 0.8s both ease 12.6s;
-	-webkit-animation: openSentence 0.8s both ease 12.6s;
-	-moz-animation: openSentence 0.8s both ease 12.6s;
-	-o-animation: openSentence 0.8s both ease 12.6s;
+	animation: openSentence 0.8s both ease 10.5s;
+	-webkit-animation: openSentence 0.8s both ease 10.5s;
+	-moz-animation: openSentence 0.8s both ease 10.5s;
+	-o-animation: openSentence 0.8s both ease 10.5s;
 }
 .showsearchpeople .realtime-intro2{
-	animation: openSentence 0.8s both ease 12.9s;
-	-webkit-animation: openSentence 0.8s both ease 12.9s;
-	-moz-animation: openSentence 0.8s both ease 12.9s;
-	-o-animation: openSentence 0.8s both ease 12.9s;
+	animation: openSentence 0.8s both ease 11.2s;
+	-webkit-animation: openSentence 0.8s both ease 11.2s;
+	-moz-animation: openSentence 0.8s both ease 11.2;
+	-o-animation: openSentence 0.8s both ease 11.2s;
 }
 
 

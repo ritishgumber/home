@@ -1,3 +1,8 @@
+var serverlightON;
+var serverlightOFF;
+var datauploadingServer;
+var dataMoving;
+
 //Initialization
 $(document).ready(function(){       
 
@@ -71,7 +76,7 @@ $(document).ready(function(){
     }, 2500); */ 
 
     var dataNo=0;
-    setInterval(function(){
+    dataMoving=setInterval(function(){
          ++dataNo;
         var dataId="dataid"+dataNo;
         var rt=' <div class="eachpipeline '+dataId+' flex-general-row-wrapper"> <div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div></div>';
@@ -82,7 +87,7 @@ $(document).ready(function(){
     var docusCount=0;
     var appendoc;
     var totaldocCount=0;
-    setInterval(function(){ 
+    datauploadingServer=setInterval(function(){ 
         ++totaldocCount;
         var uniqueId="uniqueId"+totaldocCount;            
         if(docusCount==0){
@@ -109,10 +114,11 @@ $(document).ready(function(){
 });
 
 function serverLights(elmClass,onTime,offTime){
-    setInterval(function(){
+    serverlightON=setInterval(function(){
         $(elmClass).css({"background-color":"white","opacity":1});
     },onTime);
-    setInterval(function(){
+
+    serverlightOFF=setInterval(function(){
         $(elmClass).css({"background-color":"white","opacity":0.2});
     },offTime);
 }
@@ -133,15 +139,28 @@ var showsearchpeople=function(e){
 var serverspace=function(){
     $(".trending-slides").addClass("serverspace"); 
     var transitionEnd = transitionEndEventName();
-    $(".serverspace .animsec4 .graphic-column2 .datatrans-head .sub")[0].addEventListener(transitionEnd, beginlast, false );   
+    $(".serverspace .animsec4 .graphic-column2 .datatrans-head .sub")[0].addEventListener(transitionEnd, beginlast, false );
+
+    //Passive
+    var animationEnd = animationEndEventName();
+    $(".serverspace .animsec4 .graphic-column3 .server-bx-wrap")[0].addEventListener(animationEnd, stopTyping, false );   
 };
 
 var beginlast = function (e){ 
     $(".trending-slides").addClass("beginlast");
     var transitionEnd = transitionEndEventName();      
-    $(".beginlast .animsec5 .graphic-row3 .allplatforms")[0].addEventListener(transitionEnd, readytoscroll, false );        
+    $(".beginlast .animsec5 .graphic-row3 .allplatforms")[0].addEventListener(transitionEnd, readytoscroll, false ); 
+
+    //Passive
+    $(".beginlast .animsec5 .graphic-row1 .graphic-column1 .demo-main-heading .sent1")[0].addEventListener(transitionEnd, stopallintervals, false );       
 }
 
+var stopallintervals=function() {
+    clearInterval(dataMoving);
+    clearInterval(datauploadingServer);
+    clearInterval(serverlightON);
+    clearInterval(serverlightOFF);
+};
 
 var readytoscroll=function(){
     setTimeout(function(){
@@ -157,8 +176,11 @@ var readytoscroll=function(){
             $('.trending-wrapper').html(htmlbdy);
         });         
     }, 2000);    
-}
+};
 
+var stopTyping=function(){
+    $(".dotyped").remove();
+};
 
 $(".dotyped").typed({
     stringsElement: $('.realtime-feature-wrap'),
