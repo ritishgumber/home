@@ -96,8 +96,7 @@
                     </figure>
                 </div><!--//item-->
             </div>    
-        </section>      
-
+        </section>   
        
                  
         <section class="twittr-feed">
@@ -116,11 +115,13 @@
             </div>
             <!--footer-->
             <div class="flex-general-column-wrapper-center" style="width:100%;padding-top:2px;padding-bottom:16px;margin-top:-15px;">
-                <div class="flex-general-column-wrapper-center" style="position:relative !important;width:100%;">
-                    <div class="flex-general-column-wrapper-center" style="cursor:pointer !important;position:absolute !important; z-index:99999;width:160px;width:100%;">
-                        <a href="https://twitter.com/cloudboostlove" target="_blank" style="font-size:16px !important;cursor:pointer !important;">See more cards
+                <div class="flex-general-column-wrapper-center" style="position:relative !important;width:100%;height:auto;">
+                    <div class="flex-general-column-wrapper-center" style="cursor:pointer !important;z-index:99999;width:100%;">
+                        <div>
+                            <a href="https://twitter.com/cloudboostlove" target="_blank" style="font-size:16px !important;cursor:pointer !important;">See more cards
                             <i class="fa fa-arrow-right"></i>
-                        </a>            
+                            </a> 
+                        </div>           
                     </div>
                 </div>    
                 
@@ -192,13 +193,16 @@
 
 <script type="text/javascript" src="/controllers/indexController.js"></script>
 <script type="text/javascript" src="/js/typed.js"></script>
-<script type="text/javascript" src="/bower_components/underscrore/underscore.js"></script> 
 <script type="text/javascript" src="/bower_components/slick-carousel/slick/slick.js"></script>
 <script type="text/javascript" src="/bower_components/q/q.js"></script>
 <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js"></script>-->
 <script type="text/javascript" src="/controllers/trendingBoxController.js"></script>
 <script type="text/javascript">  
-    
+       
+       var twitterDList; 
+       var tweertIds=[];
+       var windowScrolledTo;
+       var twitterCardsAdded=false;
        $(document).ready(function(){
             $('.tweetparent').slick({                
                 slidesToScroll: 1,
@@ -213,15 +217,31 @@
                 initialSlide:0,
                 respondTo:'slider'                
             });
+
+
+            /*Twitter cards*/  
+            //On Scroll to twitter cards
+            $(window).scroll(function(e){                  
+                windowScrolledTo=e.target.scrollingElement.scrollTop        
+                //console.log(windowScrolledTo);
+
+                if(windowScrolledTo>=750 && !twitterCardsAdded && twitterDList && twitterDList.length>0){
+                    appendTweet(twitterDList,tweertIds);
+                    appendTweet(twitterDList,tweertIds);
+                    appendTweet(twitterDList,tweertIds);
+                    appendTweet(twitterDList,tweertIds);
+                    $(".tweetparent").slick('slickGoTo',true); 
+                    twitterCardsAdded=true;
+                }
+            });
+            /*Twitter cards*/
      
-       });
-        
+        });          
             
         $.get(selfServerUrl+'/twitter/search',function(list, status){
             if(status=="success"){
                 //console.log(list);                
-                var promises=[];
-                var tweertIds=[];
+                var promises=[];                
                 for(var i=0;i<list.twitterFeed.length;++i){
                     //console.log(list.twitterFeed[i].entities.user_mentions[0]);
                     var tweetId=list.twitterFeed[i].id_str;
@@ -235,14 +255,8 @@
 
                 Q.all(promises).then(function(dList){
                     //console.log(dList);
-                  
-                    appendTweet(dList,tweertIds);
-                    appendTweet(dList,tweertIds);
-                    appendTweet(dList,tweertIds);
-                    appendTweet(dList,tweertIds);
-                                       
-                    
-                    $(".tweetparent").slick('slickGoTo',true); 
+                    twitterDList=dList;
+                    positionAtTwitterCards();                    
                     
                 },function(error){
                     console.log(error);
@@ -287,6 +301,24 @@
                 // $(".newtwitter").append(htmlTemp);                   
 
             }
+        }
+
+        function positionAtTwitterCards () {
+            //If page opens at the place of twitter cards
+            windowScrolledTo=$(window).scrollTop();
+            var positionAtTwitterSlider=false;
+            if(windowScrolledTo>=1800 && windowScrolledTo<=3000){
+                positionAtTwitterSlider=true;
+            }
+            if(positionAtTwitterSlider && !twitterCardsAdded && twitterDList && twitterDList.length>0){
+                appendTweet(twitterDList,tweertIds);
+                appendTweet(twitterDList,tweertIds);
+                appendTweet(twitterDList,tweertIds);
+                appendTweet(twitterDList,tweertIds);
+                $(".tweetparent").slick('slickGoTo',true); 
+                twitterCardsAdded=true;
+            }
+
         }
           
         

@@ -4,113 +4,12 @@ var datauploadingServer;
 var dataMoving;
 
 //Initialization
-$(document).ready(function(){       
-
-    serverLights(".server-light1",3000,4000);
-    serverLights(".server-light2",4000,5000);
-    serverLights(".server-light3",5000,6000);
-    serverLights(".server-light4",6000,7000);
-    serverLights(".server-light5",3000,4000);
-    serverLights(".server-light6",4000,5000);
-    serverLights(".server-light7",6000,7000);
-    serverLights(".server-light8",3000,4000);
-    serverLights(".server-light9",4000,5000);
-    serverLights(".server-light10",5000,6000);
-    serverLights(".server-light11",6000,7000);
-    /* end of server lights*/
-
-    /*var dataTypeArray=[];
-
-    var dmusic='<div style="margin-top:3px;">';
-        dmusic+='<div style="width:10px;height:10px; background-color:#E3E5E5;"></div>';
-    dmusic+='</div>';
-    dataTypeArray.push(dmusic);
-
-    var dphoto='<div style="margin-top:3px;">';
-        dphoto+='<div style="width:10px;height:10px; background-color:#00383F;"></div>';
-    dphoto+='</div>';
-    dataTypeArray.push(dphoto);
-
-    var dfile='<div style="margin-top:3px;">';
-        dfile+='<div style="width:10px;height:10px; background-color:#2DC7FF;"></div>';
-    dfile+='</div>';
-    dataTypeArray.push(dfile);  
-
-    var dfile2='<div style="margin-top:3px;">';
-        dfile2+='<div style="width:10px;height:10px; background-color:#08C1DD;"></div>';
-    dfile2+='</div>';
-    dataTypeArray.push(dfile2);   
-
-    var dataNo=0;
-    setInterval(function(){
-        ++dataNo;
-        var dataId="dataid"+dataNo;
-
-        var serverdata='<div style="width:10px !important; padding-top:2px;" class="movetoserver '+dataId+'">';
-            var randmElm=Math.floor(Math.random() * dataTypeArray.length); 
-            serverdata+=dataTypeArray[randmElm];
-
-            var randmElm=Math.floor(Math.random() * dataTypeArray.length); 
-            serverdata+=dataTypeArray[randmElm];
-
-            var randmElm=Math.floor(Math.random() * dataTypeArray.length); 
-            serverdata+=dataTypeArray[randmElm]; 
-
-            var randmElm=Math.floor(Math.random() * dataTypeArray.length); 
-            serverdata+=dataTypeArray[randmElm];
-
-        serverdata+='</div>';
-
-        $(".datatrans-body").append(serverdata);
-    },90);*/
-
-     /*setTimeout(function(){
-
-        var dataRemvNo=0;
-        setInterval(function(){
-            ++dataRemvNo;
-            var dataRemvId=".dataid"+dataRemvNo;
-            $(dataRemvId).remove();
-        },200);
-
-    }, 2500); */ 
-
-    var dataNo=0;
-    dataMoving=setInterval(function(){
-         ++dataNo;
-        var dataId="dataid"+dataNo;
-        var rt=' <div class="eachpipeline '+dataId+' flex-general-row-wrapper"> <div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div></div>';
-        $(".datatrans-body").append(rt);
-    },500);  
-
-
-    var docusCount=0;
-    var appendoc;
-    var totaldocCount=0;
-    datauploadingServer=setInterval(function(){ 
-        ++totaldocCount;
-        var uniqueId="uniqueId"+totaldocCount;            
-        if(docusCount==0){
-            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-image.png">'; 
-        }
-        if(docusCount==1){
-            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-music.png">'; 
-        }
-        if(docusCount==2){
-            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-movie.png">'; 
-        }
-        if(docusCount==3){
-            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-folder.png">'; 
-        }
-
-        $(".data-trans-wrap").append(appendoc);
-        ++docusCount;
-        if(docusCount==4){
-            docusCount=0;
-        }
-    }, 2700);
-
-        
+$(document).ready(function(){  
+    var windowsWidth = $(window).width(); 
+    if(windowsWidth<=1023){
+        var signUpBtn='<button type="button" class="sing-up-btn-demo">Sign Up &nbsp;<i class="fa fa-angle-right bounce-arrow" style="font-size:18px;"></i></button>';
+        $(".demo-start-btn").html(signUpBtn);
+    }       
 });
 
 function serverLights(elmClass,onTime,offTime){
@@ -123,6 +22,10 @@ function serverLights(elmClass,onTime,offTime){
     },offTime);
 }
 
+$(document).on( "click",".sing-up-btn-demo",function() {
+   window.open('https://dashboard.cloudboost.io/accounts/#/signup');
+});
+
 $(document).on( "click",".start-demo",function() {
     $(".trending-slides").addClass("letsstart");
     var animationEnd = animationEndEventName();
@@ -131,23 +34,28 @@ $(document).on( "click",".start-demo",function() {
 });
 
 var showsearchpeople=function(e){
-    $(".trending-slides").addClass("showsearchpeople");
+    $(".trending-slides").addClass("showsearchpeople"); 
     var transitionEnd = transitionEndEventName();
-    $(".showsearchpeople .dotyped")[0].addEventListener(transitionEnd, serverspace, false );           
+    $(".showsearchpeople .dotyped")[0].addEventListener(transitionEnd, serverspace, false ); 
+
+    //Passive
+    $(".showsearchpeople .dotyped")[0].addEventListener(transitionEnd, setupServerSlide, false );         
 };
 
 var serverspace=function(){
-    $(".trending-slides").addClass("serverspace"); 
+    $(".trending-slides").addClass("serverspace");     
     var transitionEnd = transitionEndEventName();
     $(".serverspace .animsec4 .graphic-column2 .datatrans-head .sub")[0].addEventListener(transitionEnd, beginlast, false );
 
     //Passive
     var animationEnd = animationEndEventName();
-    $(".serverspace .animsec4 .graphic-column3 .server-bx-wrap")[0].addEventListener(animationEnd, stopTyping, false );   
+    $(".serverspace .animsec4 .graphic-column2 .datatrans-body")[0].addEventListener(transitionEnd, stopTyping, false );   
 };
 
 var beginlast = function (e){ 
     $(".trending-slides").addClass("beginlast");
+    $(".trending-slides").removeClass("showsearchpeople");          
+
     var transitionEnd = transitionEndEventName();      
     $(".beginlast .animsec5 .graphic-row3 .allplatforms")[0].addEventListener(transitionEnd, readytoscroll, false ); 
 
@@ -175,11 +83,11 @@ var readytoscroll=function(){
             $('.trending-slides').remove();
             $('.trending-wrapper').html(htmlbdy);
         });         
-    }, 2000);    
+    }, 1500);    
 };
 
 var stopTyping=function(){
-    $(".dotyped").remove();
+    //$(".dotyped").remove();
 };
 
 $(".dotyped").typed({
@@ -229,4 +137,63 @@ function transitionEndEventName () {
     }
 
     //TODO: throw 'TransitionEnd event is not supported in this browser'; 
+}
+
+var setupServerSlide=function() {
+    switchServerLights();   
+    pipelinedata();
+    dataUploading();
+};
+
+function switchServerLights () {
+    serverLights(".server-light1",3000,4000);
+    serverLights(".server-light2",4000,5000);
+    serverLights(".server-light3",5000,6000);
+    serverLights(".server-light4",6000,7000);
+    serverLights(".server-light5",3000,4000);
+    serverLights(".server-light6",4000,5000);
+    serverLights(".server-light7",6000,7000);
+    serverLights(".server-light8",3000,4000);
+    serverLights(".server-light9",4000,5000);
+    serverLights(".server-light10",5000,6000);
+    serverLights(".server-light11",6000,7000);
+}
+
+
+function pipelinedata () {
+    var dataNo=0;
+    dataMoving=setInterval(function(){
+         ++dataNo;
+        var dataId="dataid"+dataNo;
+        var rt=' <div class="eachpipeline '+dataId+' flex-general-row-wrapper"> <div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div></div><div style="width:10px !important; margin-left:2px; margin-right:2px; padding-top:2px;" class=""> <div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#08C1DD;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#00383F;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#2DC7FF;"> </div></div><div style="margin-top:3px;"> <div style="width:10px;height:10px; background-color:#E3E5E5;"> </div></div></div></div>';
+        $(".datatrans-body").append(rt);
+    },500);
+}
+
+function dataUploading () {
+     var docusCount=0;
+    var appendoc;
+    var totaldocCount=0;
+    datauploadingServer=setInterval(function(){ 
+        ++totaldocCount;
+        var uniqueId="uniqueId"+totaldocCount;            
+        if(docusCount==0){
+            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-image.png">'; 
+        }
+        if(docusCount==1){
+            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-music.png">'; 
+        }
+        if(docusCount==2){
+            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-movie.png">'; 
+        }
+        if(docusCount==3){
+            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-folder.png">'; 
+        }
+
+        $(".data-trans-wrap").append(appendoc);
+        ++docusCount;
+        if(docusCount==4){
+            docusCount=0;
+        }
+    }, 2700);
 }

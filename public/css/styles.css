@@ -4154,10 +4154,10 @@ input[type="button"] {
 
 .cb-enterprise{
   width:100%;
-  height:200px;  
+  height:auto;  
   margin-bottom: 20px;
   background-color: #FAF9F9;
-  padding-left: 160px !important;   
+  padding-left: 5% !important;   
   opacity: 0.8;
   padding-bottom: 0px;
   border: 1px solid #EFEDED;
@@ -4166,12 +4166,19 @@ input[type="button"] {
 
 .cb-compare-link{
   width:100%;
-  height:200px;  
+  height:auto;  
   margin-bottom: 20px;
   background-color: #FAF9F9;
-  padding-left: 100px !important;   
+  padding-left: 5% !important;   
   opacity: 0.8;
   padding-bottom: 0px;
   border: 1px solid #EFEDED;
   
+}
+
+@media screen and (max-device-width : 475px)
+{
+    .hiring-tail{
+      display:none !important;
+    }
 }
