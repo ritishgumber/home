@@ -530,11 +530,11 @@ input[type="button"] {
 
 .index-bg {
   position: absolute;
-  width: 1348px;
+  width: 100%;
   top: 0;
   left: 0;
-  height: 650px;
-  background: #253340 url('../images/bg-index.jpg') no-repeat 50% top;
+  height: 100%;
+  background: #253340 url('../images/checkbg.jpg') no-repeat 0% 0%;
 }
 
 .headline-pricing-bg {
