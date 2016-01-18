@@ -79,7 +79,7 @@ var readytoscroll=function(){
 
         var htmlbdy=$('.trending-slides')[0];
 
-        $('html,body').animate({scrollTop: 650},'slow',function(){
+        $('html,body').animate({scrollTop: 650},700,'linear',function(){
             $('.trending-slides').remove();
             $('.trending-wrapper').html(htmlbdy);
         });         
