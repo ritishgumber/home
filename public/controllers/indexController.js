@@ -1,26 +1,16 @@
-var showNotifications=false;
 var codeMirrorEnabled = [];
-
-var commentsList=[];
-var notificationCount=0;
-var commentIndex=0;
-
-
-var codeTabSelected = 'js';
-var currentFeature = 'Insert';
-//End of default assignments
+var langTabSelected = 'js';
+var featureSelected = 'storage';
 
 //Initialization
-$(document).ready(function(){
-    //hljs.initHighlightingOnLoad();	
-	hideAllCode();
+$(document).ready(function(){ 
 
-    $('#Insert-js').show();
-    //initCodeEditors( ['objectInsert-js']);
-    $('#InsertIcon').addClass('active');  
-    $("#notificationContainer").hide();
-    $("#red-counter").hide();     
-    
+	hideAllCode();   
+    $('#div-storage-js').show();
+    $(".storagefeat").addClass('activatefeat');
+    $(".jstab").addClass('activatelang');
+    initCodeEditors( ['storage-js']);
+
     if(!__isDevelopment){
       /****Tracking************/            
        mixpanel.track('Visted Home Page', {"visited":"visited Home Page"});
@@ -29,26 +19,44 @@ $(document).ready(function(){
 });
 //Initialization
 
+
 //Functions
-var hideAllCode = function(){
-    $('#Insert-js').hide();
-    $('#Realtime-js').hide();
-    $('#Search-js').hide();
-    $('#Insert-java').hide();
-    $('#Realtime-java').hide();
-    $('#Search-java').hide();
-    //remove CSS classes. 
-    $('#InsertIcon').removeClass('active');
-    $('#RealtimeIcon').removeClass('active');
-    $('#SearchIcon').removeClass('active');
+$(".each-feature-wrap").click(function () {
+    $(".each-feature-wrap").each(function(){
+        $(this).removeClass('activatefeat');
+    });
+
+    $(this).addClass('activatefeat');
+    var featureName=$(this).data('featname');
+    featureClick(featureName);
+});
+
+$(".lang-fliprlabel").click(function(event){
+    event.preventDefault();
+
+    $(".lang-fliprlabel").each(function(){
+        $(this).removeClass('activatelang');
+    });
+
+    $(this).addClass('activatelang');
+
+    var langName=$(this).data("langname");
+    languageClick(langName);
+});
+
+var languageClick = function(lang){
+    hideAllCode();
+    langTabSelected = lang;    
+    featureClick(featureSelected);   
 };
 
-
-var myCodeMirror = CodeMirror.fromTextArea($(".code")[0],{
-    mode:  "javascript",
-    readOnly : true,
-    lineNumbers: true
-});
+var featureClick = function(feature){   
+    hideAllCode(); 
+    var WidgetId=feature+'-'+langTabSelected;    
+    $('#div-'+WidgetId).show();
+    initCodeEditors( [WidgetId]);
+    featureSelected = feature;       
+};
 
 var initCodeEditors = function(arr){
     var codeEditors = arr;
@@ -68,67 +76,28 @@ var initCodeEditors = function(arr){
     }
 };
 
-$("#InsertIcon").click(function(event){
-    event.preventDefault();
-	featureClick('Insert');
-});
+var hideAllCode = function(){
+    $('#div-storage-js').hide();
+    $('#div-storage-nodejs').hide();
+    $('#div-storage-java').hide();
 
-$("#RealtimeIcon").click(function(event){
-    event.preventDefault();
-    featureClick('Realtime');
-});
+    $('#div-search-js').hide();
+    $('#div-search-nodejs').hide();
+    $('#div-search-java').hide();
 
-$("#SearchIcon").click(function(event){
-    event.preventDefault();
-    featureClick('Search');
-});
+    $('#div-realtime-js').hide();
+    $('#div-realtime-nodejs').hide();
+    $('#div-realtime-java').hide();
 
-var featureClick = function(feature){   
-    hideAllCode();
-    $('#'+feature+'-'+codeTabSelected).show();
-    initCodeEditors( ['object'+feature+'-'+codeTabSelected]);
-    $('#'+feature+'Icon').addClass('active');
-    currentFeature = feature;
-}
+    $('#div-queues-js').hide();
+    $('#div-queues-nodejs').hide();
+    $('#div-queues-java').hide();
 
-$("#js").click(function(event){
-    event.preventDefault();
-    languageClick('js');
-});
-
-$("#java").click(function(event){
-    event.preventDefault();
-    languageClick('java');
-})
-
-var languageClick = function(lang){
-    hideAllCode();
-    codeTabSelected = lang;
-    featureClick(currentFeature);
-    $('#java').removeClass('active');
-    $('#js').removeClass('active');
-    $('#'+lang).addClass('active');
+    $('#div-cache-js').hide();
+    $('#div-cache-nodejs').hide();
+    $('#div-cache-java').hide();        
 };
 
-var switchFeature = function(id){
-    //remove active classes. 
-    $('#feature1List').removeClass('active');
-    $('#feature2List').removeClass('active');
-
-    $('#feature'+id+'List').addClass('active');
-
-    $('#feature1').hide();
-    $('#feature2').hide();
-
-    $('#feature'+id).show();
-
-    if(id===1)
-        initCodeEditors( ['objectInsert']);
-
-    if(id===2){
-        initCodeEditors( ['ObjectQuery']);
-    }
-};
 
 
 /****************************************Mixpanel Area********************************************************************/

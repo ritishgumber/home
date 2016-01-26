@@ -4245,39 +4245,163 @@ input[type="button"] {
 .card-5 {
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
-.neo-showcasecode{
-  border:1px solid green;
-  height: auto;
-  margin-top: 100px;
+.widget-feature-ribbon{
+  height:150px;
+  width:100%;
+  background-color: #F9F9F9;  
 }
 .neo-features-wrap{  
-  height: auto; 
-  padding: 10px;
-  border:1px solid red;
+  height: 100%; 
+  width: 100%;    
+}
+.neo-features-contain{
+  height: 100%;  
+}
+.neo-features-contain .each-feature-wrap{
+  height: 100%; 
+  width: 150px;  
+  border-radius: 6px;
+  position: relative;
+}
+.neo-features-contain .each-feature-wrap:hover{
+  background-color: #B5B3B3;
+}
+.neo-features-contain .each-feature-wrap.activatefeat{
+  background-color: #159CEE;
 }
 .neo-features-contain .each-feature{   
-  height: 30px;
-  width:110px;
-  cursor: pointer;
-  margin-top: 2px;
-  padding-left: 7px;    
+  height: 100%; 
+  width: 100%;
+  padding-top: 25px; 
+  padding-left: 15px; 
+  padding-right: 15px; 
+  padding-bottom: 15px; 
+  cursor: pointer;       
 }
-.neo-features-contain .each-feature span{
-  color:#596075;  
+.neo-features-contain .active-featuretail-wrap{
+  position: absolute;
+  height: 20px;
+  width:100%;  
+  left: 0;
 }
-.neo-features-contain .each-feature:first-child{  
-  margin-top: 0px;
+.neo-features-contain .each-feature-wrap:hover .active-featuretail{
+  width: 0; 
+  height: 0; 
+  border-left: 16px solid transparent; 
+  border-right: 16px solid transparent;
+  border-top: 18px solid #B5B3B3;
 }
-.neo-features-contain .each-feature:hover{
-  background-color: #036E80;
+.neo-features-contain .each-feature-wrap.activatefeat .active-featuretail{
+  width: 0; 
+  height: 0; 
+  border-left: 16px solid transparent; 
+  border-right: 16px solid transparent;
+  border-top: 18px solid #159CEE;
 }
-.neo-features-contain .each-feature:hover span{
-  color:white;
-  font-weight: 100;
+.neo-features-contain .each-feature .featureicon{
+  width: 100%;
+  height: 60%;  
 }
+.neo-features-contain .each-feature .featureicon i{
+  font-size: 40px;
+  color: #B5B3B3;  
+}
+.neo-features-contain .each-feature-wrap:hover .featureicon i{
+  font-size: 40px;
+  color: white;  
+}
+.neo-features-contain .each-feature-wrap.activatefeat .featureicon i{
+  font-size: 40px;
+  color: white;  
+}
+.neo-features-contain .each-feature .featurelabel{
+  width: 100%;
+  height: 22%;  
+}
+.neo-features-contain .each-feature .featurelabel span{
+  font-weight: 500;
+  color: #B5B3B3;  
+}
+
+.neo-features-contain .each-feature-wrap:hover .featurelabel span{
+  font-weight: 500;
+  color: white;
+}
+
+.neo-features-contain .each-feature-wrap.activatefeat .featurelabel span{
+  font-weight: 500;
+  color: white;
+}
+
+.neo-showcasecode{  
+  height: auto;
+  margin-top: 100px;  
+}
+.neo-codedemon-wrap{
+  height: 300px;
+  padding-top: 29px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px; 
+}
+
+.explaincode{
+  height: 100%;
+  width: 100%; 
+  position: relative;
+}
+.strorage-explain{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;  
+  z-index: 5;
+  padding: 15px;
+}
+.search-explain{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  z-index: 4;
+  opacity: 0;
+}
+.realtime-explain{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  z-index: 3;
+  opacity: 0;
+}
+.queues-explain{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: yellow;
+  z-index: 2;
+  opacity: 0;
+}
+.cache-explain{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: pink;
+  z-index: 1;
+  opacity: 0;
+}
+
 .neo-widget-wrap{     
-  height: auto;   
-  border:1px solid red;
+  height: auto;    
 }
 .neo-widget-contain{
   height: auto;
@@ -4297,11 +4421,73 @@ input[type="button"] {
 .lang-fliprlabel:hover{
   background-color: black;
 }
+.lang-fliprlabel.activatelang{
+  background-color: black;
+}
 .lang-fliprlabel span{
   color:white;
   font-weight: 100;
+  font-size: 13px;
 }
-.alsocode{
-  height: 40px !important;
-  border:2px solid green;
+.sampleapps-section{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.clonelinks:hover{
+  text-decoration: none;
+}
+.sampleapp-bx{
+  height: 170px;  
+  padding: 5px;  
+}
+.sampleapp-bx .icon{
+  width: 100%;
+  height: 80%;  
+}
+.sampleapp-bx .icon img{
+  height: 100%; 
+}
+.sampleapp-bx .name{
+  width: 100%;
+  height: 20%;  
+}
+.clonelinks .sampleapp-bx .name span{
+  font-weight:500;color:#A0A0A0;
+}
+.clonelinks:hover .sampleapp-bx .name span{
+  color:#6B6B6B;
+}
+
+.platform-bx{
+  width: 200px;
+  height: 200px;  
+  margin-left: 5px;
+  padding: 8px;
+}
+.platform-bx .logo{
+  width: 100%;
+  height: 80%;
+}
+
+
+.platform-bx .name{
+  width: 100%;
+  height: 20%;
+}
+#home-body-compare-btn{
+  background-color:white; 
+  color:#159CEE;
+  font-size:20px;
+  border:1px solid #159CEE;
+}
+#home-body-compare-btn i{
+  color:#159CEE;
+}
+#home-body-compare-btn:hover{
+  background-color:#159CEE;
+  color: white;
+}
+#home-body-compare-btn:hover i{
+ color: white;
 }
