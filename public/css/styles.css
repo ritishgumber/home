@@ -647,7 +647,16 @@ input[type="button"] {
   top: 0;
   left: 0;
   height: 100%;  
-  background: #253340 url('../images/checkbg.jpg') no-repeat 0% 0%;
+  /*background: #253340 url('../images/bigbg.jpg') no-repeat 0% 0%;*/
+
+    background-image: url('../images/bigbg.jpg');
+    background-position:  0px 0px;
+    background-size: cover;
+    background-repeat: repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+    background-color: #253340;
 }
 
 .headline-pricing-bg {
