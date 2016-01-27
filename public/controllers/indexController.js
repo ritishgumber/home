@@ -27,8 +27,23 @@ $(".each-feature-wrap").click(function () {
     });
 
     $(this).addClass('activatefeat');
-    var featureName=$(this).data('featname');
+    var featureName=$(this).data('featname');        
     featureClick(featureName);
+
+    $(".introrap").remove();
+    var introJson=feautureIntroText(featureName);
+
+    var introHtml='<div class="introrap">';
+        introHtml+='<div class="intro1">';
+            introHtml+='<span style="color:#159CEE;font-size:26px;font-weight:100;line-height:27px;">'+introJson.intro1+'</span>';
+        introHtml+='</div>';
+
+        introHtml+='<div class="intro2" style="margin-top:12px;">';
+           introHtml+='<span style="color:#383838;font-size:16px;">'+introJson.intro2+'</span>'; 
+        introHtml+='</div>';
+    introHtml+='</div>';
+
+    $(".todos-explain").html(introHtml);
 });
 
 $(".lang-fliprlabel").click(function(event){
@@ -98,7 +113,26 @@ var hideAllCode = function(){
     $('#div-cache-java').hide();        
 };
 
+function feautureIntroText(featureName){
+    var IntroJson={
+        intro1:null,
+        intro2:null
+    };
 
+    if(featureName=="storage"){
+        IntroJson.intro1="Store documents, stream music & videos using CloudFiles.";
+        IntroJson.intro2="We automatically process your files as soon as you upload them on CloudBoost, so they're always ready. Store documents, stream music or videos in near real-time.";
+    }
+    if(featureName=="search"){
+        IntroJson.intro1="Implement search engine in your apps with CloudSearch.";
+        IntroJson.intro2="Implementing a search engine in your app can never be much easier. We index your data for search and let your users use our CloudSearch feature to get most accurate and relevant data as possible.";
+    }
+    if(featureName=="realtime"){
+        IntroJson.intro1="Build realtime apps, effortlessly.";
+        IntroJson.intro2="When data changes, apps built with CloudBoost update instantly across every device -- web or mobile. Get an instant notification when data is inserted, updated, or deleted.";
+    }
+    return IntroJson;
+}
 
 /****************************************Mixpanel Area********************************************************************/
 $("#header-signupbtn").click(function(){
