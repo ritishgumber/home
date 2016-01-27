@@ -4342,7 +4342,7 @@ input[type="button"] {
   padding-top: 29px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;   
 }
 
 .explaincode{
@@ -4417,7 +4417,7 @@ input[type="button"] {
   font-size: 13px;
 }
 .sampleapps-section{
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 35px;
 }
 
@@ -4459,11 +4459,28 @@ input[type="button"] {
   margin-left: 5px;
   padding: 8px;
 }
+.platform-bx:hover{
+  text-decoration: none !important;
+}
+.platform-bx:visited{
+  color:white;
+  text-decoration: none;
+}
+.platform-bx:visited .name span{
+ color:#999A9B;
+}
+.platform-bx:active{
+  color:white;
+  text-decoration: none;
+}
 .platform-bx .logo{
   width: 100%;
   height: 80%;
 }
-
+.platform-bx .name span{
+  font-size:25px;
+  color:#999A9B;
+}
 
 .platform-bx .name{
   width: 100%;
@@ -4483,5 +4500,22 @@ input[type="button"] {
   color: white;
 }
 #home-body-compare-btn:hover i{
+ color: white;
+}
+
+#home-bottom-compare-btn{
+  background-color:white; 
+  color:#159CEE;
+  font-size:20px;
+  border:1px solid #159CEE;
+}
+#home-bottom-compare-btn i{
+  color:#159CEE;
+}
+#home-bottom-compare-btn:hover{
+  background-color:#159CEE;
+  color: white;
+}
+#home-bottom-compare-btn:hover i{
  color: white;
 }

@@ -64,7 +64,7 @@
         </section>   
        
        <section id="why" class="section why">
-            <div class="widget-feature-ribbon" style="">
+            <div class="widget-feature-ribbon">
                 <div class="container" style="height:100%;">               
                     <div class="row" style="height:100%;">
                         <div class="content neo-features-wrap solo-horizontal-center">
@@ -396,27 +396,51 @@ cache.set('sample',item, {
                         </div>
                     </div>
 
-                </div>                
+                </div>                              
             </div>
+
+            <div class="container" style="">               
+                <div class="row" style="">
+                    <div class="text-center" style="margin-top:60px;">
+                         <h2 class="title text-center" style="font-size:35px; color:#565656;font-weight:100 !important;">Want to quickly get up and running?</h2>
+                         <br/>
+                         <div style="width:100%" class="flex-general-column-wrapper-center">
+                             <div style="width:50%" class="flex-general-row-wrapper">
+                                <p class="intro text-center">
+                                    <a id="home-body-quickstart-btn" class="text-center btn btn-cta" style="background-color:#159CEE !important; color:white;font-size:20px;" href="/quickstart">
+                                        <i class="fa fa-bolt"></i>&nbsp;See our Quickstart
+                                    </a>
+                                </p>
+                                 <p class="intro text-center">
+                                    <a id="home-body-compare-btn" class="text-center btn btn-cta" style="" href="/compare">
+                                        <i class="fa fa-arrow-circle-right"></i>&nbsp;Compare us with others
+                                    </a>
+                                </p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>        
+
         </section>
                  
 
-        <section id="why" class="section why sampleapps-section">
+        <section id="why" class="section sampleapps-section" style="padding-top:20px;padding-bottom:50px;">
             <div class="container">               
                 <div class="row">
                     <div class="content col-md-12 col-sm-12 col-xs-12">
                        <div class="sampleapps-intro1 solo-horizontal-center">
-                           <span class="title" style="font-size:35px;">What can you build with CloudBoost?</span>
+                           <span class="title" style="font-size:35px;font-weight:100;">What can you build with CloudBoost?</span>
                            <span class="title" style="font-size:35px;font-weight:400;">&nbsp;Everything.</span>
                        </div>
                        <div class="sampleapps-intro2 solo-horizontal-center">
-                           <span class="title" style="font-size:25px;">Checkout the clones of world's most popular apps built on CloudBoost.</span>
+                           <span class="title" style="font-size:25px;font-weight:100;">Checkout the clones of world's most popular apps built on CloudBoost.</span>
                        </div>
                     </div>
                 </div>
 
                 <div class="row" style="margin-top:30px;">
-                    <a href="https://github.com/CloudBoost/whatsapp" target="_blank" class="clonelinks content col-md-offset-1 col-md-2 col-sm-2 col-xs-12">
+                    <a href="https://github.com/CloudBoost/whatsapp" target="_blank" class="clonelinks whatsappclone content col-md-offset-1 col-md-2 col-sm-2 col-xs-12">
                        <div class="sampleapp-bx">
                            <div class="icon flex-general-column-wrapper-center">
                                <img src="/images/whatsapp.png">
@@ -428,7 +452,7 @@ cache.set('sample',item, {
                        </div>                       
                     </a>
 
-                    <a href="https://github.com/CloudBoost/tinderclone" target="_blank" class="clonelinks content col-md-2 col-sm-2 col-xs-12">
+                    <a href="https://github.com/CloudBoost/tinderclone" target="_blank" class="clonelinks tinderclone content col-md-2 col-sm-2 col-xs-12">
                        <div class="sampleapp-bx">
                            <div class="icon flex-general-column-wrapper-center">
                                <img src="/images/tinder.png">
@@ -441,7 +465,7 @@ cache.set('sample',item, {
                        </div>                       
                     </a>
 
-                    <a href="https://github.com/CloudBoost/slack" target="_blank" class="clonelinks content col-md-2 col-sm-2 col-xs-12">
+                    <a href="https://github.com/CloudBoost/slack" target="_blank" class="clonelinks slackclone content col-md-2 col-sm-2 col-xs-12">
                        <div class="sampleapp-bx">
                            <div class="icon flex-general-column-wrapper-center">
                                <img src="/images/slack.png">
@@ -453,7 +477,7 @@ cache.set('sample',item, {
                        </div>                       
                     </a>
 
-                    <a href="https://github.com/CloudBoost/sample-hackernews" target="_blank" class="clonelinks content col-md-2 col-sm-2 col-xs-12">
+                    <a href="https://github.com/CloudBoost/sample-hackernews" target="_blank" class="clonelinks hnewsclone content col-md-2 col-sm-2 col-xs-12">
                        <div class="sampleapp-bx">
                            <div class="icon flex-general-column-wrapper-center">
                                <img src="/images/hackernews.png">
@@ -465,7 +489,7 @@ cache.set('sample',item, {
                        </div>                       
                     </a>
 
-                    <a href="https://github.com/CloudBoost/instagram" target="_blank" class="clonelinks content col-md-2 col-sm-2 col-xs-12">
+                    <a href="https://github.com/CloudBoost/instagram" target="_blank" class="clonelinks instagramclone content col-md-2 col-sm-2 col-xs-12">
                        <div class="sampleapp-bx">
                            <div class="icon flex-general-column-wrapper-center">
                                <img src="/images/instagram.png">
@@ -528,23 +552,23 @@ cache.set('sample',item, {
                 <div class="row" style="margin-top:30px;">
                     <div class="content col-md-12 col-sm-12 col-xs-12">
                        <div style="width:100%;" class="solo-horizontal-center"> 
-                            <div class="platform-bx flex-general-column-wrapper-center">
+                            <a href="https://github.com/CloudBoost/docker" target="_blank" class="platform-bx dockerlink flex-general-column-wrapper-center">
                                 <div class="logo flex-general-column-wrapper-center">
                                     <img src="/images/dockerland.png" style="width:100%;">
                                 </div>
                                 <div class="name solo-horizontal-center">
-                                    <span class="title" style="font-size:25px;font-weight:#999A9B;">Docker</span>
+                                    <span class="title" style="">Docker</span>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div class="platform-bx flex-general-column-wrapper-center">
+                            <a href="https://github.com/CloudBoost/kubernetes" target="_blank" class="platform-bx kuberneteslink flex-general-column-wrapper-center">
                                 <div class="logo flex-general-column-wrapper-center">
                                     <img src="/images/Kubernetesland.png"  style="height:76%;">
                                 </div>
                                 <div class="name solo-horizontal-center">
-                                    <span class="title" style="font-size:25px;font-weight:#999A9B;">Kubernetes</span>
+                                    <span class="title">Kubernetes</span>
                                 </div>
-                            </div>
+                            </a>
                                                       
                        </div>                       
                     </div>
@@ -577,12 +601,12 @@ cache.set('sample',item, {
                      <div style="width:100%" class="flex-general-column-wrapper-center">
                          <div style="width:50%" class="flex-general-row-wrapper">
                             <p class="intro text-center">
-                                <a id="home-body-quickstart-btn" class="text-center btn btn-cta" style="background-color:#159CEE !important; color:white;font-size:20px;" href="/quickstart">
+                                <a id="home-bottom-quickstart-btn" class="text-center btn btn-cta" style="background-color:#159CEE !important; color:white;font-size:20px;" href="/quickstart">
                                     <i class="fa fa-bolt"></i>&nbsp;See our Quickstart
                                 </a>
                             </p>
                              <p class="intro text-center">
-                                <a id="home-body-compare-btn" class="text-center btn btn-cta" style="" href="/compare">
+                                <a id="home-bottom-compare-btn" class="text-center btn btn-cta" style="" href="/compare">
                                     <i class="fa fa-arrow-circle-right"></i>&nbsp;Compare us with others
                                 </a>
                             </p>
