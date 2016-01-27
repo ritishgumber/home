@@ -112,6 +112,13 @@
     -webkit-align-items:flex-start;    
 }
 
+
+.flex-equal-ratio-items{
+  flex:1;
+  -moz-flex:1;
+  -webkit-flex:1;
+}
+
 body {
   font-family: 'Roboto', arial, sans-serif;
   color: #444444;
@@ -800,7 +807,10 @@ input[type="button"] {
   -moz-opacity: 0.8;
   opacity: 0.8;
 }
-
+.newpricingbg{ 
+  padding-bottom: 120px;
+  margin-top: 6px;  
+}
 /* ======= Why ======= */
 .why {
   padding-top: 80px;
@@ -4107,11 +4117,6 @@ input[type="button"] {
 }
 
 
-.flex-equal-ratio-items{
-  flex:1;
-  -moz-flex:1;
-  -webkit-flex:1;
-}
 .icon-wrapper{ 
   width: 80%;
 }
@@ -4230,7 +4235,10 @@ input[type="button"] {
     }
 }
 
-
+.card-11 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.2s ease-in-out;
+}
 .card-1 {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.2s ease-in-out;

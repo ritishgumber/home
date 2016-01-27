@@ -168,6 +168,8 @@ function updateTotal(){
     $('#totalText').text(storageAmt + searchAmt + realtimeAmt + apiAmt);
 }
 
+
+/***********************************************************Mixpanel**************************************************/
 $("#pricing-body-signup-btn").click(function(){
     if(!__isDevelopment){
       /****Tracking************/            
