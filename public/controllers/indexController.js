@@ -120,8 +120,8 @@ function feautureIntroText(featureName){
     };
 
     if(featureName=="storage"){
-        IntroJson.intro1="Store documents, stream music & videos using CloudFiles.";
-        IntroJson.intro2="We automatically process your files as soon as you upload them on CloudBoost, so they're always ready. Store documents, stream music or videos in near real-time.";
+        IntroJson.intro1="Rock solid performance and scale. Store data. Any data.";
+        IntroJson.intro2="Our API ensures compatibility with a variety of development tools, platforms and app infrastructures. Eliminate the risk and cost involved with scale thanks to CloudBoost's horizontal scaling architecture. Our Enhanced features ensure data is always available and durable throughout any situation.";
     }
     if(featureName=="search"){
         IntroJson.intro1="Implement search engine in your apps with CloudSearch.";
@@ -130,6 +130,14 @@ function feautureIntroText(featureName){
     if(featureName=="realtime"){
         IntroJson.intro1="Build realtime apps, effortlessly.";
         IntroJson.intro2="When data changes, apps built with CloudBoost update instantly across every device -- web or mobile. Get an instant notification when data is inserted, updated, or deleted.";
+    }
+    if(featureName=="queues"){
+        IntroJson.intro1="Reliable queues that tie your services and components together. ";
+        IntroJson.intro2="CloudQueue is the glue that ties micro-services together by providing a reliable way to communicate between components. Highly available, persistent by design, with best-effort one-time delivery, CloudQueue is the most industrial strength, cloud-native solution for your modern application architecture.";
+    }
+    if(featureName=="cache"){
+        IntroJson.intro1="Turbo charge your apps with CloudBoost Cache.";
+        IntroJson.intro2="CloudCache is an scalable key/value store that’s perfect for applications that need to share state, pass data, and coordinate activity between processes and devices. Boost your apps by making use of high-performance middle tier for processing and communication.";
     }
     return IntroJson;
 }

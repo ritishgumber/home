@@ -23,7 +23,12 @@ function serverLights(elmClass,onTime,offTime){
 }
 
 $(document).on( "click",".sing-up-btn-demo",function() {
-   window.open('https://dashboard.cloudboost.io/accounts/#/signup');
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('Landing SmallScreens Sign Up Button', {"Clicked":"Sign up for free"});
+      /****End of Tracking*****/
+    } 
+    window.open('https://dashboard.cloudboost.io/accounts/#/signup');
 });
 
 $(document).on( "click",".start-demo",function() {
@@ -31,6 +36,11 @@ $(document).on( "click",".start-demo",function() {
     var animationEnd = animationEndEventName();
     $(".letsstart .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .inputlike p")[0].addEventListener(animationEnd, showsearchpeople, false );
 
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('Landing StartAnimation Button', {"Clicked":"Show me"});
+      /****End of Tracking*****/
+    }
 });
 
 var showsearchpeople=function(e){
