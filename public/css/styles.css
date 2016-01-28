@@ -656,27 +656,14 @@ input[type="button"] {
   height: 100%;  
   /*background: #253340 url('../images/bigbg.jpg') no-repeat 0% 0%;*/
 
-    background-image: url('../images/bigbg.jpg');
-    background-position:  0px 0px;
-    background-size: cover;
-    background-repeat: repeat;
-    background-origin: padding-box;
-    background-clip: border-box;
-    background-attachment: scroll;
-    background-color: #253340;
-}
-
-.headline-pricing-bg {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  height: 360px;
-  background: #253340 url('../images/background/try3.jpg') no-repeat 50% top;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-image: url('../images/bigbg.jpg');
+  background-position:  0px 0px;
   background-size: cover;
+  background-repeat: repeat;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-attachment: scroll;
+  background-color: #253340;
 }
 
 .headline-compare-bg {
@@ -691,9 +678,7 @@ input[type="button"] {
   -o-background-size: cover;
   background-size: cover;
 }
-.headline-bg.pricing-headline-bg {
-  background-image: url('../images/background/try3.jpg');
-}
+
 .headline-bg.contact-headline-bg {
   background-image: url('../images/background/try3.jpg');
 }
@@ -807,12 +792,7 @@ input[type="button"] {
   -moz-opacity: 0.8;
   opacity: 0.8;
 }
-.newpricingbg{ 
-  padding-top: 40px !important;
-  padding-bottom: 90px;
-  margin-top: 6px;  
-  margin-bottom: 3%;
-}
+
 /* ======= Why ======= */
 .why {
   padding-top: 80px;
