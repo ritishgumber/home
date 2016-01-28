@@ -170,6 +170,14 @@ function updateTotal(){
 
 
 /***********************************************************Mixpanel**************************************************/
+$("#pricingchart-signup-btn").click(function(){
+    if(!__isDevelopment){
+      /****Tracking************/            
+       mixpanel.track('PricingPage Chart SignUp Button', {"Clicked":"PricingPage CHart SignUp Button"});
+      /****End of Tracking*****/
+    }
+});
+
 $("#pricing-body-signup-btn").click(function(){
     if(!__isDevelopment){
       /****Tracking************/            

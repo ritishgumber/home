@@ -671,7 +671,7 @@ input[type="button"] {
   width: 100%;
   top: 0;
   left: 0;
-  height: 400px;
+  height: 360px;
   background: #253340 url('../images/background/try3.jpg') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -808,8 +808,10 @@ input[type="button"] {
   opacity: 0.8;
 }
 .newpricingbg{ 
-  padding-bottom: 120px;
+  padding-top: 40px !important;
+  padding-bottom: 90px;
   margin-top: 6px;  
+  margin-bottom: 3%;
 }
 /* ======= Why ======= */
 .why {

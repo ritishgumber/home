@@ -5,7 +5,7 @@
 }
 .pricing-bucket{
 	margin-top:3.7%;
-	margin-bottom:6%;	
+	margin-bottom:2.5%;	
 }
 .pricingbxz-exp{
 	width: 200px;
@@ -44,4 +44,19 @@
 	width:100%;		
 	padding-left:40px;
 	color: #9AA7BA;		 
+}
+.pricingbxz .content-color{
+	color:#5E6D77;
+	position: relative;	
+	font-size: 16px;
+}
+.pricingbxz .description .content-color .dots{		
+	position: absolute;
+	top: 10px;
+	left: 1px;	
+	font-size: 10px;	 
+}
+#pricingchart-signup-btn{
+	font-size: 16px !important;
+	margin-left: 17%;
 }
