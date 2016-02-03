@@ -27,29 +27,26 @@
 }
 .pricingbxz-exp{
 	width: 200px;
-	height: 365px;		
+	height: 410px;		
 }
 .pricingbxz{
 	width: 149px;	
-	height: 365px;			
+	height: 410px;			
 }
 .pricingcap{
-	height: 90px;
+	height: 140px;
 	width: 100%;
-	background-color: #43576F;
-	position: relative;
-	border-right:1px solid #2A4563;
+	background-color: #43576F;	
+	border-right:1px solid #2A4563;	
 }
 .pricingcap .name{
 	width: 100%;
-	height: 52px;
+	padding-top: 6px;	
 	color: white;
+	
 }
 .pricingcap .circlewrap{
-	width: 100%;
-	height: 76px;
-	position: absolute;
-	left: 0;	
+	width: 100%;		
 }
 .pricingbxz-exp .description{
 	height:32px;
