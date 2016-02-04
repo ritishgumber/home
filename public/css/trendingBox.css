@@ -1118,16 +1118,17 @@
 
 .animsec1 .mbl-slide1 .mbl-app-header{
 	width: 100%;
-	height: 10%;
+	height: 10%;	
 }
 
 .animsec1 .mbl-slide1 .mbl-app-head-logo{
 	width:78%;	
+	height: 100%;	
 }
 .animsec1 .mbl-slide1 .mbl-app-head-logo img{
-	width:50%;		
+	height:100%;		
 	margin-left: 45px;	
-	margin-top: 3px !important;
+	margin-top: -3px;	
 }
 
 /*Notification bubble*/
@@ -1670,12 +1671,13 @@
 	height: 10%;
 }
 .animsec1 .mbl-slide3 .mbl-app-head-logo{
-	width:78%;	
+	width:78%;
+	height: 100%;		
 }
 .animsec1 .mbl-slide3 .mbl-app-head-logo img{
-	width:50%;		
-	margin-left: 45px;	
-	margin-top: 3px;	
+	height:100%;		
+	margin-left: 45px;
+	margin-top: -1.5px;			
 }
 
 /*Notification bubble*/
