@@ -163,9 +163,11 @@ function JSON_CALLBACK(res){
         feed.link=feed.link.replace("http://cbblog.azurewebsites.net", "http://blog.cloudboost.io");                        
         break;        
       }
-    }     
+    }  
+    $(".whatsnew-label").text("What's new :");   
     $(".whatsnew-title").text(feed.title+".");
     $(".whatsnewlink").attr("href",feed.link);
+    $(".whatsnewlink").text("Read more");
    
   }
 }
