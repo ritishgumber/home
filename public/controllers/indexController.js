@@ -10,6 +10,7 @@ $(document).ready(function(){
     $(".storagefeat").addClass('activatefeat');
     $(".jstab").addClass('activatelang');
     initCodeEditors( ['storage-js']);
+    loadBlog();
 
     if(!__isDevelopment){
       /****Tracking************/            
@@ -140,6 +141,44 @@ function feautureIntroText(featureName){
         IntroJson.intro2="CloudCache is an scalable key/value store that’s perfect for applications that need to share state, pass data, and coordinate activity between processes and devices. Boost your apps by making use of high-performance middle tier for processing and communication.";
     }
     return IntroJson;
+}
+
+function loadBlog(){  
+
+  $.ajax({
+      type: "GET",
+      url: '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent("https://blog.cloudboost.io/rss"),   
+      dataType: "jsonp"      
+  });  
+
+}
+
+function JSON_CALLBACK(res){
+  var entries=res.responseData.feed.entries;
+
+  if(entries.length>0){
+    for(var i=0;i<entries.length;++i){
+      if(entries[i].categories.length>0 && getAnnouncement(entries[i].categories)){          
+        var feed=entries[i];
+        feed.link=feed.link.replace("http://cbblog.azurewebsites.net", "http://blog.cloudboost.io");                        
+        break;        
+      }
+    }     
+    $(".whatsnew-title").text(feed.title+".");
+    $(".whatsnewlink").attr("href",feed.link);
+   
+  }
+}
+
+function getAnnouncement(categories){
+  var res=null;
+  for(var j=0;j<categories.length;++j){
+    if(categories[j]=="announcement"){
+      res=categories[j];
+      break;
+    }
+  }
+  return res;
 }
 
 /****************************************Mixpanel Area********************************************************************/
