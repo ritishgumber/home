@@ -83,16 +83,17 @@ var stopallintervals=function() {
 
 var readytoscroll=function(){
     setTimeout(function(){
+        $(".trending-wrapper").removeClass("nonews");
         $(".trending-slides").removeClass("letsstart");
         $(".trending-slides").removeClass("showsearchpeople");
         $(".trending-slides").removeClass("serverspace");
         $(".trending-slides").removeClass("beginlast");
 
-        var htmlbdy=$('.trending-slides')[0];
+        var htmlbdy=$('.trending-wrapper')[0];
 
         $('html,body').animate({scrollTop: 650},700,'linear',function(){
-            $('.trending-slides').remove();
-            $('.trending-wrapper').html(htmlbdy);
+            $('.trending-wrapper').remove();
+            $('.trending-container').html(htmlbdy);
         });         
     }, 1500);    
 };
