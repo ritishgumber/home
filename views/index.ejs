@@ -323,7 +323,7 @@ CloudNotification.publish('ChannelName','data');
                             <div id="div-queues-js">
                                 <textarea class="appcode-widget" id="queues-js">
 var queue = new CB.CloudQueue('QueueName');
-queue.push('sample', {
+queue.addMessage('sample', {
     success : function(queueMessage){
         //queueMessage is an instance of CB.QueueMessage class.
         console.log(queueMessage.id);
@@ -337,7 +337,7 @@ queue.push('sample', {
                             <div id="div-queues-nodejs">
                                 <textarea class="appcode-widget" id="queues-nodejs">
 var queue = new CB.CloudQueue('QueueName');
-queue.push('sample', {
+queue.addMessage('sample', {
     success : function(queueMessage){
         //queueMessage is an instance of CB.QueueMessage class.
         console.log(queueMessage.id);
