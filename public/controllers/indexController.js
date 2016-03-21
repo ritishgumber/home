@@ -96,22 +96,33 @@ var hideAllCode = function(){
     $('#div-storage-js').hide();
     $('#div-storage-nodejs').hide();
     $('#div-storage-java').hide();
+    $('#div-storage-dotnet').hide();
+    $('#div-storage-curl').hide();
 
     $('#div-search-js').hide();
     $('#div-search-nodejs').hide();
     $('#div-search-java').hide();
+    $('#div-search-dotnet').hide();
+    $('#div-search-curl').hide();
 
     $('#div-realtime-js').hide();
     $('#div-realtime-nodejs').hide();
     $('#div-realtime-java').hide();
+    $('#div-realtime-dotnet').hide();
+    $('#div-realtime-curl').hide();
 
     $('#div-queues-js').hide();
     $('#div-queues-nodejs').hide();
     $('#div-queues-java').hide();
+    $('#div-queues-dotnet').hide();
+    $('#div-queues-curl').hide();
+
 
     $('#div-cache-js').hide();
     $('#div-cache-nodejs').hide();
-    $('#div-cache-java').hide();        
+    $('#div-cache-java').hide();
+    $('#div-cache-dotnet').hide();
+    $('#div-cache-curl').hide();        
 };
 
 function feautureIntroText(featureName){

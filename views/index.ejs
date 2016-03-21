@@ -174,10 +174,16 @@
                                     <span>Javascript</span>
                                 </div>
                                 <div class="lang-fliprlabel solo-vertical-center nodejstab" data-langname="nodejs">
-                                    <span>Nodejs</span>
+                                    <span>NodeJs</span>
                                 </div>
                                 <div class="lang-fliprlabel solo-vertical-center javatab" data-langname="java">
                                     <span>Java</span>
+                                </div>
+                                <div class="lang-fliprlabel solo-vertical-center javatab" data-langname="dotnet">
+                                    <span>.NET</span>
+                                </div>
+                                <div class="lang-fliprlabel solo-vertical-center javatab" data-langname="curl">
+                                    <span>cURL</span>
                                 </div>
                             </div>
 
@@ -222,6 +228,53 @@ obj.save(new CloudObjectCallback(){
             //cloudObject
     }
 });
+                                </textarea>
+                            </div>
+                            <div id="div-storage-dotnet">
+                                <textarea class="appcode-widget" id="storage-dotnet">
+var obj = new CB.CloudObject("TableName");
+obj.Set("ColumnName", data);
+await obj.SaveAsync();
+                                </textarea>
+                            </div>
+                            <div id="div-storage-curl">
+                                <textarea class="appcode-widget" id="storage-curl">
+curl -X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "key": ${client_key},
+  "document": {     "_type": "custom",
+        "expires": null,
+        ${column_name}: ${column_value},
+        "_modifiedColumns": ["createdAt",
+        "updatedAt",
+        "ACL",
+        "expires",
+        ${column_name}],
+        "_tableName": "data",
+        "ACL": {
+            "write": {
+                "allow": {
+                    "role": [],
+                    "user": ["all"]
+                },
+                "deny": {
+                    "role": [],
+                    "user": []
+                }
+            },
+            "read": {
+                "allow": {
+                    "role": [],
+                    "user": ["all"]
+                },
+                "deny": {
+                    "role": [],
+                    "user": []
+                }
+            }
+        },
+        "_isModified": true}
+}' 'http://api.cloudboost.io/data/${app_id}/${table_name}'
+
                                 </textarea>
                             </div>
                             <!--/Storage-->
@@ -277,6 +330,45 @@ cs.search(new CloudObjectArrayCallback(){
 });
                                 </textarea>
                             </div>
+                        <div id="div-search-dotnet">
+                                <textarea class="appcode-widget" id="search-dotnet">
+var cs = new CB.CloudSearch("Student");
+var searchQuery = new CB.SearchQuery();
+cs.searchQuery.SearchOn("name","John");
+List<CB.CloudObject> list = await cs.Search();
+                                </textarea>
+                            </div>
+                            <div id="div-search-curl">
+                                <textarea class="appcode-widget" id="search-curl">
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "key": ${client_key},
+  "limit": 10,
+  "sort": [],
+  "query": {
+    "filtered": {
+      "query": {
+        "bool": {
+          "must_not": [],
+          "should": [{
+            "match": {
+              "name": {
+                "query": "[\"egima\",\"bengi\"]"
+              }
+            }
+          }],
+          "must": []
+        }
+      },
+      "filter": { 
+      }
+    }
+  },
+  "skip": 0,
+  "collectionName": ${table_name}
+}' 'http://api.cloudboost.io/data/${app_id}/${table_name}/search'
+
+                                </textarea>
+                            </div>
                             <!--/Search-->
 
 
@@ -316,6 +408,23 @@ CloudNotification.on('ChannelName',new CloudNotificationCallback(){
 CloudNotification.publish('ChannelName','data');
                                 </textarea>
                             </div>
+                              <div id="div-realtime-dotnet">
+                                <textarea class="appcode-widget" id="realtime-dotnet">
+//Start Listening                                
+CB.CloudNotification.On("sample", new Callback(action));
+void action(Object result){
+    //function to fire
+}
+
+//Publish
+CB.CloudNotification.Publsh("sample", "data");
+                                </textarea>
+                            </div>
+                            <div id="div-realtime-curl">
+                                <textarea class="appcode-widget" id="realtime-curl">
+//REST / cURL api for realtime is not available
+                                </textarea>
+                            </div>
                             <!--/Realtime-->
 
 
@@ -350,7 +459,97 @@ queue.addMessage('sample', {
 
                             <div id="div-queues-java">
                                 <textarea class="appcode-widget" id="queues-java">
-//Coming soon
+CloudQueue queue = new CloudQueue("QueueName");
+    queue.addMessage("sample", new CloudQueueMessageCallback() {
+        @Override
+        public void done(QueueMessage[] msgs, CloudException e) {
+            if (e != null) 
+                //
+            else
+                //
+    }
+});
+                                </textarea>
+                            </div>
+                            <div id="div-queues-dotnet">
+                                <textarea class="appcode-widget" id="queues-dotnet">
+var queue = new CB.CloudQueue("QueueName");
+await queue.AddMessageAsync("sample");
+                                </textarea>
+                            </div>
+                            <div id="div-queues-curl">
+                                <textarea class="appcode-widget" id="queues-curl">
+curl -X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "key": ${app_key},
+    "document": {
+        "_type": "queue",
+        "expires": null,
+        "queueType": "pull",
+        "name": "hostel",
+        "ACL": {
+            "write": {
+                "allow": {
+                    "role": [],
+                    "user": ["all"]
+                },
+                "deny": {
+                    "role": [],
+                    "user": []
+                }
+            },
+            "read": {
+                "allow": {
+                    "role": [],
+                    "user": ["all"]
+                },
+                "deny": {
+                    "role": [],
+                    "user": []
+                }
+            }
+        },
+        "subscribers": [],
+        "retry": null,
+        "messages": [{
+            "_type": "queue-message",
+            "expires": null,
+            "_id": null,
+            "_modifiedColumns": ["createdAt",
+            "updatedAt",
+            "ACL",
+            "expires",
+            "timeout",
+            "delay",
+            "message"],
+            "ACL": {
+                "write": {
+                    "allow": {
+                        "role": [],
+                        "user": ["all"]
+                    },
+                    "deny": {
+                        "role": [],
+                        "user": []
+                    }
+                },
+                "read": {
+                    "allow": {
+                        "role": [],
+                        "user": ["all"]
+                    },
+                    "deny": {
+                        "role": [],
+                        "user": []
+                    }
+                }
+            },
+            "delay": null,
+            "timeout": 1800,
+            "_isModified": true
+        }]
+    }
+}' 'http://api.cloudboost.io/queue/${app_id}/${queue_name}/message'
+
                                 </textarea>
                             </div>
                             <!--/Queues-->
@@ -388,7 +587,36 @@ cache.set('sample',item, {
 
                             <div id="div-cache-java">
                                 <textarea class="appcode-widget" id="cache-java">
-//Coming soon
+CloudCache cache = new CloudCache("student");
+cache.set("test1", "sample", new ObjectCallback() {
+@Override
+public void done(Object x, CloudException e) throws CloudException {
+    if (e != null)
+    //
+    else {
+    //
+    }
+}
+});
+                                </textarea>
+                            </div>
+                            <div id="div-cache-dotnet">
+                                <textarea class="appcode-widget" id="cache-dotnet">
+var cache = new CB.CloudCache("CacheName");
+var list = new Dictionary<string, Object>();
+list.Add("name", "John Doe");
+list.Add("sex", "MALE");
+list.Add("age", 24); 
+var result = await cache.SetAsync("sample", data);
+                                </textarea>
+                            </div>
+                            <div id="div-cache-curl">
+                                <textarea class="appcode-widget" id="cache-curl">
+curl -X PUT --header 'Content-Type: application/json' --header 'Accept: text/html' -d '{
+  "item": ${data_to_cache},
+  "key": ${master_key}}
+}' 'http://api.cloudboost.io/cache/${app_id}/${cache_name}/${data_key}}'
+
                                 </textarea>
                             </div>
                             <!--/Cache-->
@@ -599,7 +827,7 @@ cache.set('sample',item, {
                     <div>
                       <figure class="figure col-md-8 col-sm-12 col-xs-8 col-md-offset-2 col-xs-offset-2">
                        <a href="https://docs.cloudboost.io">
-                        <img class="img-responsive"  src="/images/frameworks.png" alt="AngularJS, NodeJS, ReactJS, EmberJS, Java, JavaScript SDK's"/>
+                        <img class="img-responsive"  src="/images/frameworks-1.png" alt="AngularJS, NodeJS, ReactJS, EmberJS, Java, JavaScript SDK's"/>
                        </a>
                       </figure>
                     </div>
