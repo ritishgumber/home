@@ -226,7 +226,7 @@ function createTutorialBox(tutorialBoxList){
                     langHtml+='</div>';
                 langs+=langHtml;    
             }           
-            //Android
+            //Java
             if(tutorialBoxList[i].languages[j]=="Java"){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
                     langHtml+='<img src="./images/java.png" style="height:24px;width:22px;margin-top:-6px;">';
@@ -237,6 +237,13 @@ function createTutorialBox(tutorialBoxList){
             if(tutorialBoxList[i].languages[j]=="Android"){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
                     langHtml+='<i class="icon ion-social-android fa-lg"></i>';
+                    langHtml+='</div>';
+                langs+=langHtml;    
+            }
+            //IOS
+            if(tutorialBoxList[i].languages[j]=="IOS"){
+                var langHtml='<div class="flex-equal-ratio-items langIcon">';
+                    langHtml+='<i class="icon ion-social-apple fa-lg"></i>';
                     langHtml+='</div>';
                 langs+=langHtml;    
             }
