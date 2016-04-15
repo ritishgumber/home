@@ -119,6 +119,13 @@
   -webkit-flex:1;
 }
 
+.default-inputfield{
+    border:none;
+}
+.default-inputfield:focus{
+    outline: none;
+}
+
 body {
   font-family: 'Roboto', arial, sans-serif;
   color: #444444;

@@ -8,6 +8,9 @@ var path = require('path');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+global.keys = require('./config/keys.js');
+
+
 //Convert the Content
 //For Production SDK
 app.get('/js-sdk/:id', function(req, res) {
