@@ -4525,3 +4525,39 @@ input[type="button"] {
 #home-bottom-compare-btn:hover i{
  color: white;
 }
+
+
+/*******compare quickstart btn****/
+#compare-bottom-quickstart-btn{
+  background-color:white; 
+  color:#159CEE;
+  font-size:20px;
+  border:1px solid #159CEE;
+}
+#compare-bottom-quickstart-btn i{
+  color:#159CEE;
+}
+#compare-bottom-quickstart-btn:hover{
+  background-color:#159CEE;
+  color: white;
+}
+#compare-bottom-quickstart-btn:hover i{
+ color: white;
+}
+
+#compare-bottom-quickstart-btn{
+  background-color:white; 
+  color:#159CEE;
+  font-size:20px;
+  border:1px solid #159CEE;
+}
+#compare-bottom-quickstart-btn i{
+  color:#159CEE;
+}
+#compare-bottom-quickstart-btn:hover{
+  background-color:#159CEE;
+  color: white;
+}
+#compare-bottom-quickstart-btn:hover i{
+ color: white;
+}
