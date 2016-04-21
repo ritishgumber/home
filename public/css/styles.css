@@ -673,6 +673,27 @@ input[type="button"] {
   background-color: #253340;
 }
 
+@media (min-device-width : 2000px) and (max-device-width : 2470px)
+{
+  .index-bg{
+    height: 75%;       
+  } 
+}
+
+@media (min-device-width : 2500px) and (max-device-width : 3440px)
+{
+  .index-bg{
+    height: 60%;       
+  } 
+}
+
+@media (min-device-width : 3500px) and (max-device-width : 6000px)
+{
+  .index-bg{
+    height: 40%;       
+  } 
+}
+
 .headline-compare-bg {
   position: absolute;
   width: 100%;

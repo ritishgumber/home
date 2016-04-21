@@ -21,6 +21,27 @@
 	} 
 }
 
+@media (min-device-width : 2000px) and (max-device-width : 2470px)
+{
+    .trendingbox-section{
+		height: 65vh;				
+	} 
+}
+
+@media (min-device-width : 2500px) and (max-device-width : 3440px)
+{
+    .trendingbox-section{
+		height: 50vh;				
+	} 
+}
+
+@media (min-device-width : 3500px) and (max-device-width : 6000px)
+{
+    .trendingbox-section{
+		height: 30vh;				
+	} 
+}
+
 
 .trending-wrapper{	
 	width:98%;
