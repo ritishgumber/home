@@ -4582,3 +4582,9 @@ input[type="button"] {
 #compare-bottom-quickstart-btn:hover i{
  color: white;
 }
+.comps-usingus-bx:first-child{
+  margin-left:0px;
+}
+.comps-usingus-bx{   
+  margin-left: 60px;
+}
