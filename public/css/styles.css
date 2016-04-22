@@ -4588,3 +4588,9 @@ input[type="button"] {
 .comps-usingus-bx{   
   margin-left: 60px;
 }
+@media screen and (max-device-width : 850px)
+{
+  #comps-logo-section{
+    display: none !important;
+  } 
+}
