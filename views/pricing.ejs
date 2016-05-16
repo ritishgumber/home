@@ -646,7 +646,23 @@ All our plans have a hard limit on the number of database connections. Our Free 
     <script type="text/javascript" src="/bower_components/underscrore/underscore.js"></script>    
     <!--<script type="text/javascript" src="/js/owlcarousel/owl.carousel.js"></script> -->
     <script type="text/javascript" src="/bower_components/slick-carousel/slick/slick.js"></script>
-
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+     
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+     
+      return t;
+    }(document, "script", "twitter-wjs"));</script>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
     <script type="text/javascript">  
     
        $(document).ready(function(){
@@ -669,98 +685,57 @@ All our plans have a hard limit on the number of database connections. Our Free 
                 initialSlide:0,
                 respondTo:'slider'                
             });
-
-            /*$('#myCarousel').carousel({
-                interval: 200,
-                wrap:true
-            });*/
-
-            /*slider=$(".tweetparent").lightSlider({
-                item: 3,
-                autoWidth: false,
-                slideMove: 1, // slidemove will be 1 if loop is true
-                slideMargin: 10 ,
-                auto: true,
-                mode: "slide",
-                loop: true,  
-                easing: 'linear',
-                controls:true,
-                pager:true             
-            });*/
        });
         
-            
+        var tweertIds=[];    
         $.get(selfServerUrl+'/twitter/search',function(list, status){
             if(status=="success"){
-                //console.log(list);                
-                var promises=[];
-                var tweertIds=[];
+                                
+                var promises=[];                
                 for(var i=0;i<list.twitterFeed.length;++i){
-                    //console.log(list.twitterFeed[i].entities.user_mentions[0]);
-                    var tweetId=list.twitterFeed[i].id_str;
                     
-                    //tweetId=JSON.stringify(tweetId);
-                    //tweetId=20;
-                    promises.push(getEachTweetById(tweetId));
-                    tweertIds.push(tweetId);                
+                    var tweetId=list.twitterFeed[i].id_str; 
+
+                    tweertIds.push(tweetId);  
+                    var tweetBxHtml='<div class="tweetbody" tweetid="'+tweetId+'"></div>';
+
+                    //$(".tweetparent").append(tweetBxHtml);
+                    $(".tweetparent").slick('slickAdd',tweetBxHtml);               
                     
+                } 
+
+                for(var i=0;i<list.twitterFeed.length;++i){
+                    
+                    var tweetId=list.twitterFeed[i].id_str; 
+
+                    tweertIds.push(tweetId);  
+                    var tweetBxHtml='<div class="tweetbody" tweetid="'+tweetId+'"></div>';
+
+                    //$(".tweetparent").append(tweetBxHtml);
+                    $(".tweetparent").slick('slickAdd',tweetBxHtml);               
+                    
+                }                
+
+                var t=document.querySelectorAll(".tweetbody");
+                for(n=0;n<t.length;n++){
+                    var attr=t[n];
+                    var twittrId=attr.getAttribute("tweetid");
+
+                    twttr.widgets.createTweet(
+                      twittrId,
+                      attr,
+                      {
+                        align: 'left'
+                    })
                 }
 
-                Q.all(promises).then(function(dList){
-                    //console.log(dList);
-                  
-                    appendTweet(dList,tweertIds);
-                    appendTweet(dList,tweertIds);
-                    appendTweet(dList,tweertIds);
-                    appendTweet(dList,tweertIds);
-                                     
-                    
-                    $(".tweetparent").slick('slickGoTo',true); 
-                    
-                },function(error){
-                    console.log(error);
-                });              
+                $(".tweetparent").slick('slickGoTo',true);
+                                       
                         
             }else{
               console.log(status);
             }        
-        });  
-
-        function getEachTweetById(tweetId){
-            var q=Q.defer();
-            $.get(selfServerUrl+'/twitter/'+tweetId,function(twitterObj, newstatus){
-                if(newstatus=="success"){ 
-                   q.resolve(twitterObj);
-                }else{
-                    q.reject(newstatus);                    
-                }
-            }); 
-
-            return  q.promise;  
-        }
-
-        function appendTweet(dList,tweertIds){
-            var duplicateId=[];
-            for(var i=0;i<dList.length;++i){
-                
-                var htmlTemp='<div class="tweetbody">';                    
-                       htmlTemp+=dList[i].html;                            
-                    htmlTemp+='</div>';
-
-                if(duplicateId.length>0){
-                    if(duplicateId.indexOf(tweertIds[i])<0){
-                        duplicateId.push(tweertIds[i]);
-                        $(".tweetparent").slick('slickAdd',htmlTemp); 
-                    }
-                }else{
-                    duplicateId.push(tweertIds[i]);
-                    $(".tweetparent").slick('slickAdd',htmlTemp); 
-                }
-
-                // $(".newtwitter").append(htmlTemp);                   
-
-            }
-        }
+        });       
           
         
     </script>
