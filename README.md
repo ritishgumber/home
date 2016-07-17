@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CloudBoost/home.svg?branch=master)](https://travis-ci.org/CloudBoost/home)
+
 #CloudBoost
 
 CloudBoost is the Complete NoSQL Database Service for your app. Think of CloudBoost as Parse + Firebase + Algolia + Iron.io all combined into one :
