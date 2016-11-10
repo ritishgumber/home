@@ -20,6 +20,7 @@ module.exports = function() {
     	twitter.getHomeTimeline({'count': 10}, function (err, response, body) {    		
 		    return res.status(500).send(err); 
 		  }, function (data) {
+		  	console.log(data);
 		    var obj=JSON.parse(data);    
 		    //console.log(obj.statuses);		    	    
 		    var returnJson={twitterFeed : obj};
