@@ -12,7 +12,11 @@ router.get('/quickstart', function(req, res) {
 });
 
 router.get('/pricing', function(req, res) {
-  res.render('pricing');  
+  res.render('pricing');
+});
+
+router.get('/development-service', function(req, res) {
+  res.render('development-service');  
 });
 
 router.get('/experts', function(req, res) {
@@ -36,7 +40,7 @@ router.get('/partners/:id', function(req, res) {
 
     if(patnerId){
 
-      _getResultsById(patnerId).then(function(results){        
+      _getResultsById(patnerId).then(function(results){
         res.render('partnerDetails',{
           partnerDetails:results
         });
@@ -84,7 +88,7 @@ function _getResultsById(partnerId){
 
   console.log("Fetch results by typeformId");
 
-  var deferred = Q.defer(); 
+  var deferred = Q.defer();
 
   try{
 
@@ -92,12 +96,12 @@ function _getResultsById(partnerId){
 
     request.get(url,function(err,response,body){
 
-        if(err || response.statusCode === 500 || response.statusCode === 400 || body === 'Error'){  
-          console.log("Error on Fetch results by partnerId");     
+        if(err || response.statusCode === 500 || response.statusCode === 400 || body === 'Error'){
+          console.log("Error on Fetch results by partnerId");
           deferred.reject(err);
-        }else {   
-         
-          console.log("Success on Fetch results by partnerId");          
+        }else {
+
+          console.log("Success on Fetch results by partnerId");
 
           try{
             var respBody=JSON.parse(body);
@@ -105,12 +109,12 @@ function _getResultsById(partnerId){
           }catch(e){
             deferred.reject(e);
           }
-          
+
         }
     });
 
-  }catch(err){   
-    deferred.reject(err)         
+  }catch(err){
+    deferred.reject(err)
   }
 
   return deferred.promise;
