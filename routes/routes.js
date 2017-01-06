@@ -16,7 +16,11 @@ router.get('/pricing', function(req, res) {
 });
 
 router.get('/development-service', function(req, res) {
-  res.render('development-service');  
+  res.render('development-service');
+});
+
+router.get('/software-development-service', function(req, res) {
+  res.render('development-service');
 });
 
 router.get('/experts', function(req, res) {
