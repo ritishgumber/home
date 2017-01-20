@@ -600,7 +600,7 @@ All our plans have a hard limit on the number of database connections. Our Free 
        });
 
         var tweertIds=[];
-        $.get(selfServerUrl+'/twitter/search',function(list, status){
+        $.get(window.location.origin+'/twitter/search',function(list, status){
             if(status=="success"){
 
                 var promises=[];

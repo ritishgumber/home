@@ -10,7 +10,7 @@ var searchAmt = (0.2) * 20 ;
 
 //Initialization
 $(document).ready(function(){
-   
+
 
     for(var i=0;i<=2000; i+=50){
       realtime.push(i);
@@ -28,9 +28,9 @@ $(document).ready(function(){
       searchArray.push(Math.round(i * 10) / 10);
     }
 
-    
-    $('#storageText').text(storageAmt);    
-    $('#apiText').text(apiAmt);    
+
+    $('#storageText').text(storageAmt);
+    $('#apiText').text(apiAmt);
     $('#realtimeText').text(realtimeAmt);
     $('#searchText').text(searchAmt);
 
@@ -43,8 +43,8 @@ $(document).ready(function(){
         postfix: " million requests",
         grid: true,
         onChange: function (data) {
-          
-        apiAmt = (data.from_value * 100) * 0.6;          
+
+        apiAmt = (data.from_value * 100) * 0.6;
 
           $('#apiText').text(apiAmt);
 
@@ -59,13 +59,13 @@ $(document).ready(function(){
         postfix: " GB",
         grid: true,
         onChange: function (data) {
-         
-        storageAmt = (data.from_value * 2);         
+
+        storageAmt = (data.from_value * 2);
 
           $('#storageText').text(storageAmt);
 
           updateTotal();
-         
+
         },
     });
 
@@ -78,14 +78,14 @@ $(document).ready(function(){
         grid: true,
         onChange: function (data) {
 
-         
+
            realtimeAmt = (data.from_value) * 0.2;
-          
+
 
           $('#realtimeText').text(realtimeAmt);
 
           updateTotal();
-         
+
         },
     });
 
@@ -97,9 +97,9 @@ $(document).ready(function(){
         postfix: " million documents",
         grid: true,
         onChange: function (data) {
-          
+
             searchAmt = (data.from_value) * 20 ;
-            
+
 
             $('#searchText').text(searchAmt);
 
@@ -107,11 +107,11 @@ $(document).ready(function(){
         },
     });
 
-    if(!__isDevelopment){
-      /****Tracking************/            
+
+      /****Tracking************/
        mixpanel.track('Visted Pricing Page', {"visited":"visited Pricing Page"});
       /****End of Tracking*****/
-    }
+    
 });
 //Initialization
 
@@ -155,13 +155,13 @@ $("#dfaq8").click(function(event){
     faqExpand('faq8')
 });
 
-var faqExpand = function(id){  
+var faqExpand = function(id){
 
     if($('#'+id).hasClass("in")){
         $('#'+id).removeClass("in");
     }else{
         $('#'+id).addClass("in");
-    }    
+    }
 };
 
 function updateTotal(){
@@ -172,7 +172,7 @@ function updateTotal(){
 /***********************************************************Mixpanel**************************************************/
 $("#pricingchart-signup-btn").click(function(){
     if(!__isDevelopment){
-      /****Tracking************/            
+      /****Tracking************/
        mixpanel.track('PricingPage Chart SignUp Button', {"Clicked":"PricingPage CHart SignUp Button"});
       /****End of Tracking*****/
     }
@@ -180,7 +180,7 @@ $("#pricingchart-signup-btn").click(function(){
 
 $("#pricing-body-signup-btn").click(function(){
     if(!__isDevelopment){
-      /****Tracking************/            
+      /****Tracking************/
        mixpanel.track('PricingPage Body SignUp Button', {"Clicked":"PricingPage Body SignUp Button"});
       /****End of Tracking*****/
     }
@@ -188,23 +188,23 @@ $("#pricing-body-signup-btn").click(function(){
 
 $("#pricing-body-getintouch-btn").click(function(){
     if(!__isDevelopment){
-      /****Tracking************/            
+      /****Tracking************/
        mixpanel.track('PricingPage GetIn-Touch Button', {"Clicked":"PricingPage GetIn-Touch Button"});
       /****End of Tracking*****/
     }
-}); 
+});
 
 $("#pricing-body-compare-btn").click(function(){
     if(!__isDevelopment){
-      /****Tracking************/            
+      /****Tracking************/
        mixpanel.track('PricingPage Compare Button', {"Clicked":"PricingPage Compare Button"});
       /****End of Tracking*****/
     }
-});  
+});
 
 $("#pricing-bottom-getintouch-btn").click(function(){
     if(!__isDevelopment){
-      /****Tracking************/            
+      /****Tracking************/
        mixpanel.track('PricingPage Bottom GetIn-Touch Button', {"Clicked":"PricingPage Bottom GetIn-Touch Button"});
       /****End of Tracking*****/
     }
