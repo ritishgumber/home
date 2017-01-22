@@ -4,11 +4,25 @@ var app = express();
 var bodyParser = require('body-parser');
 var request = require('request');
 var path = require('path');
+var minifyHTML = require('express-minify-html');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 global.keys = require('./config/keys.js');
+
+app.use(minifyHTML({
+    override:      true,
+    exception_url: false,
+    htmlMinifier: {
+        removeComments:            true,
+        collapseWhitespace:        true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes:     true,
+        removeEmptyAttributes:     true,
+        minifyJS:                  true
+    }
+}));
 
 
 //Convert the Content
@@ -55,6 +69,6 @@ app.use('/', twitterRoutes);
 
 //Ending
 app.set('port', process.env.PORT || 1444);
-var server = app.listen(app.get('port'), function() {	
+var server = app.listen(app.get('port'), function() {
 	console.log("CBLanding started on PORT:"+app.get('port'));
 });
