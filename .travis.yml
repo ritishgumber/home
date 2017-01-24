@@ -13,7 +13,7 @@ deploy:
 
 #Purge the cache.
 after_deploy:
-  - curl -X DELETE "https://api.cloudflare.com/client/v4/zones/""$cloudflare_zone""/purge_cache" -H "X-Auth-Email:hello@cloudboost.io" -H "X-Auth-Key:""$cloud_flare_key" -H "Content-Type:application/json" -data "{\"purge_everything\":true}'
+  - curl -X DELETE "https://api.cloudflare.com/client/v4/zones/""$cloudflare_zone""/purge_cache" -H "X-Auth-Email:hello@cloudboost.io" -H "X-Auth-Key:""$cloud_flare_key" -H "Content-Type:application/json" -data "{\"purge_everything\":true}"
 
 #Notify Team on Slack
 notifications:
