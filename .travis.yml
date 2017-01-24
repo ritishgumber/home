@@ -3,11 +3,25 @@ node_js:
   - "6"
 install:
   - npm install
+after_deploy:
+  - curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$cloudflare_zone/purge_cache" \
+     -H "X-Auth-Email: hello@cloudboost.io" \
+     -H "X-Auth-Key: $cloud_flare_key" \
+     -H "Content-Type: application/json" \
+     --data '{"purge_everything":true}'
 deploy:
   provider: azure_web_apps
-  username: "$azure_deployment_user"      
+  username: "$azure_deployment_user"
   password: "$azure_deployment_password"
-  site: "$azure_deployment_sitename" 
+  site: "$azure_deployment_sitename"
+  
+#Purge the cache.
+after_deploy:
+  - curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$cloudflare_zone/purge_cache" \
+     -H "X-Auth-Email: hello@cloudboost.io" \
+     -H "X-Auth-Key: $cloud_flare_key" \
+     -H "Content-Type: application/json" \
+     --data '{"purge_everything":true}'
 #Notify Team on Slack
 notifications:
   slack: cloudboost:gm7nWJDLDtBRyF75VKLKOoMW
