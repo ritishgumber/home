@@ -5,7 +5,7 @@ node_js:
 install:
   - sudo apt-get update
   - sudo apt-get install curl libc6 libcurl3 zlib1g
-  - sudo npm install
+  - npm install
 
 deploy:
   provider: azure_web_apps
