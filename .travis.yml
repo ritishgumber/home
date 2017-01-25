@@ -3,9 +3,9 @@ language: node_js
 node_js:
   - "6"
 install:
-  - apt-get update
-  - apt-get install curl libc6 libcurl3 zlib1g
-  - npm install
+  - sudo apt-get update
+  - sudo apt-get install curl libc6 libcurl3 zlib1g
+  - sudo npm install
 
 deploy:
   provider: azure_web_apps
