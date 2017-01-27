@@ -162,6 +162,7 @@ function bindTutorialData(tutData){
 
 function createTutorialBox(tutorialBoxList){
     var tutBoxHtml="";
+    var tutorialURL = "https://tutorial.cloudboost.io";
     for(var i=0;i<tutorialBoxList.length;++i){
     var boxHtml='<!--******BOX*******-->';
         boxHtml+='<div style="position:relative; margin-top:20px; margin-bottom:5px;">';
