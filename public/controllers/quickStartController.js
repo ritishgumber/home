@@ -117,7 +117,7 @@ var initCodeEditors = function(arr,language,size){
 
 //getTutorials
 function getTutorials(){
-    $.get(window.location.origin+'/tutorial', function(data, status){
+    $.get('https://service.cloudboost.io/tutorial', function(data, status){
         if(status=="success"){
           for(var i=0;i<data.length;++i){
             bindTutorialData(data[i]);
@@ -289,17 +289,13 @@ $(document).on("mouseleave",".tut-bx-container-gray-bx",function(event){
 
 $(document).on("click",".tut-view-btn",function(event){
    var subCategory=$(this).data("subcat");
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('Quickstart-View Tutorial', {"subcategory":subCategory});
-      /****End of Tracking*****/
-    }
+
 });
 
 $(".quickstart-getstarted-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('Quickstart-Getting Started Tutorial', {"clicked":"Clicked on short button for first app"});
-      /****End of Tracking*****/
-    }
+
 });

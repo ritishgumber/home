@@ -34,8 +34,6 @@ $(document).on( "click",".start-demo",function() {
     $(".trending-slides").addClass("letsstart");
     var animationEnd = animationEndEventName();
     $(".letsstart .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .inputlike p")[0].addEventListener(animationEnd, showsearchpeople, false );
-
-
     mixpanel.track('Landing StartAnimation Button', {"Clicked":"Show me"});
 
 });
