@@ -111,7 +111,7 @@ $(document).ready(function(){
       /****Tracking************/
        mixpanel.track('Visted Pricing Page', {"visited":"visited Pricing Page"});
       /****End of Tracking*****/
-    
+
 });
 //Initialization
 
@@ -171,19 +171,15 @@ function updateTotal(){
 
 /***********************************************************Mixpanel**************************************************/
 $("#pricingchart-signup-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
-       mixpanel.track('PricingPage Chart SignUp Button', {"Clicked":"PricingPage CHart SignUp Button"});
-      /****End of Tracking*****/
-    }
+
+    mixpanel.track('PricingPage Chart SignUp Button', {"Clicked":"PricingPage CHart SignUp Button"});
+
 });
 
 $("#pricing-body-signup-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
-       mixpanel.track('PricingPage Body SignUp Button', {"Clicked":"PricingPage Body SignUp Button"});
-      /****End of Tracking*****/
-    }
+
+    mixpanel.track('PricingPage Body SignUp Button', {"Clicked":"PricingPage Body SignUp Button"});
+
 });
 
 $("#pricing-body-getintouch-btn").click(function(){

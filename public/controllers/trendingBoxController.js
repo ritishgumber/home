@@ -4,12 +4,12 @@ var datauploadingServer;
 var dataMoving;
 
 //Initialization
-$(document).ready(function(){  
-    var windowsWidth = $(window).width(); 
+$(document).ready(function(){
+    var windowsWidth = $(window).width();
     if(windowsWidth<=1023){
         var signUpBtn='<button type="button" class="sing-up-btn-demo">Sign Up &nbsp;<i class="fa fa-angle-right bounce-arrow" style="font-size:18px;"></i></button>';
         $(".demo-start-btn").html(signUpBtn);
-    }       
+    }
 });
 
 function serverLights(elmClass,onTime,offTime){
@@ -23,11 +23,9 @@ function serverLights(elmClass,onTime,offTime){
 }
 
 $(document).on( "click",".sing-up-btn-demo",function() {
-    if(!__isDevelopment){
-      /****Tracking************/            
-       mixpanel.track('Landing SmallScreens Sign Up Button', {"Clicked":"Sign up for free"});
-      /****End of Tracking*****/
-    } 
+
+    mixpanel.track('Landing SmallScreens Sign Up Button', {"Clicked":"Sign up for free"});
+
     window.open('https://dashboard.cloudboost.io/accounts/#/signup');
 });
 
@@ -37,41 +35,39 @@ $(document).on( "click",".start-demo",function() {
     var animationEnd = animationEndEventName();
     $(".letsstart .animsec1 .mbl-slide2 .mbl-app-searchin-wrap .inputlike p")[0].addEventListener(animationEnd, showsearchpeople, false );
 
-    if(!__isDevelopment){
-      /****Tracking************/            
-       mixpanel.track('Landing StartAnimation Button', {"Clicked":"Show me"});
-      /****End of Tracking*****/
-    }
+
+    mixpanel.track('Landing StartAnimation Button', {"Clicked":"Show me"});
+
 });
 
 var showsearchpeople=function(e){
-    $(".trending-slides").addClass("showsearchpeople"); 
+    $(".trending-slides").addClass("showsearchpeople");
     var transitionEnd = transitionEndEventName();
-    $(".showsearchpeople .dotyped")[0].addEventListener(transitionEnd, serverspace, false ); 
+    $(".showsearchpeople .dotyped")[0].addEventListener(transitionEnd, serverspace, false );
 
     //Passive
-    $(".showsearchpeople .dotyped")[0].addEventListener(transitionEnd, setupServerSlide, false );         
+    $(".showsearchpeople .dotyped")[0].addEventListener(transitionEnd, setupServerSlide, false );
 };
 
 var serverspace=function(){
-    $(".trending-slides").addClass("serverspace");     
+    $(".trending-slides").addClass("serverspace");
     var transitionEnd = transitionEndEventName();
     $(".serverspace .animsec4 .graphic-column2 .datatrans-head .sub")[0].addEventListener(transitionEnd, beginlast, false );
 
     //Passive
     var animationEnd = animationEndEventName();
-    $(".serverspace .animsec4 .graphic-column2 .datatrans-body")[0].addEventListener(transitionEnd, stopTyping, false );   
+    $(".serverspace .animsec4 .graphic-column2 .datatrans-body")[0].addEventListener(transitionEnd, stopTyping, false );
 };
 
-var beginlast = function (e){ 
+var beginlast = function (e){
     $(".trending-slides").addClass("beginlast");
-    $(".trending-slides").removeClass("showsearchpeople");          
+    $(".trending-slides").removeClass("showsearchpeople");
 
-    var transitionEnd = transitionEndEventName();      
-    $(".beginlast .animsec5 .graphic-row3 .allplatforms")[0].addEventListener(transitionEnd, readytoscroll, false ); 
+    var transitionEnd = transitionEndEventName();
+    $(".beginlast .animsec5 .graphic-row3 .allplatforms")[0].addEventListener(transitionEnd, readytoscroll, false );
 
     //Passive
-    $(".beginlast .animsec5 .graphic-row1 .graphic-column1 .demo-main-heading .sent1")[0].addEventListener(transitionEnd, stopallintervals, false );       
+    $(".beginlast .animsec5 .graphic-row1 .graphic-column1 .demo-main-heading .sent1")[0].addEventListener(transitionEnd, stopallintervals, false );
 }
 
 var stopallintervals=function() {
@@ -94,8 +90,8 @@ var readytoscroll=function(){
         $('html,body').animate({scrollTop: 650},700,'linear',function(){
             $('.trending-wrapper').remove();
             $('.trending-container').html(htmlbdy);
-        });         
-    }, 1500);    
+        });
+    }, 1500);
 };
 
 var stopTyping=function(){
@@ -118,7 +114,7 @@ function animationEndEventName () {
         el = document.createElement('div'),
         animations = {
             'animation':'animationend',
-            'OAnimation':'oanimationend',  // oTransitionEnd in very old Opera            
+            'OAnimation':'oanimationend',  // oTransitionEnd in very old Opera
             'WebkitAnimation':'webkitAnimationEnd',
             'MsAnimation':'MSAnimationEnd'
         };
@@ -127,7 +123,7 @@ function animationEndEventName () {
         if (animations.hasOwnProperty(i) && el.style[i] !== undefined) {
             return animations[i];
         }
-    }     
+    }
 }
 
 function transitionEndEventName () {
@@ -148,11 +144,11 @@ function transitionEndEventName () {
         }
     }
 
-    //TODO: throw 'TransitionEnd event is not supported in this browser'; 
+    //TODO: throw 'TransitionEnd event is not supported in this browser';
 }
 
 var setupServerSlide=function() {
-    switchServerLights();   
+    switchServerLights();
     pipelinedata();
     dataUploading();
 };
@@ -186,20 +182,20 @@ function dataUploading () {
      var docusCount=0;
     var appendoc;
     var totaldocCount=0;
-    datauploadingServer=setInterval(function(){ 
+    datauploadingServer=setInterval(function(){
         ++totaldocCount;
-        var uniqueId="uniqueId"+totaldocCount;            
+        var uniqueId="uniqueId"+totaldocCount;
         if(docusCount==0){
-            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-image.png">'; 
+            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-image.png">';
         }
         if(docusCount==1){
-            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-music.png">'; 
+            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-music.png">';
         }
         if(docusCount==2){
-            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-movie.png">'; 
+            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-movie.png">';
         }
         if(docusCount==3){
-            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-folder.png">'; 
+            appendoc='<img class="rollingimg animateimg '+uniqueId+'" src="/images/metro-folder.png">';
         }
 
         $(".data-trans-wrap").append(appendoc);

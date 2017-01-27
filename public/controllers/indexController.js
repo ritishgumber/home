@@ -166,35 +166,27 @@ function getAnnouncement(categories){
 
 /****************************************Mixpanel Area********************************************************************/
 $("#header-signupbtn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('Landing Header Sign Up Button', {"Clicked":"Sign up for free"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $("#header-loginbtn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('Landing Header Login Button', {"Clicked":"Login"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $("#home-body-signup-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Body Sign Up Button', {"Clicked":"HomePage Body Sign Up Button"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $("#home-body-quickstart-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage CodeWidget QuickStart Button', {"Clicked":"HomePage CodeWidget QuickStart Button"});
-      /****End of Tracking*****/
-    }
+
 });
 $("#home-body-compare-btn").click(function(){
     if(!__isDevelopment){
@@ -205,67 +197,49 @@ $("#home-body-compare-btn").click(function(){
 });
 
 $("#home-bottom-quickstart-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Bottom QuickStart Button', {"Clicked":"HomePage Bottom QuickStart Button"});
-      /****End of Tracking*****/
-    }
+
 });
 $("#home-bottom-compare-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Bottom Compare Button', {"Clicked":"HomePage Bottom Compare Button"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $(".dockerlink").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Docker Link', {"Clicked":"HomePage Docker Link"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".kuberneteslink").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Kubernetes Link', {"Clicked":"HomePage Kubernetes Link"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $(".instagramclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Instagram Clone', {"Clicked":"HomePage Instagram Clone"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".hnewsclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage HackerNews Clone', {"Clicked":"HomePage HackerNews Clone"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".slackclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Slack Clone', {"Clicked":"HomePage Slack Clone"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".tinderclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Tinder Clone', {"Clicked":"HomePage Tinder Clone"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".whatsappclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/
+
        mixpanel.track('HomePage Whatsapp Clone', {"Clicked":"HomePage Whatsapp Clone"});
-      /****End of Tracking*****/
-    }
+      
 });

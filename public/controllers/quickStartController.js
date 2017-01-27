@@ -9,11 +9,9 @@ $(document).ready(function(){
 
     //LoadTutorials
     getTutorials();
-    if(!__isDevelopment){
-      /****Tracking************/
-       mixpanel.track('Visted QuickStart Page', {"visited":"visited QuickStart Page"});
-      /****End of Tracking*****/
-    }
+
+    mixpanel.track('Visted QuickStart Page', {"visited":"visited QuickStart Page"});
+
 });
 //Initialization
 
