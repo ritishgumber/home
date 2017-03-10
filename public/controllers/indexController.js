@@ -3,20 +3,19 @@ var langTabSelected = 'js';
 var featureSelected = 'storage';
 
 //Initialization
-$(document).ready(function(){ 
+$(document).ready(function(){
 
-	hideAllCode();   
+	hideAllCode();
     $('#div-storage-js').show();
     $(".storagefeat").addClass('activatefeat');
     $(".jstab").addClass('activatelang');
     initCodeEditors( ['storage-js']);
-    loadBlog();
 
-    if(!__isDevelopment){
-      /****Tracking************/            
-       mixpanel.track('Visted Home Page', {"visited":"visited Home Page"});
-      /****End of Tracking*****/
-    }  
+
+    /****Tracking************/
+     mixpanel.track('Visted Home Page', {"visited":"visited Home Page"});
+    /****End of Tracking*****/
+
 });
 //Initialization
 
@@ -28,7 +27,7 @@ $(".each-feature-wrap").click(function () {
     });
 
     $(this).addClass('activatefeat');
-    var featureName=$(this).data('featname');        
+    var featureName=$(this).data('featname');
     featureClick(featureName);
 
     $(".introrap").remove();
@@ -40,7 +39,7 @@ $(".each-feature-wrap").click(function () {
         introHtml+='</div>';
 
         introHtml+='<div class="intro2" style="margin-top:12px;">';
-           introHtml+='<span style="color:#383838;font-size:16px;">'+introJson.intro2+'</span>'; 
+           introHtml+='<span style="color:#383838;font-size:16px;">'+introJson.intro2+'</span>';
         introHtml+='</div>';
     introHtml+='</div>';
 
@@ -62,16 +61,16 @@ $(".lang-fliprlabel").click(function(event){
 
 var languageClick = function(lang){
     hideAllCode();
-    langTabSelected = lang;    
-    featureClick(featureSelected);   
+    langTabSelected = lang;
+    featureClick(featureSelected);
 };
 
-var featureClick = function(feature){   
-    hideAllCode(); 
-    var WidgetId=feature+'-'+langTabSelected;    
+var featureClick = function(feature){
+    hideAllCode();
+    var WidgetId=feature+'-'+langTabSelected;
     $('#div-'+WidgetId).show();
     initCodeEditors( [WidgetId]);
-    featureSelected = feature;       
+    featureSelected = feature;
 };
 
 var initCodeEditors = function(arr){
@@ -122,7 +121,7 @@ var hideAllCode = function(){
     $('#div-cache-nodejs').hide();
     $('#div-cache-java').hide();
     $('#div-cache-dotnet').hide();
-    $('#div-cache-curl').hide();        
+    $('#div-cache-curl').hide();
 };
 
 function feautureIntroText(featureName){
@@ -154,35 +153,6 @@ function feautureIntroText(featureName){
     return IntroJson;
 }
 
-function loadBlog(){  
-
-  $.ajax({
-      type: "GET",
-      url: '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent("https://blog.cloudboost.io/rss"),   
-      dataType: "jsonp"      
-  });  
-
-}
-
-function JSON_CALLBACK(res){
-  var entries=res.responseData.feed.entries;
-
-  if(entries.length>0){
-    for(var i=0;i<entries.length;++i){
-      if(entries[i].categories.length>0 && getAnnouncement(entries[i].categories)){          
-        var feed=entries[i];
-        feed.link=feed.link.replace("http://cbblog.azurewebsites.net", "http://blog.cloudboost.io");                        
-        break;        
-      }
-    }  
-    $(".whatsnew-label").text("What's new :");   
-    $(".whatsnew-title").text(feed.title+".");
-    $(".whatsnewlink").attr("href",feed.link);
-    $(".whatsnewlink").text("Read more");
-   
-  }
-}
-
 function getAnnouncement(categories){
   var res=null;
   for(var j=0;j<categories.length;++j){
@@ -196,107 +166,80 @@ function getAnnouncement(categories){
 
 /****************************************Mixpanel Area********************************************************************/
 $("#header-signupbtn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('Landing Header Sign Up Button', {"Clicked":"Sign up for free"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $("#header-loginbtn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('Landing Header Login Button', {"Clicked":"Login"});
-      /****End of Tracking*****/
-    }
-}); 
+
+});
 
 $("#home-body-signup-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Body Sign Up Button', {"Clicked":"HomePage Body Sign Up Button"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $("#home-body-quickstart-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage CodeWidget QuickStart Button', {"Clicked":"HomePage CodeWidget QuickStart Button"});
-      /****End of Tracking*****/
-    }
-}); 
+
+});
 $("#home-body-compare-btn").click(function(){
     if(!__isDevelopment){
-      /****Tracking************/            
+      /****Tracking************/
        mixpanel.track('HomePage CodeWidget Compare Button', {"Clicked":"HomePage CodeWidget Compare Button"});
       /****End of Tracking*****/
     }
 });
 
 $("#home-bottom-quickstart-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Bottom QuickStart Button', {"Clicked":"HomePage Bottom QuickStart Button"});
-      /****End of Tracking*****/
-    }
-}); 
+
+});
 $("#home-bottom-compare-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Bottom Compare Button', {"Clicked":"HomePage Bottom Compare Button"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $(".dockerlink").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Docker Link', {"Clicked":"HomePage Docker Link"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".kuberneteslink").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Kubernetes Link', {"Clicked":"HomePage Kubernetes Link"});
-      /****End of Tracking*****/
-    }
+
 });
 
 $(".instagramclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Instagram Clone', {"Clicked":"HomePage Instagram Clone"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".hnewsclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage HackerNews Clone', {"Clicked":"HomePage HackerNews Clone"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".slackclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Slack Clone', {"Clicked":"HomePage Slack Clone"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".tinderclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Tinder Clone', {"Clicked":"HomePage Tinder Clone"});
-      /****End of Tracking*****/
-    }
+
 });
 $(".whatsappclone").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('HomePage Whatsapp Clone', {"Clicked":"HomePage Whatsapp Clone"});
-      /****End of Tracking*****/
-    }
+      
 });
- 

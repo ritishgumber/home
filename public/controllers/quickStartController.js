@@ -5,15 +5,13 @@ var codeMirrorEnabled = [];
 $(document).ready(function(){
     languageClick('js',1);
     switchFeature(1);
-    featureSelected  = 1;  
+    featureSelected  = 1;
 
-    //LoadTutorials    
-    getTutorials(); 
-    if(!__isDevelopment){
-      /****Tracking************/            
-       mixpanel.track('Visted QuickStart Page', {"visited":"visited QuickStart Page"});
-      /****End of Tracking*****/
-    }  
+    //LoadTutorials
+    getTutorials();
+
+    mixpanel.track('Visted QuickStart Page', {"visited":"visited QuickStart Page"});
+
 });
 //Initialization
 
@@ -24,7 +22,7 @@ $(".js").click(function(event){
 
 $(".java").click(function(event){
     event.preventDefault();
-    languageClick('java');    
+    languageClick('java');
 });
 
 var languageClick=function(lang, id){
@@ -44,7 +42,7 @@ var languageClick=function(lang, id){
     if(id){
         featureSelected = id;
     }
-   
+
     initCodeEditors( ['initCode-'+lang],'javascript',50);
 
     if(featureSelected  ===1){
@@ -76,7 +74,7 @@ $("#afeature3").click(function(event){
 });
 
 var switchFeature = function(id){
-    //remove active classes. 
+    //remove active classes.
     $('#feature1List').removeClass('active');
     $('#feature2List').removeClass('active');
     $('#feature3List').removeClass('active');
@@ -115,18 +113,18 @@ var initCodeEditors = function(arr,language,size){
             codeMirrorEnabled.push(codeEditors[i]);
         }
     }
-};  
+};
 
 //getTutorials
-function getTutorials(){     
-    $.get(serverURL+'/tutorial', function(data, status){
+function getTutorials(){
+    $.get('https://service.cloudboost.io/tutorial', function(data, status){
         if(status=="success"){
           for(var i=0;i<data.length;++i){
             bindTutorialData(data[i]);
           }
         }
         $(".tutorials-loading").remove();
-    }); 
+    });
 }
 
 function bindTutorialData(tutData){
@@ -142,7 +140,7 @@ function bindTutorialData(tutData){
         tutHtml+='<!--Boxes-->';
         tutHtml+='<div class="tut-bx-wrapper flex-general-row-wrapper">';
                 //Create Tutorial Boxes
-               
+
                 tutData.tutorials.sort(function (a, b) {
                   if (a.order > b.order) {
                     return 1;
@@ -153,29 +151,30 @@ function bindTutorialData(tutData){
                   // a must be equal to b
                   return 0;
                 });
-                var result=createTutorialBox(tutData.tutorials); 
-                tutHtml+=result;             
-        tutHtml+='</div>';    
+                var result=createTutorialBox(tutData.tutorials);
+                tutHtml+=result;
+        tutHtml+='</div>';
         tutHtml+='</div>';
         tutHtml+='</section>';
 
-    $(".tutorials-parent").append(tutHtml);  
+    $(".tutorials-parent").append(tutHtml);
 }
 
 function createTutorialBox(tutorialBoxList){
     var tutBoxHtml="";
-    for(var i=0;i<tutorialBoxList.length;++i){    
+    var tutorialURL = "https://tutorials.cloudboost.io";
+    for(var i=0;i<tutorialBoxList.length;++i){
     var boxHtml='<!--******BOX*******-->';
         boxHtml+='<div style="position:relative; margin-top:20px; margin-bottom:5px;">';
         boxHtml+='<div class="tut-bx-container" data-boxid="'+tutorialBoxList[i].id+'">';
         boxHtml+='<div class="tut-name">';
         boxHtml+='<h3 class="flex-general-column-wrapper-center" style="margin-top:30px;color:#737373; font-family: Signika, sans-serif; font-weight: 300; ">'+tutorialBoxList[i].name+'</h3>';
-        boxHtml+='</div>'; 
+        boxHtml+='</div>';
         boxHtml+='<div class="tut-desc">';
         boxHtml+='<div class="flex-general-column-wrapper-center">';
         boxHtml+='<span style="color:#737373; font-family: Signika, sans-serif; font-weight: 300; font-size:15px">'+tutorialBoxList[i].description+'</span>';
         boxHtml+='</div>';
-        boxHtml+='</div>'; 
+        boxHtml+='</div>';
         boxHtml+='<div class="tut-labels flex-general-row-wrapper-center" style="margin-top:30px;">';
         boxHtml+='<div class="flex-general-row-wrapper" style="width:85%; color:#737373;">';
         boxHtml+='<div class="flex-equal-ratio-items flex-general-row-wrapper-center">';
@@ -190,19 +189,19 @@ function createTutorialBox(tutorialBoxList){
         boxHtml+='&nbsp;'+tutorialBoxList[i].time;
         boxHtml+='</span>';
         boxHtml+='</div>';
-        boxHtml+='</div>';                        
+        boxHtml+='</div>';
         boxHtml+='</div>';
         boxHtml+='<div style="border-top:1px solid #BCBABA;margin-top:25px;">';
-        boxHtml+='</div>';        
-           
+        boxHtml+='</div>';
+
         boxHtml+='<div class="tut-prog-langs" style="margin-top:5px;">';
         boxHtml+='<div class="flex-general-column-wrapper-center" style="margin:0;">';
         boxHtml+='<span style="margin:0;color:#BCBABA;">Available</span>';
-        boxHtml+='</div>'; 
+        boxHtml+='</div>';
         boxHtml+='<div class="prog-lang-list flex-general-column-wrapper-center">';
         boxHtml+='<div class="flex-general-row-wrapper">';
 
-        //Loop over languages        
+        //Loop over languages
         var langs="";
         for(var j=0;j<tutorialBoxList[i].languages.length;++j){
             //Javascript
@@ -210,98 +209,94 @@ function createTutorialBox(tutorialBoxList){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
                     langHtml+='<i class="icon ion-social-javascript fa-lg"></i>';
                     langHtml+='</div>';
-                langs+=langHtml;    
+                langs+=langHtml;
             }
             //.Net
             if(tutorialBoxList[i].languages[j]=="DotNet"){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
                     langHtml+='<i class="icon ion-social-windows fa-lg"></i>';
                     langHtml+='</div>';
-                langs+=langHtml;    
-            }          
+                langs+=langHtml;
+            }
             //Node.js
             if(tutorialBoxList[i].languages[j]=="Nodejs"){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
                     langHtml+='<i class="icon ion-social-nodejs fa-lg"></i>';
                     langHtml+='</div>';
-                langs+=langHtml;    
-            }           
+                langs+=langHtml;
+            }
             //Java
             if(tutorialBoxList[i].languages[j]=="Java"){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
                     langHtml+='<img src="./images/java.png" style="height:24px;width:22px;margin-top:-6px;">';
                     langHtml+='</div>';
-                langs+=langHtml;    
+                langs+=langHtml;
             }
             //Android
             if(tutorialBoxList[i].languages[j]=="Android"){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
                     langHtml+='<i class="icon ion-social-android fa-lg"></i>';
                     langHtml+='</div>';
-                langs+=langHtml;    
+                langs+=langHtml;
             }
             //IOS
             if(tutorialBoxList[i].languages[j]=="IOS"){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
                     langHtml+='<i class="icon ion-social-apple fa-lg"></i>';
                     langHtml+='</div>';
-                langs+=langHtml;    
+                langs+=langHtml;
             }
             //.Net
-            //PHP           
-            //IOS            
+            //PHP
+            //IOS
         }
         boxHtml+=langs;//Bind languages
 
         boxHtml+='</div>';
-        boxHtml+='</div>';   
-        boxHtml+='</div>'; 
+        boxHtml+='</div>';
+        boxHtml+='</div>';
         boxHtml+='</div>';
 
         var tURL=tutorialURL+"/"+tutorialBoxList[i].tutorialLink.lang+"/"+tutorialBoxList[i].tutorialLink.category+"/"+tutorialBoxList[i].tutorialLink.subcategory;
         boxHtml+='<!--On Hover-->';
         boxHtml+='<div id="'+tutorialBoxList[i].id+'" class="tut-bx-container-gray-bx flex-general-column-wrapper-center">';
         boxHtml+='<a href="'+tURL+'" target="_blank" data-subcat="'+tutorialBoxList[i].tutorialLink.subcategory+'" class="btn tut-view-btn"><p style="margin-top:3px;">View</p></a>';
-        boxHtml+='</div>'; 
-        boxHtml+='</div>'; 
+        boxHtml+='</div>';
+        boxHtml+='</div>';
         boxHtml+='<!--****/END BOX****-->';
 
-        tutBoxHtml+=boxHtml;  
-    } 
+        tutBoxHtml+=boxHtml;
+    }
 
     return tutBoxHtml;
 }
 
 //Tutorials functions
-$(document).on("mouseenter",".tut-bx-container",function(event){ 
-    $(".tut-bx-container-gray-bx").css("visibility", "hidden"); 
-    var targetDiv="#"+$(this).data("boxid");  
+$(document).on("mouseenter",".tut-bx-container",function(event){
+    $(".tut-bx-container-gray-bx").css("visibility", "hidden");
+    var targetDiv="#"+$(this).data("boxid");
     $(targetDiv).css("visibility", "visible");
-    $(targetDiv).find(".tut-view-btn").css("display", "initial"); 
-    $(targetDiv).removeClass('animated fadeOut');  
-    $(targetDiv).addClass('animated fadeIn');   
+    $(targetDiv).find(".tut-view-btn").css("display", "initial");
+    $(targetDiv).removeClass('animated fadeOut');
+    $(targetDiv).addClass('animated fadeIn');
 });
 
-$(document).on("mouseleave",".tut-bx-container-gray-bx",function(event){ 
-    $(this).find(".tut-view-btn").css("display", "none");      
-    $(this).removeClass('animated fadeIn'); 
+$(document).on("mouseleave",".tut-bx-container-gray-bx",function(event){
+    $(this).find(".tut-view-btn").css("display", "none");
+    $(this).removeClass('animated fadeIn');
     $(this).addClass('animated fadeOut');
-    $(this).css("visibility", "hidden");      
+    $(this).css("visibility", "hidden");
 });
 
-$(document).on("click",".tut-view-btn",function(event){ 
+$(document).on("click",".tut-view-btn",function(event){
    var subCategory=$(this).data("subcat");
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('Quickstart-View Tutorial', {"subcategory":subCategory});
-      /****End of Tracking*****/
-    }      
+
 });
 
 $(".quickstart-getstarted-btn").click(function(){
-    if(!__isDevelopment){
-      /****Tracking************/            
+
        mixpanel.track('Quickstart-Getting Started Tutorial', {"clicked":"Clicked on short button for first app"});
-      /****End of Tracking*****/
-    }
+
 });

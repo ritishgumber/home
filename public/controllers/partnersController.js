@@ -1,10 +1,10 @@
- 
-$(document).ready(function(){  
+
+$(document).ready(function(){
     $("#pform-wyl-sbmtng").hide();
     $("#pform-sbmt-success").text("");
 });
 
-$("#sbmt-partnr-btn").click(function(){  
+$("#sbmt-partnr-btn").click(function(){
     var companyName         = $("#pform-companyname").val();
     var companyDescription  = $("#pform-companydescri").val();
     var personName          = $("#pform-personname").val();
@@ -12,15 +12,15 @@ $("#sbmt-partnr-btn").click(function(){
     var companyContact      = $("#pform-companycontact").val();
     var personMobile        = $("#pform-personmobile").val();
     var companyAddress      = $("#pform-companyaddrs").val();
-    var companyWebsite      = $("#pform-companywebsite").val();    
+    var companyWebsite      = $("#pform-companywebsite").val();
     var companyCountry      = $("#pform-companycntry").val();
     var appSpecilizedIn     = $("#pform-apps").val();
-    var companySize         = $("#pform-companysize").val();    
+    var companySize         = $("#pform-companysize").val();
 
     $("#pform-sbmt-error").text("");
     $("#pform-sbmt-success").text("");
     var validateMsg=_validateFields(companyName,companyDescription,personName,companyEmail,companyContact,personMobile,companyAddress,companyWebsite,companyCountry,appSpecilizedIn,companySize);
-   
+
     if(validateMsg){
         $("#pform-sbmt-error").text("ERROR: "+validateMsg);
     }
@@ -47,22 +47,20 @@ $("#sbmt-partnr-btn").click(function(){
             type: "POST",
             url: 'https://service.cloudboost.io/partner',
             'data': partnerForm ,
-            success: function(result,status,xhr) {                
+            success: function(result,status,xhr) {
 
                 $("#pform-bfr-sbmt").show();
                 $("#pform-wyl-sbmtng").hide();
 
                 var successMsg="Thank you for your interest in our partner program. One of our partner support monkeys will reach out to you soon and help you get on-board.";
                 $("#pform-sbmt-success").text(successMsg);
-                
+
 
                 partnerForm.partnerId=result.id;
-                if(!__isDevelopment){
-                  /****Tracking************/            
-                  mixpanel.track('Partner Submitted Form', partnerForm);
-                  /****End of Tracking*****/
-                }
-            },         
+
+                mixpanel.track('Partner Submitted Form', partnerForm);
+
+            },
             error: function(xhr,status,error) {
                 var errorResp="Something went wrong, try again."
                 if(xhr && xhr.responseText){
@@ -86,63 +84,63 @@ $("#sbmt-partnr-btn").click(function(){
 
 
 function _validateFields(companyName,companyDescription,personName,companyEmail,companyContact,personMobile,companyAddress,companyWebsite,companyCountry,appSpecilizedIn,companySize,acceptedCbAgreement){
-    if(!companyName || companyName==""){      
+    if(!companyName || companyName==""){
       return "Company Name is required."
     }
 
-    if(!companyDescription || companyDescription==""){        
+    if(!companyDescription || companyDescription==""){
         return "Company Description is required."
     }
 
-    if(!personName || personName==""){       
+    if(!personName || personName==""){
         return "Person's Name is required."
     }
 
-    if(!companyEmail || companyEmail==""){        
+    if(!companyEmail || companyEmail==""){
        return "Business Email is required."
     }
 
-    if(companyEmail && !_emailValidation(companyEmail)){       
+    if(companyEmail && !_emailValidation(companyEmail)){
       return "Business Email is invalid."
     }
 
-    if(!companyContact || companyContact==""){     
+    if(!companyContact || companyContact==""){
        return "Business Contact is required."
     }
 
-    if(!personMobile || personMobile==""){        
+    if(!personMobile || personMobile==""){
         return "Person's Contact is required."
     }
 
-    if(!companyAddress || companyAddress==""){        
+    if(!companyAddress || companyAddress==""){
         return "Company's Address is required."
     }
 
-    if(!companyWebsite || companyWebsite==""){        
+    if(!companyWebsite || companyWebsite==""){
         return "Company's Website is required."
     }
 
-    if(companyWebsite &&  companyWebsite!="" && !isUrl(companyWebsite)){        
+    if(companyWebsite &&  companyWebsite!="" && !isUrl(companyWebsite)){
         return "Company's Website is invalid."
     }
 
-    if(!companyCountry || companyCountry==""){       
+    if(!companyCountry || companyCountry==""){
         return "Company's Country is required."
     }
 
-    if(!appSpecilizedIn || appSpecilizedIn==""){       
+    if(!appSpecilizedIn || appSpecilizedIn==""){
         return "Apps Specialized In is required."
     }
 
-    if(!companySize || companySize==""){        
+    if(!companySize || companySize==""){
         return "Company's Size is required."
     }
 
-    if(companySize &&  companySize!="" && !_numberValidation(companySize)){        
+    if(companySize &&  companySize!="" && !_numberValidation(companySize)){
         return "Company's Size is invalid, it should be number."
     }
 
-    if(!$("#cbagrmnt").is(":checked")){        
+    if(!$("#cbagrmnt").is(":checked")){
         return "Need to Accept CloudBoost Agreement."
     }
 
@@ -152,7 +150,7 @@ function _validateFields(companyName,companyDescription,personName,companyEmail,
 function _emailValidation(email){
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-    if (!filter.test(email)) {            
+    if (!filter.test(email)) {
         return false;
     }
 
@@ -180,5 +178,3 @@ function isUrl(url) {
     return regexp.test(url);
 
 }
-
-
