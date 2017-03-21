@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CloudBoost | Quickstart</title> 
-    <base href="/">   
+    <title>CloudBoost | Quickstart</title>
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="CloudBoost | Quickstart"/>
     <meta name="description" content="Quickstart : Start building your app in under 2 minutes.">
     <meta name="keywords" content="quickstart, cloudbost quickstart, baas, backend as a service, database as a service, hybrid database, cloudboost, search, realtime, storage, app storage">
-    <meta name="fragment" content="!"/>  
-    <!--common head links-->  
+    <meta name="fragment" content="!"/>
+    <!--common head links-->
     <% include ./partials/commonHead %>
 </head>
 
@@ -22,33 +22,34 @@
 </header>
 
 <!--Content-->
-<!--********************************************************************************************-->    
-    <div class="headline-bg">
+<!--********************************************************************************************-->
+    <div class="headline-bg" style="height:400px;">
     </div><!--//headline-bg-->
 
-    <section class="contact-section section section-on-bg promo-quickstart">
-        <div class="container text-center">
-            <div class="col-md-12"> 
-                <h1 style="color:white; font-family:font-family: 'Signika', sans-serif; font-weight: 300; ">Here's a <span style="font-weight: 700;">a 2 minute quickstart </span> on CloudBoost.</h1>
-            </div> 
-            <div>             
-                    <h4 style="color:white; font-family:font-family: 'Signika', sans-serif; font-weight: 300; ">Build mobile and web apps in minutes using client-side code and our powerful API. Save time. Delight your users.<br/><br/><b>It'll just take few lines of code to power your app with CloudBoost.</b></h4>
-            </div>
-            <br/><br/>
-            <div>
-                 <button type="button" class="play-trigger btn-link " data-toggle="modal" data-target="#modal-video" data-backdrop="static" data-keyboard="false"><i class="fa fa-youtube-play"></i> WATCH THE QUICKSTART VIDEO</button> &nbsp;&nbsp; | &nbsp;&nbsp; <a href="https://blog.cloudboost.io/building-a-sample-social-networking-app-with-cloudboost-io/" target="_blank" class="play-trigger btn-link " ><i class="fa fa-rocket"></i> SAMPLE APP BUILT ON CLOUDBOOST</a>
+    <section class="pricing section section-on-bg newpricingbg">
+        <div class="container">
+            <center>
+                <h1 style="color:white; font-size:44px;">
+                    <span style="font-family: 'Signika', sans-serif; font-weight:700;font-size:50px">Get Started.</span>
+                </h1>
 
-            </div>
-        </div><!--//container-->
-    </section><!--//promo-->
+                <div>
+                    <h3 style="color:white; font-size:30px; -family: 'Signika', sans-serif; font-weight: 300; ">
+                        <span style="color:#b1d8ec; font-family: 'Signika', sans-serif; font-weight: 300;">Jump start with CloudBoost and build your first app in under 10 minutes.</span>
+                    </h3>
+                </div>
 
-    <section class="quickstart-strip">
+            </center>
+        </div>
+    </section>
+
+    <section class="quickstart-strip" style="margin-top:75px">
         <div class="container text-center" style="margin-top:7px;">
-               
+
             <div class="col-md-9">
                 <div class="padding-left:30px">
                    <h1 style="color:#737373; font-family: 'Signika', sans-serif; font-weight: 700; ">CloudBoost Quick Start Guide</h1>
-                  <span style="margin-top:8px; color:#737373; font-family: 'Signika', sans-serif; font-weight: 300; margin-left:13%;">Be up & running with CloudBoost in 2 minutes for all languages & frameworks.</span>
+                  <span style="margin-top:8px; color:#737373; font-family: 'Signika', sans-serif; font-weight: 300; margin-left:13%;">Be up & running with CloudBoost and build your first app in under 10 minutes.</span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -58,23 +59,23 @@
                     </a>
                 </p>
             </div>
-                 
+
         </div><!--//container-->
     </section><!--//promo-->
-     
+
 
     <!--Tutorials Loading-->
     <div class="tutorials-loading flex-general-column-wrapper-center">
         <div>
             <i class="fa fa-spinner fa-spin fa-2x"></i>
-        </div>    
-    </div> 
+        </div>
+    </div>
     <!--/End Tutorials Loading-->
 
     <!--Tutorials-->
     <div class="tutorials-parent">
-    </div> 
-    <!--/End Tutorials--> 
+    </div>
+    <!--/End Tutorials-->
 
     <!-- Video Modal -->
     <div class="modal modal-video" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
@@ -95,15 +96,15 @@
 
     <section id="cta" class="section cta-section text-center home-cta-section">
         <% include ./partials/bottom_banner %>
-    </section>       
+    </section>
 
     <!--footer-->
     <footer class="footer">
         <% include ./partials/footer %>
-    </footer>    
+    </footer>
 
     <!--scripts-->
-    <% include ./partials/commonScripts %>   
+    <% include ./partials/commonScripts %>
 
 <!--********************************************************************************************-->
     <script type="text/javascript" src="/controllers/quickStartController.js"></script>
