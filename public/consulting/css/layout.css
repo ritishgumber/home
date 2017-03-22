@@ -31,7 +31,7 @@
 .port-item {
     margin: auto;
     width: 100%;
-    max-width: 1024px;
+    /*max-width: 1024px;*/
     text-align: center;
     line-height: 20px;
 }
@@ -73,7 +73,7 @@
     display: inline-block;
     height: 490px;
     overflow: hidden;
-    width: 550px;
+    width: 650px;
     vertical-align: middle;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
     position: relative;
@@ -90,7 +90,7 @@
 
 
 .img-source {
-    height: 480px;
+    height: 96%;
     position: relative;
     background-position: top center;
 }
