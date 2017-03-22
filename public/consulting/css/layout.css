@@ -223,35 +223,32 @@ p.p-lead {
     background-size: cover;
 }
 
-.img-cfait .img-source {
-    background: url(../images/work/cfait.jpg);
-    background-size: cover;
-}
+
 
 .img-ewb .img-source {
-    background: url(../images/work/ewb.jpg);
+    background: url(/images/work/5-min.png);
     background-size: cover;
 }
 
 .img-panda .img-source {
-    background: url(../images/work/panda.png);
+    background: url(/images/work/1-min.png);
     background-size: cover;
 }
 
 
 .img-hex .img-source {
-    background: url(../images/work/hex.jpg);
+    background: url(/images/work/3-min.png);
     background-size: cover;
 }
 
 .img-ux .img-source {
-    background: url(../images/work/ux.jpg);
+    background: url(/images/work/4-min.png);
     background-size: cover;
 }
 
 
 .img-andrei .img-source {
-    background: url(../images/work/andrei/andrei.jpg);
+    background: url(/images/work/2-min.png);
     background-size: cover;
 }
 
