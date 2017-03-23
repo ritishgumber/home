@@ -120,10 +120,10 @@
 }
 
 .default-inputfield{
-    border:none;
+  border-color:#c7c7c7;
 }
 .default-inputfield:focus{
-    outline: none;
+  border-color:#777777;
 }
 
 body {
@@ -147,7 +147,7 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  color: #e74124;
+  color: #005e87;
 }
 .btn,
 a.btn {
@@ -1675,7 +1675,7 @@ input[type="button"] {
 }
 .faq .panel .panel-title .panel-toggle .fa {
   margin-right: 10px;
-  color: #6a97f2;
+  color: #3691C1;
 }
 .faq .panel .panel-title:hover .fa {
   color: #328aba;
