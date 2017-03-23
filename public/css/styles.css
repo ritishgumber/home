@@ -175,7 +175,7 @@ a.btn-cta-primary,
 }
 a.btn-cta-primary:hover,
 .btn-cta-primary:hover {
-  background: #3271f0;
+  background: #005e87;
   border: 2px solid #3271f0;
   color: #fff;
 }
@@ -238,7 +238,7 @@ a.btn-ghost .text,
 }
 
 .linkHover:hover{
-  background:#096E80 !important;
+  background:#005e87 !important;
   border-radius:12px !important;
 }
 .linkHover-nrml a{
@@ -2416,7 +2416,7 @@ input[type="button"] {
   padding: 30px;
 }
 .story-section .belife {
-  border-color: #6a97f2;
+  border-color: #328aba;
   padding: 15px 30px;
   font-family: 'Roboto slab', serif;
   font-weight: 300;
@@ -4150,7 +4150,7 @@ input[type="button"] {
 .compare-head{
   height:50px;
   width: 100%;
-  background-color: #039DB5;
+  background-color: #2f84b3;
   color: white;
 }
 
