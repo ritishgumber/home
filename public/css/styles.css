@@ -4595,3 +4595,40 @@ input[type="button"] {
     display: none !important;
   }
 }
+
+
+.rocket{
+       float: left;
+    margin-top: -10px;
+    width: 100px;
+    height: 100px;
+}
+.skype{
+       float: left;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+}
+.rockethead{
+  text-transform: uppercase;
+    font-family: Signika;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 700;
+    font-style: normal;
+    color: #111;
+    margin: 10px 0;
+    display: block;
+    letter-spacing: normal;
+}
+.rocketsub{
+      font-family: Signika;
+    font-size: 30px;
+    line-height: 140%;
+    font-style: normal;
+    color: #111;
+    margin: 10px 0;
+    display: block;
+    letter-spacing: normal;
+    margin-top: -7px;
+}
