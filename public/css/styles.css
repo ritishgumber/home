@@ -4631,9 +4631,9 @@ input[type="button"] {
 .skype{
     float: left;
     margin-right: 30px;
-    width: 70px;
-    height: 70px;
-    margin-top: 5px;
+    width: 60px;
+    height: 60px;
+    margin-top: 12px;
 }
 .rockethead{
   text-transform: uppercase;
@@ -4648,8 +4648,8 @@ input[type="button"] {
     letter-spacing: normal;
 }
 .rocketsub{
-      font-family: Signika;
-    font-size: 30px;
+    font-family: Signika;
+    font-size: 25px;
     line-height: 140%;
     font-style: normal;
     color: #111;
