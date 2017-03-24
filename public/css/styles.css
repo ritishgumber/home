@@ -4596,6 +4596,31 @@ input[type="button"] {
   }
 }
 
+@media (min-width:1300px){
+  .rockercontainer{
+    width: 65%;
+    height: 110px;
+    margin-top: -4px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width:1299px){
+  .rockercontainer{
+    width: 100%;
+    height: 110px;
+    margin-top: -4px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width:855px){
+  .rockercontainer{
+    display: none
+  }
+}
 
 .rocket{
     float: left;
