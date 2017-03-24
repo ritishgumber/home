@@ -45,7 +45,7 @@
         </header><!--//header-->
 
         <section class="featured-blog-posts section">
-            <div class="flexslider blog-slider" style="margin-top:0px;">
+            <div class="flexslider blog-slider" style="margin-top:60px;">
                 <ul class="slides">
                     <li class="slide slide-1">
                         <div class="flex-caption container">
@@ -106,7 +106,7 @@
                                </div>
                             </figure><!--//post-thumb-->
                             <div class="content">
-                                <h3 class="post-title">A ninja hacker.</h3>
+                                <h3 class="post-title">A Hacker.</h3>
                                 <div class="post-entry">
                                     <p>We need complete geeks, hackers, and people who play with tons of code. We need people to dive in, right from Day 1 they're hired. We heart people who write code.</p>
 
@@ -331,20 +331,16 @@
     <script type="text/javascript">
         //Initialization
         $(document).ready(function(){
-            if(!__isDevelopment){
-              /****Tracking************/
+
                mixpanel.track('Visted Join us Page', {"visited":"visited join Us Page"});
-              /****End of Tracking*****/
-            }
+
         });
         //Initialization
 
         $("#joinus-apply-btn").click(function(){
-            if(!__isDevelopment){
-              /****Tracking************/
+
                mixpanel.track('JoinUsPage ApplyHere Button', {"Clicked":"JoinUsPage ApplyHere Button"});
-              /****End of Tracking*****/
-            }
+
         });
     </script>
 

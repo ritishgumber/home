@@ -23,45 +23,70 @@
 
 <!--Content-->
 <!--********************************************************************************************-->
-   <div class="headline-bg contact-headline-bg">
+   <div class="headline-bg contact-headline-bg" style="height:400px">
         </div><!--//headline-bg-->
 
 
-        <!-- ******Contact Section****** -->
-        <section class="contact-section section section-on-bg">
+        <section class="pricing section section-on-bg newpricingbg">
             <div class="container">
-                <h2 class="title text-center">Need help? We're all ears.</h2>
-                <p class="intro text-center">We're here to talk about anything you like - <b>Anything!</b> <br/> Even if you need someone to talk to. :)<br/><br/>We'd even love if you drop by our office and grab lunch with us.</p>
-            </div><!--//container-->
-        </section><!--//contact-section-->
+                <center>
+                    <h1 style="color:white; font-size:44px;">
+                        <span style="font-family: 'Signika', sans-serif; font-weight:700;font-size:50px">Need help? We're all ears.</span>
+                    </h1>
+
+                    <div>
+                        <h3 style="color:white; font-size:30px; -family: 'Signika', sans-serif; font-weight: 300; ">
+                            <span style="color:#b1d8ec; font-family: 'Signika', sans-serif; font-weight: 300;">At CloudBoost, every team member is here to help you. <br/> Have questions? Feel free to drop us a line.</span>
+                        </h3>
+                    </div>
+
+                </center>
+            </div>
+        </section>
 
         <!-- ******Other Contact Section****** -->
         <section class="contact-other-section section">
             <div class="container text-center">
             <br/><br/><br/><br/><br/>
-                <div class="row">
+                <div class="row" style="margin-bottom:30px">
                     <ul class="other-info list-unstyled col-md-6 col-sm-10 col-xs-12 col-md-offset-3 col-sm-offset-1 xs-offset-0" >
                         <li>
                             <i class="fa fa-stack-overflow"></i>
-                            <b>Stackoverflow : <a href="http://stackoverflow.com/questions/ask?tags=cloudboost" target="_blank">#cloudboost</a>
+                            <b><span style="font-family: 'Signika', sans-serif;
+    font-weight: 600;
+    font-size: 20px;"> StackOverflow </span> <br/></b>
+                            <a href="http://stackoverflow.com/questions/ask?tags=cloudboost" target="_blank" style="cursor:pointer">Tag your questions with CloudBoost</a>
                             </b>
                         </li>
 
                         <li>
-                            <i class="fa fa-slack"></i>Our engineers hangout here :<br/>
-                            <a href="https://slack.cloudboost.io/" target="_blank">slack.cloudboost.io</a>
+                          <i class="fa fa-slack"></i>
+                          <b><span style="font-family: 'Signika', sans-serif;
+  font-weight: 600;
+  font-size: 20px;"> Slack </span> <br/></b>
+                            <a style="cursor:pointer" href="https://slack.cloudboost.io/" target="_blank">Talk to us on Slack here.</a>
                         </li>
                         <li>
-                            <i class="fa fa-envelope-o"></i><a href="mailto:hello@cloudboost.io">support@cloudboost.io</a>
+
+                            <i class="fa fa-envelope-o"></i>
+                            <b><span style="font-family: 'Signika', sans-serif;
+    font-weight: 600;
+    font-size: 20px;"> Support Email </span> <br/></b>
+    <a style="cursor:pointer" href="mailto:hello@cloudboost.io">support@cloudboost.io</a>
                         </li>
                         <li>
                             <i class="fa fa-facebook"></i>
-                            <a href="https://www.facebook.com/groups/805935712787827" target="_blank">CloudBoost Developers</a>
+                            <b><span style="font-family: 'Signika', sans-serif;
+    font-weight: 600;
+    font-size: 20px;"> Facebook Group </span> <br/></b>
+                            <a style="cursor:pointer" href="https://www.facebook.com/groups/805935712787827" target="_blank">CloudBoost Developers</a>
                         </li>
                         <li>
                             <i class="fa fa-twitter"></i>
-                            Want to share your feedback with the world?</br> Good? Bad? We're listening.<br/><br/>
-                            <a href="https://twitter.com/cloudboostio" target="_blank">@cloudboostio</a>
+                            <b><span style="font-family: 'Signika', sans-serif;
+    font-weight: 600;
+    font-size: 20px;"> Twitter </span> <br/></b>
+                            <a style="cursor:pointer" href="https://twitter.com/cloudboostio" target="_blank">Share your feedback at @cloudboostio</a>
                         </li>
                     </ul>
                 </div><!--//row-->
@@ -82,11 +107,9 @@
     <script type="text/javascript">
         //Initialization
         $(document).ready(function(){
-            if(!__isDevelopment){
-              /****Tracking************/
+
                mixpanel.track('Visted Contact Page', {"visited":"visited Contact Page"});
-              /****End of Tracking*****/
-            }
+
         });
         //Initialization
     </script>

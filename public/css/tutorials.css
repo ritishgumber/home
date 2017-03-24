@@ -1,24 +1,24 @@
 .tutorials-parent{
 	margin-bottom: 100px;
 }
-.tutorials-loading{	
+.tutorials-loading{
 	height: 300px;
 	width: 100%;
-	padding-top: 50px;	
+	padding-top: 50px;
 }
-.tut-heading h1{	
+.tut-heading h1{
 	margin: 0;
 }
-.tut-heading span{	
+.tut-heading span{
 	margin-top: 10px;
 }
-.tut-bx-wrapper{	
+.tut-bx-wrapper{
 	height: auto;
 	/* Flex row rules */
     display: flex;
     display:-webkit-flex;
-    display:-moz-flex;    
-    
+    display:-moz-flex;
+
     flex-flow:row wrap;
     -moz-flex-flow:row wrap;
     -webkit-flex-flow:row wrap;
@@ -27,34 +27,34 @@
     -moz-justify-content: center;
     -webkit-justify-content: center;
 
-    align-items:center;  
-    -moz-align-items: center;  
-    -webkit-align-items:center;	
+    align-items:center;
+    -moz-align-items: center;
+    -webkit-align-items:center;
 }
 
 .cb-tutorials:first-child {
 	margin-top:0;
 }
-.cb-tutorials {	
+.cb-tutorials {
 	margin-bottom: 10px;
 }
 .cb-tutorials .bx-list{
-	margin-top:4% !important;	
+	margin-top:4% !important;
 }
 .cb-tutorials:first-child{
 	margin-top:0;
 }
 
-.tut-bx-container{	
+.tut-bx-container{
 	cursor: pointer;
 	padding: 10px;
 	width: 300px;
-	height:320px;	
+	height:320px;
 	background-color: white;
 	-webkit-box-shadow: 0 0 4px 1px gray;
     -moz-box-shadow: 0 0 4px 1px gray;
     box-shadow: 0 0 4px 1px gray;
-    margin-left: 30px;        
+    margin-left: 30px;
 }
 
 .tut-bx-container-gray-bx{
@@ -66,12 +66,12 @@
 	position: absolute !important;
 	z-index: 1;
 	background-color: #383636;
-	visibility: hidden;	
+	visibility: hidden;
 }
 
 .tut-desc{
 	font-size: 12px;
-	height: 74px;	
+	height: 74px;
 	margin-top: 10px;
 	overflow: hidden;
 	padding-left: 10px;
@@ -85,7 +85,7 @@
 	color: white;
 	border-radius: 2px;
 }
-.tut-view-btn:hover{	
+.tut-view-btn:hover{
 	width: 90px;
 	height:40px;
 	background-color: white;
@@ -99,6 +99,6 @@
     margin-left:0;
 }
 .prog-lang-list{
-	color:#BCC9DE;
+	color:#c1c1c1;
 	margin-top: 10px;
 }

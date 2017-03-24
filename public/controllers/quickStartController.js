@@ -225,13 +225,7 @@ function createTutorialBox(tutorialBoxList){
                     langHtml+='</div>';
                 langs+=langHtml;
             }
-            //Java
-            if(tutorialBoxList[i].languages[j]=="Java"){
-                var langHtml='<div class="flex-equal-ratio-items langIcon">';
-                    langHtml+='<img src="./images/java.png" style="height:24px;width:22px;margin-top:-6px;">';
-                    langHtml+='</div>';
-                langs+=langHtml;
-            }
+            
             //Android
             if(tutorialBoxList[i].languages[j]=="Android"){
                 var langHtml='<div class="flex-equal-ratio-items langIcon">';
