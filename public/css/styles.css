@@ -4598,16 +4598,17 @@ input[type="button"] {
 
 
 .rocket{
-       float: left;
+    float: left;
     margin-top: -10px;
     width: 100px;
     height: 100px;
 }
 .skype{
-       float: left;
-    margin-right: 20px;
-    width: 80px;
-    height: 80px;
+    float: left;
+    margin-right: 30px;
+    width: 70px;
+    height: 70px;
+    margin-top: 5px;
 }
 .rockethead{
   text-transform: uppercase;
