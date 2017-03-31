@@ -691,6 +691,7 @@ input[type="submit"], input[type="button"] {
 .index-bg {
     position: absolute;
     width: 100%;
+    min-width: 500px!important;
     top: 0;
     left: 0;
     height: 100%;
@@ -703,6 +704,26 @@ input[type="submit"], input[type="button"] {
     background-clip: border-box;
     background-attachment: scroll;
     background-color: #253340;
+}
+
+.description-span {
+    color: #9AA7BA;
+}
+
+.pricingcap-div {
+    margin-top: 30px;
+}
+
+.pricingcap-div:first-child {
+    margin-top: 0px;
+}
+
+.carousel-inner .item {
+    padding: 30px 0px!important;
+}
+
+.item .each-feature-wrap .each-feature .featureicon {
+    font-size: 40px;
 }
 
 @media (min-device-width: 2000px) and (max-device-width: 2470px) {
@@ -3011,11 +3032,14 @@ input[type="submit"], input[type="button"] {
 
 .access-section .form-group.password:before {
     content: "\f023";
-    font-family: FontAwesome;
+    23";
+ font-family: FontAwesome;
     font-style: normal;
+    ormal;
+    ormal;
     font-weight: normal;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
+    -webk -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: absolute;
     left: 10px;
@@ -3682,6 +3706,18 @@ input[type="submit"], input[type="button"] {
     color: #253340;
 }
 
+@media (max-width:1200px) {
+    #logoContainer {
+        float: none!important;
+    }
+}
+
+@media (max-width:992px) {
+    .header-sign-up {
+        margin-left: 40%;
+    }
+}
+
 @media (max-width:412px) {
     .headline-bg {
         height: 500px!important;
@@ -4089,6 +4125,9 @@ input[type="submit"], input[type="button"] {
 @media (max-width: 992px) {
     .quickstart-strip {
         margin-top: 0;
+    }
+    .pricing-bucket-wrap-div {
+        width: 100%!important;
     }
 }
 
@@ -4827,6 +4866,15 @@ input[type="submit"], input[type="button"] {
     }
 }
 
+@media (max-width:575px) {
+    html {
+        width: 500px!important;
+    }
+    .headline-compare-bg {
+        width: 500px!important;
+    }
+}
+
 @media screen and ( max-width: 475px) {
     .hiring-tail {
         display: none !important;
@@ -5348,5 +5396,15 @@ input[type="submit"], input[type="button"] {
     margin-top: -7px;
 }
 
+
+}
+
+}
+
+}
+
+}
+
+}
 
 }
