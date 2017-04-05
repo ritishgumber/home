@@ -3777,6 +3777,33 @@ input[type="submit"], input[type="button"] {
     }
 }
 
+@media (max-width:1113px) {
+    .vivascafe {
+        display: none!important;
+    }
+}
+
+@media (max-width:949px) {
+    .ceraplus {
+        display: none!important;
+    }
+}
+
+@media (max-width:930px) {
+    .skype-contact {
+        display: none;
+    }
+    .project-contact {
+        margin-left: 28%!important;
+    }
+}
+
+@media (max-width:768px) {
+    .whatsappclone {
+        margin-left: 0px!important;
+    }
+}
+
 
 /* Extra small devices (phones, less than 768px) */
 
@@ -4128,6 +4155,9 @@ input[type="submit"], input[type="button"] {
     }
     .pricing-bucket-wrap-div {
         width: 100%!important;
+    }
+    .promo {
+        margin-bottom: 0px!important;
     }
 }
 
@@ -5325,6 +5355,10 @@ input[type="submit"], input[type="button"] {
     }
     .comps-usingus-bx {
         margin-left: auto!important;
+        margin-top: 10px!important;
+    }
+    .comps-usingus-bx:last-child {
+        padding-bottom: 5px!important;
     }
 }
 
