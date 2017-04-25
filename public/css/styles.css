@@ -4127,7 +4127,7 @@ input[type="submit"], input[type="button"] {
 
 @media (min-width: 300px) {
     .promo {
-        height: 650px;
+        height: 541px;
         padding-top: 40px;
     }
     .promo-quickstart {
@@ -4212,7 +4212,7 @@ input[type="submit"], input[type="button"] {
         float: right !important;
     }
     .promo {
-        height: 500px;
+        height: 476px;
         padding-top: 40px;
     }
     .promo-quickstart {
@@ -4926,7 +4926,7 @@ input[type="submit"], input[type="button"] {
     }
     .comps-usingus-bx:first-child {
         margin-left: 60px!important;
-        margin-top: 10px!important;
+        margin-top: 18px!important;
     }
 }
 
@@ -5351,11 +5351,11 @@ input[type="submit"], input[type="button"] {
     }
     .comps-usingus-bx:first-child {
         margin-left: auto!important;
-        margin-top: 10px!important;
+        margin-top: 18px!important;
     }
     .comps-usingus-bx {
         margin-left: auto!important;
-        margin-top: 10px!important;
+        margin-top: 18px!important;
     }
     .comps-usingus-bx:last-child {
         padding-bottom: 5px!important;
